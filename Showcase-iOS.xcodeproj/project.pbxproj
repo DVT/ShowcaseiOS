@@ -601,7 +601,7 @@
 				99FB80002085F25300B300BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		99FB80012085F25300B300BA /* Build configuration list for PBXNativeTarget "Showcase-iOS" */ = {
 			isa = XCConfigurationList;
@@ -610,7 +610,7 @@
 				99FB80032085F25300B300BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		99FB80042085F25300B300BA /* Build configuration list for PBXNativeTarget "Showcase-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -619,7 +619,7 @@
 				99FB80062085F25300B300BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
