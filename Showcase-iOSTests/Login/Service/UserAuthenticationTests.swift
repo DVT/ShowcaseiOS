@@ -12,9 +12,14 @@ import Cuckoo
 class UserAuthenticationTests: XCTestCase {
     
     let mockUserAuthentication = MockAuthenticating()
-    
+    var testEmail: String?
     override func setUp() {
         super.setUp()
+        testEmail = "test@gmail.com"
+    }
+    
+    override func tearDown() {
+        super.tearDown()
     }
     
     func testThatSignInMethodGetsCalledOnlyOnce() {
@@ -25,9 +30,30 @@ class UserAuthenticationTests: XCTestCase {
         verify(mockUserAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testThatSignInMethodCompletesWithAUser() {
+        var userAuthenticated: Bool = false
+        stub(mockUserAuthentication) { (mock) in
+            let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, _, completion) in
+                let fakeUser = User(email: email)
+                completion(fakeUser, nil)
+            }))
+        }
+        mockUserAuthentication.signIn(withEmail: testEmail!, password: "") { (user, _) in
+            userAuthenticated = (user as! User) == User(email: self.testEmail!)
+        }
+        XCTAssertTrue(userAuthenticated)
+        verify(mockUserAuthentication).signIn(withEmail: anyString(), password: anyString(), completion: any())
     }
     
+    class User: Equatable {
+        let email: String
+        
+        init(email: String) {
+            self.email = email
+        }
+        
+        static func == (lhs: UserAuthenticationTests.User, rhs: UserAuthenticationTests.User) -> Bool {
+            return lhs.email == rhs.email
+        }
+    }
 }

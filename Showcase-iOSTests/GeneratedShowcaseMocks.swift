@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/Authenticating.swift at 2018-04-18 17:08:59 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/Authenticating.swift at 2018-04-18 19:22:35 +0000
 
 //
 //  Authenticating.swift
@@ -89,7 +89,7 @@ class MockAuthenticating: Authenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-18 17:08:59 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-18 19:22:35 +0000
 
 //
 //  Viewable.swift
