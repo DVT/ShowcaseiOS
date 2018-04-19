@@ -2,6 +2,6 @@
 import FirebaseDatabase
 import Foundation
 
-protocol FirebaseRetrievable {
-    func firebaseRetriever(path: String) -> DatabaseRetrievable?
+protocol FirebaseRetrievable: DatabaseRetrievable {
+    func firebaseRetriever(path: String) -> DatabaseReference?
 }
