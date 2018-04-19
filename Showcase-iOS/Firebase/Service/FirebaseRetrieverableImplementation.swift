@@ -3,11 +3,7 @@ import FirebaseDatabase
 import Foundation
 
 class FirebaseRetrieverableImplementation: FirebaseRetrievable {
-    func firebaseRetriever(path: String) -> DatabaseReference? {
-        return databaseService()?.child(path)
-    }
-    
-    func databaseService() -> DatabaseReference? {
+    func database() -> DataReferenceable {
         return Database.database().reference()
     }
 }

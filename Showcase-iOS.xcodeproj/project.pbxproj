@@ -17,8 +17,8 @@
 		99FB800B20860C4500B300BA /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB800A20860C4500B300BA /* Viewable.swift */; };
 		A33D79AD208879C900D272E7 /* FirebaseRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79AC208879C900D272E7 /* FirebaseRetrievable.swift */; };
 		A33D79AF208879F900D272E7 /* FirebaseRetrieverableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79AE208879F900D272E7 /* FirebaseRetrieverableImplementation.swift */; };
-		A33D79B120887B8300D272E7 /* DatabaseRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B020887B8300D272E7 /* DatabaseRetrievable.swift */; };
-		A33D79B320887BAA00D272E7 /* DatabaseRetrievableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseRetrievableImplementation.swift */; };
+		A33D79B120887B8300D272E7 /* DataReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B020887B8300D272E7 /* DataReferenceable.swift */; };
+		A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */; };
 		A58CB69A40BBA1DAAE40AD2B /* Pods_Showcase_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E63F38617F9FAE5D2CFB4F /* Pods_Showcase_iOS.framework */; };
 		D3CA0C259152F306ADF67208 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -52,8 +52,8 @@
 		A118543CC27C3C0951383809 /* Pods-Showcase-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A33D79AC208879C900D272E7 /* FirebaseRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRetrievable.swift; sourceTree = "<group>"; };
 		A33D79AE208879F900D272E7 /* FirebaseRetrieverableImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRetrieverableImplementation.swift; sourceTree = "<group>"; };
-		A33D79B020887B8300D272E7 /* DatabaseRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRetrievable.swift; sourceTree = "<group>"; };
-		A33D79B220887BAA00D272E7 /* DatabaseRetrievableImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRetrievableImplementation.swift; sourceTree = "<group>"; };
+		A33D79B020887B8300D272E7 /* DataReferenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReferenceable.swift; sourceTree = "<group>"; };
+		A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Extension.swift"; sourceTree = "<group>"; };
 		BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA1459AB0697F9EB2E7C36 /* Pods-Showcase-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,8 +136,8 @@
 			children = (
 				A33D79AC208879C900D272E7 /* FirebaseRetrievable.swift */,
 				A33D79AE208879F900D272E7 /* FirebaseRetrieverableImplementation.swift */,
-				A33D79B020887B8300D272E7 /* DatabaseRetrievable.swift */,
-				A33D79B220887BAA00D272E7 /* DatabaseRetrievableImplementation.swift */,
+				A33D79B020887B8300D272E7 /* DataReferenceable.swift */,
+				A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -411,10 +411,10 @@
 			files = (
 				99FB7FEA2085F25100B300BA /* ViewController.swift in Sources */,
 				A33D79AF208879F900D272E7 /* FirebaseRetrieverableImplementation.swift in Sources */,
-				A33D79B120887B8300D272E7 /* DatabaseRetrievable.swift in Sources */,
+				A33D79B120887B8300D272E7 /* DataReferenceable.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
 				A33D79AD208879C900D272E7 /* FirebaseRetrievable.swift in Sources */,
-				A33D79B320887BAA00D272E7 /* DatabaseRetrievableImplementation.swift in Sources */,
+				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
