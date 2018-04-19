@@ -15,6 +15,10 @@
 		99FB7FFD2085F25300B300BA /* Showcase_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB7FFC2085F25300B300BA /* Showcase_iOSTests.swift */; };
 		99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99FB80072085FAC300B300BA /* GoogleService-Info.plist */; };
 		99FB800B20860C4500B300BA /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB800A20860C4500B300BA /* Viewable.swift */; };
+		A33D79AD208879C900D272E7 /* FirebaseRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79AC208879C900D272E7 /* FirebaseRetrievable.swift */; };
+		A33D79AF208879F900D272E7 /* FirebaseRetrieverableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79AE208879F900D272E7 /* FirebaseRetrieverableImplementation.swift */; };
+		A33D79B120887B8300D272E7 /* DatabaseRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B020887B8300D272E7 /* DatabaseRetrievable.swift */; };
+		A33D79B320887BAA00D272E7 /* DatabaseRetrievableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseRetrievableImplementation.swift */; };
 		A58CB69A40BBA1DAAE40AD2B /* Pods_Showcase_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E63F38617F9FAE5D2CFB4F /* Pods_Showcase_iOS.framework */; };
 		D3CA0C259152F306ADF67208 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +50,10 @@
 		99FB80072085FAC300B300BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		99FB800A20860C4500B300BA /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 		A118543CC27C3C0951383809 /* Pods-Showcase-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		A33D79AC208879C900D272E7 /* FirebaseRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRetrievable.swift; sourceTree = "<group>"; };
+		A33D79AE208879F900D272E7 /* FirebaseRetrieverableImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRetrieverableImplementation.swift; sourceTree = "<group>"; };
+		A33D79B020887B8300D272E7 /* DatabaseRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRetrievable.swift; sourceTree = "<group>"; };
+		A33D79B220887BAA00D272E7 /* DatabaseRetrievableImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRetrievableImplementation.swift; sourceTree = "<group>"; };
 		BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA1459AB0697F9EB2E7C36 /* Pods-Showcase-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +101,7 @@
 		99FB7FE62085F25100B300BA /* Showcase-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A33D79AA2088795C00D272E7 /* Firebase */,
 				99FB80072085FAC300B300BA /* GoogleService-Info.plist */,
 				99FB7FE72085F25100B300BA /* AppDelegate.swift */,
 				99FB7FE92085F25100B300BA /* ViewController.swift */,
@@ -112,6 +121,25 @@
 				99FB7FFE2085F25300B300BA /* Info.plist */,
 			);
 			path = "Showcase-iOSTests";
+			sourceTree = "<group>";
+		};
+		A33D79AA2088795C00D272E7 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				A33D79AB208879A800D272E7 /* Service */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		A33D79AB208879A800D272E7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A33D79AC208879C900D272E7 /* FirebaseRetrievable.swift */,
+				A33D79AE208879F900D272E7 /* FirebaseRetrieverableImplementation.swift */,
+				A33D79B020887B8300D272E7 /* DatabaseRetrievable.swift */,
+				A33D79B220887BAA00D272E7 /* DatabaseRetrievableImplementation.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		C55D84FE98E7C7D0A5487DDD /* Pods */ = {
@@ -146,6 +174,7 @@
 				99FB7FE12085F25100B300BA /* Frameworks */,
 				99FB7FE22085F25100B300BA /* Resources */,
 				2E6B2CB2CC8D4E4243BEC491 /* [CP] Embed Pods Frameworks */,
+				0BA583F0E6859FAE0282989C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,6 +195,7 @@
 				99FB7FF52085F25300B300BA /* Frameworks */,
 				99FB7FF62085F25300B300BA /* Resources */,
 				353869C5DF9BBD23E9FC7AD2 /* [CP] Embed Pods Frameworks */,
+				329F75048EF0B200F9F9CD6E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,6 +267,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0BA583F0E6859FAE0282989C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		243FCE851B61496AA23E4D06 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +330,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		329F75048EF0B200F9F9CD6E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		353869C5DF9BBD23E9FC7AD2 /* [CP] Embed Pods Frameworks */ = {
@@ -350,7 +410,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				99FB7FEA2085F25100B300BA /* ViewController.swift in Sources */,
+				A33D79AF208879F900D272E7 /* FirebaseRetrieverableImplementation.swift in Sources */,
+				A33D79B120887B8300D272E7 /* DatabaseRetrievable.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
+				A33D79AD208879C900D272E7 /* FirebaseRetrievable.swift in Sources */,
+				A33D79B320887BAA00D272E7 /* DatabaseRetrievableImplementation.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
