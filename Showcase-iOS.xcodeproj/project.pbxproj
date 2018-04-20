@@ -22,6 +22,12 @@
 		BCE5DAC32089D962000458FD /* FirebaseAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAC22089D962000458FD /* FirebaseAuthenticating.swift */; };
 		BCE5DAC52089DA2A000458FD /* GeneratedShowcaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAC42089DA2A000458FD /* GeneratedShowcaseMocks.swift */; };
 		D3CA0C259152F306ADF67208 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */; };
+		FD77C047208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77C046208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift */; };
+		FD77C048208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77C046208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift */; };
+		FD77C04A208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77C049208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift */; };
+		FD77C04B208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77C049208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift */; };
+		FD77C04D208A09AD00C1BE25 /* DatabaseReferenceExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77C04C208A09AD00C1BE25 /* DatabaseReferenceExtention.swift */; };
+		FD77C04E208A09AD00C1BE25 /* DatabaseReferenceExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77C04C208A09AD00C1BE25 /* DatabaseReferenceExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +64,9 @@
 		BCE5DAC22089D962000458FD /* FirebaseAuthenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticating.swift; sourceTree = "<group>"; };
 		BCE5DAC42089DA2A000458FD /* GeneratedShowcaseMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedShowcaseMocks.swift; sourceTree = "<group>"; };
 		DCFA1459AB0697F9EB2E7C36 /* Pods-Showcase-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD77C046208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseDatabaseReferenceObservable.swift; sourceTree = "<group>"; };
+		FD77C049208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseDatabaseReferenceObservableImplemantation.swift; sourceTree = "<group>"; };
+		FD77C04C208A09AD00C1BE25 /* DatabaseReferenceExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +112,7 @@
 		99FB7FE62085F25100B300BA /* Showcase-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FD77C044208A088300C1BE25 /* FirebaseFetcher */,
 				BCE5DA822087A93B000458FD /* Login */,
 				99FB80072085FAC300B300BA /* GoogleService-Info.plist */,
 				99FB7FE72085F25100B300BA /* AppDelegate.swift */,
@@ -179,6 +189,24 @@
 				BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD77C044208A088300C1BE25 /* FirebaseFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				FD77C045208A089000C1BE25 /* Service */,
+			);
+			path = FirebaseFetcher;
+			sourceTree = "<group>";
+		};
+		FD77C045208A089000C1BE25 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FD77C046208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift */,
+				FD77C049208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift */,
+				FD77C04C208A09AD00C1BE25 /* DatabaseReferenceExtention.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,7 +428,10 @@
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
+				FD77C04D208A09AD00C1BE25 /* DatabaseReferenceExtention.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
+				FD77C047208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift in Sources */,
+				FD77C04A208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseAuthenticating.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +442,9 @@
 			files = (
 				BCE5DA8D2087AB69000458FD /* UserAuthenticationTests.swift in Sources */,
 				BCE5DAC52089DA2A000458FD /* GeneratedShowcaseMocks.swift in Sources */,
+				FD77C048208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift in Sources */,
+				FD77C04B208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift in Sources */,
+				FD77C04E208A09AD00C1BE25 /* DatabaseReferenceExtention.swift in Sources */,
 				99FB7FFD2085F25300B300BA /* Showcase_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
