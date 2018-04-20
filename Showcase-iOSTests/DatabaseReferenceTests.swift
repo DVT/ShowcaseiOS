@@ -14,28 +14,26 @@ class DatabaseReferenceTests: XCTestCase {
     
     let mockDatabaseReference = MockDataReferenceable()
     let mockPath = ""
+    var systemUnderTest : FirebaseRetrieverableImplementation!
     
     override func setUp() {
         super.setUp()
+        systemUnderTest  = FirebaseRetrieverableImplementation(reference: mockDatabaseReference)
     }
     
     func testDatabaseReferenceIsNotNil() {
         stub(mockDatabaseReference) { (mock) in
-            let _ = when(mock.child(path: anyString()).then({ (_ ) -> DataReferenceable in
+            _ = when(mock.databaseReference()).then({ (_ ) -> DataReferenceable in
                 return self.mockDatabaseReference
-            }))
+            })
         }
-        let databaseReference = mockDatabaseReference.child(path: mockPath)
-        XCTAssertNotNil(databaseReference)
+        let result = systemUnderTest.dataBaseReference()
+        XCTAssertNotNil(result)
+        verify(mockDatabaseReference, times(1)).databaseReference()
+        
     }
     
-    func testDatabaseReferenceIsCalledOnce() {
-        stub(mockDatabaseReference) { (mock) in
-            let _ = when(mock.child(path: anyString()).then({ (_) -> DataReferenceable in return self.mockDatabaseReference }))
-        }
-        let _ = mockDatabaseReference.child(path: mockPath)
-        verify(mockDatabaseReference, times(1)).child(path: anyString())
-    }
+    
     
     override func tearDown() {
         super.tearDown()
