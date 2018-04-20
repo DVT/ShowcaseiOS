@@ -8,42 +8,48 @@
 
 import XCTest
 import Cuckoo
+@testable import Showcase_iOS
 
 class UserAuthenticationTests: XCTestCase {
     
-    let mockUserAuthentication = MockAuthenticating()
+    var mockFirebaseAuthentication: MockFirebaseAuthenticating = MockFirebaseAuthenticating()
+    var serviceUnderTest: UserAuthentication?
     var testEmail: String?
     override func setUp() {
         super.setUp()
         testEmail = "test@gmail.com"
+        serviceUnderTest = UserAuthentication(mockFirebaseAuthentication)
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
-    func testThatSignInMethodGetsCalledOnlyOnce() {
-        stub(mockUserAuthentication) { (mock) in
-            let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ _, _, _ in }))
-        }
-        mockUserAuthentication.signIn(withEmail: "", password: "") { (_, _) in }
-        verify(mockUserAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
-    }
-    
-    func testThatSignInMethodCompletesWithAUser() {
-        var userAuthenticated: Bool = false
-        stub(mockUserAuthentication) { (mock) in
-            let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, _, completion) in
+    func testThatSignInMethodCompletesWithAUserWhenAuthenticationIsSuccesfull() {
+        stub(mockFirebaseAuthentication) { (mock) in
+            let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, password, completion) in
                 let fakeUser = User(email: email)
-                completion(fakeUser, nil)
+                completion(fakeUser,nil)
             }))
         }
-        mockUserAuthentication.signIn(withEmail: testEmail!, password: "") { (user, _) in
-            userAuthenticated = (user as! User) == User(email: self.testEmail!)
+        serviceUnderTest?.signIn(withEmail: testEmail!, password: "") { (user, error) in
+            XCTAssertEqual(user as! User, User(email: self.testEmail!))
         }
-        XCTAssertTrue(userAuthenticated)
-        verify(mockUserAuthentication).signIn(withEmail: anyString(), password: anyString(), completion: any())
+        verify(mockFirebaseAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
     }
+    
+    func testThatSignInMethodCompletesWithAnErrorWhenAuthenticationIsUnSuccesfull() {
+        stub(mockFirebaseAuthentication) { (mock) in
+            let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, password, completion) in
+                completion(nil ,AuthError.notAuthenticated)
+            }))
+        }
+        serviceUnderTest?.signIn(withEmail: "", password: "") { (user, error) in
+            XCTAssertEqual(error as! AuthError, AuthError.notAuthenticated)
+        }
+        verify(mockFirebaseAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
+    }
+    
     
     class User: Equatable {
         let email: String
@@ -56,4 +62,9 @@ class UserAuthenticationTests: XCTestCase {
             return lhs.email == rhs.email
         }
     }
+    
+    enum AuthError: Error {
+        case notAuthenticated
+    }
+    
 }

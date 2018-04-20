@@ -1,10 +1,10 @@
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/Authenticating.swift at 2018-04-18 19:22:35 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseAuthenticating.swift at 2018-04-20 09:22:19 +0000
 
 //
-//  Authenticating.swift
+//  FirebaseAuthenticating.swift
 //  Showcase-iOS
 //
-//  Created by Lehlohonolo Mbele on 2018/04/18.
+//  Created by Lehlohonolo Mbele on 2018/04/20.
 //  Copyright © 2018 DVT. All rights reserved.
 //
 
@@ -13,10 +13,10 @@ import Cuckoo
 
 import Foundation
 
-class MockAuthenticating: Authenticating, Cuckoo.ProtocolMock {
-    typealias MocksType = Authenticating
-    typealias Stubbing = __StubbingProxy_Authenticating
-    typealias Verification = __VerificationProxy_Authenticating
+class MockFirebaseAuthenticating: FirebaseAuthenticating, Cuckoo.ProtocolMock {
+    typealias MocksType = FirebaseAuthenticating
+    typealias Stubbing = __StubbingProxy_FirebaseAuthenticating
+    typealias Verification = __VerificationProxy_FirebaseAuthenticating
     let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
 
     
@@ -24,7 +24,7 @@ class MockAuthenticating: Authenticating, Cuckoo.ProtocolMock {
     
 
     
-    // ["name": "signIn", "returnSignature": "", "fullyQualifiedName": "signIn(withEmail: String, password: String, completion: @escaping (Any?, Error?) -> Void)", "parameterSignature": "withEmail email: String, password: String, completion: @escaping (Any?, Error?) -> Void", "parameterSignatureWithoutNames": "email: String, password: String, completion: @escaping (Any?, Error?) -> Void", "inputTypes": "String, String, (Any?, Error?) -> Void", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": true, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "email, password, completion", "call": "withEmail: email, password: password, completion: completion", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withEmail"), name: "email", type: "String", range: CountableRange(209..<232), nameRange: CountableRange(209..<218)), CuckooGeneratorFramework.MethodParameter(label: Optional("password"), name: "password", type: "String", range: CountableRange(234..<250), nameRange: CountableRange(234..<242)), CuckooGeneratorFramework.MethodParameter(label: Optional("completion"), name: "completion", type: "@escaping (Any?, Error?) -> Void", range: CountableRange(252..<296), nameRange: CountableRange(252..<262))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    // ["name": "signIn", "returnSignature": "", "fullyQualifiedName": "signIn(withEmail: String, password: String, completion: @escaping (Any?, Error?) -> Void)", "parameterSignature": "withEmail email: String, password: String, completion: @escaping (Any?, Error?) -> Void", "parameterSignatureWithoutNames": "email: String, password: String, completion: @escaping (Any?, Error?) -> Void", "inputTypes": "String, String, (Any?, Error?) -> Void", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": true, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "email, password, completion", "call": "withEmail: email, password: password, completion: completion", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withEmail"), name: "email", type: "String", range: CountableRange(225..<248), nameRange: CountableRange(225..<234)), CuckooGeneratorFramework.MethodParameter(label: Optional("password"), name: "password", type: "String", range: CountableRange(250..<266), nameRange: CountableRange(250..<258)), CuckooGeneratorFramework.MethodParameter(label: Optional("completion"), name: "completion", type: "@escaping (Any?, Error?) -> Void", range: CountableRange(268..<312), nameRange: CountableRange(268..<278))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func signIn(withEmail email: String, password: String, completion: @escaping (Any?, Error?) -> Void)  {
         
             return cuckoo_manager.call("signIn(withEmail: String, password: String, completion: @escaping (Any?, Error?) -> Void)",
@@ -37,7 +37,7 @@ class MockAuthenticating: Authenticating, Cuckoo.ProtocolMock {
     }
     
 
-	struct __StubbingProxy_Authenticating: Cuckoo.StubbingProxy {
+	struct __StubbingProxy_FirebaseAuthenticating: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
 	
 	    init(manager: Cuckoo.MockManager) {
@@ -47,12 +47,12 @@ class MockAuthenticating: Authenticating, Cuckoo.ProtocolMock {
 	    
 	    func signIn<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(withEmail email: M1, password: M2, completion: M3) -> Cuckoo.ProtocolStubNoReturnFunction<(String, String, (Any?, Error?) -> Void)> where M1.MatchedType == String, M2.MatchedType == String, M3.MatchedType == (Any?, Error?) -> Void {
 	        let matchers: [Cuckoo.ParameterMatcher<(String, String, (Any?, Error?) -> Void)>] = [wrap(matchable: email) { $0.0 }, wrap(matchable: password) { $0.1 }, wrap(matchable: completion) { $0.2 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockAuthenticating.self, method: "signIn(withEmail: String, password: String, completion: @escaping (Any?, Error?) -> Void)", parameterMatchers: matchers))
+	        return .init(stub: cuckoo_manager.createStub(for: MockFirebaseAuthenticating.self, method: "signIn(withEmail: String, password: String, completion: @escaping (Any?, Error?) -> Void)", parameterMatchers: matchers))
 	    }
 	    
 	}
 
-	struct __VerificationProxy_Authenticating: Cuckoo.VerificationProxy {
+	struct __VerificationProxy_FirebaseAuthenticating: Cuckoo.VerificationProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
 	    private let callMatcher: Cuckoo.CallMatcher
 	    private let sourceLocation: Cuckoo.SourceLocation
@@ -76,7 +76,7 @@ class MockAuthenticating: Authenticating, Cuckoo.ProtocolMock {
 
 }
 
- class AuthenticatingStub: Authenticating {
+ class FirebaseAuthenticatingStub: FirebaseAuthenticating {
     
 
     
@@ -89,7 +89,7 @@ class MockAuthenticating: Authenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-18 19:22:35 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-20 09:22:19 +0000
 
 //
 //  Viewable.swift
