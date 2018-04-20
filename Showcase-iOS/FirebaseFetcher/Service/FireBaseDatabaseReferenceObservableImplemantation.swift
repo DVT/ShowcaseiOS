@@ -9,15 +9,14 @@
 import Foundation
 
 class FireBaseDatabaseReferenceObservableImplemantation {
-
     private var fireBaseDatabaseReferenceObservable: FireBaseDatabaseReferenceObservable?
-    typealias CompletionHandler = (_ result: Any?, _ error: Error?) -> Void
+    typealias completionHandler = (_ result: Any?, _ error: Error?) -> Void
     
     init(_ fireBaseDatabaseReference: FireBaseDatabaseReferenceObservable) {
         self.fireBaseDatabaseReferenceObservable = fireBaseDatabaseReference
     }
     
-    func child(with path: String, completion: @escaping (CompletionHandler)) {
+    func child(with path: String, completion: @escaping (completionHandler)) {
         self.fireBaseDatabaseReferenceObservable?.child(path, completion: completion)
     }
 }
