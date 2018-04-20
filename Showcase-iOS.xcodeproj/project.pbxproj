@@ -119,10 +119,10 @@
 		99FB7FFB2085F25300B300BA /* Showcase-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				A34475472089EFFF001734CA /* FirebaseDataBase */,
 				99FB7FFC2085F25300B300BA /* Showcase_iOSTests.swift */,
 				A34475412088B289001734CA /* GeneratedShowcaseMocks.swift */,
 				99FB7FFE2085F25300B300BA /* Info.plist */,
-				A34475432088B318001734CA /* DatabaseReferenceTests.swift */,
 			);
 			path = "Showcase-iOSTests";
 			sourceTree = "<group>";
@@ -143,6 +143,14 @@
 				A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		A34475472089EFFF001734CA /* FirebaseDataBase */ = {
+			isa = PBXGroup;
+			children = (
+				A34475432088B318001734CA /* DatabaseReferenceTests.swift */,
+			);
+			path = FirebaseDataBase;
 			sourceTree = "<group>";
 		};
 		C55D84FE98E7C7D0A5487DDD /* Pods */ = {
