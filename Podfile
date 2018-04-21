@@ -8,7 +8,8 @@ target 'Showcase-iOS' do
   # Pods for Showcase-iOS
    pod 'Firebase/Core'
    pod 'Firebase/Database'
-   pod 'Firebase/Crash'
+   pod 'Fabric', '~> 1.7.6'
+   pod 'Crashlytics', '~> 3.10.1'
    pod 'Firebase/Auth'
    pod 'Firebase/Storage'
    pod 'RxSwift','~> 4.0'
