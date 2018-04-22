@@ -15,6 +15,9 @@
 		99FB7FFD2085F25300B300BA /* Showcase_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB7FFC2085F25300B300BA /* Showcase_iOSTests.swift */; };
 		99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99FB80072085FAC300B300BA /* GoogleService-Info.plist */; };
 		99FB800B20860C4500B300BA /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB800A20860C4500B300BA /* Viewable.swift */; };
+		A339977F208D12D8004776AB /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A339977E208D12D8004776AB /* ContactUs.swift */; };
+		A3399781208D17D1004776AB /* Contactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3399780208D17D1004776AB /* Contactable.swift */; };
+		A3399783208D1991004776AB /* ContactableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3399782208D1991004776AB /* ContactableImplementation.swift */; };
 		A58CB69A40BBA1DAAE40AD2B /* Pods_Showcase_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E63F38617F9FAE5D2CFB4F /* Pods_Showcase_iOS.framework */; };
 		BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DA862087A981000458FD /* UserAuthentication.swift */; };
 		BCE5DA8D2087AB69000458FD /* UserAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DA8C2087AB69000458FD /* UserAuthenticationTests.swift */; };
@@ -51,6 +54,9 @@
 		99FB80072085FAC300B300BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		99FB800A20860C4500B300BA /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 		A118543CC27C3C0951383809 /* Pods-Showcase-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		A339977E208D12D8004776AB /* ContactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
+		A3399780208D17D1004776AB /* Contactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactable.swift; sourceTree = "<group>"; };
+		A3399782208D1991004776AB /* ContactableImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactableImplementation.swift; sourceTree = "<group>"; };
 		BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE5DA862087A981000458FD /* UserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
 		BCE5DA8C2087AB69000458FD /* UserAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationTests.swift; sourceTree = "<group>"; };
@@ -112,6 +118,9 @@
 				99FB7FF02085F25200B300BA /* LaunchScreen.storyboard */,
 				99FB7FF32085F25200B300BA /* Info.plist */,
 				99FB800A20860C4500B300BA /* Viewable.swift */,
+				A339977E208D12D8004776AB /* ContactUs.swift */,
+				A3399780208D17D1004776AB /* Contactable.swift */,
+				A3399782208D1991004776AB /* ContactableImplementation.swift */,
 			);
 			path = "Showcase-iOS";
 			sourceTree = "<group>";
@@ -399,7 +408,10 @@
 				99FB7FEA2085F25100B300BA /* ViewController.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
+				A3399783208D1991004776AB /* ContactableImplementation.swift in Sources */,
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
+				A3399781208D17D1004776AB /* Contactable.swift in Sources */,
+				A339977F208D12D8004776AB /* ContactUs.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseAuthenticating.swift in Sources */,
 			);
