@@ -18,7 +18,8 @@ class UserAuthenticationTests: XCTestCase {
     override func setUp() {
         super.setUp()
         testEmail = "test@gmail.com"
-        serviceUnderTest = UserAuthentication(mockFirebaseAuthentication)
+        serviceUnderTest = UserAuthentication()
+        serviceUnderTest?.authenticator = mockFirebaseAuthentication
     }
     
     override func tearDown() {
