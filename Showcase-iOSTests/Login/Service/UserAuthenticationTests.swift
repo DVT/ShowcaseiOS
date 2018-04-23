@@ -49,9 +49,4 @@ class UserAuthenticationTests: XCTestCase {
         }
         verify(mockFirebaseAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
     }
-    
-    enum AuthError: Error {
-        case notAuthenticated
-    }
-    
 }
