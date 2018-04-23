@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseAuthenticating.swift at 2018-04-20 09:22:19 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseAuthenticating.swift at 2018-04-23 07:30:15 +0000
 
 //
 //  FirebaseAuthenticating.swift
@@ -89,7 +89,7 @@ class MockFirebaseAuthenticating: FirebaseAuthenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-20 09:22:19 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-23 07:30:15 +0000
 
 //
 //  Viewable.swift
