@@ -5,10 +5,9 @@ notify:
         default:
         url: "https://hooks.slack.com/services/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"
         threshold: 1%
-        only_pulls: false
         branches: null
-        flags: null
-        paths: null
+        attachments: "sunburst, diff" # list of attachments to include in notification
+        message: "CodeCov"   
 require_ci_to_pass: yes
 
 coverage:
@@ -42,8 +41,8 @@ parsers:
         macro: no
 
 ignore:
-- "**/AppDelegate.swift"
-- "**/*ViewController.swift"
+- "[a-z]+/AppDelegate.swift"
+- "[a-z]+/*ViewController.swift"
 - "Showcase-iOSTests/*"
 
 comment:
