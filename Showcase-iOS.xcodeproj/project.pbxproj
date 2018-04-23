@@ -15,6 +15,10 @@
 		99FB7FFD2085F25300B300BA /* Showcase_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB7FFC2085F25300B300BA /* Showcase_iOSTests.swift */; };
 		99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99FB80072085FAC300B300BA /* GoogleService-Info.plist */; };
 		99FB800B20860C4500B300BA /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB800A20860C4500B300BA /* Viewable.swift */; };
+		A33D79AF208879F900D272E7 /* DataReferenceableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79AE208879F900D272E7 /* DataReferenceableImplementation.swift */; };
+		A33D79B120887B8300D272E7 /* DataReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B020887B8300D272E7 /* DataReferenceable.swift */; };
+		A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */; };
+		A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34475432088B318001734CA /* DatabaseReferenceTests.swift */; };
 		A339977F208D12D8004776AB /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A339977E208D12D8004776AB /* ContactUs.swift */; };
 		A58CB69A40BBA1DAAE40AD2B /* Pods_Showcase_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E63F38617F9FAE5D2CFB4F /* Pods_Showcase_iOS.framework */; };
 		BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DA862087A981000458FD /* UserAuthentication.swift */; };
@@ -53,6 +57,10 @@
 		99FB800A20860C4500B300BA /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 		A118543CC27C3C0951383809 /* Pods-Showcase-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A339977E208D12D8004776AB /* ContactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
+		A33D79AE208879F900D272E7 /* DataReferenceableImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReferenceableImplementation.swift; sourceTree = "<group>"; };
+		A33D79B020887B8300D272E7 /* DataReferenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReferenceable.swift; sourceTree = "<group>"; };
+		A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Extension.swift"; sourceTree = "<group>"; };
+		A34475432088B318001734CA /* DatabaseReferenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceTests.swift; sourceTree = "<group>"; };
 		BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE5DA862087A981000458FD /* UserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
 		BCE5DA8C2087AB69000458FD /* UserAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationTests.swift; sourceTree = "<group>"; };
@@ -106,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				A3399789208E0514004776AB /* Contact Us */,
+				A33D79AA2088795C00D272E7 /* Firebase */,
 				BCE5DA822087A93B000458FD /* Login */,
 				99FB80072085FAC300B300BA /* GoogleService-Info.plist */,
 				99FB7FE72085F25100B300BA /* AppDelegate.swift */,
@@ -122,12 +131,39 @@
 		99FB7FFB2085F25300B300BA /* Showcase-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				A34475472089EFFF001734CA /* FirebaseDataBase */,
 				BCE5DAC42089DA2A000458FD /* GeneratedShowcaseMocks.swift */,
 				99FB7FFC2085F25300B300BA /* Showcase_iOSTests.swift */,
 				BCE5DA8A2087AB31000458FD /* Login */,
 				99FB7FFE2085F25300B300BA /* Info.plist */,
 			);
 			path = "Showcase-iOSTests";
+			sourceTree = "<group>";
+		};
+		A33D79AA2088795C00D272E7 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				A33D79AB208879A800D272E7 /* Service */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		A33D79AB208879A800D272E7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A33D79B020887B8300D272E7 /* DataReferenceable.swift */,
+				A33D79AE208879F900D272E7 /* DataReferenceableImplementation.swift */,
+				A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A34475472089EFFF001734CA /* FirebaseDataBase */ = {
+			isa = PBXGroup;
+			children = (
+				A34475432088B318001734CA /* DatabaseReferenceTests.swift */,
+			);
+			path = FirebaseDataBase;
 			sourceTree = "<group>";
 		};
 		A3399789208E0514004776AB /* Contact Us */ = {
@@ -212,6 +248,7 @@
 				99FB7FE12085F25100B300BA /* Frameworks */,
 				99FB7FE22085F25100B300BA /* Resources */,
 				2E6B2CB2CC8D4E4243BEC491 /* [CP] Embed Pods Frameworks */,
+				0BA583F0E6859FAE0282989C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,6 +269,7 @@
 				99FB7FF52085F25300B300BA /* Frameworks */,
 				99FB7FF62085F25300B300BA /* Resources */,
 				353869C5DF9BBD23E9FC7AD2 /* [CP] Embed Pods Frameworks */,
+				329F75048EF0B200F9F9CD6E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +341,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0BA583F0E6859FAE0282989C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		243FCE851B61496AA23E4D06 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,6 +406,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		329F75048EF0B200F9F9CD6E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		353869C5DF9BBD23E9FC7AD2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -388,7 +456,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseAuthenticating.swift)\"";
+			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\"";
 		};
 		BD4AD3F8FC636C5DD65094C4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -416,7 +484,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				99FB7FEA2085F25100B300BA /* ViewController.swift in Sources */,
+				A33D79AF208879F900D272E7 /* DataReferenceableImplementation.swift in Sources */,
+				A33D79B120887B8300D272E7 /* DataReferenceable.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
+				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
 				A339977F208D12D8004776AB /* ContactUs.swift in Sources */,
@@ -431,6 +502,7 @@
 			files = (
 				BCE5DA8D2087AB69000458FD /* UserAuthenticationTests.swift in Sources */,
 				BCE5DAC52089DA2A000458FD /* GeneratedShowcaseMocks.swift in Sources */,
+				A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */,
 				99FB7FFD2085F25300B300BA /* Showcase_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +540,7 @@
 		99FB7FFF2085F25300B300BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -528,6 +601,7 @@
 		99FB80002085F25300B300BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -583,7 +657,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 020FD1E11BA6FAEB113B2F52 /* Pods-Showcase-iOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
@@ -605,7 +679,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A118543CC27C3C0951383809 /* Pods-Showcase-iOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
@@ -627,11 +701,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCFA1459AB0697F9EB2E7C36 /* Pods-Showcase-iOSTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = "Showcase-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -653,11 +728,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 195CBCE6838C1529F8F1B02C /* Pods-Showcase-iOSTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_TESTABILITY = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = "Showcase-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
