@@ -9,5 +9,5 @@
 import Foundation
 
 protocol FireBaseDatabaseReferenceObservable {    
-    func child(_ path: String, completion: @escaping (Any?, Error?) -> Void)
+    func child(_ path: Path, completion: @escaping (Any?, Error?) -> Void)
 }

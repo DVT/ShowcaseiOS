@@ -16,7 +16,7 @@ class FireBaseDatabaseReferenceObservableImplemantation {
         self.fireBaseDatabaseReferenceObservable = fireBaseDatabaseReference
     }
     
-    func child(with path: String, completion: @escaping (completionHandler)) {
+    func child(with path: Path, completion: @escaping (completionHandler)) {
         self.fireBaseDatabaseReferenceObservable?.child(path, completion: completion)
     }
 }
