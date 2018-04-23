@@ -30,12 +30,14 @@ class DatabaseReferenceTests: XCTestCase {
         let result = systemUnderTest.dataBaseReference()
         XCTAssertNotNil(result)
         verify(mockDatabaseReference, times(1)).databaseReference()
-        
     }
     
-    
-    
-    override func tearDown() {
-        super.tearDown()
+    func testDatabaseReferenceIsNil() {
+        stub(mockDatabaseReference) { (mock) in
+            _ = when(mock.databaseReference()).thenReturn(nil)
+        }
+        let result = systemUnderTest.dataBaseReference()
+        XCTAssertNil(result)
+        verify(mockDatabaseReference, times(1)).databaseReference()
     }
 }
