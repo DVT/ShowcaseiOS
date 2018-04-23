@@ -51,8 +51,4 @@ class LoginInteractorTests: XCTestCase {
         systemUnderTest.signIn(withEmail: "", password: "")
         verify(mockLoginPresenter, times(1)).failedToSign(withError: any())
     }
-    
-    func testTrue() {
-        XCTAssertTrue(true)
-    }
 }
