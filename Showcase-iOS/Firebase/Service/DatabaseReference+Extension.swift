@@ -1,13 +1,14 @@
+    
 
 import FirebaseDatabase
 import Foundation
 
 extension DatabaseReference: DataReferenceable {
-    func databaseReference() -> DataReferenceable {
-         return Database.database().reference()
+    func databaseReference() -> DataReferenceable? {
+        return Database.database().reference()
     }
     
-    func child(from path: String) -> DataReferenceable {
+    func child(from path: String) -> DataReferenceable? {
         return self.child(path)
     }
     
@@ -15,3 +16,5 @@ extension DatabaseReference: DataReferenceable {
         self.observe(eventType, with: snapshot, withCancel: cancel)
     }
 }
+    
+    

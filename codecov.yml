@@ -1,0 +1,55 @@
+
+codecov:
+notify:
+    slack:
+        default:
+        url: "https://hooks.slack.com/services/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"
+        threshold: 1%
+        only_pulls: false
+        branches: null
+        flags: null
+        paths: null
+require_ci_to_pass: yes
+
+coverage:
+    precision: 2
+    round: down
+    range: "70...100"
+    status:
+    project:
+        default:
+        # basic
+        target: auto
+        threshold: null
+        base: auto
+        # advanced
+        branches: null
+        if_no_uploads: error
+        if_not_found: success
+        if_ci_failed: error
+        only_pulls: false
+        flags: null
+        paths: null
+        patch: yes
+        changes: no
+
+parsers:
+    gcov:
+        branch_detection:
+        conditional: yes
+        loop: yes
+        method: no
+        macro: no
+
+ignore:
+- "**/AppDelegate.swift"
+- "**/*ViewController.swift"
+- "Showcase-iOSTests/*"
+
+comment:
+    layout: "header, diff, flags, files, footer"
+    behavior: default
+    require_changes: false  # if true: only post the comment if coverage changes
+    branches: null
+    flags: null
+    paths: null
