@@ -41,8 +41,8 @@ parsers:
         macro: no
 
 ignore:
-- "[a-z]+/AppDelegate.swift"
-- "[a-z]+/*ViewController.swift"
+- "Showcase-iOS/AppDelegate.swift"
+- "Showcase-iOS/*ViewController.swift"
 - "Showcase-iOSTests/*"
 
 comment:
