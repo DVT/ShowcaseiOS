@@ -14,8 +14,6 @@
 		99FB7FF22085F25200B300BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB7FF02085F25200B300BA /* LaunchScreen.storyboard */; };
 		99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99FB80072085FAC300B300BA /* GoogleService-Info.plist */; };
 		99FB800B20860C4500B300BA /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB800A20860C4500B300BA /* Viewable.swift */; };
-		A33D79AF208879F900D272E7 /* DataReferenceableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79AE208879F900D272E7 /* DataReferenceableImplementation.swift */; };
-		A33D79B120887B8300D272E7 /* DataReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B020887B8300D272E7 /* DataReferenceable.swift */; };
 		A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */; };
 		A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34475432088B318001734CA /* DatabaseReferenceTests.swift */; };
 		A339977F208D12D8004776AB /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A339977E208D12D8004776AB /* ContactUs.swift */; };
@@ -33,6 +31,12 @@
 		BCE5DAD7208A23D5000458FD /* Authenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD6208A23D5000458FD /* Authenticating.swift */; };
 		BCE5DADC208A2756000458FD /* InteractorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DADB208A2756000458FD /* InteractorPresentable.swift */; };
 		D3CA0C259152F306ADF67208 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */; };
+		FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */; };
+		FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */; };
+		FD6FAA9D208E1C3F00D108C5 /* DataReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FAA9C208E1C3F00D108C5 /* DataReferenceable.swift */; };
+		FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD71315E208DD3EA0090E2E7 /* Path.swift */; };
+		FD77C047208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77C046208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift */; };
+		FD77C04A208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77C049208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,13 @@
 		BCE5DAD6208A23D5000458FD /* Authenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticating.swift; sourceTree = "<group>"; };
 		BCE5DADB208A2756000458FD /* InteractorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorPresentable.swift; sourceTree = "<group>"; };
 		DCFA1459AB0697F9EB2E7C36 /* Pods-Showcase-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD5BA717208DE6860002A1A9 /* FireBaseDatabaseReferenceObservableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseDatabaseReferenceObservableTests.swift; sourceTree = "<group>"; };
+		FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
+		FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceableImplementation.swift; sourceTree = "<group>"; };
+		FD6FAA9C208E1C3F00D108C5 /* DataReferenceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceable.swift; sourceTree = "<group>"; };
+		FD71315E208DD3EA0090E2E7 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		FD77C046208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseDatabaseReferenceObservable.swift; sourceTree = "<group>"; };
+		FD77C049208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseDatabaseReferenceObservableImplemantation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				A3399789208E0514004776AB /* Contact Us */,
+				FD71315D208DD3AD0090E2E7 /* Enum */,
 				A33D79AA2088795C00D272E7 /* Firebase */,
+				FD77C044208A088300C1BE25 /* FirebaseFetcher */,
 				BCE5DA822087A93B000458FD /* Login */,
 				99FB80072085FAC300B300BA /* GoogleService-Info.plist */,
 				99FB7FE72085F25100B300BA /* AppDelegate.swift */,
@@ -144,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				BCE5DAC42089DA2A000458FD /* GeneratedShowcaseMocks.swift */,
+				FD713160208DDCC90090E2E7 /* FirebaseFetcher */,
 				A34475472089EFFF001734CA /* FirebaseDataBase */,
 				BCE5DA8A2087AB31000458FD /* Login */,
 				99FB7FFE2085F25300B300BA /* Info.plist */,
@@ -162,8 +176,8 @@
 		A33D79AB208879A800D272E7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				A33D79B020887B8300D272E7 /* DataReferenceable.swift */,
-				A33D79AE208879F900D272E7 /* DataReferenceableImplementation.swift */,
+				FD6FAA9C208E1C3F00D108C5 /* DataReferenceable.swift */,
+				FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */,
 				A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */,
 			);
 			path = Service;
@@ -276,6 +290,48 @@
 				BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD5BA719208DE76E0002A1A9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FD5BA717208DE6860002A1A9 /* FireBaseDatabaseReferenceObservableTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FD71315D208DD3AD0090E2E7 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FD71315E208DD3EA0090E2E7 /* Path.swift */,
+				FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		FD713160208DDCC90090E2E7 /* FirebaseFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				FD5BA719208DE76E0002A1A9 /* Service */,
+			);
+			path = FirebaseFetcher;
+			sourceTree = "<group>";
+		};
+		FD77C044208A088300C1BE25 /* FirebaseFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				FD77C045208A089000C1BE25 /* Service */,
+			);
+			path = FirebaseFetcher;
+			sourceTree = "<group>";
+		};
+		FD77C045208A089000C1BE25 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FD77C046208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift */,
+				FD77C049208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,7 +481,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -436,7 +491,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -525,10 +579,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6FAA9D208E1C3F00D108C5 /* DataReferenceable.swift in Sources */,
 				BCE5DAD7208A23D5000458FD /* Authenticating.swift in Sources */,
 				99FB7FEA2085F25100B300BA /* ViewController.swift in Sources */,
-				A33D79AF208879F900D272E7 /* DataReferenceableImplementation.swift in Sources */,
-				A33D79B120887B8300D272E7 /* DataReferenceable.swift in Sources */,
+				FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
 				BCE5DAD1208A1B2A000458FD /* PresenterInteractable.swift in Sources */,
 				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
@@ -538,7 +592,11 @@
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
 				A339977F208D12D8004776AB /* ContactUs.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
+				FD77C047208A08B200C1BE25 /* FireBaseDatabaseReferenceObservable.swift in Sources */,
+				FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */,
+				FD77C04A208A090600C1BE25 /* FireBaseDatabaseReferenceObservableImplemantation.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseAuthenticating.swift in Sources */,
+				FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */,
 				BC9253E7208DC2FA003EACBE /* AuthError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -707,8 +765,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = "Showcase-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -729,8 +788,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = "Showcase-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -751,7 +811,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
@@ -778,7 +838,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_TESTABILITY = YES;
