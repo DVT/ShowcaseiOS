@@ -12,14 +12,13 @@ import Cuckoo
 
 class UserAuthenticationTests: XCTestCase {
     
-    var mockFirebaseAuthentication: MockFirebaseAuthenticating = MockFirebaseAuthenticating()
-    var serviceUnderTest: UserAuthentication?
+    var mockFirebaseAuthentication = MockFirebaseAuthenticating()
+    var serviceUnderTest: UserAuthentication!
     var testEmail: String?
     override func setUp() {
         super.setUp()
         testEmail = "test@gmail.com"
-        serviceUnderTest = UserAuthentication()
-        serviceUnderTest?.authenticator = mockFirebaseAuthentication
+        serviceUnderTest = UserAuthentication(mockFirebaseAuthentication)
     }
     
     override func tearDown() {
