@@ -8,6 +8,7 @@
 
 import XCTest
 import Cuckoo
+import Firebase
 @testable import Showcase_iOS
 
 class DatabaseReferenceTests: XCTestCase {
@@ -17,11 +18,13 @@ class DatabaseReferenceTests: XCTestCase {
     let mockPath = ""
     var systemUnderTest : FirebaseRetrieverableImplementation!
     var serviceUnderTest: FireBaseDatabaseReferenceObservableImplemantation?
+    var snapshot: DataSnapshot?
     
     override func setUp() {
         super.setUp()
         systemUnderTest  = FirebaseRetrieverableImplementation(reference: mockDatabaseReference)
         serviceUnderTest = FireBaseDatabaseReferenceObservableImplemantation(mockdatabaseReferenceObservable)
+        snapshot = DataSnapshot()
     }
     
     func testDatabaseReferenceIsNotNil() {
@@ -34,10 +37,7 @@ class DatabaseReferenceTests: XCTestCase {
         XCTAssertNotNil(result)
         verify(mockDatabaseReference, times(1)).databaseReference()
     }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
+
     
     func testDatabaseReferenceIsNil() {
         stub(mockDatabaseReference) { (mock) in
@@ -54,9 +54,34 @@ class DatabaseReferenceTests: XCTestCase {
                 completion(nil, DatabaseError.childNotFound)
             }))
         }
-        
         serviceUnderTest?.child(with: .none) { result, error in
             XCTAssertEqual(error as? DatabaseError, DatabaseError.childNotFound)
+        }
+        verify(mockdatabaseReferenceObservable, times(1)).child(any(), completion: any())
+    }
+    
+    func testThatRetrievingChildWithValidPathCompletesWithDataSnapshotType() {
+        stub(mockdatabaseReferenceObservable) { mock in
+            _ = when(mock.child(any(), completion: any()).then({path, completion in
+                completion(self.snapshot, nil)
+            }))
+        }
+        serviceUnderTest?.child(with: .apps) { result, error in
+            XCTAssertEqual(result as? DataSnapshot, self.snapshot)
+            XCTAssertNotNil(result)
+
+        }
+        verify(mockdatabaseReferenceObservable, times(1)).child(any(), completion: any())
+    }
+    
+    func testThatRetrievingChildWithPathCompletesWithNilDataSnapshot() {
+        stub(mockdatabaseReferenceObservable) { mock in
+            _ = when(mock.child(any(), completion: any()).then({path, completion in
+                completion(nil, nil)
+            }))
+        }
+        serviceUnderTest?.child(with: .apps) { result, error in
+            XCTAssertNil(result)
         }
         verify(mockdatabaseReferenceObservable, times(1)).child(any(), completion: any())
     }
