@@ -41,11 +41,11 @@ class UserAuthenticationTests: XCTestCase {
     func testThatSignInMethodCompletesWithAnErrorWhenAuthenticationIsUnSuccesfull() {
         stub(mockFirebaseAuthentication) { (mock) in
             let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, password, completion) in
-                completion(nil ,AuthError.notAuthenticated)
+                completion(nil ,AuthenticationError.notAuthenticated)
             }))
         }
         serviceUnderTest?.signIn(withEmail: "", password: "") { (user, error) in
-            XCTAssertEqual(error as! AuthError, AuthError.notAuthenticated)
+            XCTAssertEqual(error as! AuthenticationError, AuthenticationError.notAuthenticated)
         }
         verify(mockFirebaseAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
     }

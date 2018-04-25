@@ -19,8 +19,16 @@
 		A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */; };
 		A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34475432088B318001734CA /* DatabaseReferenceTests.swift */; };
 		A58CB69A40BBA1DAAE40AD2B /* Pods_Showcase_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E63F38617F9FAE5D2CFB4F /* Pods_Showcase_iOS.framework */; };
+		BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */; };
+		BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */; };
+		BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82C4208F4CB8003EFB06 /* LoginPresenterTests.swift */; };
+		BC4D82C7208F598C003EFB06 /* EmailValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82C6208F598C003EFB06 /* EmailValidatorTests.swift */; };
+		BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82C9208F59B1003EFB06 /* EmailValidator.swift */; };
+		BC4D82CD208F6059003EFB06 /* PresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82CC208F6059003EFB06 /* PresenterViewable.swift */; };
+		BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */; };
+		BC4D82D3208F6FB6003EFB06 /* PasswordValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */; };
+		BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D07352090683F00FFE9DD /* AuthenticationError.swift */; };
 		BC8406F1208DE32E00B15318 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8406F0208DE32E00B15318 /* LoginInteractorTests.swift */; };
-		BC9253E7208DC2FA003EACBE /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9253E6208DC2FA003EACBE /* AuthError.swift */; };
 		BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DA862087A981000458FD /* UserAuthentication.swift */; };
 		BCE5DA8D2087AB69000458FD /* UserAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DA8C2087AB69000458FD /* UserAuthenticationTests.swift */; };
 		BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAC02089D90A000458FD /* Auth+FirebaseAuthenticating.swift */; };
@@ -65,8 +73,16 @@
 		A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Extension.swift"; sourceTree = "<group>"; };
 		A34475432088B318001734CA /* DatabaseReferenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceTests.swift; sourceTree = "<group>"; };
 		BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentable.swift; sourceTree = "<group>"; };
+		BC4D82C4208F4CB8003EFB06 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		BC4D82C6208F598C003EFB06 /* EmailValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorTests.swift; sourceTree = "<group>"; };
+		BC4D82C9208F59B1003EFB06 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		BC4D82CC208F6059003EFB06 /* PresenterViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewable.swift; sourceTree = "<group>"; };
+		BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorTests.swift; sourceTree = "<group>"; };
+		BC6D07352090683F00FFE9DD /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		BC8406F0208DE32E00B15318 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
-		BC9253E6208DC2FA003EACBE /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		BCE5DA862087A981000458FD /* UserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
 		BCE5DA8C2087AB69000458FD /* UserAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationTests.swift; sourceTree = "<group>"; };
 		BCE5DAC02089D90A000458FD /* Auth+FirebaseAuthenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auth+FirebaseAuthenticating.swift"; sourceTree = "<group>"; };
@@ -123,6 +139,7 @@
 		99FB7FE62085F25100B300BA /* Showcase-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BC4D82C8208F599E003EFB06 /* Helpers */,
 				A33D79AA2088795C00D272E7 /* Firebase */,
 				BCE5DA822087A93B000458FD /* Login */,
 				99FB80072085FAC300B300BA /* GoogleService-Info.plist */,
@@ -144,6 +161,8 @@
 				A34475472089EFFF001734CA /* FirebaseDataBase */,
 				BCE5DA8A2087AB31000458FD /* Login */,
 				99FB7FFE2085F25300B300BA /* Info.plist */,
+				BC4D82C6208F598C003EFB06 /* EmailValidatorTests.swift */,
+				BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */,
 			);
 			path = "Showcase-iOSTests";
 			sourceTree = "<group>";
@@ -174,6 +193,40 @@
 			path = FirebaseDataBase;
 			sourceTree = "<group>";
 		};
+		BC4D82C1208F4C87003EFB06 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BC4D82C4208F4CB8003EFB06 /* LoginPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BC4D82C8208F599E003EFB06 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BC4D82D4208F70D3003EFB06 /* Validators */,
+				BC6D07352090683F00FFE9DD /* AuthenticationError.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BC4D82CB208F601B003EFB06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC4D82CC208F6059003EFB06 /* PresenterViewable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC4D82D4208F70D3003EFB06 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				BC4D82C9208F59B1003EFB06 /* EmailValidator.swift */,
+				BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
 		BC9253E8208DCEA4003EACBE /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +238,7 @@
 		BCE5DA822087A93B000458FD /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				BC4D82CB208F601B003EFB06 /* View */,
 				BCE5DADA208A25BA000458FD /* Presenter */,
 				BCE5DACF208A1AEB000458FD /* Interactor */,
 				BCE5DA832087A94B000458FD /* Service */,
@@ -199,7 +253,6 @@
 				BCE5DA862087A981000458FD /* UserAuthentication.swift */,
 				BCE5DAC02089D90A000458FD /* Auth+FirebaseAuthenticating.swift */,
 				BCE5DAC22089D962000458FD /* FirebaseAuthenticating.swift */,
-				BC9253E6208DC2FA003EACBE /* AuthError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -207,6 +260,7 @@
 		BCE5DA8A2087AB31000458FD /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				BC4D82C1208F4C87003EFB06 /* Presenter */,
 				BC9253E8208DCEA4003EACBE /* Interactor */,
 				BCE5DA8B2087AB3A000458FD /* Service */,
 			);
@@ -235,6 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				BCE5DADB208A2756000458FD /* InteractorPresentable.swift */,
+				BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */,
+				BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -479,7 +535,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name InteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name Authenticating.swift)\"";
+			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name InteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name Authenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name PresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name PresenterViewable.swift)\"";
 		};
 		BD4AD3F8FC636C5DD65094C4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -507,19 +563,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE5DAD7208A23D5000458FD /* Authenticating.swift in Sources */,
+				BC4D82CD208F6059003EFB06 /* PresenterViewable.swift in Sources */,
 				99FB7FEA2085F25100B300BA /* ViewController.swift in Sources */,
 				A33D79AF208879F900D272E7 /* DataReferenceableImplementation.swift in Sources */,
 				A33D79B120887B8300D272E7 /* DataReferenceable.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
 				BCE5DAD1208A1B2A000458FD /* PresenterInteractable.swift in Sources */,
+				BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */,
 				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
 				BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */,
+				BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */,
+				BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */,
 				BCE5DADC208A2756000458FD /* InteractorPresentable.swift in Sources */,
+				BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */,
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseAuthenticating.swift in Sources */,
-				BC9253E7208DC2FA003EACBE /* AuthError.swift in Sources */,
+				BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,9 +589,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC8406F1208DE32E00B15318 /* LoginInteractorTests.swift in Sources */,
+				BC4D82C7208F598C003EFB06 /* EmailValidatorTests.swift in Sources */,
 				BCE5DA8D2087AB69000458FD /* UserAuthenticationTests.swift in Sources */,
+				BC4D82D3208F6FB6003EFB06 /* PasswordValidatorTests.swift in Sources */,
 				BCE5DAC52089DA2A000458FD /* GeneratedShowcaseMocks.swift in Sources */,
 				A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */,
+				BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */,
 				BCE5DACE208A0908000458FD /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
