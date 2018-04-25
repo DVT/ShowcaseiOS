@@ -32,10 +32,27 @@ class LoginPresenterTests: XCTestCase {
     
     func testThatWhenEmailIsInvalidThenShowEmailValidationErrorIsPresented() {
         stub(mockLoginViewer) { (mock) in
-            let _ = when(mock.showEmailValidationFailure().thenDoNothing())
+            let _ = when(mock.showEmailValidationFailure(withError: any()).thenDoNothing())
+        }
+        systemUnderTest.login(withEmail: "", password: "shdjk")
+        verify(mockLoginViewer, times(1)).showEmailValidationFailure(withError: any())
+    }
+    
+
+    func testThatWhenPasswordIsInvalidThenShowPasswordValidationErrorIsPresented() {
+        stub(mockLoginViewer) { (mock) in
+            let _ = when(mock.showPasswordValidationFailure(withError: any()).thenDoNothing())
+        }
+        systemUnderTest.login(withEmail: "hloks@gmail.com", password: "")
+        verify(mockLoginViewer, times(1)).showPasswordValidationFailure(withError: any())
+    }
+    
+    func testThatWhenBothEmailAndPasswordAreInvalidThenAnInputValidationErrorIsPresented() {
+        stub(mockLoginViewer) { (mock) in
+            let _ = when(mock.showInvalidInputsFailure(withError: any()).thenDoNothing())
         }
         systemUnderTest.login(withEmail: "", password: "")
-        verify(mockLoginViewer, times(1)).showEmailValidationFailure()
+        verify(mockLoginViewer, times(1)).showInvalidInputsFailure(withError: any())
     }
     
 }

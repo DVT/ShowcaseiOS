@@ -12,12 +12,17 @@ class LoginPresenter: LoginPresentable {
     var loginViewer: PresenterViewable?
     var loginInteractor: PresenterInteractable?
     let emailValidator = EmailValidator()
+    let passwordValidator = PasswordValidator()
 
     func login(withEmail email: String, password: String) {
-        if emailValidator.isValid(email) {
+        if emailValidator.isValid(email) && passwordValidator.isValid(password) {
             loginInteractor?.signIn(withEmail: email, password: password)
-        } else {
-            loginViewer?.showEmailValidationFailure()
+        } else if (!emailValidator.isValid(email) && !passwordValidator.isValid(password)){
+            loginViewer?.showInvalidInputsFailure(withError: AuthenticationError.invalidInputs)
+        } else if !emailValidator.isValid(email) {
+            loginViewer?.showEmailValidationFailure(withError: AuthenticationError.invalidEmail)
+        } else if !passwordValidator.isValid(password) {
+            loginViewer?.showPasswordValidationFailure(withError: AuthenticationError.invalidPassword)
         }
     }
 }

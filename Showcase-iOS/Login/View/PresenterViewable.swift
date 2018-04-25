@@ -10,5 +10,8 @@ import Foundation
 
 protocol PresenterViewable {
     var loginPresentable: LoginPresentable? { get set}
-    func showEmailValidationFailure()
+    func showEmailValidationFailure(withError error: AuthenticationError)
+    func showPasswordValidationFailure(withError error: AuthenticationError)
+    func showInvalidInputsFailure(withError error: AuthenticationError)
+    func showSuccess()
 }

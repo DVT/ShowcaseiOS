@@ -27,6 +27,7 @@
 		BC4D82CD208F6059003EFB06 /* PresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82CC208F6059003EFB06 /* PresenterViewable.swift */; };
 		BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */; };
 		BC4D82D3208F6FB6003EFB06 /* PasswordValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */; };
+		BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D07352090683F00FFE9DD /* AuthenticationError.swift */; };
 		BC8406F1208DE32E00B15318 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8406F0208DE32E00B15318 /* LoginInteractorTests.swift */; };
 		BC9253E7208DC2FA003EACBE /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9253E6208DC2FA003EACBE /* AuthError.swift */; };
 		BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DA862087A981000458FD /* UserAuthentication.swift */; };
@@ -81,6 +82,7 @@
 		BC4D82CC208F6059003EFB06 /* PresenterViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewable.swift; sourceTree = "<group>"; };
 		BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorTests.swift; sourceTree = "<group>"; };
+		BC6D07352090683F00FFE9DD /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		BC8406F0208DE32E00B15318 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
 		BC9253E6208DC2FA003EACBE /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		BCE5DA862087A981000458FD /* UserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				BC4D82D4208F70D3003EFB06 /* Validators */,
+				BC6D07352090683F00FFE9DD /* AuthenticationError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseAuthenticating.swift in Sources */,
+				BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */,
 				BC9253E7208DC2FA003EACBE /* AuthError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-04-24 14:19:59 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-04-25 08:16:49 +0000
 
 
 import Cuckoo
@@ -83,7 +83,7 @@ class MockDataReferenceable: DataReferenceable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/PresenterInteractable.swift at 2018-04-24 14:19:59 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/PresenterInteractable.swift at 2018-04-25 08:16:49 +0000
 
 //
 //  PresenterInteractable.swift
@@ -240,7 +240,7 @@ class MockPresenterInteractable: PresenterInteractable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/InteractorPresentable.swift at 2018-04-24 14:19:59 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/InteractorPresentable.swift at 2018-04-25 08:16:49 +0000
 
 //
 //  InteractorPresentable.swift
@@ -358,7 +358,7 @@ class MockInteractorPresentable: InteractorPresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginPresentable.swift at 2018-04-24 14:19:59 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginPresentable.swift at 2018-04-25 08:16:49 +0000
 
 //
 //  LoginPresentable.swift
@@ -482,7 +482,7 @@ class MockLoginPresentable: LoginPresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/Authenticating.swift at 2018-04-24 14:19:59 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/Authenticating.swift at 2018-04-25 08:16:49 +0000
 
 //
 //  Authenticating.swift
@@ -606,7 +606,7 @@ class MockAuthenticating: Authenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseAuthenticating.swift at 2018-04-24 14:19:59 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseAuthenticating.swift at 2018-04-25 08:16:49 +0000
 
 //
 //  FirebaseAuthenticating.swift
@@ -697,7 +697,7 @@ class MockFirebaseAuthenticating: FirebaseAuthenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/PresenterViewable.swift at 2018-04-24 14:19:59 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/PresenterViewable.swift at 2018-04-25 08:16:49 +0000
 
 //
 //  PresenterViewable.swift
@@ -739,10 +739,46 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
     
 
     
-    // ["name": "showEmailValidationFailure", "returnSignature": "", "fullyQualifiedName": "showEmailValidationFailure()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
-     func showEmailValidationFailure()  {
+    // ["name": "showEmailValidationFailure", "returnSignature": "", "fullyQualifiedName": "showEmailValidationFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(290..<326), nameRange: CountableRange(290..<299))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func showEmailValidationFailure(withError error: AuthenticationError)  {
         
-            return cuckoo_manager.call("showEmailValidationFailure()",
+            return cuckoo_manager.call("showEmailValidationFailure(withError: AuthenticationError)",
+                parameters: (error),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "showPasswordValidationFailure", "returnSignature": "", "fullyQualifiedName": "showPasswordValidationFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(367..<403), nameRange: CountableRange(367..<376))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func showPasswordValidationFailure(withError error: AuthenticationError)  {
+        
+            return cuckoo_manager.call("showPasswordValidationFailure(withError: AuthenticationError)",
+                parameters: (error),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "showInvalidInputsFailure", "returnSignature": "", "fullyQualifiedName": "showInvalidInputsFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(439..<475), nameRange: CountableRange(439..<448))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func showInvalidInputsFailure(withError error: AuthenticationError)  {
+        
+            return cuckoo_manager.call("showInvalidInputsFailure(withError: AuthenticationError)",
+                parameters: (error),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "showSuccess", "returnSignature": "", "fullyQualifiedName": "showSuccess()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func showSuccess()  {
+        
+            return cuckoo_manager.call("showSuccess()",
                 parameters: (),
                 superclassCall:
                     
@@ -764,9 +800,24 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
 	    }
 	    
 	    
-	    func showEmailValidationFailure() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	    func showEmailValidationFailure<M1: Cuckoo.Matchable>(withError error: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(AuthenticationError)> where M1.MatchedType == AuthenticationError {
+	        let matchers: [Cuckoo.ParameterMatcher<(AuthenticationError)>] = [wrap(matchable: error) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockPresenterViewable.self, method: "showEmailValidationFailure(withError: AuthenticationError)", parameterMatchers: matchers))
+	    }
+	    
+	    func showPasswordValidationFailure<M1: Cuckoo.Matchable>(withError error: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(AuthenticationError)> where M1.MatchedType == AuthenticationError {
+	        let matchers: [Cuckoo.ParameterMatcher<(AuthenticationError)>] = [wrap(matchable: error) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockPresenterViewable.self, method: "showPasswordValidationFailure(withError: AuthenticationError)", parameterMatchers: matchers))
+	    }
+	    
+	    func showInvalidInputsFailure<M1: Cuckoo.Matchable>(withError error: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(AuthenticationError)> where M1.MatchedType == AuthenticationError {
+	        let matchers: [Cuckoo.ParameterMatcher<(AuthenticationError)>] = [wrap(matchable: error) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockPresenterViewable.self, method: "showInvalidInputsFailure(withError: AuthenticationError)", parameterMatchers: matchers))
+	    }
+	    
+	    func showSuccess() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockPresenterViewable.self, method: "showEmailValidationFailure()", parameterMatchers: matchers))
+	        return .init(stub: cuckoo_manager.createStub(for: MockPresenterViewable.self, method: "showSuccess()", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -790,9 +841,27 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
 	
 	    
 	    @discardableResult
-	    func showEmailValidationFailure() -> Cuckoo.__DoNotUse<Void> {
+	    func showEmailValidationFailure<M1: Cuckoo.Matchable>(withError error: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == AuthenticationError {
+	        let matchers: [Cuckoo.ParameterMatcher<(AuthenticationError)>] = [wrap(matchable: error) { $0 }]
+	        return cuckoo_manager.verify("showEmailValidationFailure(withError: AuthenticationError)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func showPasswordValidationFailure<M1: Cuckoo.Matchable>(withError error: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == AuthenticationError {
+	        let matchers: [Cuckoo.ParameterMatcher<(AuthenticationError)>] = [wrap(matchable: error) { $0 }]
+	        return cuckoo_manager.verify("showPasswordValidationFailure(withError: AuthenticationError)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func showInvalidInputsFailure<M1: Cuckoo.Matchable>(withError error: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == AuthenticationError {
+	        let matchers: [Cuckoo.ParameterMatcher<(AuthenticationError)>] = [wrap(matchable: error) { $0 }]
+	        return cuckoo_manager.verify("showInvalidInputsFailure(withError: AuthenticationError)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func showSuccess() -> Cuckoo.__DoNotUse<Void> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("showEmailValidationFailure()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	        return cuckoo_manager.verify("showSuccess()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -814,14 +883,26 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
     
 
     
-     func showEmailValidationFailure()  {
+     func showEmailValidationFailure(withError error: AuthenticationError)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func showPasswordValidationFailure(withError error: AuthenticationError)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func showInvalidInputsFailure(withError error: AuthenticationError)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func showSuccess()  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-24 14:19:59 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-25 08:16:49 +0000
 
 //
 //  Viewable.swift
