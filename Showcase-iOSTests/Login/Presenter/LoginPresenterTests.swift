@@ -12,14 +12,13 @@ import Cuckoo
 
 class LoginPresenterTests: XCTestCase {
     
-    var systemUnderTest = LoginPresenter()
+    var systemUnderTest: LoginPresenter!
     var mockLoginViewer = MockPresenterViewable()
     var mockLoginInteractor = MockPresenterInteractable()
     
     override func setUp() {
         super.setUp()
-        systemUnderTest.loginInteractor = mockLoginInteractor
-        systemUnderTest.loginViewer = mockLoginViewer
+        systemUnderTest = LoginPresenter(mockLoginViewer, mockLoginInteractor)
     }
     
     func testThatTheSignInMethodOfTheLoginInteractorGetsCalled() {

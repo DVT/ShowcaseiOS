@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-04-25 08:16:49 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-04-25 09:09:03 +0000
 
 
 import Cuckoo
@@ -83,7 +83,7 @@ class MockDataReferenceable: DataReferenceable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/PresenterInteractable.swift at 2018-04-25 08:16:49 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/PresenterInteractable.swift at 2018-04-25 09:09:03 +0000
 
 //
 //  PresenterInteractable.swift
@@ -240,7 +240,7 @@ class MockPresenterInteractable: PresenterInteractable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/InteractorPresentable.swift at 2018-04-25 08:16:49 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/InteractorPresentable.swift at 2018-04-25 09:09:03 +0000
 
 //
 //  InteractorPresentable.swift
@@ -358,7 +358,7 @@ class MockInteractorPresentable: InteractorPresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginPresentable.swift at 2018-04-25 08:16:49 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginPresentable.swift at 2018-04-25 09:09:03 +0000
 
 //
 //  LoginPresentable.swift
@@ -380,27 +380,11 @@ class MockLoginPresentable: LoginPresentable, Cuckoo.ProtocolMock {
     let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
 
     
-    // ["name": "loginInteractor", "stubType": "ProtocolToBeStubbedProperty", "@type": "InstanceVariable", "type": "PresenterInteractable?", "isReadOnly": false, "accessibility": ""]
-     var loginInteractor: PresenterInteractable? {
-        get {
-            
-            return cuckoo_manager.getter("loginInteractor", superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-        set {
-            
-            cuckoo_manager.setter("loginInteractor", value: newValue, superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-    }
-    
 
     
 
     
-    // ["name": "login", "returnSignature": "", "fullyQualifiedName": "login(withEmail: String, password: String)", "parameterSignature": "withEmail email: String, password: String", "parameterSignatureWithoutNames": "email: String, password: String", "inputTypes": "String, String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "email, password", "call": "withEmail: email, password: password", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withEmail"), name: "email", type: "String", range: CountableRange(271..<294), nameRange: CountableRange(271..<280)), CuckooGeneratorFramework.MethodParameter(label: Optional("password"), name: "password", type: "String", range: CountableRange(296..<312), nameRange: CountableRange(296..<304))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    // ["name": "login", "returnSignature": "", "fullyQualifiedName": "login(withEmail: String, password: String)", "parameterSignature": "withEmail email: String, password: String", "parameterSignatureWithoutNames": "email: String, password: String", "inputTypes": "String, String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "email, password", "call": "withEmail: email, password: password", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withEmail"), name: "email", type: "String", range: CountableRange(212..<235), nameRange: CountableRange(212..<221)), CuckooGeneratorFramework.MethodParameter(label: Optional("password"), name: "password", type: "String", range: CountableRange(237..<253), nameRange: CountableRange(237..<245))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func login(withEmail email: String, password: String)  {
         
             return cuckoo_manager.call("login(withEmail: String, password: String)",
@@ -418,10 +402,6 @@ class MockLoginPresentable: LoginPresentable, Cuckoo.ProtocolMock {
 	
 	    init(manager: Cuckoo.MockManager) {
 	        self.cuckoo_manager = manager
-	    }
-	    
-	    var loginInteractor: Cuckoo.ProtocolToBeStubbedProperty<MockLoginPresentable, PresenterInteractable?> {
-	        return .init(manager: cuckoo_manager, name: "loginInteractor")
 	    }
 	    
 	    
@@ -444,10 +424,6 @@ class MockLoginPresentable: LoginPresentable, Cuckoo.ProtocolMock {
 	    }
 	
 	    
-	    var loginInteractor: Cuckoo.VerifyProperty<PresenterInteractable?> {
-	        return .init(manager: cuckoo_manager, name: "loginInteractor", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
 	
 	    
 	    @discardableResult
@@ -462,15 +438,6 @@ class MockLoginPresentable: LoginPresentable, Cuckoo.ProtocolMock {
 
  class LoginPresentableStub: LoginPresentable {
     
-     var loginInteractor: PresenterInteractable? {
-        get {
-            return DefaultValueRegistry.defaultValue(for: (PresenterInteractable?).self)
-        }
-        
-        set { }
-        
-    }
-    
 
     
 
@@ -482,7 +449,7 @@ class MockLoginPresentable: LoginPresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/Authenticating.swift at 2018-04-25 08:16:49 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/Authenticating.swift at 2018-04-25 09:09:03 +0000
 
 //
 //  Authenticating.swift
@@ -606,7 +573,7 @@ class MockAuthenticating: Authenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseAuthenticating.swift at 2018-04-25 08:16:49 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseAuthenticating.swift at 2018-04-25 09:09:03 +0000
 
 //
 //  FirebaseAuthenticating.swift
@@ -697,7 +664,7 @@ class MockFirebaseAuthenticating: FirebaseAuthenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/PresenterViewable.swift at 2018-04-25 08:16:49 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/PresenterViewable.swift at 2018-04-25 09:09:03 +0000
 
 //
 //  PresenterViewable.swift
@@ -719,27 +686,11 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
     let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
 
     
-    // ["name": "loginPresentable", "stubType": "ProtocolToBeStubbedProperty", "@type": "InstanceVariable", "type": "LoginPresentable?", "isReadOnly": false, "accessibility": ""]
-     var loginPresentable: LoginPresentable? {
-        get {
-            
-            return cuckoo_manager.getter("loginPresentable", superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-        set {
-            
-            cuckoo_manager.setter("loginPresentable", value: newValue, superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-    }
-    
 
     
 
     
-    // ["name": "showEmailValidationFailure", "returnSignature": "", "fullyQualifiedName": "showEmailValidationFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(290..<326), nameRange: CountableRange(290..<299))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    // ["name": "showEmailValidationFailure", "returnSignature": "", "fullyQualifiedName": "showEmailValidationFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(235..<271), nameRange: CountableRange(235..<244))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func showEmailValidationFailure(withError error: AuthenticationError)  {
         
             return cuckoo_manager.call("showEmailValidationFailure(withError: AuthenticationError)",
@@ -751,7 +702,7 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
         
     }
     
-    // ["name": "showPasswordValidationFailure", "returnSignature": "", "fullyQualifiedName": "showPasswordValidationFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(367..<403), nameRange: CountableRange(367..<376))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    // ["name": "showPasswordValidationFailure", "returnSignature": "", "fullyQualifiedName": "showPasswordValidationFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(312..<348), nameRange: CountableRange(312..<321))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func showPasswordValidationFailure(withError error: AuthenticationError)  {
         
             return cuckoo_manager.call("showPasswordValidationFailure(withError: AuthenticationError)",
@@ -763,7 +714,7 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
         
     }
     
-    // ["name": "showInvalidInputsFailure", "returnSignature": "", "fullyQualifiedName": "showInvalidInputsFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(439..<475), nameRange: CountableRange(439..<448))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    // ["name": "showInvalidInputsFailure", "returnSignature": "", "fullyQualifiedName": "showInvalidInputsFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(384..<420), nameRange: CountableRange(384..<393))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func showInvalidInputsFailure(withError error: AuthenticationError)  {
         
             return cuckoo_manager.call("showInvalidInputsFailure(withError: AuthenticationError)",
@@ -793,10 +744,6 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
 	
 	    init(manager: Cuckoo.MockManager) {
 	        self.cuckoo_manager = manager
-	    }
-	    
-	    var loginPresentable: Cuckoo.ProtocolToBeStubbedProperty<MockPresenterViewable, LoginPresentable?> {
-	        return .init(manager: cuckoo_manager, name: "loginPresentable")
 	    }
 	    
 	    
@@ -834,10 +781,6 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
 	    }
 	
 	    
-	    var loginPresentable: Cuckoo.VerifyProperty<LoginPresentable?> {
-	        return .init(manager: cuckoo_manager, name: "loginPresentable", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
 	
 	    
 	    @discardableResult
@@ -870,15 +813,6 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
 
  class PresenterViewableStub: PresenterViewable {
     
-     var loginPresentable: LoginPresentable? {
-        get {
-            return DefaultValueRegistry.defaultValue(for: (LoginPresentable?).self)
-        }
-        
-        set { }
-        
-    }
-    
 
     
 
@@ -902,7 +836,7 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-25 08:16:49 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-25 09:09:03 +0000
 
 //
 //  Viewable.swift

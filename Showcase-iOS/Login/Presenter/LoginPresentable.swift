@@ -9,6 +9,5 @@
 import Foundation
 
 protocol LoginPresentable {
-    var loginInteractor: PresenterInteractable? { get set}
     func login(withEmail email: String, password: String)
 }
