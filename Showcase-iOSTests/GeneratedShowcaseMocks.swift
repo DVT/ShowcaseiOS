@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-04-25 11:35:35 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-04-25 11:44:08 +0000
 
 
 import Cuckoo
@@ -83,7 +83,7 @@ class MockDataReferenceable: DataReferenceable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/PresenterInteractable.swift at 2018-04-25 11:35:35 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/PresenterInteractable.swift at 2018-04-25 11:44:08 +0000
 
 //
 //  PresenterInteractable.swift
@@ -174,7 +174,7 @@ class MockPresenterInteractable: PresenterInteractable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/InteractorPresentable.swift at 2018-04-25 11:35:35 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/InteractorPresentable.swift at 2018-04-25 11:44:08 +0000
 
 //
 //  InteractorPresentable.swift
@@ -292,7 +292,7 @@ class MockInteractorPresentable: InteractorPresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginPresentable.swift at 2018-04-25 11:35:35 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginPresentable.swift at 2018-04-25 11:44:08 +0000
 
 //
 //  LoginPresentable.swift
@@ -383,7 +383,7 @@ class MockLoginPresentable: LoginPresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/Authenticating.swift at 2018-04-25 11:35:35 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/Authenticating.swift at 2018-04-25 11:44:08 +0000
 
 //
 //  Authenticating.swift
@@ -474,7 +474,7 @@ class MockAuthenticating: Authenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseAuthenticating.swift at 2018-04-25 11:35:35 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseAuthenticating.swift at 2018-04-25 11:44:08 +0000
 
 //
 //  FirebaseAuthenticating.swift
@@ -565,7 +565,7 @@ class MockFirebaseAuthenticating: FirebaseAuthenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/PresenterViewable.swift at 2018-04-25 11:35:35 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/PresenterViewable.swift at 2018-04-25 11:44:08 +0000
 
 //
 //  PresenterViewable.swift
@@ -737,7 +737,7 @@ class MockPresenterViewable: PresenterViewable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-25 11:35:35 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-04-25 11:44:08 +0000
 
 //
 //  Viewable.swift
