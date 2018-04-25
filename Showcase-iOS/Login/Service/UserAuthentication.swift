@@ -9,13 +9,13 @@
 import Foundation
 import FirebaseAuth
 
-class UserAuthentication {
-    private var authenticator: FirebaseAuthenticating
+class UserAuthentication: Authenticating {
+    var authenticator: FirebaseAuthenticating
     
     init(_ authenticator: FirebaseAuthenticating) {
         self.authenticator = authenticator
     }
-
+    
     func signIn(withEmail email: String, password: String, completion: @escaping (Any?, Error?) -> Void){
         authenticator.signIn(withEmail: email, password: password) { (user, error) in
             completion(user,error)

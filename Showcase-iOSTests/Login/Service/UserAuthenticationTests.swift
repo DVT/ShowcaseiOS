@@ -12,8 +12,8 @@ import Cuckoo
 
 class UserAuthenticationTests: XCTestCase {
     
-    var mockFirebaseAuthentication: MockFirebaseAuthenticating = MockFirebaseAuthenticating()
-    var serviceUnderTest: UserAuthentication?
+    var mockFirebaseAuthentication = MockFirebaseAuthenticating()
+    var serviceUnderTest: UserAuthentication!
     var testEmail: String?
     override func setUp() {
         super.setUp()
@@ -49,22 +49,4 @@ class UserAuthenticationTests: XCTestCase {
         }
         verify(mockFirebaseAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
     }
-    
-    
-    class User: Equatable {
-        let email: String
-        
-        init(email: String) {
-            self.email = email
-        }
-        
-        static func == (lhs: UserAuthenticationTests.User, rhs: UserAuthenticationTests.User) -> Bool {
-            return lhs.email == rhs.email
-        }
-    }
-    
-    enum AuthError: Error {
-        case notAuthenticated
-    }
-    
 }
