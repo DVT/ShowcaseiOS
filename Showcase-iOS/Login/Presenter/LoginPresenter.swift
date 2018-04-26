@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class LoginPresenter: LoginPresentable {
     var loginViewer: PresenterViewable
@@ -29,5 +30,16 @@ class LoginPresenter: LoginPresentable {
         } else if !passwordValidator.isValid(password) {
             loginViewer.showPasswordValidationFailure(withError: AuthenticationError.invalidPassword)
         }
+    }
+}
+
+extension LoginPresenter: InteractorPresentable {
+    func signedInSuccessfully() {
+        loginViewer.showSuccess()
+    }
+    
+    func failedToSign(withError error: Error) {
+        let authenticationError = AuthErrorCode(rawValue: error._code)
+        loginViewer.showAuthenticationFailure(withMessage: authenticationError?.errorMessage)
     }
 }
