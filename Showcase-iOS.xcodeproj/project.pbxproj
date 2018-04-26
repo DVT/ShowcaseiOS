@@ -80,7 +80,6 @@
 		BCE5DADB208A2756000458FD /* InteractorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorPresentable.swift; sourceTree = "<group>"; };
 		DCFA1459AB0697F9EB2E7C36 /* Pods-Showcase-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD0880562090937F00B814FE /* GeneratedShowcaseMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedShowcaseMocks.swift; sourceTree = "<group>"; };
-		FD5BA717208DE6860002A1A9 /* FireBaseDatabaseReferenceObservableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseDatabaseReferenceObservableTests.swift; sourceTree = "<group>"; };
 		FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceableImplementation.swift; sourceTree = "<group>"; };
 		FD6FAA9C208E1C3F00D108C5 /* DataReferenceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceable.swift; sourceTree = "<group>"; };
@@ -152,7 +151,6 @@
 		99FB7FFB2085F25300B300BA /* Showcase-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				FD713160208DDCC90090E2E7 /* FirebaseFetcher */,
 				A34475472089EFFF001734CA /* FirebaseDataBase */,
 				BCE5DA8A2087AB31000458FD /* Login */,
 				99FB7FFE2085F25300B300BA /* Info.plist */,
@@ -279,14 +277,6 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		FD5BA719208DE76E0002A1A9 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				FD5BA717208DE6860002A1A9 /* FireBaseDatabaseReferenceObservableTests.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		FD71315D208DD3AD0090E2E7 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,14 +284,6 @@
 				FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */,
 			);
 			path = Enum;
-			sourceTree = "<group>";
-		};
-		FD713160208DDCC90090E2E7 /* FirebaseFetcher */ = {
-			isa = PBXGroup;
-			children = (
-				FD5BA719208DE76E0002A1A9 /* Service */,
-			);
-			path = FirebaseFetcher;
 			sourceTree = "<group>";
 		};
 		FD77C044208A088300C1BE25 /* FirebaseFetcher */ = {

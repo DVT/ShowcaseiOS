@@ -69,7 +69,6 @@ class DatabaseReferenceTests: XCTestCase {
         serviceUnderTest?.child(with: .apps) { result, error in
             XCTAssertEqual(result as? DataSnapshot, self.snapshot)
             XCTAssertNotNil(result)
-
         }
         verify(mockdatabaseReferenceObservable, times(1)).child(any(), completion: any())
     }
