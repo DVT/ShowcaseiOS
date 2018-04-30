@@ -8,8 +8,8 @@ extension DatabaseReference: DataReferenceable {
         return Database.database().reference()
     }
     
-    func child(from path: String) -> DataReferenceable? {
-        return self.child(path)
+    func child(_ path: Path) -> DataReferenceable? {
+        return self.child(path.rawValue)
     }
     
     func observe(eventType: DataEventType, with snapshot: @escaping (DataSnapshot) -> Void, withCancel cancel: @escaping (Error) -> Void) {
