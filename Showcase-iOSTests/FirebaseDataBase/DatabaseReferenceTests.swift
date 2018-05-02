@@ -24,7 +24,7 @@ class DatabaseReferenceTests: XCTestCase {
         mockSnaphot = DataSnapshot()
     }
     
-    func testDatabaseReferenceIsNotNil() {
+    func testThatRetrievingFirebaseDatabaseReferenceDoesNotReturnNil() {
         stub(mockDatabaseReference) { (mock) in
             _ = when(mock.databaseReference()).then({ (_ ) -> DataReferenceable in
                 return self.mockDatabaseReference
@@ -35,7 +35,7 @@ class DatabaseReferenceTests: XCTestCase {
         verify(mockDatabaseReference, times(1)).databaseReference()
     }
     
-    func testDatabaseReferenceIsNil() {
+    func testThatRetrievingFirebaseDatabaseReferenceReturnsNil() {
         stub(mockDatabaseReference) { (mock) in
             _ = when(mock.databaseReference()).thenReturn(nil)
         }
@@ -56,6 +56,7 @@ class DatabaseReferenceTests: XCTestCase {
         systemUnderTest?.fetchFirebaseData(from: .contacts) { data, _ in
             XCTAssertNotNil(data)
         }
+        verify(mockDatabaseReference, times(1)).observe(eventType: any(), with: any(), withCancel: any())
     }
     
     func testThatFirebaseFetcherReturnsErrorThatIsNotNilWhenFirebaseReturnsAnError() {
@@ -69,6 +70,7 @@ class DatabaseReferenceTests: XCTestCase {
         systemUnderTest?.fetchFirebaseData(from: .contacts) { _, error in
             XCTAssertNotNil(error)
         }
+        verify(mockDatabaseReference, times(1)).observe(eventType: any(), with: any(), withCancel: any())
     }
     
     private func setUpDatabaseReferenceTestsStubs() {
