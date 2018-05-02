@@ -14,8 +14,6 @@
 		99FB7FF22085F25200B300BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB7FF02085F25200B300BA /* LaunchScreen.storyboard */; };
 		99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99FB80072085FAC300B300BA /* GoogleService-Info.plist */; };
 		99FB800B20860C4500B300BA /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB800A20860C4500B300BA /* Viewable.swift */; };
-		A33D79AF208879F900D272E7 /* DataReferenceableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79AE208879F900D272E7 /* DataReferenceableImplementation.swift */; };
-		A33D79B120887B8300D272E7 /* DataReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B020887B8300D272E7 /* DataReferenceable.swift */; };
 		A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */; };
 		A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34475432088B318001734CA /* DatabaseReferenceTests.swift */; };
 		A58CB69A40BBA1DAAE40AD2B /* Pods_Showcase_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E63F38617F9FAE5D2CFB4F /* Pods_Showcase_iOS.framework */; };
@@ -36,13 +34,17 @@
 		BCE5DA8D2087AB69000458FD /* UserAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DA8C2087AB69000458FD /* UserAuthenticationTests.swift */; };
 		BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAC02089D90A000458FD /* Auth+FirebaseAuthenticating.swift */; };
 		BCE5DAC32089D962000458FD /* FirebaseAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAC22089D962000458FD /* FirebaseAuthenticating.swift */; };
-		BCE5DAC52089DA2A000458FD /* GeneratedShowcaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAC42089DA2A000458FD /* GeneratedShowcaseMocks.swift */; };
 		BCE5DACE208A0908000458FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DACD208A0908000458FD /* User.swift */; };
 		BCE5DAD1208A1B2A000458FD /* PresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD0208A1B2A000458FD /* PresenterInteractable.swift */; };
 		BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD2208A1B9B000458FD /* LoginInteractor.swift */; };
 		BCE5DAD7208A23D5000458FD /* Authenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD6208A23D5000458FD /* Authenticating.swift */; };
 		BCE5DADC208A2756000458FD /* InteractorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DADB208A2756000458FD /* InteractorPresentable.swift */; };
 		D3CA0C259152F306ADF67208 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */; };
+		FD0880572090937F00B814FE /* GeneratedShowcaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0880562090937F00B814FE /* GeneratedShowcaseMocks.swift */; };
+		FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */; };
+		FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */; };
+		FD6FAA9D208E1C3F00D108C5 /* DataReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FAA9C208E1C3F00D108C5 /* DataReferenceable.swift */; };
+		FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD71315E208DD3EA0090E2E7 /* Path.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +73,6 @@
 		99FB80072085FAC300B300BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		99FB800A20860C4500B300BA /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 		A118543CC27C3C0951383809 /* Pods-Showcase-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		A33D79AE208879F900D272E7 /* DataReferenceableImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReferenceableImplementation.swift; sourceTree = "<group>"; };
-		A33D79B020887B8300D272E7 /* DataReferenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReferenceable.swift; sourceTree = "<group>"; };
 		A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Extension.swift"; sourceTree = "<group>"; };
 		A34475432088B318001734CA /* DatabaseReferenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceTests.swift; sourceTree = "<group>"; };
 		BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,13 +93,17 @@
 		BCE5DA8C2087AB69000458FD /* UserAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationTests.swift; sourceTree = "<group>"; };
 		BCE5DAC02089D90A000458FD /* Auth+FirebaseAuthenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auth+FirebaseAuthenticating.swift"; sourceTree = "<group>"; };
 		BCE5DAC22089D962000458FD /* FirebaseAuthenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticating.swift; sourceTree = "<group>"; };
-		BCE5DAC42089DA2A000458FD /* GeneratedShowcaseMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedShowcaseMocks.swift; sourceTree = "<group>"; };
 		BCE5DACD208A0908000458FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BCE5DAD0208A1B2A000458FD /* PresenterInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterInteractable.swift; sourceTree = "<group>"; };
 		BCE5DAD2208A1B9B000458FD /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		BCE5DAD6208A23D5000458FD /* Authenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticating.swift; sourceTree = "<group>"; };
 		BCE5DADB208A2756000458FD /* InteractorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorPresentable.swift; sourceTree = "<group>"; };
 		DCFA1459AB0697F9EB2E7C36 /* Pods-Showcase-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD0880562090937F00B814FE /* GeneratedShowcaseMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedShowcaseMocks.swift; sourceTree = "<group>"; };
+		FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
+		FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceableImplementation.swift; sourceTree = "<group>"; };
+		FD6FAA9C208E1C3F00D108C5 /* DataReferenceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceable.swift; sourceTree = "<group>"; };
+		FD71315E208DD3EA0090E2E7 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 				99FB7FE52085F25100B300BA /* Products */,
 				C55D84FE98E7C7D0A5487DDD /* Pods */,
 				F801D26D37231D719D5A7957 /* Frameworks */,
+				FD0880512090923C00B814FE /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				BC4D82C8208F599E003EFB06 /* Helpers */,
+				FD71315D208DD3AD0090E2E7 /* Enum */,
 				A33D79AA2088795C00D272E7 /* Firebase */,
 				BCE5DA822087A93B000458FD /* Login */,
 				99FB80072085FAC300B300BA /* GoogleService-Info.plist */,
@@ -163,13 +169,13 @@
 		99FB7FFB2085F25300B300BA /* Showcase-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				BCE5DAC42089DA2A000458FD /* GeneratedShowcaseMocks.swift */,
 				A34475472089EFFF001734CA /* FirebaseDataBase */,
 				BCE5DA8A2087AB31000458FD /* Login */,
 				99FB7FFE2085F25300B300BA /* Info.plist */,
 				BC4D82C6208F598C003EFB06 /* EmailValidatorTests.swift */,
 				BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */,
 				BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */,
+				FD0880562090937F00B814FE /* GeneratedShowcaseMocks.swift */,
 			);
 			path = "Showcase-iOSTests";
 			sourceTree = "<group>";
@@ -185,8 +191,8 @@
 		A33D79AB208879A800D272E7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				A33D79B020887B8300D272E7 /* DataReferenceable.swift */,
-				A33D79AE208879F900D272E7 /* DataReferenceableImplementation.swift */,
+				FD6FAA9C208E1C3F00D108C5 /* DataReferenceable.swift */,
+				FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */,
 				A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */,
 			);
 			path = Service;
@@ -330,6 +336,22 @@
 				BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD0880512090923C00B814FE /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		FD71315D208DD3AD0090E2E7 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FD71315E208DD3EA0090E2E7 /* Path.swift */,
+				FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,7 +501,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -490,7 +511,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -582,7 +602,9 @@
 				BCE5DAD7208A23D5000458FD /* Authenticating.swift in Sources */,
 				BC6D07412092481100FFE9DD /* ErrorMessage.swift in Sources */,
 				BC4D82CD208F6059003EFB06 /* PresenterViewable.swift in Sources */,
+				FD6FAA9D208E1C3F00D108C5 /* DataReferenceable.swift in Sources */,
 				99FB7FEA2085F25100B300BA /* ViewController.swift in Sources */,
+				FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */,
 				BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */,
 				A33D79AF208879F900D272E7 /* DataReferenceableImplementation.swift in Sources */,
 				A33D79B120887B8300D272E7 /* DataReferenceable.swift in Sources */,
@@ -598,8 +620,11 @@
 				BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */,
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
+				FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseAuthenticating.swift in Sources */,
 				BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */,
+				BC9253E7208DC2FA003EACBE /* AuthError.swift in Sources */,
+				FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +640,7 @@
 				BCE5DAC52089DA2A000458FD /* GeneratedShowcaseMocks.swift in Sources */,
 				A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */,
 				BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */,
+				FD0880572090937F00B814FE /* GeneratedShowcaseMocks.swift in Sources */,
 				BCE5DACE208A0908000458FD /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,7 +847,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
@@ -848,7 +874,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_TESTABILITY = YES;
