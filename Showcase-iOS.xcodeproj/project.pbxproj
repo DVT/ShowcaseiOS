@@ -41,6 +41,11 @@
 		BCE5DADC208A2756000458FD /* InteractorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DADB208A2756000458FD /* InteractorPresentable.swift */; };
 		D3CA0C259152F306ADF67208 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */; };
 		FD0880572090937F00B814FE /* GeneratedShowcaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0880562090937F00B814FE /* GeneratedShowcaseMocks.swift */; };
+		FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2852099DA52006EA459 /* ShowcaseApp.swift */; };
+		FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */; };
+		FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */; };
+		FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E28B2099DAE5006EA459 /* HomePresentable.swift */; };
+		FD37E28F2099EC94006EA459 /* HomeInteractableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E28E2099EC94006EA459 /* HomeInteractableTests.swift */; };
 		FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */; };
 		FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */; };
 		FD6FAA9D208E1C3F00D108C5 /* DataReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FAA9C208E1C3F00D108C5 /* DataReferenceable.swift */; };
@@ -100,6 +105,11 @@
 		BCE5DADB208A2756000458FD /* InteractorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorPresentable.swift; sourceTree = "<group>"; };
 		DCFA1459AB0697F9EB2E7C36 /* Pods-Showcase-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD0880562090937F00B814FE /* GeneratedShowcaseMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedShowcaseMocks.swift; sourceTree = "<group>"; };
+		FD37E2852099DA52006EA459 /* ShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseApp.swift; sourceTree = "<group>"; };
+		FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractable.swift; sourceTree = "<group>"; };
+		FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractorImplementation.swift; sourceTree = "<group>"; };
+		FD37E28B2099DAE5006EA459 /* HomePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresentable.swift; sourceTree = "<group>"; };
+		FD37E28E2099EC94006EA459 /* HomeInteractableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractableTests.swift; sourceTree = "<group>"; };
 		FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceableImplementation.swift; sourceTree = "<group>"; };
 		FD6FAA9C208E1C3F00D108C5 /* DataReferenceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceable.swift; sourceTree = "<group>"; };
@@ -150,6 +160,7 @@
 		99FB7FE62085F25100B300BA /* Showcase-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FD37E2812099DA20006EA459 /* Dashboard */,
 				BC4D82C8208F599E003EFB06 /* Helpers */,
 				FD71315D208DD3AD0090E2E7 /* Enum */,
 				A33D79AA2088795C00D272E7 /* Firebase */,
@@ -169,6 +180,7 @@
 		99FB7FFB2085F25300B300BA /* Showcase-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				FD37E28D2099EC5F006EA459 /* Dashboard */,
 				A34475472089EFFF001734CA /* FirebaseDataBase */,
 				BCE5DA8A2087AB31000458FD /* Login */,
 				99FB7FFE2085F25300B300BA /* Info.plist */,
@@ -343,6 +355,49 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		FD37E2812099DA20006EA459 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				FD37E2842099DA40006EA459 /* Model */,
+				FD37E2832099DA32006EA459 /* Interactor */,
+				FD37E2822099DA2C006EA459 /* Presenter */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		FD37E2822099DA2C006EA459 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FD37E28B2099DAE5006EA459 /* HomePresentable.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FD37E2832099DA32006EA459 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */,
+				FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FD37E2842099DA40006EA459 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD37E2852099DA52006EA459 /* ShowcaseApp.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD37E28D2099EC5F006EA459 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				FD37E28E2099EC94006EA459 /* HomeInteractableTests.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		FD71315D208DD3AD0090E2E7 /* Enum */ = {
@@ -572,7 +627,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name InteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name Authenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name PresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name PresenterViewable.swift)\"";
+			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name InteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name Authenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name PresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name PresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresentable.swift)\"";
 		};
 		BD4AD3F8FC636C5DD65094C4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -601,14 +656,15 @@
 			files = (
 				BCE5DAD7208A23D5000458FD /* Authenticating.swift in Sources */,
 				BC6D07412092481100FFE9DD /* ErrorMessage.swift in Sources */,
+				FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */,
 				BC4D82CD208F6059003EFB06 /* PresenterViewable.swift in Sources */,
+				FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */,
 				FD6FAA9D208E1C3F00D108C5 /* DataReferenceable.swift in Sources */,
 				99FB7FEA2085F25100B300BA /* ViewController.swift in Sources */,
 				FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */,
 				BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */,
-				A33D79AF208879F900D272E7 /* DataReferenceableImplementation.swift in Sources */,
-				A33D79B120887B8300D272E7 /* DataReferenceable.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
+				FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */,
 				BCE5DAD1208A1B2A000458FD /* PresenterInteractable.swift in Sources */,
 				BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */,
 				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
@@ -619,11 +675,11 @@
 				BCE5DADC208A2756000458FD /* InteractorPresentable.swift in Sources */,
 				BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */,
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
+				FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
 				FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseAuthenticating.swift in Sources */,
 				BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */,
-				BC9253E7208DC2FA003EACBE /* AuthError.swift in Sources */,
 				FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,8 +692,8 @@
 				BC4D82C7208F598C003EFB06 /* EmailValidatorTests.swift in Sources */,
 				BCE5DA8D2087AB69000458FD /* UserAuthenticationTests.swift in Sources */,
 				BC6D073F209246D400FFE9DD /* AuthErrorCodeTests.swift in Sources */,
+				FD37E28F2099EC94006EA459 /* HomeInteractableTests.swift in Sources */,
 				BC4D82D3208F6FB6003EFB06 /* PasswordValidatorTests.swift in Sources */,
-				BCE5DAC52089DA2A000458FD /* GeneratedShowcaseMocks.swift in Sources */,
 				A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */,
 				BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */,
 				FD0880572090937F00B814FE /* GeneratedShowcaseMocks.swift in Sources */,
