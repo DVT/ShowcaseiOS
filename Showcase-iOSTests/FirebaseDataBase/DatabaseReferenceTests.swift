@@ -8,23 +8,23 @@
 
 import XCTest
 import Cuckoo
+import Firebase
 @testable import Showcase_iOS
 
 class DatabaseReferenceTests: XCTestCase {
     
     let mockDatabaseReference = MockDataReferenceable()
-    var mockdatabaseReferenceObservable = MockFireBaseDatabaseReferenceObservable()
     let mockPath = ""
+    var mockSnaphot: DataSnapshot?
     var systemUnderTest : FirebaseRetrieverableImplementation!
-    var serviceUnderTest: FireBaseDatabaseReferenceObservableImplemantation?
     
     override func setUp() {
         super.setUp()
         systemUnderTest  = FirebaseRetrieverableImplementation(reference: mockDatabaseReference)
-        serviceUnderTest = FireBaseDatabaseReferenceObservableImplemantation(mockdatabaseReferenceObservable)
+        mockSnaphot = DataSnapshot()
     }
     
-    func testDatabaseReferenceIsNotNil() {
+    func testThatRetrievingFirebaseDatabaseReferenceDoesNotReturnNil() {
         stub(mockDatabaseReference) { (mock) in
             _ = when(mock.databaseReference()).then({ (_ ) -> DataReferenceable in
                 return self.mockDatabaseReference
@@ -35,7 +35,7 @@ class DatabaseReferenceTests: XCTestCase {
         verify(mockDatabaseReference, times(1)).databaseReference()
     }
     
-    func testDatabaseReferenceIsNil() {
+    func testThatRetrievingFirebaseDatabaseReferenceReturnsNil() {
         stub(mockDatabaseReference) { (mock) in
             _ = when(mock.databaseReference()).thenReturn(nil)
         }
@@ -44,16 +44,46 @@ class DatabaseReferenceTests: XCTestCase {
         verify(mockDatabaseReference, times(1)).databaseReference()
     }
     
-    func testThatRetrievingChildWithInvalidPathCompletesWithAnError() {
-        stub(mockdatabaseReferenceObservable) { (mock) in
-            let _ = when(mock.child(any(), completion: any()).then({ path, completion in
-                completion(nil, DatabaseError.childNotFound)
+    func testThatFirebaseFetcherReturnsDataSnapshotThatIsNotNilWhenFirebaseReturnsAValidSnapShot() {
+        setUpDatabaseReferenceTestsStubs()
+        stub(mockDatabaseReference) { mock in
+            _ = when(mock.observe(eventType: any(), with: any(), withCancel: any()).then({ _, snapshotCompletion, _  in
+                if let snapShotData = self.mockSnaphot {
+                    snapshotCompletion(snapShotData)
+                }
             }))
         }
-        
-        serviceUnderTest?.child(with: .none) { result, error in
-            XCTAssertEqual(error as? DatabaseError, DatabaseError.childNotFound)
+        systemUnderTest.fetchData(from: .contacts) { data, _ in
+            XCTAssertNotNil(data)
         }
-        verify(mockdatabaseReferenceObservable, times(1)).child(any(), completion: any())
     }
+    
+    func testThatFirebaseFetcherReturnsErrorThatIsNotNilWhenFirebaseReturnsAnError() {
+        setUpDatabaseReferenceTestsStubs()
+        stub (mockDatabaseReference) { mock in
+            _ = when(mock.observe(eventType: any(), with: any(), withCancel: any()).then({ _, _, errorCompletion in
+                let error = NSError(domain: "FirebaseFetchError", code: 1, userInfo: nil)
+                errorCompletion(error)
+            }))
+        }
+        systemUnderTest.fetchData(from: .contacts) { _, error in
+            XCTAssertNotNil(error)
+        }
+    }
+    
+    
+    private func setUpDatabaseReferenceTestsStubs() {
+        stub(mockDatabaseReference) { (mock) in
+            _ = when(mock.databaseReference()).then({ (_ ) -> DataReferenceable? in
+                return self.mockDatabaseReference
+            })
+        }
+        
+        stub(mockDatabaseReference) { (mock) in
+            _ = when(mock.child(any()).then({ (path) -> DataReferenceable? in
+                return self.mockDatabaseReference
+            }))
+        }
+    }
+
 }
