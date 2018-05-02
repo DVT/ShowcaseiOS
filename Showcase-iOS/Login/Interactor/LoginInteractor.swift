@@ -8,11 +8,11 @@
 
 import Foundation
 
-class LoginInteractor: PresenterInteractable {
-    var loginPresenter: InteractorPresentable
-    var userAuthenticator: Authenticating
+class LoginInteractor: LoginPresenterInteractable {
+    var loginPresenter: LoginInteractorPresentable
+    var userAuthenticator: LoginAuthenticating
     
-    init(_ loginPresenter: InteractorPresentable,_ userAuthenticator: Authenticating) {
+    init(_ loginPresenter: LoginInteractorPresentable,_ userAuthenticator: LoginAuthenticating) {
         self.loginPresenter = loginPresenter
         self.userAuthenticator = userAuthenticator
     }

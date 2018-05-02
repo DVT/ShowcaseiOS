@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol InteractorPresentable {
+protocol LoginInteractorPresentable {
     func signedInSuccessfully()
     func failedToSign(withError error: Error)
 }
