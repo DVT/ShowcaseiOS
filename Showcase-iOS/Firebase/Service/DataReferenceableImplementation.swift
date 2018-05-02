@@ -17,14 +17,12 @@ struct FirebaseRetrieverableImplementation {
         }
         return reference
     }
-}
-
-extension FirebaseRetrieverableImplementation: FireBaseDatabaseReferenceObservable {
-    func child(_ path: Path, completion: @escaping (Any?, Error?) -> Void) {
-        dataBaseReference()?.child(from: path.rawValue)?.observe(eventType: .childAdded, with: { snapshot in
+    
+    func fetchFirebaseData(from path: Path, completion: @escaping (Any?, Error?) -> Void) {
+        dataBaseReference()?.child(path)?.observe(eventType: .childAdded, with: { snapshot in
             completion(snapshot, nil)
-        }) { (error) in
+        }, withCancel: { (error) in
             completion(nil, error)
-        }
+        })
     }
 }

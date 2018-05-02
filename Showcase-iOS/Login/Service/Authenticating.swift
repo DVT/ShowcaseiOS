@@ -9,6 +9,5 @@
 import Foundation
 
 protocol Authenticating {
-    var authenticator: FirebaseAuthenticating? { get set}
     func signIn(withEmail email: String, password: String, completion: @escaping (Any?, Error?) -> Void)
 }

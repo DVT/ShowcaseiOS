@@ -12,22 +12,19 @@ import Cuckoo
 
 class LoginInteractorTests: XCTestCase {
     
-    var systemUnderTest = LoginInteractor()
+    var systemUnderTest: LoginInteractor!
     var mockLoginPresenter = MockInteractorPresentable()
     var mockUserAuthenticator = MockAuthenticating()
     
-    
     override func setUp() {
         super.setUp()
-        systemUnderTest.loginPresenter = mockLoginPresenter
-        systemUnderTest.userAuthenticator = mockUserAuthenticator
+        systemUnderTest = LoginInteractor(mockLoginPresenter, mockUserAuthenticator)
     }
     
     func testThatTheSignedInSuccesfullyMethodOfTheLoginPresenterGetsCalledWhenUserIsAuthorized() {
         stub(mockLoginPresenter) { (mock) in
             let _ = when(mock.signedInSuccessfully().thenDoNothing())
         }
-        
         stub(mockUserAuthenticator) { (mock) in
             let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, password, completion) in
                 let fakeUser = String("fakeUser")

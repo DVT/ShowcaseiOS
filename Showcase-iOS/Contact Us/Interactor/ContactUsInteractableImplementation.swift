@@ -16,7 +16,7 @@ class ContactUsInteractableImplementation: ContactUsInteractable {
         var offices: [Office] = [Office]()
         guard let dataReference = dataReference else {return }
         let databaseReference = FirebaseRetrieverableImplementation(reference: dataReference)
-        databaseReference.fetchData(from: .contacts) { (snapshot, error) in
+        databaseReference.fetchFirebaseData(from: .contacts) { (snapshot, error) in
             if let error = error {
                 self.contactUsPresenter.onRetrieveOfficesFailed(with: error)
             } else if let result = snapshot as? DataSnapshot {

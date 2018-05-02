@@ -12,27 +12,27 @@ import Firebase
 @testable import Showcase_iOS
 
 class ContactUsInteractableTests: XCTestCase {
-    
+
     //MARK: Mockables
-    
+
     var mockDatabaseRefeceabele = MockDataReferenceable()
     var mockContactUsPresentable = MockContactUsPresentable()
-    
+
     //MARK: System(s) under test
-    
+
     var systeUnderTest: ContactUsInteractableImplementation?
     var mockError: NSError?
-    
+
     //MARK: Test lifcycle method(s)
-    
+
     override func setUp() {
         super.setUp()
         mockError = NSError(domain: "FirebaseError", code: 1, userInfo: nil)
         systeUnderTest = ContactUsInteractableImplementation(with: mockContactUsPresentable, mockDatabaseRefeceabele)
     }
-    
+
     //MARK: Tests
-    
+
     func testThatRetrievingFirbaseContactsReturnsAValidErrorWhenFirebaseContactRetrieverReturnsAnError() {
         setUpMockStubs()
         stub(mockDatabaseRefeceabele) { mock in
@@ -50,7 +50,7 @@ class ContactUsInteractableTests: XCTestCase {
         systeUnderTest?.retrieveContacts()
         verify(mockContactUsPresentable, times(1)).onRetrieveOfficesFailed(with: any())
     }
-    
+
     func testThatWhenFirebaseContactRetrieverReturnsAValidEmptySnapshotThenOnRetrieveOfficesCompletesWithAnEmptyArrayOfOffices() {
         setUpMockStubs()
         stub(mockDatabaseRefeceabele) { mock in
@@ -59,23 +59,23 @@ class ContactUsInteractableTests: XCTestCase {
                 successCompletion(mockSnapShot)
             }))
         }
-        
+
         stub(mockContactUsPresentable) { mock in
             _ = when(mock.onRetrieveOfficesComplete(with: any()).then({ (offices) in
                 XCTAssertTrue(offices.isEmpty, "Offices is not empty")
             }))
         }
-        
+
         systeUnderTest?.retrieveContacts()
         verify(mockContactUsPresentable, times(1)).onRetrieveOfficesComplete(with: any())
     }
-    
+
     func setUpMockStubs() {
         stub(mockDatabaseRefeceabele) { (mock) in
             let _ = when(mock.databaseReference().then({ return self.mockDatabaseRefeceabele }))
             let _ = when(mock.child(any()).then({ _ in return self.mockDatabaseRefeceabele}))
-            
+
         }
     }
-   
+
 }

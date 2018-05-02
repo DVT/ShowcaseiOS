@@ -15,8 +15,8 @@ class DatabaseReferenceTests: XCTestCase {
     
     let mockDatabaseReference = MockDataReferenceable()
     let mockPath = ""
+    var systemUnderTest : FirebaseRetrieverableImplementation?
     var mockSnaphot: DataSnapshot?
-    var systemUnderTest : FirebaseRetrieverableImplementation!
     
     override func setUp() {
         super.setUp()
@@ -30,7 +30,7 @@ class DatabaseReferenceTests: XCTestCase {
                 return self.mockDatabaseReference
             })
         }
-        let result = systemUnderTest.dataBaseReference()
+        let result = systemUnderTest?.dataBaseReference()
         XCTAssertNotNil(result)
         verify(mockDatabaseReference, times(1)).databaseReference()
     }
@@ -39,7 +39,7 @@ class DatabaseReferenceTests: XCTestCase {
         stub(mockDatabaseReference) { (mock) in
             _ = when(mock.databaseReference()).thenReturn(nil)
         }
-        let result = systemUnderTest.dataBaseReference()
+        let result = systemUnderTest?.dataBaseReference()
         XCTAssertNil(result)
         verify(mockDatabaseReference, times(1)).databaseReference()
     }
@@ -53,9 +53,10 @@ class DatabaseReferenceTests: XCTestCase {
                 }
             }))
         }
-        systemUnderTest.fetchData(from: .contacts) { data, _ in
+        systemUnderTest?.fetchFirebaseData(from: .contacts) { data, _ in
             XCTAssertNotNil(data)
         }
+        verify(mockDatabaseReference, times(1)).observe(eventType: any(), with: any(), withCancel: any())
     }
     
     func testThatFirebaseFetcherReturnsErrorThatIsNotNilWhenFirebaseReturnsAnError() {
@@ -66,11 +67,11 @@ class DatabaseReferenceTests: XCTestCase {
                 errorCompletion(error)
             }))
         }
-        systemUnderTest.fetchData(from: .contacts) { _, error in
+        systemUnderTest?.fetchFirebaseData(from: .contacts) { _, error in
             XCTAssertNotNil(error)
         }
+        verify(mockDatabaseReference, times(1)).observe(eventType: any(), with: any(), withCancel: any())
     }
-    
     
     private func setUpDatabaseReferenceTestsStubs() {
         stub(mockDatabaseReference) { (mock) in
@@ -78,12 +79,10 @@ class DatabaseReferenceTests: XCTestCase {
                 return self.mockDatabaseReference
             })
         }
-        
-        stub(mockDatabaseReference) { (mock) in
-            _ = when(mock.child(any()).then({ (path) -> DataReferenceable? in
+        stub(mockDatabaseReference) {(mock) in
+            _ = when(mock.child(any()).then({(path) -> DataReferenceable? in
                 return self.mockDatabaseReference
             }))
         }
     }
-
 }

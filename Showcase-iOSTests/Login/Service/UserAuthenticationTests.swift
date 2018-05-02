@@ -11,21 +11,20 @@ import Cuckoo
 @testable import Showcase_iOS
 
 class UserAuthenticationTests: XCTestCase {
-    
-    var mockFirebaseAuthentication: MockFirebaseAuthenticating = MockFirebaseAuthenticating()
-    var serviceUnderTest: UserAuthentication?
+
+    var mockFirebaseAuthentication = MockFirebaseAuthenticating()
+    var serviceUnderTest: UserAuthentication!
     var testEmail: String?
     override func setUp() {
         super.setUp()
         testEmail = "test@gmail.com"
-        serviceUnderTest = UserAuthentication()
-        serviceUnderTest?.authenticator = mockFirebaseAuthentication
+        serviceUnderTest = UserAuthentication(mockFirebaseAuthentication)
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
-    
+
     func testThatSignInMethodCompletesWithAUserWhenAuthenticationIsSuccesfull() {
         stub(mockFirebaseAuthentication) { (mock) in
             let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, password, completion) in
@@ -38,15 +37,15 @@ class UserAuthenticationTests: XCTestCase {
         }
         verify(mockFirebaseAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
     }
-    
+
     func testThatSignInMethodCompletesWithAnErrorWhenAuthenticationIsUnSuccesfull() {
         stub(mockFirebaseAuthentication) { (mock) in
             let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, password, completion) in
-                completion(nil ,AuthError.notAuthenticated)
+                completion(nil ,AuthenticationError.notAuthenticated)
             }))
         }
         serviceUnderTest?.signIn(withEmail: "", password: "") { (user, error) in
-            XCTAssertEqual(error as! AuthError, AuthError.notAuthenticated)
+            XCTAssertEqual(error as! AuthenticationError, AuthenticationError.notAuthenticated)
         }
         verify(mockFirebaseAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
     }
