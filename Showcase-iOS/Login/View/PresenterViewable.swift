@@ -12,5 +12,6 @@ protocol PresenterViewable {
     func showEmailValidationFailure(withError error: AuthenticationError)
     func showPasswordValidationFailure(withError error: AuthenticationError)
     func showInvalidInputsFailure(withError error: AuthenticationError)
+    func showAuthenticationFailure(withMessage: String?)
     func showSuccess()
 }

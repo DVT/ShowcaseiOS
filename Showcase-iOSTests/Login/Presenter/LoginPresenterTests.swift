@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import FirebaseAuth
 import Cuckoo
 @testable import Showcase_iOS
 
@@ -15,6 +16,7 @@ class LoginPresenterTests: XCTestCase {
     var systemUnderTest: LoginPresenter!
     var mockLoginViewer = MockPresenterViewable()
     var mockLoginInteractor = MockPresenterInteractable()
+    let mockLoginPresenter = MockInteractorPresentable()
     
     override func setUp() {
         super.setUp()
@@ -52,6 +54,22 @@ class LoginPresenterTests: XCTestCase {
         }
         systemUnderTest.login(withEmail: "", password: "")
         verify(mockLoginViewer, times(1)).showInvalidInputsFailure(withError: any())
+    }
+    
+    func testWhenFailedToSignInMethodIsCalledThenTheLoginViewerShowFailureWithCorrectMessage() {
+        stub(mockLoginViewer) { (mock) in
+            let _ = when(mock.showAuthenticationFailure(withMessage: any()).thenDoNothing())
+        }
+        systemUnderTest.failedToSign(withError: AuthenticationError.notAuthenticated)
+        verify(mockLoginViewer, times(1)).showAuthenticationFailure(withMessage: any())
+    }
+    
+    func testThatWhenSignedInSuccesfullyMethodGetsCalledThenShowSuccessIsInvoked() {
+        stub(mockLoginViewer) { mock in
+            let _ = when(mock.showSuccess().thenDoNothing())
+        }
+        systemUnderTest.signedInSuccessfully()
+        verify(mockLoginViewer, times(1)).showSuccess()
     }
     
 }
