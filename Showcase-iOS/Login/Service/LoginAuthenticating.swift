@@ -1,5 +1,5 @@
 //
-//  FirebaseAuthenticating.swift
+//  Authenticating.swift
 //  Showcase-iOS
 //
 //  Created by Lehlohonolo Mbele on 2018/04/20.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol FirebaseAuthenticating {
+protocol LoginAuthenticating {
     func signIn(withEmail email: String, password: String, completion: @escaping (Any?, Error?) -> Void)
 }

@@ -9,6 +9,6 @@
 import Foundation
 
 
-protocol PresenterInteractable {
+protocol LoginPresenterInteractable {
     func signIn(withEmail email: String, password: String)
 }
