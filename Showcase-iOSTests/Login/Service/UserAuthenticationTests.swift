@@ -20,11 +20,11 @@ class UserAuthenticationTests: XCTestCase {
         testEmail = "test@gmail.com"
         serviceUnderTest = UserAuthentication(mockFirebaseAuthentication)
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
-    
+
     func testThatSignInMethodCompletesWithAUserWhenAuthenticationIsSuccesfull() {
         stub(mockFirebaseAuthentication) { (mock) in
             let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, password, completion) in
@@ -37,7 +37,7 @@ class UserAuthenticationTests: XCTestCase {
         }
         verify(mockFirebaseAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
     }
-    
+
     func testThatSignInMethodCompletesWithAnErrorWhenAuthenticationIsUnSuccesfull() {
         stub(mockFirebaseAuthentication) { (mock) in
             let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, password, completion) in
