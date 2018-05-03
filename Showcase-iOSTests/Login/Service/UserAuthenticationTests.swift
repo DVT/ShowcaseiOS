@@ -11,8 +11,8 @@ import Cuckoo
 @testable import Showcase_iOS
 
 class UserAuthenticationTests: XCTestCase {
-
-    var mockFirebaseAuthentication = MockFirebaseAuthenticating()
+    
+    var mockFirebaseAuthentication = MockFirebaseLoginAuthenticating()
     var serviceUnderTest: UserAuthentication!
     var testEmail: String?
     override func setUp() {

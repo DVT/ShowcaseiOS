@@ -13,8 +13,8 @@ import Cuckoo
 class LoginInteractorTests: XCTestCase {
     
     var systemUnderTest: LoginInteractor!
-    var mockLoginPresenter = MockInteractorPresentable()
-    var mockUserAuthenticator = MockAuthenticating()
+    var mockLoginPresenter = MockLoginInteractorPresentable()
+    var mockUserAuthenticator = MockLoginAuthenticating()
     
     override func setUp() {
         super.setUp()
