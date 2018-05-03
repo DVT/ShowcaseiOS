@@ -22,7 +22,6 @@
 		BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82C4208F4CB8003EFB06 /* LoginPresenterTests.swift */; };
 		BC4D82C7208F598C003EFB06 /* EmailValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82C6208F598C003EFB06 /* EmailValidatorTests.swift */; };
 		BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82C9208F59B1003EFB06 /* EmailValidator.swift */; };
-		BC4D82CD208F6059003EFB06 /* PresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82CC208F6059003EFB06 /* PresenterViewable.swift */; };
 		BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */; };
 		BC4D82D3208F6FB6003EFB06 /* PasswordValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */; };
 		BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D07352090683F00FFE9DD /* AuthenticationError.swift */; };
@@ -30,17 +29,18 @@
 		BC6D073F209246D400FFE9DD /* AuthErrorCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */; };
 		BC6D07412092481100FFE9DD /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D07402092481100FFE9DD /* ErrorMessage.swift */; };
 		BC8406F1208DE32E00B15318 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8406F0208DE32E00B15318 /* LoginInteractorTests.swift */; };
+		BC9DD69B2099E4A900E91F59 /* GeneratedShowcaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DD69A2099E4A800E91F59 /* GeneratedShowcaseMocks.swift */; };
 		BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DA862087A981000458FD /* UserAuthentication.swift */; };
 		BCE5DA8D2087AB69000458FD /* UserAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DA8C2087AB69000458FD /* UserAuthenticationTests.swift */; };
 		BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAC02089D90A000458FD /* Auth+FirebaseAuthenticating.swift */; };
-		BCE5DAC32089D962000458FD /* FirebaseAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAC22089D962000458FD /* FirebaseAuthenticating.swift */; };
+		BCE5DAC32089D962000458FD /* FirebaseLoginAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAC22089D962000458FD /* FirebaseLoginAuthenticating.swift */; };
 		BCE5DACE208A0908000458FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DACD208A0908000458FD /* User.swift */; };
-		BCE5DAD1208A1B2A000458FD /* PresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD0208A1B2A000458FD /* PresenterInteractable.swift */; };
+		BCE5DAD1208A1B2A000458FD /* LoginPresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD0208A1B2A000458FD /* LoginPresenterInteractable.swift */; };
 		BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD2208A1B9B000458FD /* LoginInteractor.swift */; };
-		BCE5DAD7208A23D5000458FD /* Authenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD6208A23D5000458FD /* Authenticating.swift */; };
-		BCE5DADC208A2756000458FD /* InteractorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DADB208A2756000458FD /* InteractorPresentable.swift */; };
+		BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD6208A23D5000458FD /* LoginAuthenticating.swift */; };
+		BCE5DADC208A2756000458FD /* LoginInteractorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DADB208A2756000458FD /* LoginInteractorPresentable.swift */; };
 		D3CA0C259152F306ADF67208 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */; };
-		FD0880572090937F00B814FE /* GeneratedShowcaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0880562090937F00B814FE /* GeneratedShowcaseMocks.swift */; };
+		FD00B633209B0CCD0018696B /* LoginPresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B632209B0CCD0018696B /* LoginPresenterViewable.swift */; };
 		FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2852099DA52006EA459 /* ShowcaseApp.swift */; };
 		FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */; };
 		FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */; };
@@ -86,7 +86,6 @@
 		BC4D82C4208F4CB8003EFB06 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		BC4D82C6208F598C003EFB06 /* EmailValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorTests.swift; sourceTree = "<group>"; };
 		BC4D82C9208F59B1003EFB06 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
-		BC4D82CC208F6059003EFB06 /* PresenterViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewable.swift; sourceTree = "<group>"; };
 		BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorTests.swift; sourceTree = "<group>"; };
 		BC6D07352090683F00FFE9DD /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
@@ -94,17 +93,19 @@
 		BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorCodeTests.swift; sourceTree = "<group>"; };
 		BC6D07402092481100FFE9DD /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		BC8406F0208DE32E00B15318 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
+		BC9DD69A2099E4A800E91F59 /* GeneratedShowcaseMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedShowcaseMocks.swift; sourceTree = "<group>"; };
 		BCE5DA862087A981000458FD /* UserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
 		BCE5DA8C2087AB69000458FD /* UserAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationTests.swift; sourceTree = "<group>"; };
 		BCE5DAC02089D90A000458FD /* Auth+FirebaseAuthenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auth+FirebaseAuthenticating.swift"; sourceTree = "<group>"; };
-		BCE5DAC22089D962000458FD /* FirebaseAuthenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticating.swift; sourceTree = "<group>"; };
+		BCE5DAC22089D962000458FD /* FirebaseLoginAuthenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginAuthenticating.swift; sourceTree = "<group>"; };
+		BCE5DAC42089DA2A000458FD /* GeneratedShowcaseMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedShowcaseMocks.swift; sourceTree = "<group>"; };
 		BCE5DACD208A0908000458FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BCE5DAD0208A1B2A000458FD /* PresenterInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterInteractable.swift; sourceTree = "<group>"; };
+		BCE5DAD0208A1B2A000458FD /* LoginPresenterInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterInteractable.swift; sourceTree = "<group>"; };
 		BCE5DAD2208A1B9B000458FD /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
-		BCE5DAD6208A23D5000458FD /* Authenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticating.swift; sourceTree = "<group>"; };
-		BCE5DADB208A2756000458FD /* InteractorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorPresentable.swift; sourceTree = "<group>"; };
+		BCE5DAD6208A23D5000458FD /* LoginAuthenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticating.swift; sourceTree = "<group>"; };
+		BCE5DADB208A2756000458FD /* LoginInteractorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorPresentable.swift; sourceTree = "<group>"; };
 		DCFA1459AB0697F9EB2E7C36 /* Pods-Showcase-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FD0880562090937F00B814FE /* GeneratedShowcaseMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedShowcaseMocks.swift; sourceTree = "<group>"; };
+		FD00B632209B0CCD0018696B /* LoginPresenterViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenterViewable.swift; sourceTree = "<group>"; };
 		FD37E2852099DA52006EA459 /* ShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseApp.swift; sourceTree = "<group>"; };
 		FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractable.swift; sourceTree = "<group>"; };
 		FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractorImplementation.swift; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 		99FB7FFB2085F25300B300BA /* Showcase-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				BC9DD69A2099E4A800E91F59 /* GeneratedShowcaseMocks.swift */,
 				FD37E28D2099EC5F006EA459 /* Dashboard */,
 				A34475472089EFFF001734CA /* FirebaseDataBase */,
 				BCE5DA8A2087AB31000458FD /* Login */,
@@ -187,7 +189,6 @@
 				BC4D82C6208F598C003EFB06 /* EmailValidatorTests.swift */,
 				BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */,
 				BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */,
-				FD0880562090937F00B814FE /* GeneratedShowcaseMocks.swift */,
 			);
 			path = "Showcase-iOSTests";
 			sourceTree = "<group>";
@@ -238,7 +239,7 @@
 		BC4D82CB208F601B003EFB06 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BC4D82CC208F6059003EFB06 /* PresenterViewable.swift */,
+				FD00B632209B0CCD0018696B /* LoginPresenterViewable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,10 +285,10 @@
 		BCE5DA832087A94B000458FD /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				BCE5DAD6208A23D5000458FD /* Authenticating.swift */,
+				BCE5DAD6208A23D5000458FD /* LoginAuthenticating.swift */,
 				BCE5DA862087A981000458FD /* UserAuthentication.swift */,
 				BCE5DAC02089D90A000458FD /* Auth+FirebaseAuthenticating.swift */,
-				BCE5DAC22089D962000458FD /* FirebaseAuthenticating.swift */,
+				BCE5DAC22089D962000458FD /* FirebaseLoginAuthenticating.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -314,7 +315,7 @@
 		BCE5DACF208A1AEB000458FD /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				BCE5DAD0208A1B2A000458FD /* PresenterInteractable.swift */,
+				BCE5DAD0208A1B2A000458FD /* LoginPresenterInteractable.swift */,
 				BCE5DAD2208A1B9B000458FD /* LoginInteractor.swift */,
 			);
 			path = Interactor;
@@ -323,9 +324,9 @@
 		BCE5DADA208A25BA000458FD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				BCE5DADB208A2756000458FD /* InteractorPresentable.swift */,
 				BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */,
 				BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */,
+				BCE5DADB208A2756000458FD /* LoginInteractorPresentable.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -353,6 +354,7 @@
 		FD0880512090923C00B814FE /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
+				BCE5DAC42089DA2A000458FD /* GeneratedShowcaseMocks.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -627,7 +629,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name InteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name Authenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name PresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name PresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresentable.swift)\"";
+			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseLoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginInteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresentable.swift)\"\n";
 		};
 		BD4AD3F8FC636C5DD65094C4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -654,33 +656,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCE5DAD7208A23D5000458FD /* Authenticating.swift in Sources */,
 				BC6D07412092481100FFE9DD /* ErrorMessage.swift in Sources */,
+				BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */,
 				FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */,
-				BC4D82CD208F6059003EFB06 /* PresenterViewable.swift in Sources */,
 				FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */,
 				FD6FAA9D208E1C3F00D108C5 /* DataReferenceable.swift in Sources */,
 				99FB7FEA2085F25100B300BA /* ViewController.swift in Sources */,
 				FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */,
 				BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
+				BCE5DAD1208A1B2A000458FD /* LoginPresenterInteractable.swift in Sources */,
 				FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */,
-				BCE5DAD1208A1B2A000458FD /* PresenterInteractable.swift in Sources */,
 				BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */,
 				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
 				BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */,
+				BCE5DADC208A2756000458FD /* LoginInteractorPresentable.swift in Sources */,
 				BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */,
 				BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */,
-				BCE5DADC208A2756000458FD /* InteractorPresentable.swift in Sources */,
 				BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */,
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
 				FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
 				FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */,
-				BCE5DAC32089D962000458FD /* FirebaseAuthenticating.swift in Sources */,
+				BCE5DAC32089D962000458FD /* FirebaseLoginAuthenticating.swift in Sources */,
 				BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */,
 				FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */,
+				FD00B633209B0CCD0018696B /* LoginPresenterViewable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,7 +698,7 @@
 				BC4D82D3208F6FB6003EFB06 /* PasswordValidatorTests.swift in Sources */,
 				A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */,
 				BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */,
-				FD0880572090937F00B814FE /* GeneratedShowcaseMocks.swift in Sources */,
+				BC9DD69B2099E4A900E91F59 /* GeneratedShowcaseMocks.swift in Sources */,
 				BCE5DACE208A0908000458FD /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

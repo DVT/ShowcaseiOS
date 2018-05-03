@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseAuth
 
-extension Auth: FirebaseAuthenticating {
+extension Auth: FirebaseLoginAuthenticating {
     func signIn(withEmail email: String, password: String, completion: @escaping (Any?, Error?) -> Void) {
         self.signIn(withEmail: email, password: password, completion: completion)
     }

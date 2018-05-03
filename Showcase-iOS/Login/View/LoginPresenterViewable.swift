@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PresenterViewable {
+protocol LoginPresenterViewable {
     func showEmailValidationFailure(withError error: AuthenticationError)
     func showPasswordValidationFailure(withError error: AuthenticationError)
     func showInvalidInputsFailure(withError error: AuthenticationError)

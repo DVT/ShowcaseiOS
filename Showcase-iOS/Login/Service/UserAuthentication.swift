@@ -9,10 +9,10 @@
 import Foundation
 import FirebaseAuth
 
-class UserAuthentication: Authenticating {
-    var authenticator: FirebaseAuthenticating
+class UserAuthentication: LoginAuthenticating {
+    var authenticator: FirebaseLoginAuthenticating
     
-    init(_ authenticator: FirebaseAuthenticating) {
+    init(_ authenticator: FirebaseLoginAuthenticating) {
         self.authenticator = authenticator
     }
     

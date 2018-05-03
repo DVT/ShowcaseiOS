@@ -10,12 +10,12 @@ import Foundation
 import FirebaseAuth
 
 class LoginPresenter: LoginPresentable {
-    var loginViewer: PresenterViewable
-    var loginInteractor: PresenterInteractable
+    var loginViewer: LoginPresenterViewable
+    var loginInteractor: LoginPresenterInteractable
     let emailValidator = EmailValidator()
     let passwordValidator = PasswordValidator()
     
-    init(_ loginViewer: PresenterViewable,_ loginInteractor: PresenterInteractable) {
+    init(_ loginViewer: LoginPresenterViewable,_ loginInteractor: LoginPresenterInteractable) {
         self.loginViewer = loginViewer
         self.loginInteractor = loginInteractor
     }
@@ -33,7 +33,7 @@ class LoginPresenter: LoginPresentable {
     }
 }
 
-extension LoginPresenter: InteractorPresentable {
+extension LoginPresenter: LoginInteractorPresentable {
     func signedInSuccessfully() {
         loginViewer.showSuccess()
     }
