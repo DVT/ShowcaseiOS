@@ -9,7 +9,7 @@
 import Foundation
 
 enum Path: String {
-    case contacts = "offices"
+    case office = "offices"
     case apps = "apps"
     case none
 }

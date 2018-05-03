@@ -53,7 +53,7 @@ class DatabaseReferenceTests: XCTestCase {
                 }
             }))
         }
-        systemUnderTest?.fetchFirebaseData(from: .contacts) { data, _ in
+        systemUnderTest?.fetchFirebaseData(from: .office) { data, _ in
             XCTAssertNotNil(data)
         }
         verify(mockDatabaseReference, times(1)).observe(eventType: any(), with: any(), withCancel: any())
@@ -67,7 +67,7 @@ class DatabaseReferenceTests: XCTestCase {
                 errorCompletion(error)
             }))
         }
-        systemUnderTest?.fetchFirebaseData(from: .contacts) { _, error in
+        systemUnderTest?.fetchFirebaseData(from: .office) { _, error in
             XCTAssertNotNil(error)
         }
         verify(mockDatabaseReference, times(1)).observe(eventType: any(), with: any(), withCancel: any())
