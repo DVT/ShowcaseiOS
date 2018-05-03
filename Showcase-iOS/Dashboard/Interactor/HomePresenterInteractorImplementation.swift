@@ -11,7 +11,7 @@ import Firebase
 
 class HomeInteractorImplementation: HomePresenterInteractable {
     var firebaseDatabaseReference: DataReferenceable
-    var homePresenter: HomePresentable?
+    var homePresenter: HomePresentable
     
     init(with reference: DataReferenceable, and presenter: HomePresentable) {
         self.firebaseDatabaseReference = reference
@@ -23,13 +23,13 @@ class HomeInteractorImplementation: HomePresenterInteractable {
         let databaseReference = FirebaseRetrieverableImplementation(reference: self.firebaseDatabaseReference)
         databaseReference.fetchFirebaseData(from: .apps) { snapshot, error in
             if error != nil {
-                self.homePresenter?.onFetchShowcaseAppsFailure(with: .childNotFound)
+                self.homePresenter.onFetchShowcaseAppsFailure(with: .childNotFound)
             } else {
                 let result = snapshot as? DataSnapshot
                 result?.children.forEach { child in
                     showcaseApps.append(ShowcaseApp(with: child as? DataSnapshot))
                 }
-                self.homePresenter?.onFetchShowcaseAppsSuccess(with: showcaseApps)
+                self.homePresenter.onFetchShowcaseAppsSuccess(with: showcaseApps)
             }
         }
     }
