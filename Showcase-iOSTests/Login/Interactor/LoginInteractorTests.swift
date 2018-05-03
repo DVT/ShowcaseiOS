@@ -27,7 +27,7 @@ class LoginInteractorTests: XCTestCase {
         }
         stub(mockUserAuthenticator) { (mock) in
             let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, password, completion) in
-                let fakeUser = String("fakeUser")
+                let fakeUser = MockUser()
                 completion(fakeUser, nil)
             }))
         }
