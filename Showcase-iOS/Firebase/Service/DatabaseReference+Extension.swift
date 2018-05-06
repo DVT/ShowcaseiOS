@@ -16,5 +16,3 @@ extension DatabaseReference: DataReferenceable {
         self.observe(eventType, with: snapshot, withCancel: cancel)
     }
 }
-    
-    
