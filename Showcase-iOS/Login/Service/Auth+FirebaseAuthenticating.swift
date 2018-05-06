@@ -10,7 +10,8 @@ import Foundation
 import FirebaseAuth
 
 extension Auth: FirebaseLoginAuthenticating {
-    func signIn(withEmail email: String, password: String, completion: @escaping (Any?, Error?) -> Void) {
+    func signIn(withEmail email: String, password: String, completion: @escaping (FirUserProtocol?, Error?) -> Void) {
+        let completion = completion as AuthResultCallback
         self.signIn(withEmail: email, password: password, completion: completion)
     }
 }
