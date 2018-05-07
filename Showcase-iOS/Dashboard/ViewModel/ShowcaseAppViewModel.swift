@@ -33,7 +33,7 @@ class ShowcaseAppViewModel {
     }
     
     var screenshots: [String]? {
-        return showcaseApp.screenshots
+        return showcaseApp.screenshots ?? [String]()
     }
     
     var shortDescription: String? {

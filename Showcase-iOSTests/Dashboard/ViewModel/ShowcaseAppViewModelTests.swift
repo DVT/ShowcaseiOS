@@ -54,7 +54,7 @@ class ShowcaseAppViewModelTests: XCTestCase {
     
     func testThatGivenADictionaryThenAShowcaseAppViewModelScreenshotsFieldShoulHaveAValue() {
         let screenshots: [String] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
-        XCTAssertEqual(self.mockShowcaseAppViewModel.screenshots, screenshots)
+        XCTAssertEqual(self.mockShowcaseAppViewModel.screenshots!, screenshots)
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelClientFieldShoulBeNil() {
@@ -86,7 +86,7 @@ class ShowcaseAppViewModelTests: XCTestCase {
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelScreenshotsFieldShoulBeNil() {
-        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.screenshots, nil)
+        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.screenshots!, [String]())
     }
     
     func setupShowcaseAppDictionary() -> [String: Any] {
