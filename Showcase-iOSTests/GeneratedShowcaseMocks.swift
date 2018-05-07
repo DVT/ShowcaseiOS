@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2018-05-03 11:41:08 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2018-05-07 09:14:34 +0000
 
 
 import Cuckoo
@@ -148,7 +148,7 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2018-05-03 11:41:08 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2018-05-07 09:14:34 +0000
 
 
 import Cuckoo
@@ -259,7 +259,7 @@ class MockContactUsPresentable: ContactUsPresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2018-05-03 11:41:08 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2018-05-07 09:14:34 +0000
 
 //
 //  HomePresenterInteractable.swift
@@ -350,7 +350,7 @@ class MockHomePresenterInteractable: HomePresenterInteractable, Cuckoo.ProtocolM
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2018-05-03 11:41:08 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2018-05-07 09:14:34 +0000
 
 //
 //  HomePresentable.swift
@@ -468,7 +468,7 @@ class MockHomePresentable: HomePresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-05-03 11:41:08 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-05-07 09:14:34 +0000
 
 
 import Cuckoo
@@ -608,7 +608,7 @@ class MockDataReferenceable: DataReferenceable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2018-05-03 11:41:08 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2018-05-07 09:14:34 +0000
 
 //
 //  PresenterInteractable.swift
@@ -699,7 +699,7 @@ class MockLoginPresenterInteractable: LoginPresenterInteractable, Cuckoo.Protoco
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2018-05-03 11:41:08 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2018-05-07 09:14:34 +0000
 
 //
 //  InteractorPresentable.swift
@@ -817,7 +817,7 @@ class MockLoginInteractorPresentable: LoginInteractorPresentable, Cuckoo.Protoco
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2018-05-03 11:41:08 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2018-05-07 09:14:34 +0000
 
 //
 //  FirebaseAuthenticating.swift
@@ -908,7 +908,7 @@ class MockFirebaseLoginAuthenticating: FirebaseLoginAuthenticating, Cuckoo.Proto
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2018-05-03 11:41:08 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2018-05-07 09:14:34 +0000
 
 //
 //  Authenticating.swift
@@ -999,7 +999,7 @@ class MockLoginAuthenticating: LoginAuthenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2018-05-03 11:41:08 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2018-05-07 09:14:34 +0000
 
 //
 //  PresenterViewable.swift
@@ -1198,7 +1198,7 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-05-03 11:41:08 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-05-07 09:14:34 +0000
 
 //
 //  Viewable.swift

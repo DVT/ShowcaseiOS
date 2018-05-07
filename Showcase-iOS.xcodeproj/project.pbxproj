@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB7FE72085F25100B300BA /* AppDelegate.swift */; };
-		99FB7FEA2085F25100B300BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB7FE92085F25100B300BA /* ViewController.swift */; };
 		99FB7FED2085F25100B300BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB7FEB2085F25100B300BA /* Main.storyboard */; };
 		99FB7FEF2085F25200B300BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FB7FEE2085F25200B300BA /* Assets.xcassets */; };
 		99FB7FF22085F25200B300BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB7FF02085F25200B300BA /* LaunchScreen.storyboard */; };
@@ -29,6 +28,8 @@
 		BC02346920A0472A006E6E92 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC02346820A0472A006E6E92 /* About.storyboard */; };
 		BC02346B20A0474D006E6E92 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC02346A20A0474D006E6E92 /* Contact.storyboard */; };
 		BC02346D20A049BF006E6E92 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346C20A049BF006E6E92 /* LoginVC.swift */; };
+		BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */; };
+		BC02347320A051B2006E6E92 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */; };
 		BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */; };
 		BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */; };
 		BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */; };
@@ -79,7 +80,6 @@
 		49E63F38617F9FAE5D2CFB4F /* Pods_Showcase_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FB7FE42085F25100B300BA /* Showcase-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Showcase-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FB7FE72085F25100B300BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99FB7FE92085F25100B300BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99FB7FEC2085F25100B300BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99FB7FEE2085F25200B300BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99FB7FF12085F25200B300BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,6 +104,8 @@
 		BC02346820A0472A006E6E92 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		BC02346A20A0474D006E6E92 /* Contact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
 		BC02346C20A049BF006E6E92 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStoryboard+Enum.swift"; sourceTree = "<group>"; };
+		BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUserProtocol.swift; sourceTree = "<group>"; };
 		BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentable.swift; sourceTree = "<group>"; };
@@ -192,7 +194,6 @@
 				BCE5DA822087A93B000458FD /* Login */,
 				99FB80072085FAC300B300BA /* GoogleService-Info.plist */,
 				99FB7FE72085F25100B300BA /* AppDelegate.swift */,
-				99FB7FE92085F25100B300BA /* ViewController.swift */,
 				BC02346620A04661006E6E92 /* Home.storyboard */,
 				BC02346820A0472A006E6E92 /* About.storyboard */,
 				BC02346420A045DE006E6E92 /* Login.storyboard */,
@@ -290,6 +291,22 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		BC02346E20A050DC006E6E92 /* AppStoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */,
+			);
+			path = AppStoryBoards;
+			sourceTree = "<group>";
+		};
+		BC02347120A0519F006E6E92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BC4D82C1208F4C87003EFB06 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +318,8 @@
 		BC4D82C8208F599E003EFB06 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				BC02347120A0519F006E6E92 /* Extensions */,
+				BC02346E20A050DC006E6E92 /* AppStoryBoards */,
 				BC6D073B2091C87F00FFE9DD /* Errors */,
 				BC4D82D4208F70D3003EFB06 /* Validators */,
 			);
@@ -740,7 +759,6 @@
 				BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */,
 				FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */,
 				FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */,
-				99FB7FEA2085F25100B300BA /* ViewController.swift in Sources */,
 				FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */,
 				BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
@@ -751,10 +769,12 @@
 				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
 				A36A55562099E4990037C4BF /* DataReferenceable.swift in Sources */,
+				BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */,
 				FD16358C209B14C50085B0E6 /* LoginPresenterViewable.swift in Sources */,
 				BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */,
 				BCE5DADC208A2756000458FD /* LoginInteractorPresentable.swift in Sources */,
 				BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */,
+				BC02347320A051B2006E6E92 /* UIViewController+Extensions.swift in Sources */,
 				BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */,
 				BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */,
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
