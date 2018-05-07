@@ -11,8 +11,8 @@ import Cuckoo
 @testable import Showcase_iOS
 
 class ShowcaseAppViewModelTests: XCTestCase {
-    var mockShowcaseAppViewModel: ShowcaseAppViewModel?
-    var mockEmptyShowcaseAppViewModel: ShowcaseAppViewModel?
+    var mockShowcaseAppViewModel: ShowcaseAppViewModel!
+    var mockEmptyShowcaseAppViewModel: ShowcaseAppViewModel!
     var dictinary: [String: Any]?
     
     override func setUp() {
@@ -27,56 +27,56 @@ class ShowcaseAppViewModelTests: XCTestCase {
     }
     
     func testThatGivenADictionaryThenAShowcaseAppViewModelClientFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel?.client, "Group Five")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.client, "Group Five")
     }
     
     func testThatGivenADictionaryThenAShowcaseAppViewModelFunctionalityFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel?.functionality, "Asset data capture on Windows Mobile devices.")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.functionality, "Asset data capture on Windows Mobile devices.")
     }
     
     func testThatGivenADictionaryThenAShowcaseAppViewModelIconUrlFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel?.iconUrl, "app-images/group-five/group_five_logo.jpg")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.iconUrl, "app-images/group-five/group_five_logo.jpg")
     }
     
     func testThatGivenADictionaryThenAShowcaseAppViewModelIdFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel?.id, "group-five")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.id, "group-five")
     }
     
     func testThatGivenADictionaryThenAShowcaseAppViewModelIndustryShoulFieldHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel?.industry, "Asset Management")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.industry, "Asset Management")
     }
     
     func testThatGivenADictionaryThenAShowcaseAppViewModelShortDescriptionFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel?.shortDescription, "Asset data capturing application")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.shortDescription, "Asset data capturing application")
     }
     
     func testThatGivenADictionaryThenAShowcaseAppViewModelTechnologyUsedFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel?.technologyUsed, "Windows Phone \n.NET Development ")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.technologyUsed, "Windows Phone \n.NET Development ")
     }
     
     func testThatGivenADictionaryThenAShowcaseAppViewModelScreenshotsFieldShoulHaveAValue() {
         let screenshots = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
-        XCTAssertEqual(self.mockShowcaseAppViewModel?.screenshots, screenshots)
+        XCTAssertEqual(self.mockShowcaseAppViewModel.screenshots, screenshots)
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelClientFieldShoulBeNil() {
-        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel?.client, nil)
+        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.client, nil)
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelFunctionalityFieldShoulBeNil() {
-        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel?.functionality, nil)
+        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.functionality, nil)
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelIconUrlFieldShoulBeNil() {
-        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel?.iconUrl, nil)
+        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.iconUrl, nil)
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelIdFieldShoulBeNil() {
-        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel?.id, nil)
+        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.id, nil)
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelIndustryFieldIShoulBeNil() {
-        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel?.industry, nil)
+        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.industry, nil)
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelShortDescriptionFieldShoulBeNil() {
@@ -84,11 +84,11 @@ class ShowcaseAppViewModelTests: XCTestCase {
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelTechnologyUsedFieldShoulBeNil() {
-        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel?.technologyUsed, nil)
+        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.technologyUsed, nil)
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelScreenshotsFieldShoulBeNil() {
-        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel?.screenshots, nil)
+        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.screenshots, nil)
     }
     
     func setupShowcaseAppDictionary() -> [String: Any] {
