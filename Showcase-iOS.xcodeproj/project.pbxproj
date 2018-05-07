@@ -24,6 +24,11 @@
 		A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA5ECA208F631100E0D34F /* ContactUsInteractableImplementation.swift */; };
 		A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E71967209AFEF80081D5C1 /* LoginPresenterInteractable.swift */; };
 		A58CB69A40BBA1DAAE40AD2B /* Pods_Showcase_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E63F38617F9FAE5D2CFB4F /* Pods_Showcase_iOS.framework */; };
+		BC02346520A045DE006E6E92 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC02346420A045DE006E6E92 /* Login.storyboard */; };
+		BC02346720A04661006E6E92 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC02346620A04661006E6E92 /* Home.storyboard */; };
+		BC02346920A0472A006E6E92 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC02346820A0472A006E6E92 /* About.storyboard */; };
+		BC02346B20A0474D006E6E92 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC02346A20A0474D006E6E92 /* Contact.storyboard */; };
+		BC02346D20A049BF006E6E92 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346C20A049BF006E6E92 /* LoginVC.swift */; };
 		BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */; };
 		BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */; };
 		BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */; };
@@ -94,6 +99,11 @@
 		A3BA5ECA208F631100E0D34F /* ContactUsInteractableImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsInteractableImplementation.swift; sourceTree = "<group>"; };
 		A3E71967209AFEF80081D5C1 /* LoginPresenterInteractable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenterInteractable.swift; sourceTree = "<group>"; };
 		BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC02346420A045DE006E6E92 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		BC02346620A04661006E6E92 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		BC02346820A0472A006E6E92 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		BC02346A20A0474D006E6E92 /* Contact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
+		BC02346C20A049BF006E6E92 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUserProtocol.swift; sourceTree = "<group>"; };
 		BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentable.swift; sourceTree = "<group>"; };
@@ -173,6 +183,7 @@
 		99FB7FE62085F25100B300BA /* Showcase-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BC02346A20A0474D006E6E92 /* Contact.storyboard */,
 				FD37E2812099DA20006EA459 /* Dashboard */,
 				BC4D82C8208F599E003EFB06 /* Helpers */,
 				A3399789208E0514004776AB /* Contact Us */,
@@ -182,6 +193,9 @@
 				99FB80072085FAC300B300BA /* GoogleService-Info.plist */,
 				99FB7FE72085F25100B300BA /* AppDelegate.swift */,
 				99FB7FE92085F25100B300BA /* ViewController.swift */,
+				BC02346620A04661006E6E92 /* Home.storyboard */,
+				BC02346820A0472A006E6E92 /* About.storyboard */,
+				BC02346420A045DE006E6E92 /* Login.storyboard */,
 				99FB7FEB2085F25100B300BA /* Main.storyboard */,
 				99FB7FEE2085F25200B300BA /* Assets.xcassets */,
 				99FB7FF02085F25200B300BA /* LaunchScreen.storyboard */,
@@ -297,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				FD16358B209B14C50085B0E6 /* LoginPresenterViewable.swift */,
+				BC02346C20A049BF006E6E92 /* LoginVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -558,8 +573,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				99FB7FF22085F25200B300BA /* LaunchScreen.storyboard in Resources */,
+				BC02346920A0472A006E6E92 /* About.storyboard in Resources */,
 				99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */,
 				99FB7FEF2085F25200B300BA /* Assets.xcassets in Resources */,
+				BC02346720A04661006E6E92 /* Home.storyboard in Resources */,
+				BC02346B20A0474D006E6E92 /* Contact.storyboard in Resources */,
+				BC02346520A045DE006E6E92 /* Login.storyboard in Resources */,
 				99FB7FED2085F25100B300BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,6 +744,7 @@
 				FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */,
 				BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
+				BC02346D20A049BF006E6E92 /* LoginVC.swift in Sources */,
 				FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */,
 				A3BA5EC9208F54BB00E0D34F /* ContactUsPresentable.swift in Sources */,
 				BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */,
