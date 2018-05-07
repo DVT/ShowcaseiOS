@@ -13,12 +13,10 @@ import Cuckoo
 class ShowcaseAppViewModelTests: XCTestCase {
     var mockShowcaseAppViewModel: ShowcaseAppViewModel!
     var mockEmptyShowcaseAppViewModel: ShowcaseAppViewModel!
-    var dictinary: [String: Any]?
     
     override func setUp() {
         super.setUp()
-        self.dictinary = setupShowcaseAppDictionary()
-        self.mockShowcaseAppViewModel = ShowcaseAppViewModel(with: ShowcaseApp(with: self.dictinary))
+        self.mockShowcaseAppViewModel = ShowcaseAppViewModel(with: ShowcaseApp(with: self.setupShowcaseAppDictionary()))
         self.mockEmptyShowcaseAppViewModel = ShowcaseAppViewModel(with: ShowcaseApp(with: [String: Any]()))
     }
     
@@ -55,7 +53,7 @@ class ShowcaseAppViewModelTests: XCTestCase {
     }
     
     func testThatGivenADictionaryThenAShowcaseAppViewModelScreenshotsFieldShoulHaveAValue() {
-        let screenshots = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
+        let screenshots: [String] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
         XCTAssertEqual(self.mockShowcaseAppViewModel.screenshots, screenshots)
     }
     
@@ -80,7 +78,7 @@ class ShowcaseAppViewModelTests: XCTestCase {
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelShortDescriptionFieldShoulBeNil() {
-        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel?.shortDescription, nil)
+        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.shortDescription, nil)
     }
     
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelTechnologyUsedFieldShoulBeNil() {
