@@ -19,16 +19,14 @@ class ShowcaseApp {
     var shortDescription: String?
     var technologyUsed: String?
     
-    init(with snapshot: DataSnapshot?) {
-        if let dictionary = snapshot?.value as? Dictionary<String, Any> {
-            self.client = dictionary["client"] as? String
-            self.functionality = dictionary["functionality"] as? String
-            self.iconUrl = dictionary["iconUrl"] as? String
-            self.id = dictionary["id"] as? String
-            self.industry = dictionary["industry"] as? String
-            self.screenshots = dictionary["screenshots"] as? [String]
-            self.shortDescription = dictionary["shortDescription"] as? String
-            self.technologyUsed = dictionary["technologyUsed"] as? String
-        }
+    init(with dictionary: [String: Any]?) {
+        self.client = dictionary?["client"] as? String
+        self.functionality = dictionary?["functionality"] as? String
+        self.iconUrl = dictionary?["iconUrl"] as? String
+        self.id = dictionary?["id"] as? String
+        self.industry = dictionary?["industry"] as? String
+        self.screenshots = dictionary?["screenshots"] as? [String]
+        self.shortDescription = dictionary?["shortDescription"] as? String
+        self.technologyUsed = dictionary?["technologyUsed"] as? String
     }
 }
