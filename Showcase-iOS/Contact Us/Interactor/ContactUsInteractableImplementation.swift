@@ -19,7 +19,7 @@ class ContactUsInteractableImplementation: ContactUsInteractable {
             if let error = error {
                 self.contactUsPresenter.onRetrieveOfficesFailed(with: error)
             } else if let result = snapshot as? DataSnapshot {
-                offices = result.children.map({ Office(with: ($0 as! [String: Any]))})
+                offices = result.children.map({ Office(with: ($0 as? [String: Any]))})
                 self.contactUsPresenter.onRetrieveOfficesComplete(with: offices)
             }
         }

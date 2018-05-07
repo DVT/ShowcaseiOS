@@ -14,7 +14,8 @@ class Office {
     var name: String?
     var telephone: String?
     
-    init(with snapShotValue: [String: Any]) {
+    init(with snapShotValue: [String: Any]?) {
+        if let snapShotValue = snapShotValue {
         self.address = snapShotValue["address"] as? String
         self.emailAddress = snapShotValue["emailAddress"] as? String
         self.googleMapsName = snapShotValue["googleMapsName"] as? String
@@ -24,5 +25,6 @@ class Office {
         self.longitude = snapShotValue["longitude"] as? String
         self.name = snapShotValue["name"] as? String
         self.telephone = snapShotValue["telephone"] as? String
+        }
     }
 }
