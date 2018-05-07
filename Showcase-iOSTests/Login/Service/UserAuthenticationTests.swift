@@ -26,14 +26,14 @@ class UserAuthenticationTests: XCTestCase {
     }
 
     func testThatSignInMethodCompletesWithAUserWhenAuthenticationIsSuccesfull() {
+        let fakeUser = MockUser()
         stub(mockFirebaseAuthentication) { (mock) in
             let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, password, completion) in
-                let fakeUser = User(email: email)
                 completion(fakeUser,nil)
             }))
         }
         serviceUnderTest?.signIn(withEmail: testEmail!, password: "") { (user, error) in
-            XCTAssertEqual(user as! User, User(email: self.testEmail!))
+            XCTAssertEqual(user!.uid , fakeUser.uid)
         }
         verify(mockFirebaseAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
     }
@@ -49,4 +49,8 @@ class UserAuthenticationTests: XCTestCase {
         }
         verify(mockFirebaseAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())
     }
+}
+
+class MockUser: FirUserProtocol {
+    var uid: String = "user"
 }
