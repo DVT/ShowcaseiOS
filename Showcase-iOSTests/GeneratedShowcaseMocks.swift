@@ -13,8 +13,8 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
     let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
 
     
-    // ["name": "dataReference", "stubType": "ProtocolToBeStubbedProperty", "@type": "InstanceVariable", "type": "DataReferenceable?", "isReadOnly": false, "accessibility": ""]
-     var dataReference: DataReferenceable? {
+    // ["name": "dataReference", "stubType": "ProtocolToBeStubbedProperty", "@type": "InstanceVariable", "type": "DataReferenceable", "isReadOnly": false, "accessibility": ""]
+     var dataReference: DataReferenceable {
         get {
             
             return cuckoo_manager.getter("dataReference", superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
@@ -69,7 +69,7 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 	        self.cuckoo_manager = manager
 	    }
 	    
-	    var dataReference: Cuckoo.ProtocolToBeStubbedProperty<MockContactUsInteractable, DataReferenceable?> {
+	    var dataReference: Cuckoo.ProtocolToBeStubbedProperty<MockContactUsInteractable, DataReferenceable> {
 	        return .init(manager: cuckoo_manager, name: "dataReference")
 	    }
 	    
@@ -97,7 +97,7 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 	    }
 	
 	    
-	    var dataReference: Cuckoo.VerifyProperty<DataReferenceable?> {
+	    var dataReference: Cuckoo.VerifyProperty<DataReferenceable> {
 	        return .init(manager: cuckoo_manager, name: "dataReference", callMatcher: callMatcher, sourceLocation: sourceLocation)
 	    }
 	    
@@ -119,9 +119,9 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 
  class ContactUsInteractableStub: ContactUsInteractable {
     
-     var dataReference: DataReferenceable? {
+     var dataReference: DataReferenceable {
         get {
-            return DefaultValueRegistry.defaultValue(for: (DataReferenceable?).self)
+            return DefaultValueRegistry.defaultValue(for: (DataReferenceable).self)
         }
         
         set { }
