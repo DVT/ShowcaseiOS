@@ -20,8 +20,5 @@ enum AppStoryBoard: String {
         let storyBoardID = viewControllerClass.storyBoardID
         return instance.instantiateViewController(withIdentifier: storyBoardID) as! T
     }
-    
-    func instantiateViewController() -> UIViewController? {
-        return instance.instantiateInitialViewController()
-    }
+
 }
