@@ -1,17 +1,17 @@
 //
-//  ViewController.swift
+//  LoginVC.swift
 //  Showcase-iOS
 //
-//  Created by pjapple on 2018/04/17.
+//  Created by Lehlohonolo Mbele on 2018/05/07.
 //  Copyright © 2018 DVT. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-}
 
+}

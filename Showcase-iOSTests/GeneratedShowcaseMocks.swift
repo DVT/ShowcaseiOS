@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2018-05-06 19:07:32 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2018-05-08 13:01:00 +0000
 
 
 import Cuckoo
@@ -148,7 +148,7 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2018-05-06 19:07:32 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2018-05-08 13:01:00 +0000
 
 
 import Cuckoo
@@ -259,7 +259,118 @@ class MockContactUsPresentable: ContactUsPresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2018-05-06 19:07:32 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/View/ContactUsPresenterViewable.swift at 2018-05-08 13:01:00 +0000
+
+
+import Cuckoo
+@testable import Showcase_iOS
+
+import Foundation
+
+class MockContactUsPresenterViewable: ContactUsPresenterViewable, Cuckoo.ProtocolMock {
+    typealias MocksType = ContactUsPresenterViewable
+    typealias Stubbing = __StubbingProxy_ContactUsPresenterViewable
+    typealias Verification = __VerificationProxy_ContactUsPresenterViewable
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
+
+    
+
+    
+
+    
+    // ["name": "showOnSuccess", "returnSignature": "", "fullyQualifiedName": "showOnSuccess(with: [OfficeViewModel])", "parameterSignature": "with officeViewModels: [OfficeViewModel]", "parameterSignatureWithoutNames": "officeViewModels: [OfficeViewModel]", "inputTypes": "[OfficeViewModel]", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "officeViewModels", "call": "with: officeViewModels", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("with"), name: "officeViewModels", type: "[OfficeViewModel]", range: CountableRange(81..<121), nameRange: CountableRange(81..<85))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func showOnSuccess(with officeViewModels: [OfficeViewModel])  {
+        
+            return cuckoo_manager.call("showOnSuccess(with: [OfficeViewModel])",
+                parameters: (officeViewModels),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "showOnFailure", "returnSignature": "", "fullyQualifiedName": "showOnFailure(with: Error)", "parameterSignature": "with error: Error", "parameterSignatureWithoutNames": "error: Error", "inputTypes": "Error", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "with: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("with"), name: "error", type: "Error", range: CountableRange(146..<163), nameRange: CountableRange(146..<150))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func showOnFailure(with error: Error)  {
+        
+            return cuckoo_manager.call("showOnFailure(with: Error)",
+                parameters: (error),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_ContactUsPresenterViewable: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func showOnSuccess<M1: Cuckoo.Matchable>(with officeViewModels: M1) -> Cuckoo.ProtocolStubNoReturnFunction<([OfficeViewModel])> where M1.MatchedType == [OfficeViewModel] {
+	        let matchers: [Cuckoo.ParameterMatcher<([OfficeViewModel])>] = [wrap(matchable: officeViewModels) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockContactUsPresenterViewable.self, method: "showOnSuccess(with: [OfficeViewModel])", parameterMatchers: matchers))
+	    }
+	    
+	    func showOnFailure<M1: Cuckoo.Matchable>(with error: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Error)> where M1.MatchedType == Error {
+	        let matchers: [Cuckoo.ParameterMatcher<(Error)>] = [wrap(matchable: error) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockContactUsPresenterViewable.self, method: "showOnFailure(with: Error)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_ContactUsPresenterViewable: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func showOnSuccess<M1: Cuckoo.Matchable>(with officeViewModels: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == [OfficeViewModel] {
+	        let matchers: [Cuckoo.ParameterMatcher<([OfficeViewModel])>] = [wrap(matchable: officeViewModels) { $0 }]
+	        return cuckoo_manager.verify("showOnSuccess(with: [OfficeViewModel])", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func showOnFailure<M1: Cuckoo.Matchable>(with error: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Error {
+	        let matchers: [Cuckoo.ParameterMatcher<(Error)>] = [wrap(matchable: error) { $0 }]
+	        return cuckoo_manager.verify("showOnFailure(with: Error)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class ContactUsPresenterViewableStub: ContactUsPresenterViewable {
+    
+
+    
+
+    
+     func showOnSuccess(with officeViewModels: [OfficeViewModel])  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func showOnFailure(with error: Error)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2018-05-08 13:01:00 +0000
 
 //
 //  HomePresenterInteractable.swift
@@ -350,7 +461,7 @@ class MockHomePresenterInteractable: HomePresenterInteractable, Cuckoo.ProtocolM
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2018-05-06 19:07:32 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2018-05-08 13:01:00 +0000
 
 //
 //  HomePresentable.swift
@@ -468,7 +579,125 @@ class MockHomePresentable: HomePresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-05-06 19:07:32 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2018-05-08 13:01:00 +0000
+
+//
+//  HomePresenterViewable.swift
+//  Showcase-iOS
+//
+//  Created by Edward Mtshweni on 2018/05/03.
+//  Copyright © 2018 DVT. All rights reserved.
+//
+
+import Cuckoo
+@testable import Showcase_iOS
+
+import Foundation
+
+class MockHomePresenterViewable: HomePresenterViewable, Cuckoo.ProtocolMock {
+    typealias MocksType = HomePresenterViewable
+    typealias Stubbing = __StubbingProxy_HomePresenterViewable
+    typealias Verification = __VerificationProxy_HomePresenterViewable
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
+
+    
+
+    
+
+    
+    // ["name": "showOnSuccess", "returnSignature": "", "fullyQualifiedName": "showOnSuccess(with: [ShowcaseAppViewModel])", "parameterSignature": "with showcaseApps: [ShowcaseAppViewModel]", "parameterSignatureWithoutNames": "showcaseApps: [ShowcaseAppViewModel]", "inputTypes": "[ShowcaseAppViewModel]", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "showcaseApps", "call": "with: showcaseApps", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("with"), name: "showcaseApps", type: "[ShowcaseAppViewModel]", range: CountableRange(228..<269), nameRange: CountableRange(228..<232))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func showOnSuccess(with showcaseApps: [ShowcaseAppViewModel])  {
+        
+            return cuckoo_manager.call("showOnSuccess(with: [ShowcaseAppViewModel])",
+                parameters: (showcaseApps),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "showOnFailure", "returnSignature": "", "fullyQualifiedName": "showOnFailure(with: DatabaseError)", "parameterSignature": "with error: DatabaseError", "parameterSignatureWithoutNames": "error: DatabaseError", "inputTypes": "DatabaseError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "with: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("with"), name: "error", type: "DatabaseError", range: CountableRange(294..<319), nameRange: CountableRange(294..<298))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func showOnFailure(with error: DatabaseError)  {
+        
+            return cuckoo_manager.call("showOnFailure(with: DatabaseError)",
+                parameters: (error),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_HomePresenterViewable: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func showOnSuccess<M1: Cuckoo.Matchable>(with showcaseApps: M1) -> Cuckoo.ProtocolStubNoReturnFunction<([ShowcaseAppViewModel])> where M1.MatchedType == [ShowcaseAppViewModel] {
+	        let matchers: [Cuckoo.ParameterMatcher<([ShowcaseAppViewModel])>] = [wrap(matchable: showcaseApps) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresenterViewable.self, method: "showOnSuccess(with: [ShowcaseAppViewModel])", parameterMatchers: matchers))
+	    }
+	    
+	    func showOnFailure<M1: Cuckoo.Matchable>(with error: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(DatabaseError)> where M1.MatchedType == DatabaseError {
+	        let matchers: [Cuckoo.ParameterMatcher<(DatabaseError)>] = [wrap(matchable: error) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresenterViewable.self, method: "showOnFailure(with: DatabaseError)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_HomePresenterViewable: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func showOnSuccess<M1: Cuckoo.Matchable>(with showcaseApps: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == [ShowcaseAppViewModel] {
+	        let matchers: [Cuckoo.ParameterMatcher<([ShowcaseAppViewModel])>] = [wrap(matchable: showcaseApps) { $0 }]
+	        return cuckoo_manager.verify("showOnSuccess(with: [ShowcaseAppViewModel])", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func showOnFailure<M1: Cuckoo.Matchable>(with error: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == DatabaseError {
+	        let matchers: [Cuckoo.ParameterMatcher<(DatabaseError)>] = [wrap(matchable: error) { $0 }]
+	        return cuckoo_manager.verify("showOnFailure(with: DatabaseError)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class HomePresenterViewableStub: HomePresenterViewable {
+    
+
+    
+
+    
+     func showOnSuccess(with showcaseApps: [ShowcaseAppViewModel])  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func showOnFailure(with error: DatabaseError)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-05-08 13:01:00 +0000
 
 
 import Cuckoo
@@ -608,7 +837,7 @@ class MockDataReferenceable: DataReferenceable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2018-05-06 19:07:32 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2018-05-08 13:01:00 +0000
 
 //
 //  PresenterInteractable.swift
@@ -699,7 +928,7 @@ class MockLoginPresenterInteractable: LoginPresenterInteractable, Cuckoo.Protoco
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2018-05-06 19:07:32 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2018-05-08 13:01:00 +0000
 
 //
 //  InteractorPresentable.swift
@@ -817,7 +1046,7 @@ class MockLoginInteractorPresentable: LoginInteractorPresentable, Cuckoo.Protoco
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2018-05-06 19:07:32 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2018-05-08 13:01:00 +0000
 
 //
 //  FirebaseAuthenticating.swift
@@ -908,7 +1137,7 @@ class MockFirebaseLoginAuthenticating: FirebaseLoginAuthenticating, Cuckoo.Proto
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2018-05-06 19:07:32 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2018-05-08 13:01:00 +0000
 
 //
 //  Authenticating.swift
@@ -999,7 +1228,7 @@ class MockLoginAuthenticating: LoginAuthenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2018-05-06 19:07:32 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2018-05-08 13:01:00 +0000
 
 //
 //  PresenterViewable.swift
@@ -1198,7 +1427,7 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-05-06 19:07:32 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-05-08 13:01:00 +0000
 
 //
 //  Viewable.swift
