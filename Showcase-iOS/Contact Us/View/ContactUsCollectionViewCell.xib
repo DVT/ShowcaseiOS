@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.otf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ContactUsCollectionViewCell" customModule="Showcase_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="236"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="345" height="236"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3UM-WF-QqQ">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="ByE-1f-etB"/>
+                        </constraints>
+                    </imageView>
+                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mfg-n0-Sbb">
+                        <rect key="frame" x="110" y="0.0" width="235" height="100"/>
+                    </mapView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johannesburg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yt-pM-IGt">
+                        <rect key="frame" x="0.0" y="115" width="126" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="2y3-f3-j0a"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9E-fK-Qk6">
+                        <rect key="frame" x="220" y="115" width="29" height="22"/>
+                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                        <state key="normal" title="Call"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Yl-6r-XEu">
+                        <rect key="frame" x="279" y="115" width="66" height="22"/>
+                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                        <state key="normal" title="Navigate"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecy-VL-3V6">
+                        <rect key="frame" x="0.0" y="140" width="218" height="75"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a49-CS-4y5">
+                        <rect key="frame" x="150" y="115" width="40" height="22"/>
+                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                        <state key="normal" title="Email"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="3UM-WF-QqQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0qs-Ww-gve"/>
+                <constraint firstItem="ecy-VL-3V6" firstAttribute="top" secondItem="a49-CS-4y5" secondAttribute="bottom" constant="3" id="4Li-Vl-r9j"/>
+                <constraint firstAttribute="trailing" secondItem="ecy-VL-3V6" secondAttribute="trailing" constant="127" id="5Yj-6S-7gH"/>
+                <constraint firstAttribute="bottom" secondItem="C9E-fK-Qk6" secondAttribute="bottom" constant="99" id="5hn-zm-ptJ"/>
+                <constraint firstItem="3UM-WF-QqQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7ji-K0-pLr"/>
+                <constraint firstItem="C9E-fK-Qk6" firstAttribute="top" secondItem="Mfg-n0-Sbb" secondAttribute="bottom" constant="15" id="Bl0-EB-NAb"/>
+                <constraint firstItem="3UM-WF-QqQ" firstAttribute="top" secondItem="Mfg-n0-Sbb" secondAttribute="top" id="Bzs-bC-VUd"/>
+                <constraint firstItem="0Yl-6r-XEu" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="153" id="Dxo-u7-a2y"/>
+                <constraint firstItem="a49-CS-4y5" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="24" id="Elh-sU-wtP"/>
+                <constraint firstAttribute="bottom" secondItem="ecy-VL-3V6" secondAttribute="bottom" constant="21" id="GeB-lv-pQr"/>
+                <constraint firstItem="7yt-pM-IGt" firstAttribute="leading" secondItem="ecy-VL-3V6" secondAttribute="leading" id="Go2-yo-VPS"/>
+                <constraint firstItem="C9E-fK-Qk6" firstAttribute="leading" secondItem="a49-CS-4y5" secondAttribute="trailing" constant="30" id="OF8-rV-ijf"/>
+                <constraint firstItem="ecy-VL-3V6" firstAttribute="top" secondItem="7yt-pM-IGt" secondAttribute="bottom" constant="10" id="OFg-Om-UPW"/>
+                <constraint firstAttribute="trailing" secondItem="0Yl-6r-XEu" secondAttribute="trailing" id="Q1K-CU-YSO"/>
+                <constraint firstItem="a49-CS-4y5" firstAttribute="baseline" secondItem="C9E-fK-Qk6" secondAttribute="firstBaseline" id="Q4d-Tj-y8G"/>
+                <constraint firstItem="ecy-VL-3V6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YHy-5w-QMy"/>
+                <constraint firstItem="C9E-fK-Qk6" firstAttribute="baseline" secondItem="0Yl-6r-XEu" secondAttribute="baseline" id="ZZW-iP-l3D"/>
+                <constraint firstItem="a49-CS-4y5" firstAttribute="top" secondItem="Mfg-n0-Sbb" secondAttribute="bottom" constant="15" id="cSg-iD-Ib7"/>
+                <constraint firstItem="C9E-fK-Qk6" firstAttribute="baseline" secondItem="0Yl-6r-XEu" secondAttribute="firstBaseline" id="f37-fR-Vhk"/>
+                <constraint firstItem="C9E-fK-Qk6" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="94" id="gBi-bX-az5"/>
+                <constraint firstItem="0Yl-6r-XEu" firstAttribute="leading" secondItem="C9E-fK-Qk6" secondAttribute="trailing" constant="30" id="lGB-yF-Zdj"/>
+                <constraint firstItem="0Yl-6r-XEu" firstAttribute="trailing" secondItem="Mfg-n0-Sbb" secondAttribute="trailing" id="oRw-Tq-yJv"/>
+                <constraint firstItem="a49-CS-4y5" firstAttribute="baseline" secondItem="C9E-fK-Qk6" secondAttribute="baseline" id="owh-e6-cHe"/>
+                <constraint firstItem="0Yl-6r-XEu" firstAttribute="top" secondItem="Mfg-n0-Sbb" secondAttribute="bottom" constant="15" id="qtZ-fF-iSy"/>
+                <constraint firstItem="7yt-pM-IGt" firstAttribute="top" secondItem="a49-CS-4y5" secondAttribute="top" id="ueF-as-Yu5"/>
+                <constraint firstItem="Mfg-n0-Sbb" firstAttribute="leading" secondItem="3UM-WF-QqQ" secondAttribute="trailing" constant="10" id="vh9-wI-wY9"/>
+                <constraint firstItem="C9E-fK-Qk6" firstAttribute="baseline" secondItem="a49-CS-4y5" secondAttribute="firstBaseline" id="wjf-mh-aQj"/>
+                <constraint firstItem="7yt-pM-IGt" firstAttribute="top" secondItem="3UM-WF-QqQ" secondAttribute="bottom" constant="15" id="zRV-1y-Z92"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="349" height="236"/>
+            <point key="canvasLocation" x="-14.5" y="-155"/>
+        </collectionViewCell>
+    </objects>
+</document>

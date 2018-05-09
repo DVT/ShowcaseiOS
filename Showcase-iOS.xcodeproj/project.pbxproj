@@ -18,6 +18,9 @@
 		A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */; };
 		A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34475432088B318001734CA /* DatabaseReferenceTests.swift */; };
 		A36A55562099E4990037C4BF /* DataReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A55552099E4990037C4BF /* DataReferenceable.swift */; };
+		A3B502FB20A2FD3700FA8546 /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3B502FA20A2FD3700FA8546 /* Poppins-Medium.otf */; };
+		A3B502FE20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B502FC20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift */; };
+		A3B502FF20A31CAE00FA8546 /* ContactUsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3B502FD20A31CAE00FA8546 /* ContactUsCollectionViewCell.xib */; };
 		A3BA5EC6208F50FA00E0D34F /* ContactUsInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA5EC5208F50FA00E0D34F /* ContactUsInteractable.swift */; };
 		A3BA5EC9208F54BB00E0D34F /* ContactUsPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA5EC8208F54BB00E0D34F /* ContactUsPresentable.swift */; };
 		A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA5ECA208F631100E0D34F /* ContactUsInteractableImplementation.swift */; };
@@ -108,6 +111,9 @@
 		A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Extension.swift"; sourceTree = "<group>"; };
 		A34475432088B318001734CA /* DatabaseReferenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceTests.swift; sourceTree = "<group>"; };
 		A36A55552099E4990037C4BF /* DataReferenceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceable.swift; sourceTree = "<group>"; };
+		A3B502FA20A2FD3700FA8546 /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
+		A3B502FC20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A3B502FD20A31CAE00FA8546 /* ContactUsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactUsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A3BA5EC5208F50FA00E0D34F /* ContactUsInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsInteractable.swift; sourceTree = "<group>"; };
 		A3BA5EC8208F54BB00E0D34F /* ContactUsPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPresentable.swift; sourceTree = "<group>"; };
 		A3BA5ECA208F631100E0D34F /* ContactUsInteractableImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsInteractableImplementation.swift; sourceTree = "<group>"; };
@@ -212,6 +218,7 @@
 		99FB7FE62085F25100B300BA /* Showcase-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A3B502F920A2FD1400FA8546 /* Utils */,
 				BC02347420A06DD0006E6E92 /* Router */,
 				FD37E2812099DA20006EA459 /* Dashboard */,
 				BC4D82C8208F599E003EFB06 /* Helpers */,
@@ -306,6 +313,14 @@
 			path = "Contact Us";
 			sourceTree = "<group>";
 		};
+		A3B502F920A2FD1400FA8546 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A3B502FA20A2FD3700FA8546 /* Poppins-Medium.otf */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		A3BA5EC4208F4FF200E0D34F /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +351,8 @@
 			isa = PBXGroup;
 			children = (
 				A3E71970209B1A200081D5C1 /* ContactUsPresenterViewable.swift */,
+				A3B502FC20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift */,
+				A3B502FD20A31CAE00FA8546 /* ContactUsCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -738,7 +755,9 @@
 				99FB7FF22085F25200B300BA /* LaunchScreen.storyboard in Resources */,
 				BC02346920A0472A006E6E92 /* About.storyboard in Resources */,
 				99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */,
+				A3B502FB20A2FD3700FA8546 /* Poppins-Medium.otf in Resources */,
 				99FB7FEF2085F25200B300BA /* Assets.xcassets in Resources */,
+				A3B502FF20A31CAE00FA8546 /* ContactUsCollectionViewCell.xib in Resources */,
 				BC02346720A04661006E6E92 /* Home.storyboard in Resources */,
 				BC02346B20A0474D006E6E92 /* Contact.storyboard in Resources */,
 				BC02346520A045DE006E6E92 /* Login.storyboard in Resources */,
@@ -901,6 +920,7 @@
 				BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */,
 				A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */,
 				BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */,
+				A3B502FE20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift in Sources */,
 				FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */,
 				FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */,
 				A3E71966209AFEE10081D5C1 /* (null) in Sources */,
