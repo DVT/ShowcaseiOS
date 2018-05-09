@@ -9,5 +9,8 @@
 import Foundation
 
 protocol LoginPresentable {
+    var loginViewer: LoginPresenterViewable? { get set}
+    var loginInteractor: LoginPresenterInteractable? { get set}
+    var loginRouter: Routable? { get set}
     func login(withEmail email: String, password: String)
 }

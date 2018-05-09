@@ -7,10 +7,14 @@
 //
 
 import Foundation
+import FirebaseAuth
 import UIKit
 
 struct LoginRouter: Routable {
     func createModule() -> UIViewController {
-        return LoginVC.instantiate(fromAppStoryboard: .Login)
+        let loginView = DependencyContainer()
+                        .container?
+                        .resolve(LoginPresenterViewable.self) as! LoginVC
+        return loginView
     }
 }
