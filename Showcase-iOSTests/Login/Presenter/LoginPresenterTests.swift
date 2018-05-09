@@ -20,7 +20,9 @@ class LoginPresenterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        systemUnderTest = LoginPresenter(mockLoginViewer, mockLoginInteractor)
+        systemUnderTest = LoginPresenter()
+        systemUnderTest.loginViewer = mockLoginViewer
+        systemUnderTest.loginInteractor = mockLoginInteractor
     }
 
     func testThatTheSignInMethodOfTheLoginInteractorGetsCalled() {
