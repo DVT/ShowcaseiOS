@@ -24,6 +24,7 @@ class DependencyContainer {
             loginPresenter.loginViewer = loginView
             loginPresenter.loginInteractor = loginInteractor
             loginView.loginPresenter = loginPresenter
+            loginView.notificationCenter = NotificationCenter.default
             return loginView 
         }
         return dependencyContainer
