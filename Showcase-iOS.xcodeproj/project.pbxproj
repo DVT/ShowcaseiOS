@@ -18,6 +18,12 @@
 		A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */; };
 		A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34475432088B318001734CA /* DatabaseReferenceTests.swift */; };
 		A36A55562099E4990037C4BF /* DataReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A55552099E4990037C4BF /* DataReferenceable.swift */; };
+		A389D66320A59471008DB6FE /* FirebaseStorage+FIRStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66220A59471008DB6FE /* FirebaseStorage+FIRStoring.swift */; };
+		A389D66520A594EB008DB6FE /* FIRStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66420A594EB008DB6FE /* FIRStoring.swift */; };
+		A389D66720A59556008DB6FE /* StorageReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66620A59556008DB6FE /* StorageReferenceable.swift */; };
+		A389D66920A595F7008DB6FE /* StorageReference+StorageReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66820A595F7008DB6FE /* StorageReference+StorageReferenceable.swift */; };
+		A389D66C20A598B9008DB6FE /* FIRImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66B20A598B9008DB6FE /* FIRImageFetcher.swift */; };
+		A389D67520A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D67420A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift */; };
 		A3BA5EC6208F50FA00E0D34F /* ContactUsInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA5EC5208F50FA00E0D34F /* ContactUsInteractable.swift */; };
 		A3BA5EC9208F54BB00E0D34F /* ContactUsPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA5EC8208F54BB00E0D34F /* ContactUsPresentable.swift */; };
 		A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA5ECA208F631100E0D34F /* ContactUsInteractableImplementation.swift */; };
@@ -108,6 +114,12 @@
 		A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Extension.swift"; sourceTree = "<group>"; };
 		A34475432088B318001734CA /* DatabaseReferenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceTests.swift; sourceTree = "<group>"; };
 		A36A55552099E4990037C4BF /* DataReferenceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceable.swift; sourceTree = "<group>"; };
+		A389D66220A59471008DB6FE /* FirebaseStorage+FIRStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseStorage+FIRStoring.swift"; sourceTree = "<group>"; };
+		A389D66420A594EB008DB6FE /* FIRStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRStoring.swift; sourceTree = "<group>"; };
+		A389D66620A59556008DB6FE /* StorageReferenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReferenceable.swift; sourceTree = "<group>"; };
+		A389D66820A595F7008DB6FE /* StorageReference+StorageReferenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+StorageReferenceable.swift"; sourceTree = "<group>"; };
+		A389D66B20A598B9008DB6FE /* FIRImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRImageFetcher.swift; sourceTree = "<group>"; };
+		A389D67420A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageFetcherTests.swift; sourceTree = "<group>"; };
 		A3BA5EC5208F50FA00E0D34F /* ContactUsInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsInteractable.swift; sourceTree = "<group>"; };
 		A3BA5EC8208F54BB00E0D34F /* ContactUsPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPresentable.swift; sourceTree = "<group>"; };
 		A3BA5ECA208F631100E0D34F /* ContactUsInteractableImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsInteractableImplementation.swift; sourceTree = "<group>"; };
@@ -237,6 +249,7 @@
 		99FB7FFB2085F25300B300BA /* Showcase-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				A389D66D20A59EDF008DB6FE /* FIRStorageTests */,
 				A3DBE44B209F8BC300561CE0 /* GeneratedShowcaseMocks.swift */,
 				FD37E28D2099EC5F006EA459 /* Dashboard */,
 				A36AE4872091B32A008ABB67 /* Contact Us */,
@@ -273,6 +286,8 @@
 		A33D79AA2088795C00D272E7 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				A389D66A20A5989B008DB6FE /* ImageFetcher */,
+				A389D66120A5943F008DB6FE /* Storage */,
 				A33D79AB208879A800D272E7 /* Service */,
 			);
 			path = Firebase;
@@ -304,6 +319,33 @@
 				A3E71977209B49A50081D5C1 /* OfficeViewModelTests */,
 			);
 			path = "Contact Us";
+			sourceTree = "<group>";
+		};
+		A389D66120A5943F008DB6FE /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				A389D66220A59471008DB6FE /* FirebaseStorage+FIRStoring.swift */,
+				A389D66420A594EB008DB6FE /* FIRStoring.swift */,
+				A389D66620A59556008DB6FE /* StorageReferenceable.swift */,
+				A389D66820A595F7008DB6FE /* StorageReference+StorageReferenceable.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		A389D66A20A5989B008DB6FE /* ImageFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				A389D66B20A598B9008DB6FE /* FIRImageFetcher.swift */,
+			);
+			path = ImageFetcher;
+			sourceTree = "<group>";
+		};
+		A389D66D20A59EDF008DB6FE /* FIRStorageTests */ = {
+			isa = PBXGroup;
+			children = (
+				A389D67420A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift */,
+			);
+			path = FIRStorageTests;
 			sourceTree = "<group>";
 		};
 		A3BA5EC4208F4FF200E0D34F /* Interactor */ = {
@@ -869,7 +911,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseLoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginInteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterViewable.swift)\"";
+			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseLoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginInteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FIRStoring.swift)\" \\\n\"$INPUT_DIR/$(find . -name StorageReferenceable.swift)\"";
 		};
 		BD4AD3F8FC636C5DD65094C4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -898,6 +940,7 @@
 			files = (
 				BC6D07412092481100FFE9DD /* ErrorMessage.swift in Sources */,
 				A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */,
+				A389D66920A595F7008DB6FE /* StorageReference+StorageReferenceable.swift in Sources */,
 				BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */,
 				A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */,
 				BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */,
@@ -913,11 +956,14 @@
 				FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */,
 				A3BA5EC9208F54BB00E0D34F /* ContactUsPresentable.swift in Sources */,
 				BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */,
+				A389D66720A59556008DB6FE /* StorageReferenceable.swift in Sources */,
 				BC02347B20A071D5006E6E92 /* LoginRouter.swift in Sources */,
 				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
+				A389D66C20A598B9008DB6FE /* FIRImageFetcher.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
 				FDE1AE7B209B26A300D383C4 /* HomePresenterViewable.swift in Sources */,
 				A36A55562099E4990037C4BF /* DataReferenceable.swift in Sources */,
+				A389D66520A594EB008DB6FE /* FIRStoring.swift in Sources */,
 				FDE1AE7E209B2D5A00D383C4 /* ShowcaseAppViewModel.swift in Sources */,
 				BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */,
 				BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */,
@@ -932,6 +978,7 @@
 				FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */,
 				A339977F208D12D8004776AB /* Office.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
+				A389D66320A59471008DB6FE /* FirebaseStorage+FIRStoring.swift in Sources */,
 				BC02347620A06DE5006E6E92 /* Routable.swift in Sources */,
 				A3BA5EC6208F50FA00E0D34F /* ContactUsInteractable.swift in Sources */,
 				FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */,
@@ -961,6 +1008,7 @@
 				A30087C2209718F70095FAC1 /* ContactUsInteractableTests.swift in Sources */,
 				BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */,
 				BC02348020A1CFF8006E6E92 /* LoginRouterTests.swift in Sources */,
+				A389D67520A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift in Sources */,
 				BCE5DACE208A0908000458FD /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
