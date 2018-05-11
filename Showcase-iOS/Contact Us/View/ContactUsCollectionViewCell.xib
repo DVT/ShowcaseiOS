@@ -46,11 +46,17 @@
                         <rect key="frame" x="220" y="115" width="29" height="22"/>
                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                         <state key="normal" title="Call"/>
+                        <connections>
+                            <action selector="callPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="vRT-Zn-9ho"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Yl-6r-XEu">
                         <rect key="frame" x="279" y="115" width="66" height="22"/>
                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                         <state key="normal" title="Navigate"/>
+                        <connections>
+                            <action selector="navigatePressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Neq-Nl-syc"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecy-VL-3V6">
                         <rect key="frame" x="0.0" y="140" width="218" height="75"/>
@@ -62,6 +68,9 @@
                         <rect key="frame" x="150" y="115" width="40" height="22"/>
                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                         <state key="normal" title="Email"/>
+                        <connections>
+                            <action selector="emailPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Wi8-MX-3ns"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -97,7 +106,13 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="349" height="236"/>
-            <point key="canvasLocation" x="-14.5" y="-155"/>
+            <connections>
+                <outlet property="branch" destination="7yt-pM-IGt" id="akz-qu-b9Q"/>
+                <outlet property="image" destination="3UM-WF-QqQ" id="nrh-Ac-w4X"/>
+                <outlet property="locationDescription" destination="ecy-VL-3V6" id="6pp-vK-FUS"/>
+                <outlet property="map" destination="Mfg-n0-Sbb" id="kfB-fg-cvH"/>
+            </connections>
+            <point key="canvasLocation" x="127" y="-165"/>
         </collectionViewCell>
     </objects>
 </document>
