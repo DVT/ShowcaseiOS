@@ -8,25 +8,21 @@
 import Foundation
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var missingLoginDetailsLabel: UILabel!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var loginContainer: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginScrollView: UIScrollView!
     weak var keyBoardDelegate: KeyBoardDelegate!
     weak var keyBoardObserver: KeyboardObservable!
     weak var notificationCenter: NotificationCenterDelegate?
-    
-    // TODO: Use Swinject to Inject a concrete NotificationCenter
-    
-
     var loginPresenter: LoginPresentable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameTextField.delegate = self
+        emailTextField.delegate = self
         passwordTextField.delegate = self
         keyBoardDelegate = self
         keyBoardObserver = self
@@ -43,9 +39,16 @@ class LoginVC: UIViewController {
         super.viewWillDisappear(animated)
         keyBoardObserver.removeObservers()
     }
+    
+    @IBAction func didTapLoginButton(_ sender: Any) {
+        guard let email = self.emailTextField.text else { return }
+        guard let password = self.passwordTextField.text else { return}
+        self.loginPresenter?.login(withEmail: email, password: password)
+    }
+    
 }
 
-extension LoginVC: KeyBoardDelegate {
+extension LoginViewController: KeyBoardDelegate {
     
     @objc func keyBoardWillShow(_ notification: Notification) {
         if let keyBoardHeight = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.height {
@@ -83,7 +86,7 @@ extension LoginVC: KeyBoardDelegate {
     
 }
 
-extension LoginVC: LoginPresenterViewable {
+extension LoginViewController: LoginPresenterViewable {
     
     func showEmailValidationFailure(withError error: AuthenticationError) {
     }
@@ -94,7 +97,7 @@ extension LoginVC: LoginPresenterViewable {
     func showInvalidInputsFailure(withError error: AuthenticationError) {
     }
     
-    func showAuthenticationFailure(withMessage: String?) {
+    func showAuthenticationFailure(withMessage message: String?) {
     }
     
     func showSuccess() {
@@ -102,7 +105,7 @@ extension LoginVC: LoginPresenterViewable {
     
 }
 
-extension LoginVC: KeyboardObservable {
+extension LoginViewController: KeyboardObservable {
     
     func addObservers() {
         notificationCenter?.addObserver(self, selector: #selector(keyBoardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -114,7 +117,7 @@ extension LoginVC: KeyboardObservable {
     }
 }
 
-extension LoginVC: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         hideKeyboard(for: textField)
         return true

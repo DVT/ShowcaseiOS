@@ -14,7 +14,7 @@ struct LoginRouter: Routable {
     func createModule() -> UIViewController {
         let loginView = DependencyContainer()
                         .container?
-                        .resolve(LoginPresenterViewable.self) as! LoginVC
+                        .resolve(LoginPresenterViewable.self) as! LoginViewController
         return loginView
     }
 }

@@ -26,7 +26,7 @@ class LoginRouterTests: XCTestCase {
     
     func testThatTheResultingViewcontrollerFromLoginRouterHasCorrectIdentifiier() {
         let resultLoginVC = systemUnderTest.createModule()
-        XCTAssertTrue(resultLoginVC.restorationIdentifier == "LoginVC")
+        XCTAssertTrue(resultLoginVC.restorationIdentifier == "LoginViewController")
     }
     
 }

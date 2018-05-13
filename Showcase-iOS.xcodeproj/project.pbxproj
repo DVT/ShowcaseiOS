@@ -35,7 +35,7 @@
 		BC02346720A04661006E6E92 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC02346620A04661006E6E92 /* Home.storyboard */; };
 		BC02346920A0472A006E6E92 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC02346820A0472A006E6E92 /* About.storyboard */; };
 		BC02346B20A0474D006E6E92 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC02346A20A0474D006E6E92 /* Contact.storyboard */; };
-		BC02346D20A049BF006E6E92 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346C20A049BF006E6E92 /* LoginVC.swift */; };
+		BC02346D20A049BF006E6E92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346C20A049BF006E6E92 /* LoginViewController.swift */; };
 		BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */; };
 		BC02347320A051B2006E6E92 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */; };
 		BC02347620A06DE5006E6E92 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02347520A06DE5006E6E92 /* Routable.swift */; };
@@ -45,9 +45,9 @@
 		BC31C0FA20A4697100F8B543 /* KeyboardObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EC420A4687300CBBE56 /* KeyboardObservable.swift */; };
 		BC31C0FC20A46FB400F8B543 /* NotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC31C0FB20A46FB400F8B543 /* NotificationCenterDelegate.swift */; };
 		BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */; };
+		BC425EB120A2E7E100CBBE56 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EB020A2E7E100CBBE56 /* DependencyContainer.swift */; };
 		BC425EBD20A45D0E00CBBE56 /* CurvedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */; };
 		BC425EC020A461CE00CBBE56 /* LoginVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBF20A461CE00CBBE56 /* LoginVCTests.swift */; };
-		BC425EB120A2E7E100CBBE56 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EB020A2E7E100CBBE56 /* DependencyContainer.swift */; };
 		BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */; };
 		BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */; };
 		BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82C4208F4CB8003EFB06 /* LoginPresenterTests.swift */; };
@@ -130,7 +130,7 @@
 		BC02346620A04661006E6E92 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BC02346820A0472A006E6E92 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		BC02346A20A0474D006E6E92 /* Contact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
-		BC02346C20A049BF006E6E92 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		BC02346C20A049BF006E6E92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStoryboard+Enum.swift"; sourceTree = "<group>"; };
 		BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		BC02347520A06DE5006E6E92 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
@@ -138,11 +138,11 @@
 		BC02347F20A1CFF8006E6E92 /* LoginRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouterTests.swift; sourceTree = "<group>"; };
 		BC31C0FB20A46FB400F8B543 /* NotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterDelegate.swift; sourceTree = "<group>"; };
 		BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUserProtocol.swift; sourceTree = "<group>"; };
+		BC425EB020A2E7E100CBBE56 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedButton.swift; sourceTree = "<group>"; };
 		BC425EBF20A461CE00CBBE56 /* LoginVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCTests.swift; sourceTree = "<group>"; };
 		BC425EC220A4675800CBBE56 /* KeyBoardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardDelegate.swift; sourceTree = "<group>"; };
 		BC425EC420A4687300CBBE56 /* KeyboardObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObservable.swift; sourceTree = "<group>"; };
-		BC425EB020A2E7E100CBBE56 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentable.swift; sourceTree = "<group>"; };
 		BC4D82C4208F4CB8003EFB06 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
@@ -417,6 +417,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		BC425EAF20A2E7C000CBBE56 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				BC425EB020A2E7E100CBBE56 /* DependencyContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
 		BC425EBB20A45CDA00CBBE56 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,14 +452,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BC425EAF20A2E7C000CBBE56 /* Container */ = {
-			isa = PBXGroup;
-			children = (
-				BC425EB020A2E7E100CBBE56 /* DependencyContainer.swift */,
-			);
-			path = Container;
-			sourceTree = "<group>";
-		};
 		BC4D82C1208F4C87003EFB06 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,7 +477,7 @@
 				BC425EC120A4673900CBBE56 /* Extensions */,
 				BC425EBB20A45CDA00CBBE56 /* Custom Views */,
 				A3DBE449209F891600561CE0 /* LoginPresenterViewable.swift */,
-				BC02346C20A049BF006E6E92 /* LoginVC.swift */,
+				BC02346C20A049BF006E6E92 /* LoginViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -960,7 +960,7 @@
 				BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
 				A3DBE44A209F891600561CE0 /* LoginPresenterViewable.swift in Sources */,
-				BC02346D20A049BF006E6E92 /* LoginVC.swift in Sources */,
+				BC02346D20A049BF006E6E92 /* LoginViewController.swift in Sources */,
 				FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */,
 				A3BA5EC9208F54BB00E0D34F /* ContactUsPresentable.swift in Sources */,
 				BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */,

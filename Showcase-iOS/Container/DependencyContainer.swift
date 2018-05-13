@@ -14,7 +14,7 @@ class DependencyContainer {
     var container: Container? {
         let dependencyContainer = Container()
         dependencyContainer.register(LoginPresenterViewable.self) { r in
-            let loginView: LoginVC = LoginVC.instantiate(fromAppStoryboard: .Login)
+            let loginView: LoginViewController = LoginViewController.instantiate(fromAppStoryboard: .Login)
             let loginPresenter = LoginPresenter()
             let loginInteractor = LoginInteractor()
             let userAuthenticator = UserAuthentication(Auth.auth())
