@@ -18,7 +18,7 @@
 		A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */; };
 		A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34475432088B318001734CA /* DatabaseReferenceTests.swift */; };
 		A36A55562099E4990037C4BF /* DataReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A55552099E4990037C4BF /* DataReferenceable.swift */; };
-		A389D66320A59471008DB6FE /* FirebaseStorage+FIRStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66220A59471008DB6FE /* FirebaseStorage+FIRStoring.swift */; };
+		A389D66320A59471008DB6FE /* FirebaseStorageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66220A59471008DB6FE /* FirebaseStorageExtension.swift */; };
 		A389D66520A594EB008DB6FE /* FIRStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66420A594EB008DB6FE /* FIRStoring.swift */; };
 		A389D66720A59556008DB6FE /* StorageReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66620A59556008DB6FE /* StorageReferenceable.swift */; };
 		A389D66920A595F7008DB6FE /* StorageReference+StorageReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66820A595F7008DB6FE /* StorageReference+StorageReferenceable.swift */; };
@@ -114,7 +114,7 @@
 		A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Extension.swift"; sourceTree = "<group>"; };
 		A34475432088B318001734CA /* DatabaseReferenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceTests.swift; sourceTree = "<group>"; };
 		A36A55552099E4990037C4BF /* DataReferenceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceable.swift; sourceTree = "<group>"; };
-		A389D66220A59471008DB6FE /* FirebaseStorage+FIRStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseStorage+FIRStoring.swift"; sourceTree = "<group>"; };
+		A389D66220A59471008DB6FE /* FirebaseStorageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageExtension.swift; sourceTree = "<group>"; };
 		A389D66420A594EB008DB6FE /* FIRStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRStoring.swift; sourceTree = "<group>"; };
 		A389D66620A59556008DB6FE /* StorageReferenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReferenceable.swift; sourceTree = "<group>"; };
 		A389D66820A595F7008DB6FE /* StorageReference+StorageReferenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+StorageReferenceable.swift"; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 		A389D66120A5943F008DB6FE /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				A389D66220A59471008DB6FE /* FirebaseStorage+FIRStoring.swift */,
+				A389D66220A59471008DB6FE /* FirebaseStorageExtension.swift */,
 				A389D66420A594EB008DB6FE /* FIRStoring.swift */,
 				A389D66620A59556008DB6FE /* StorageReferenceable.swift */,
 				A389D66820A595F7008DB6FE /* StorageReference+StorageReferenceable.swift */,
@@ -978,7 +978,7 @@
 				FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */,
 				A339977F208D12D8004776AB /* Office.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
-				A389D66320A59471008DB6FE /* FirebaseStorage+FIRStoring.swift in Sources */,
+				A389D66320A59471008DB6FE /* FirebaseStorageExtension.swift in Sources */,
 				BC02347620A06DE5006E6E92 /* Routable.swift in Sources */,
 				A3BA5EC6208F50FA00E0D34F /* ContactUsInteractable.swift in Sources */,
 				FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */,
