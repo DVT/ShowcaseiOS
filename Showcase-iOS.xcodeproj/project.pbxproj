@@ -21,7 +21,7 @@
 		A389D66320A59471008DB6FE /* FirebaseStorageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66220A59471008DB6FE /* FirebaseStorageExtension.swift */; };
 		A389D66520A594EB008DB6FE /* FIRStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66420A594EB008DB6FE /* FIRStoring.swift */; };
 		A389D66720A59556008DB6FE /* StorageReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66620A59556008DB6FE /* StorageReferenceable.swift */; };
-		A389D66920A595F7008DB6FE /* StorageReference+StorageReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66820A595F7008DB6FE /* StorageReference+StorageReferenceable.swift */; };
+		A389D66920A595F7008DB6FE /* StorageReferenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66820A595F7008DB6FE /* StorageReferenceExtension.swift */; };
 		A389D66C20A598B9008DB6FE /* FIRImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66B20A598B9008DB6FE /* FIRImageFetcher.swift */; };
 		A389D67520A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D67420A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift */; };
 		A3BA5EC6208F50FA00E0D34F /* ContactUsInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA5EC5208F50FA00E0D34F /* ContactUsInteractable.swift */; };
@@ -117,7 +117,7 @@
 		A389D66220A59471008DB6FE /* FirebaseStorageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageExtension.swift; sourceTree = "<group>"; };
 		A389D66420A594EB008DB6FE /* FIRStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRStoring.swift; sourceTree = "<group>"; };
 		A389D66620A59556008DB6FE /* StorageReferenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReferenceable.swift; sourceTree = "<group>"; };
-		A389D66820A595F7008DB6FE /* StorageReference+StorageReferenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+StorageReferenceable.swift"; sourceTree = "<group>"; };
+		A389D66820A595F7008DB6FE /* StorageReferenceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReferenceExtension.swift; sourceTree = "<group>"; };
 		A389D66B20A598B9008DB6FE /* FIRImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRImageFetcher.swift; sourceTree = "<group>"; };
 		A389D67420A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageFetcherTests.swift; sourceTree = "<group>"; };
 		A3BA5EC5208F50FA00E0D34F /* ContactUsInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsInteractable.swift; sourceTree = "<group>"; };
@@ -327,7 +327,7 @@
 				A389D66220A59471008DB6FE /* FirebaseStorageExtension.swift */,
 				A389D66420A594EB008DB6FE /* FIRStoring.swift */,
 				A389D66620A59556008DB6FE /* StorageReferenceable.swift */,
-				A389D66820A595F7008DB6FE /* StorageReference+StorageReferenceable.swift */,
+				A389D66820A595F7008DB6FE /* StorageReferenceExtension.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -940,7 +940,7 @@
 			files = (
 				BC6D07412092481100FFE9DD /* ErrorMessage.swift in Sources */,
 				A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */,
-				A389D66920A595F7008DB6FE /* StorageReference+StorageReferenceable.swift in Sources */,
+				A389D66920A595F7008DB6FE /* StorageReferenceExtension.swift in Sources */,
 				BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */,
 				A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */,
 				BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */,
