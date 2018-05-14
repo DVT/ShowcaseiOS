@@ -69,7 +69,7 @@ DEPENDENCIES:
   - Swinject
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Crashlytics
     - Cuckoo
     - Fabric
@@ -113,4 +113,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: dea5039611b3a7a282ccb1a6e6a4dd99cd188ad1
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2

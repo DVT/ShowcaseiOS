@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2018-05-14 13:59:05 +0000
 
 
 import Cuckoo
@@ -12,38 +12,6 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
     typealias Verification = __VerificationProxy_ContactUsInteractable
     let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
 
-    
-    // ["name": "dataReference", "stubType": "ProtocolToBeStubbedProperty", "@type": "InstanceVariable", "type": "DataReferenceable", "isReadOnly": false, "accessibility": ""]
-     var dataReference: DataReferenceable {
-        get {
-            
-            return cuckoo_manager.getter("dataReference", superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-        set {
-            
-            cuckoo_manager.setter("dataReference", value: newValue, superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-    }
-    
-    // ["name": "contactUsPresenter", "stubType": "ProtocolToBeStubbedProperty", "@type": "InstanceVariable", "type": "ContactUsPresentable", "isReadOnly": false, "accessibility": ""]
-     var contactUsPresenter: ContactUsPresentable {
-        get {
-            
-            return cuckoo_manager.getter("contactUsPresenter", superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-        set {
-            
-            cuckoo_manager.setter("contactUsPresenter", value: newValue, superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-    }
     
 
     
@@ -69,14 +37,6 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 	        self.cuckoo_manager = manager
 	    }
 	    
-	    var dataReference: Cuckoo.ProtocolToBeStubbedProperty<MockContactUsInteractable, DataReferenceable> {
-	        return .init(manager: cuckoo_manager, name: "dataReference")
-	    }
-	    
-	    var contactUsPresenter: Cuckoo.ProtocolToBeStubbedProperty<MockContactUsInteractable, ContactUsPresentable> {
-	        return .init(manager: cuckoo_manager, name: "contactUsPresenter")
-	    }
-	    
 	    
 	    func retrieveContacts() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
@@ -97,14 +57,6 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 	    }
 	
 	    
-	    var dataReference: Cuckoo.VerifyProperty<DataReferenceable> {
-	        return .init(manager: cuckoo_manager, name: "dataReference", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
-	    var contactUsPresenter: Cuckoo.VerifyProperty<ContactUsPresentable> {
-	        return .init(manager: cuckoo_manager, name: "contactUsPresenter", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
 	
 	    
 	    @discardableResult
@@ -119,24 +71,6 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 
  class ContactUsInteractableStub: ContactUsInteractable {
     
-     var dataReference: DataReferenceable {
-        get {
-            return DefaultValueRegistry.defaultValue(for: (DataReferenceable).self)
-        }
-        
-        set { }
-        
-    }
-    
-     var contactUsPresenter: ContactUsPresentable {
-        get {
-            return DefaultValueRegistry.defaultValue(for: (ContactUsPresentable).self)
-        }
-        
-        set { }
-        
-    }
-    
 
     
 
@@ -148,7 +82,7 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2018-05-14 13:59:05 +0000
 
 
 import Cuckoo
@@ -259,7 +193,7 @@ class MockContactUsPresentable: ContactUsPresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/View/ContactUsPresenterViewable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/View/ContactUsPresenterViewable.swift at 2018-05-14 13:59:05 +0000
 
 
 import Cuckoo
@@ -370,7 +304,7 @@ class MockContactUsPresenterViewable: ContactUsPresenterViewable, Cuckoo.Protoco
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  HomePresenterInteractable.swift
@@ -461,7 +395,7 @@ class MockHomePresenterInteractable: HomePresenterInteractable, Cuckoo.ProtocolM
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  HomePresentable.swift
@@ -579,7 +513,7 @@ class MockHomePresentable: HomePresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  HomePresenterViewable.swift
@@ -697,7 +631,7 @@ class MockHomePresenterViewable: HomePresenterViewable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-05-14 13:59:05 +0000
 
 
 import Cuckoo
@@ -837,7 +771,204 @@ class MockDataReferenceable: DataReferenceable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/FIRStoring.swift at 2018-05-14 13:59:05 +0000
+
+
+import Cuckoo
+@testable import Showcase_iOS
+
+import FirebaseStorage
+import Foundation
+
+class MockFIRStoring: FIRStoring, Cuckoo.ProtocolMock {
+    typealias MocksType = FIRStoring
+    typealias Stubbing = __StubbingProxy_FIRStoring
+    typealias Verification = __VerificationProxy_FIRStoring
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
+
+    
+
+    
+
+    
+    // ["name": "storageReference", "returnSignature": " -> StorageReferenceable?", "fullyQualifiedName": "storageReference() -> StorageReferenceable?", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Optional<StorageReferenceable>", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubFunction"]
+     func storageReference()  -> StorageReferenceable? {
+        
+            return cuckoo_manager.call("storageReference() -> StorageReferenceable?",
+                parameters: (),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_FIRStoring: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func storageReference() -> Cuckoo.ProtocolStubFunction<(), Optional<StorageReferenceable>> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockFIRStoring.self, method: "storageReference() -> StorageReferenceable?", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_FIRStoring: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func storageReference() -> Cuckoo.__DoNotUse<Optional<StorageReferenceable>> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("storageReference() -> StorageReferenceable?", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class FIRStoringStub: FIRStoring {
+    
+
+    
+
+    
+     func storageReference()  -> StorageReferenceable? {
+        return DefaultValueRegistry.defaultValue(for: Optional<StorageReferenceable>.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/StorageReferenceable.swift at 2018-05-14 13:59:05 +0000
+
+
+import Cuckoo
+@testable import Showcase_iOS
+
+import FirebaseStorage
+import Foundation
+
+class MockStorageReferenceable: StorageReferenceable, Cuckoo.ProtocolMock {
+    typealias MocksType = StorageReferenceable
+    typealias Stubbing = __StubbingProxy_StorageReferenceable
+    typealias Verification = __VerificationProxy_StorageReferenceable
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
+
+    
+
+    
+
+    
+    // ["name": "child", "returnSignature": " -> StorageReferenceable", "fullyQualifiedName": "child(from: String) -> StorageReferenceable", "parameterSignature": "from path: String", "parameterSignatureWithoutNames": "path: String", "inputTypes": "String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "path", "call": "from: path", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("from"), name: "path", type: "String", range: CountableRange(90..<107), nameRange: CountableRange(90..<94))], "returnType": "StorageReferenceable", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubFunction"]
+     func child(from path: String)  -> StorageReferenceable {
+        
+            return cuckoo_manager.call("child(from: String) -> StorageReferenceable",
+                parameters: (path),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "downloadImageUrl", "returnSignature": "", "fullyQualifiedName": "downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)", "parameterSignature": "completion: @escaping (URL?, Error?) -> Void", "parameterSignatureWithoutNames": "completion: @escaping (URL?, Error?) -> Void", "inputTypes": "(URL?, Error?) -> Void", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": true, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "completion", "call": "completion: completion", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("completion"), name: "completion", type: "@escaping (URL?, Error?) -> Void", range: CountableRange(159..<203), nameRange: CountableRange(159..<169))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)  {
+        
+            return cuckoo_manager.call("downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)",
+                parameters: (completion),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_StorageReferenceable: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func child<M1: Cuckoo.Matchable>(from path: M1) -> Cuckoo.ProtocolStubFunction<(String), StorageReferenceable> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: path) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockStorageReferenceable.self, method: "child(from: String) -> StorageReferenceable", parameterMatchers: matchers))
+	    }
+	    
+	    func downloadImageUrl<M1: Cuckoo.Matchable>(completion: M1) -> Cuckoo.ProtocolStubNoReturnFunction<((URL?, Error?) -> Void)> where M1.MatchedType == (URL?, Error?) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<((URL?, Error?) -> Void)>] = [wrap(matchable: completion) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockStorageReferenceable.self, method: "downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_StorageReferenceable: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func child<M1: Cuckoo.Matchable>(from path: M1) -> Cuckoo.__DoNotUse<StorageReferenceable> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: path) { $0 }]
+	        return cuckoo_manager.verify("child(from: String) -> StorageReferenceable", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func downloadImageUrl<M1: Cuckoo.Matchable>(completion: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == (URL?, Error?) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<((URL?, Error?) -> Void)>] = [wrap(matchable: completion) { $0 }]
+	        return cuckoo_manager.verify("downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class StorageReferenceableStub: StorageReferenceable {
+    
+
+    
+
+    
+     func child(from path: String)  -> StorageReferenceable {
+        return DefaultValueRegistry.defaultValue(for: StorageReferenceable.self)
+    }
+    
+     func downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  PresenterInteractable.swift
@@ -994,7 +1125,7 @@ class MockLoginPresenterInteractable: LoginPresenterInteractable, Cuckoo.Protoco
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  InteractorPresentable.swift
@@ -1112,7 +1243,7 @@ class MockLoginInteractorPresentable: LoginInteractorPresentable, Cuckoo.Protoco
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  FirebaseAuthenticating.swift
@@ -1203,7 +1334,7 @@ class MockFirebaseLoginAuthenticating: FirebaseLoginAuthenticating, Cuckoo.Proto
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  Authenticating.swift
@@ -1294,7 +1425,7 @@ class MockLoginAuthenticating: LoginAuthenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyBoardDelegate.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyBoardDelegate.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  KeyBoardDelegate.swift
@@ -1548,7 +1679,7 @@ class MockKeyBoardDelegate: KeyBoardDelegate, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyboardObservable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyboardObservable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  KeyboardObservable.swift
@@ -1666,7 +1797,7 @@ class MockKeyboardObservable: KeyboardObservable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/NotificationCenterDelegate.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/NotificationCenterDelegate.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  NotificationCenterDelegate.swift
@@ -1811,7 +1942,7 @@ class MockNotificationCenterDelegate: NotificationCenterDelegate, Cuckoo.Protoco
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  PresenterViewable.swift
@@ -2043,7 +2174,7 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-05-14 12:53:20 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  Viewable.swift
