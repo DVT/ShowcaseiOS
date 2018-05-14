@@ -105,3 +105,11 @@ playground.xcworkspace
 
 
 # End of https://www.gitignore.io/api/swift,cocoapods,objective-c
+.idea/.name
+.idea/modules.xml
+.idea/Showcase_iOS.iml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/xcode.xml
+.idea/runConfigurations/Showcase_iOS.xml
+.idea/runConfigurations/Showcase_iOSTests.xml
