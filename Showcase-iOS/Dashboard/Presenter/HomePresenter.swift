@@ -17,6 +17,10 @@ class HomePresenter: HomePresentable {
         self.homePresenterInteractable = presenterInteractable
     }
     
+    func fetchShowcaseApps() {
+        self.homePresenterInteractable.fetchShowcaseApps()
+    }
+    
     func onFetchShowcaseAppsSuccess(with showcaseApps: [ShowcaseApp]) {
         var showcaseAppsViewModel = [ShowcaseAppViewModel]()
         showcaseApps.forEach { showcaseApp in
