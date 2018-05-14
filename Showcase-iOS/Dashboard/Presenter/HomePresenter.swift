@@ -9,13 +9,8 @@
 import Foundation
 
 class HomePresenter: HomePresentable {
-    var homePresenterViewable: HomePresenterViewable
-    var homePresenterInteractable: HomePresenterInteractable
-    
-    init(presenterViewable: HomePresenterViewable, presenterInteractable: HomePresenterInteractable) {
-        self.homePresenterViewable = presenterViewable
-        self.homePresenterInteractable = presenterInteractable
-    }
+    var homePresenterViewable: HomePresenterViewable?
+    var homePresenterInteractable: HomePresenterInteractable?
     
     func fetchShowcaseApps() {
         self.homePresenterInteractable.fetchShowcaseApps()
@@ -26,10 +21,10 @@ class HomePresenter: HomePresentable {
         showcaseApps.forEach { showcaseApp in
             showcaseAppsViewModel.append(ShowcaseAppViewModel(with: showcaseApp))
         }
-        self.homePresenterViewable.showOnSuccess(with: showcaseAppsViewModel)
+        self.homePresenterViewable?.showOnSuccess(with: showcaseAppsViewModel)
     }
     
     func onFetchShowcaseAppsFailure(with error: DatabaseError) {
-        self.homePresenterViewable.showOnFailure(with: error)
+        self.homePresenterViewable?.showOnFailure(with: error)
     }
 }

@@ -14,11 +14,14 @@ import Firebase
 class HomeInteractableTests: XCTestCase {
     var mockDatabaseReference = MockDataReferenceable()
     var mockHomePresentable = MockHomePresentable()
-    var systeUnderTest: HomeInteractorImplementation?
+    var systeUnderTest: HomeInteractor?
     
     override func setUp() {
         super.setUp()
-        systeUnderTest = HomeInteractorImplementation(with: mockDatabaseReference, and: mockHomePresentable)
+        let homeInteractor = HomeInteractor()
+        homeInteractor.firebaseDatabaseReference = mockDatabaseReference
+        homeInteractor.homePresenter = mockHomePresentable
+        systeUnderTest = homeInteractor
     }
     
     func testThatFetchingShowcaseAppsCompletesWithAnErrorWhenFirebaseReturnsAnError() {
