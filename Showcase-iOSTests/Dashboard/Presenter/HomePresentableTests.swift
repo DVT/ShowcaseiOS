@@ -20,7 +20,10 @@ class HomePresentableTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        self.systeUnderTest = HomePresenter(presenterViewable: mockHomeViewer, presenterInteractable: mockHomeInteractor)
+        let homePresenter = HomePresenter()
+        homePresenter.homePresenterInteractable = mockHomeInteractor
+        homePresenter.homePresenterViewable = mockHomeViewer
+        systeUnderTest = homePresenter
     }
     
     func testThatGivenFetchShowcaseAppsFailsThenShowOnFailureIsPresentedWithAnError() {
