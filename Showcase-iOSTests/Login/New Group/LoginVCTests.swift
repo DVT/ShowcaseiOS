@@ -22,7 +22,8 @@ class LoginVCTests: XCTestCase {
         super.setUp()
         systemUnderTest.keyBoardDelegate = mockKeyboardDelegate
         systemUnderTest.keyBoardObserver = mockKeyBoardObservable
-        systemUnderTest.notificationCenter = mockNotificationCenter    }
+        systemUnderTest.notificationCenter = mockNotificationCenter
+    }
     
     func testThatWhenViewWillDisappearMethodGetsCalledThenRemoveObserversIsInvoked() {
         stub(mockKeyBoardObservable) { (mock) in

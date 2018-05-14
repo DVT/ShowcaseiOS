@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     weak var keyBoardObserver: KeyboardObservable!
     weak var notificationCenter: NotificationCenterDelegate?
     var loginPresenter: LoginPresentable?
+    var alertController: UIAlertController?
+    let retryAction = UIAlertAction(title: "Retry", style: .destructive, handler: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,8 @@ class LoginViewController: UIViewController {
         keyBoardDelegate = self
         keyBoardObserver = self
         loginScrollView.keyboardDismissMode = .interactive
+        alertController = UIAlertController(title: "Can't log you in", message: "", preferredStyle: .alert)
+        alertController?.addAction(retryAction)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,18 +93,30 @@ extension LoginViewController: KeyBoardDelegate {
 extension LoginViewController: LoginPresenterViewable {
     
     func showEmailValidationFailure(withError error: AuthenticationError) {
+        alertController?.title = "Invalid email."
+        alertController?.message = "Please provide a valid email."
+        present(alertController!, animated: true, completion: nil)
     }
     
     func showPasswordValidationFailure(withError error: AuthenticationError) {
+        alertController?.title = "Invalid password."
+        alertController?.message = "Please provide a strong password."
+        present(alertController!, animated: true, completion: nil)
     }
     
     func showInvalidInputsFailure(withError error: AuthenticationError) {
+        alertController?.title = "Invalid inputs."
+        alertController?.message = "Please make sure that you've provided valid inputs for username and password."
+        present(alertController!, animated: true, completion: nil)
     }
     
     func showAuthenticationFailure(withMessage message: String?) {
+        alertController?.message = message
+        present(alertController!, animated: true, completion: nil)
     }
     
     func showSuccess() {
+        
     }
     
 }
