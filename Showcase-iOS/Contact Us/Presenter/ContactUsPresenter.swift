@@ -7,19 +7,12 @@ class ContactUsPresenter: ContactUsPresentable {
     
     //MARK: Injectable Properties
     
-    var contactUsInteractor: ContactUsInteractable
-    var contactUsView: ContactUsPresenterViewable
+    var contactUsInteractor: ContactUsInteractable?
+    var contactUsView: ContactUsPresenterViewable?
     
     //MARK: Properties
     
     var officeViewModels: [OfficeViewModel] = [OfficeViewModel]()
-    
-    //MARK: Lifecycle method(s)
-    
-    init(contactUsInteractor: ContactUsInteractable, contactUsView: ContactUsPresenterViewable) {
-        self.contactUsInteractor = contactUsInteractor
-        self.contactUsView = contactUsView
-    }
     
     //MARK: Operations
     
@@ -28,11 +21,11 @@ class ContactUsPresenter: ContactUsPresentable {
             let officeViewModel = OfficeViewModel(with: office)
             officeViewModels.append(officeViewModel)
         }
-        contactUsView.showOnSuccess(with: officeViewModels)
+        contactUsView?.showOnSuccess(with: officeViewModels)
     }
     
     func onRetrieveOfficesFailed(with error: Error) {
-        contactUsView.showOnFailure(with: error)
+        contactUsView?.showOnFailure(with: error)
     }
     
 }

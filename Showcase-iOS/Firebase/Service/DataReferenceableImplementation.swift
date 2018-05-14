@@ -7,7 +7,7 @@ struct FirebaseRetrieverableImplementation {
 
     private let reference : DataReferenceable?
     
-    init(reference : DataReferenceable) {
+    init(reference : DataReferenceable?) {
         self.reference = reference
     }
     
