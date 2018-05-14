@@ -80,6 +80,10 @@
 		FD98CA7D20A99F2800FDF031 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA7C20A99F2800FDF031 /* HomeViewController.swift */; };
 		FD98CA7F20A99F4D00FDF031 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA7E20A99F4D00FDF031 /* TabBarViewController.swift */; };
 		FD98CA8220A9A17D00FDF031 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA8120A9A17D00FDF031 /* HomeViewTests.swift */; };
+		FD98CA8E20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA8C20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift */; };
+		FD98CA8F20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD98CA8D20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.xib */; };
+		FD98CA9220A9BE1700FDF031 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA9120A9BE1700FDF031 /* HomeRouter.swift */; };
+		FD98CA9520A9BE6800FDF031 /* DependencyInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA9420A9BE6800FDF031 /* DependencyInjectionContainer.swift */; };
 		FDE1AE78209B244C00D383C4 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE1AE77209B244C00D383C4 /* HomePresenter.swift */; };
 		FDE1AE7B209B26A300D383C4 /* HomePresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE1AE7A209B26A300D383C4 /* HomePresenterViewable.swift */; };
 		FDE1AE7E209B2D5A00D383C4 /* ShowcaseAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE1AE7D209B2D5A00D383C4 /* ShowcaseAppViewModel.swift */; };
@@ -179,6 +183,10 @@
 		FD98CA7C20A99F2800FDF031 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FD98CA7E20A99F4D00FDF031 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FD98CA8120A9A17D00FDF031 /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
+		FD98CA8C20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseAppCollectionViewCell.swift; sourceTree = "<group>"; };
+		FD98CA8D20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowcaseAppCollectionViewCell.xib; sourceTree = "<group>"; };
+		FD98CA9120A9BE1700FDF031 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		FD98CA9420A9BE6800FDF031 /* DependencyInjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionContainer.swift; sourceTree = "<group>"; };
 		FDE1AE77209B244C00D383C4 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		FDE1AE7A209B26A300D383C4 /* HomePresenterViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterViewable.swift; sourceTree = "<group>"; };
 		FDE1AE7D209B2D5A00D383C4 /* ShowcaseAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseAppViewModel.swift; sourceTree = "<group>"; };
@@ -601,6 +609,9 @@
 		FD37E2812099DA20006EA459 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				FD98CA9320A9BE3100FDF031 /* DependencyContainer */,
+				FD98CA9020A9BDF700FDF031 /* Router */,
+				FD98CA8B20A9BAA200FDF031 /* Cell */,
 				FDE1AE7C209B2D3400D383C4 /* ViewModel */,
 				FDE1AE79209B268700D383C4 /* View */,
 				FD37E2842099DA40006EA459 /* Model */,
@@ -662,6 +673,31 @@
 				FD98CA8120A9A17D00FDF031 /* HomeViewTests.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FD98CA8B20A9BAA200FDF031 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FD98CA8C20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift */,
+				FD98CA8D20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FD98CA9020A9BDF700FDF031 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FD98CA9120A9BE1700FDF031 /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FD98CA9320A9BE3100FDF031 /* DependencyContainer */ = {
+			isa = PBXGroup;
+			children = (
+				FD98CA9420A9BE6800FDF031 /* DependencyInjectionContainer.swift */,
+			);
+			path = DependencyContainer;
 			sourceTree = "<group>";
 		};
 		FDE1AE79209B268700D383C4 /* View */ = {
@@ -795,6 +831,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99FB7FF22085F25200B300BA /* LaunchScreen.storyboard in Resources */,
+				FD98CA8F20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.xib in Resources */,
 				BC02346920A0472A006E6E92 /* About.storyboard in Resources */,
 				99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */,
 				99FB7FEF2085F25200B300BA /* Assets.xcassets in Resources */,
@@ -967,7 +1004,9 @@
 				A3E7196E209B072A0081D5C1 /* OfficeViewModel.swift in Sources */,
 				FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */,
 				BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */,
+				FD98CA8E20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
+				FD98CA9520A9BE6800FDF031 /* DependencyInjectionContainer.swift in Sources */,
 				A3DBE44A209F891600561CE0 /* LoginPresenterViewable.swift in Sources */,
 				BC02346D20A049BF006E6E92 /* LoginVC.swift in Sources */,
 				FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */,
@@ -999,6 +1038,7 @@
 				FD98CA7D20A99F2800FDF031 /* HomeViewController.swift in Sources */,
 				A389D66320A59471008DB6FE /* FirebaseStorageExtension.swift in Sources */,
 				BC02347620A06DE5006E6E92 /* Routable.swift in Sources */,
+				FD98CA9220A9BE1700FDF031 /* HomeRouter.swift in Sources */,
 				A3BA5EC6208F50FA00E0D34F /* ContactUsInteractable.swift in Sources */,
 				FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseLoginAuthenticating.swift in Sources */,
@@ -1237,7 +1277,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = "Showcase-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
