@@ -28,7 +28,10 @@ class ContactUsInteractableTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockError = NSError(domain: "FirebaseError", code: 1, userInfo: nil)
-        systeUnderTest = ContactUsInteractableImplementation(with: mockContactUsPresentable, mockDatabaseRefeceabele)
+        let contactUsInteractor = ContactUsInteractableImplementation()
+        contactUsInteractor.contactUsPresenter = mockContactUsPresentable
+        contactUsInteractor.dataReference = mockDatabaseRefeceabele        
+        systeUnderTest = contactUsInteractor
     }
     
     //MARK: Tests
