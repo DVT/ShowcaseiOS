@@ -1,5 +1,5 @@
 //
-//  LoginVCTests.swift
+//  LoginViewControllerTests.swift
 //  Showcase-iOSTests
 //
 //  Created by Lehlohonolo Mbele on 2018/05/10.
@@ -10,7 +10,7 @@ import XCTest
 import Cuckoo
 @testable import Showcase_iOS
 
-class LoginVCTests: XCTestCase {
+class LoginViewControllerTests: XCTestCase {
     
     let systemUnderTest = LoginViewController()
     var mockKeyboardDelegate = MockKeyBoardDelegate()
