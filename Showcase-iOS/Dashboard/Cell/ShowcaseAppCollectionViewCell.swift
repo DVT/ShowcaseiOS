@@ -9,14 +9,30 @@
 import UIKit
 
 class ShowcaseAppCollectionViewCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var shortDescriptionLabel: UILabel!
+    @IBOutlet private weak var clientLabel: UILabel!
+    
+    var firebaseStorage: FIRStoring?
+    
+    func populateCell(with showcaseViewModel: ShowcaseAppViewModel) {
+        self.shortDescriptionLabel.text = showcaseViewModel.shortDescription
+        self.clientLabel.text = showcaseViewModel.client
+        self.populateImageView(with: showcaseViewModel.iconUrl)
     }
     
-    var showcaseViewModel: ShowcaseAppViewModel? {
-        didSet {
-            
+    func populateImageView(with iconUrl: String?) {
+        guard let imageUrl = iconUrl else {
+            return
+        }
+        guard let firStorage = self.firebaseStorage else  {
+            return
+        }
+        let imageFetcher = ImageFetcher(from: firStorage)
+        imageFetcher.fetchImage(imageUrl) { (url, error) in
+            if error == nil {
+                
+            }
         }
     }
 }

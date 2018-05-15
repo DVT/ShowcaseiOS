@@ -9,12 +9,23 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
+    var currentIndex = TabBarIndex.home.rawValue
+    
+    enum TabBarIndex:Int {
+        case home = 0, about, contacts
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.inject(with: .Home)
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+extension TabBarViewController: InjectView {
+    
+    func inject(with storyBoard: AppStoryBoard) {
+        if storyBoard == .Home {
+            self.viewControllers?[self.currentIndex] = HomeRouter().createModule()
+        }
     }
 }

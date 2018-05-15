@@ -9,17 +9,51 @@
 import UIKit
 
 class HomeViewController: UICollectionViewController {
+    @IBOutlet private weak var searchBar: UISearchBar!
+    
     var presenter: HomePresentable?
     var showcaseAppsViewModels: [ShowcaseAppViewModel] = [ShowcaseAppViewModel]()
-
+    var firebaseStorage:FIRStoring?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.topItem?.title = "DVT Showcase"
+        self.setupCollectionViewNib()
         self.presenter?.fetchShowcaseApps()
         self.mockFectchApps()
     }
     
+    func setupCollectionViewNib() {
+        let nib = UINib(nibName: "ShowcaseAppCollectionViewCell", bundle: nil)
+        self.collectionView?.register(nib, forCellWithReuseIdentifier: "ShowcaseAppViewIdentifier")
+    }
+    
     func mockFectchApps() {
         let showcaseViewModel = ShowcaseApp(with: self.setupShowcaseAppDictionary())
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
+        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
         showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
         showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
         showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
@@ -51,17 +85,28 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseAppViewIdentifier", for: indexPath) as! ShowcaseAppCollectionViewCell
-        cell.showcaseViewModel = showcaseAppsViewModels[indexPath.row]
+        cell.firebaseStorage = firebaseStorage
+        cell.populateCell(with: showcaseAppsViewModels[indexPath.row])
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width:collectionView.frame.size.width, height:50)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind:
+        String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:
+            "HeaderCollectionViewCellIdentifier", for: indexPath) as! HeaderCollectionViewCell
+        return header
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let side = collectionView.frame.width/3 - 1
-        return CGSize(width: side, height: side)
+        return CGSize(width: collectionView.frame.width/3 - 1, height: collectionView.frame.height/3)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5.0
+        return 1.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section:Int) -> CGFloat {
@@ -77,6 +122,8 @@ extension HomeViewController: HomePresenterViewable {
     }
     
     func showOnFailure(with error: DatabaseError) {
-        
     }
 }
+
+
+

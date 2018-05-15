@@ -13,7 +13,7 @@ class HomePresenter: HomePresentable {
     var homePresenterInteractable: HomePresenterInteractable?
     
     func fetchShowcaseApps() {
-        self.homePresenterInteractable.fetchShowcaseApps()
+        self.homePresenterInteractable?.fetchShowcaseApps()
     }
     
     func onFetchShowcaseAppsSuccess(with showcaseApps: [ShowcaseApp]) {

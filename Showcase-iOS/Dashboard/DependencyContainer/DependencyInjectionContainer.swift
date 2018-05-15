@@ -9,6 +9,7 @@
 import Foundation
 import Swinject
 import FirebaseDatabase
+import FirebaseStorage
 
 class DependencyInjection {
     var container: Container? {
@@ -18,10 +19,10 @@ class DependencyInjection {
             let homePresenter = HomePresenter()
             let databaseReference = Database.database().reference()
             let homeInteractor = HomeInteractor()
-            homeInteractor.presenter = homePresenter
+            homeInteractor.homePresenter = homePresenter
             homeInteractor.firebaseDatabaseReference = databaseReference
-            homePresenter.interacter = homeInteractor
-            homePresenter.homeView = homeView
+            homePresenter.homePresenterInteractable = homeInteractor
+            homePresenter.homePresenterViewable = homeView
             homeView.presenter = homePresenter
             return homeView
         }

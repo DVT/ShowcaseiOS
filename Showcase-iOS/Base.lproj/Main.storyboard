@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0GL-De-Z92">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,7 +11,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="mxt-yw-Lcb">
             <objects>
-                <tabBarController id="0GL-De-Z92" customClass="TabBarViewController" customModule="Showcase_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="0GL-De-Z92" customClass="TabBarViewController" customModule="Showcase_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="76u-8N-NO1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -30,7 +30,7 @@
         <!--Home-->
         <scene sceneID="h9m-s9-Rwe">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="kjL-JP-Y6s" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Home" storyboardName="Home" id="kjL-JP-Y6s" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="VJ0-hw-lIh"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddg-W5-VDq" userLabel="First Responder" sceneMemberID="firstResponder"/>
