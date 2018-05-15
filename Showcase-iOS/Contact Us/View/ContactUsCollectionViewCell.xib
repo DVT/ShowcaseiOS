@@ -30,11 +30,8 @@
                             <constraint firstAttribute="width" constant="100" id="ByE-1f-etB"/>
                         </constraints>
                     </imageView>
-                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mfg-n0-Sbb">
-                        <rect key="frame" x="110" y="0.0" width="235" height="100"/>
-                    </mapView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johannesburg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yt-pM-IGt">
-                        <rect key="frame" x="0.0" y="115" width="126" height="15"/>
+                        <rect key="frame" x="0.0" y="110" width="126" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="2y3-f3-j0a"/>
                         </constraints>
@@ -43,7 +40,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9E-fK-Qk6">
-                        <rect key="frame" x="220" y="115" width="29" height="22"/>
+                        <rect key="frame" x="220" y="105" width="29" height="32"/>
                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                         <state key="normal" title="Call"/>
                         <connections>
@@ -51,7 +48,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Yl-6r-XEu">
-                        <rect key="frame" x="279" y="115" width="66" height="22"/>
+                        <rect key="frame" x="279" y="105" width="66" height="32"/>
                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                         <state key="normal" title="Navigate"/>
                         <connections>
@@ -59,31 +56,34 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecy-VL-3V6">
-                        <rect key="frame" x="0.0" y="140" width="218" height="75"/>
+                        <rect key="frame" x="0.0" y="135" width="218" height="80"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a49-CS-4y5">
-                        <rect key="frame" x="150" y="115" width="40" height="22"/>
+                        <rect key="frame" x="150" y="110" width="40" height="22"/>
                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                         <state key="normal" title="Email"/>
                         <connections>
                             <action selector="emailPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Wi8-MX-3ns"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WrP-Fj-oE9">
+                        <rect key="frame" x="110" y="0.0" width="235" height="100"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="WrP-Fj-oE9" firstAttribute="leading" secondItem="3UM-WF-QqQ" secondAttribute="trailing" constant="10" id="0O7-UG-fcV"/>
                 <constraint firstItem="3UM-WF-QqQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0qs-Ww-gve"/>
                 <constraint firstItem="ecy-VL-3V6" firstAttribute="top" secondItem="a49-CS-4y5" secondAttribute="bottom" constant="3" id="4Li-Vl-r9j"/>
                 <constraint firstAttribute="trailing" secondItem="ecy-VL-3V6" secondAttribute="trailing" constant="127" id="5Yj-6S-7gH"/>
                 <constraint firstAttribute="bottom" secondItem="C9E-fK-Qk6" secondAttribute="bottom" constant="99" id="5hn-zm-ptJ"/>
                 <constraint firstItem="3UM-WF-QqQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7ji-K0-pLr"/>
-                <constraint firstItem="C9E-fK-Qk6" firstAttribute="top" secondItem="Mfg-n0-Sbb" secondAttribute="bottom" constant="15" id="Bl0-EB-NAb"/>
-                <constraint firstItem="3UM-WF-QqQ" firstAttribute="top" secondItem="Mfg-n0-Sbb" secondAttribute="top" id="Bzs-bC-VUd"/>
                 <constraint firstItem="0Yl-6r-XEu" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="153" id="Dxo-u7-a2y"/>
                 <constraint firstItem="a49-CS-4y5" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="24" id="Elh-sU-wtP"/>
+                <constraint firstAttribute="trailing" secondItem="WrP-Fj-oE9" secondAttribute="trailing" id="FwF-q8-WjE"/>
                 <constraint firstAttribute="bottom" secondItem="ecy-VL-3V6" secondAttribute="bottom" constant="21" id="GeB-lv-pQr"/>
                 <constraint firstItem="7yt-pM-IGt" firstAttribute="leading" secondItem="ecy-VL-3V6" secondAttribute="leading" id="Go2-yo-VPS"/>
                 <constraint firstItem="C9E-fK-Qk6" firstAttribute="leading" secondItem="a49-CS-4y5" secondAttribute="trailing" constant="30" id="OF8-rV-ijf"/>
@@ -91,18 +91,16 @@
                 <constraint firstAttribute="trailing" secondItem="0Yl-6r-XEu" secondAttribute="trailing" id="Q1K-CU-YSO"/>
                 <constraint firstItem="a49-CS-4y5" firstAttribute="baseline" secondItem="C9E-fK-Qk6" secondAttribute="firstBaseline" id="Q4d-Tj-y8G"/>
                 <constraint firstItem="ecy-VL-3V6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YHy-5w-QMy"/>
+                <constraint firstItem="WrP-Fj-oE9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YXp-8a-2OT"/>
                 <constraint firstItem="C9E-fK-Qk6" firstAttribute="baseline" secondItem="0Yl-6r-XEu" secondAttribute="baseline" id="ZZW-iP-l3D"/>
-                <constraint firstItem="a49-CS-4y5" firstAttribute="top" secondItem="Mfg-n0-Sbb" secondAttribute="bottom" constant="15" id="cSg-iD-Ib7"/>
                 <constraint firstItem="C9E-fK-Qk6" firstAttribute="baseline" secondItem="0Yl-6r-XEu" secondAttribute="firstBaseline" id="f37-fR-Vhk"/>
                 <constraint firstItem="C9E-fK-Qk6" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="94" id="gBi-bX-az5"/>
                 <constraint firstItem="0Yl-6r-XEu" firstAttribute="leading" secondItem="C9E-fK-Qk6" secondAttribute="trailing" constant="30" id="lGB-yF-Zdj"/>
-                <constraint firstItem="0Yl-6r-XEu" firstAttribute="trailing" secondItem="Mfg-n0-Sbb" secondAttribute="trailing" id="oRw-Tq-yJv"/>
                 <constraint firstItem="a49-CS-4y5" firstAttribute="baseline" secondItem="C9E-fK-Qk6" secondAttribute="baseline" id="owh-e6-cHe"/>
-                <constraint firstItem="0Yl-6r-XEu" firstAttribute="top" secondItem="Mfg-n0-Sbb" secondAttribute="bottom" constant="15" id="qtZ-fF-iSy"/>
                 <constraint firstItem="7yt-pM-IGt" firstAttribute="top" secondItem="a49-CS-4y5" secondAttribute="top" id="ueF-as-Yu5"/>
-                <constraint firstItem="Mfg-n0-Sbb" firstAttribute="leading" secondItem="3UM-WF-QqQ" secondAttribute="trailing" constant="10" id="vh9-wI-wY9"/>
                 <constraint firstItem="C9E-fK-Qk6" firstAttribute="baseline" secondItem="a49-CS-4y5" secondAttribute="firstBaseline" id="wjf-mh-aQj"/>
-                <constraint firstItem="7yt-pM-IGt" firstAttribute="top" secondItem="3UM-WF-QqQ" secondAttribute="bottom" constant="15" id="zRV-1y-Z92"/>
+                <constraint firstItem="a49-CS-4y5" firstAttribute="top" secondItem="WrP-Fj-oE9" secondAttribute="bottom" constant="10" id="xQF-aq-4H7"/>
+                <constraint firstItem="7yt-pM-IGt" firstAttribute="top" secondItem="3UM-WF-QqQ" secondAttribute="bottom" constant="10" id="zRV-1y-Z92"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="349" height="236"/>
@@ -110,9 +108,9 @@
                 <outlet property="branch" destination="7yt-pM-IGt" id="akz-qu-b9Q"/>
                 <outlet property="image" destination="3UM-WF-QqQ" id="nrh-Ac-w4X"/>
                 <outlet property="locationDescription" destination="ecy-VL-3V6" id="6pp-vK-FUS"/>
-                <outlet property="map" destination="Mfg-n0-Sbb" id="kfB-fg-cvH"/>
+                <outlet property="mapImage" destination="WrP-Fj-oE9" id="N0C-G9-eus"/>
             </connections>
-            <point key="canvasLocation" x="127" y="-165"/>
+            <point key="canvasLocation" x="94" y="-182"/>
         </collectionViewCell>
     </objects>
 </document>
