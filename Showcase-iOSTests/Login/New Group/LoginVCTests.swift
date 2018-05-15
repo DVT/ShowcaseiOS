@@ -15,7 +15,6 @@ class LoginVCTests: XCTestCase {
     let systemUnderTest = LoginViewController()
     var mockKeyboardDelegate = MockKeyBoardDelegate()
     var mockKeyBoardObservable = MockKeyboardObservable()
-    var mockLoginPresenter = LoginPresenter()
     var mockNotificationCenter = MockNotificationCenterDelegate()
     
     override func setUp() {
@@ -27,7 +26,7 @@ class LoginVCTests: XCTestCase {
     
     func testThatWhenViewWillDisappearMethodGetsCalledThenRemoveObserversIsInvoked() {
         stub(mockKeyBoardObservable) { (mock) in
-            _ = when(mock.removeObservers().then {})
+            _ = when(mock.removeObservers().thenDoNothing())
         }
         systemUnderTest.viewWillDisappear(true)
         verify(mockKeyBoardObservable, times(1)).removeObservers()
@@ -76,11 +75,6 @@ class LoginVCTests: XCTestCase {
         let contentInset = systemUnderTest.updateContentInset(keyBoardHeight: height)
         let expectedResult = UIEdgeInsets(top: 0, left: 0, bottom: height, right: 0)
         XCTAssertEqual(contentInset, expectedResult)
-    }
-    
-    func testThatWhenTheLoginPresenterGetsCalledWithWrongPasswordThenAuthenticationFailureGetsInvoked() {
-        systemUnderTest.loginPresenter = mockLoginPresenter
-        systemUnderTest.loginPresenter?.login(withEmail: "", password: "")
     }
     
     override func tearDown() {
