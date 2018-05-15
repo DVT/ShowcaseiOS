@@ -12,7 +12,6 @@ import FirebaseAuth
 class LoginPresenter: LoginPresentable {
     var loginViewer: LoginPresenterViewable?
     var loginInteractor: LoginPresenterInteractable?
-    var loginRouter: Routable?
     
     let emailValidator = EmailValidator()
     let passwordValidator = PasswordValidator()

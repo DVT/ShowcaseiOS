@@ -44,14 +44,10 @@
 		BC02346D20A049BF006E6E92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346C20A049BF006E6E92 /* LoginViewController.swift */; };
 		BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */; };
 		BC02347320A051B2006E6E92 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */; };
-		BC02347620A06DE5006E6E92 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02347520A06DE5006E6E92 /* Routable.swift */; };
-		BC02347B20A071D5006E6E92 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02347A20A071D5006E6E92 /* LoginRouter.swift */; };
-		BC02348020A1CFF8006E6E92 /* LoginRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02347F20A1CFF8006E6E92 /* LoginRouterTests.swift */; };
 		BC31C0F920A4696D00F8B543 /* KeyBoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EC220A4675800CBBE56 /* KeyBoardDelegate.swift */; };
 		BC31C0FA20A4697100F8B543 /* KeyboardObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EC420A4687300CBBE56 /* KeyboardObservable.swift */; };
 		BC31C0FC20A46FB400F8B543 /* NotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC31C0FB20A46FB400F8B543 /* NotificationCenterDelegate.swift */; };
 		BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */; };
-		BC425EB120A2E7E100CBBE56 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EB020A2E7E100CBBE56 /* DependencyContainer.swift */; };
 		BC425EBD20A45D0E00CBBE56 /* CurvedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */; };
 		BC425EC020A461CE00CBBE56 /* LoginVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBF20A461CE00CBBE56 /* LoginVCTests.swift */; };
 		BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */; };
@@ -145,12 +141,8 @@
 		BC02346C20A049BF006E6E92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStoryboard+Enum.swift"; sourceTree = "<group>"; };
 		BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		BC02347520A06DE5006E6E92 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
-		BC02347A20A071D5006E6E92 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
-		BC02347F20A1CFF8006E6E92 /* LoginRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouterTests.swift; sourceTree = "<group>"; };
 		BC31C0FB20A46FB400F8B543 /* NotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterDelegate.swift; sourceTree = "<group>"; };
 		BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUserProtocol.swift; sourceTree = "<group>"; };
-		BC425EB020A2E7E100CBBE56 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedButton.swift; sourceTree = "<group>"; };
 		BC425EBF20A461CE00CBBE56 /* LoginVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCTests.swift; sourceTree = "<group>"; };
 		BC425EC220A4675800CBBE56 /* KeyBoardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardDelegate.swift; sourceTree = "<group>"; };
@@ -438,7 +430,6 @@
 		BC02347420A06DD0006E6E92 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				BC02347520A06DE5006E6E92 /* Routable.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -446,7 +437,6 @@
 		BC02347920A071BD006E6E92 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				BC02347A20A071D5006E6E92 /* LoginRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -454,7 +444,6 @@
 		BC02347E20A1CFE0006E6E92 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				BC02347F20A1CFF8006E6E92 /* LoginRouterTests.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -462,7 +451,6 @@
 		BC425EAF20A2E7C000CBBE56 /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				BC425EB020A2E7E100CBBE56 /* DependencyContainer.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -976,7 +964,6 @@
 				A3BA5EC9208F54BB00E0D34F /* ContactUsPresentable.swift in Sources */,
 				BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */,
 				A389D66720A59556008DB6FE /* StorageReferenceable.swift in Sources */,
-				BC02347B20A071D5006E6E92 /* LoginRouter.swift in Sources */,
 				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
 				A389D66C20A598B9008DB6FE /* FIRImageFetcher.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
@@ -1001,10 +988,8 @@
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
 				A389D66320A59471008DB6FE /* FirebaseStorageExtension.swift in Sources */,
 				BC31C0FA20A4697100F8B543 /* KeyboardObservable.swift in Sources */,
-				BC02347620A06DE5006E6E92 /* Routable.swift in Sources */,
 				A3BA5EC6208F50FA00E0D34F /* ContactUsInteractable.swift in Sources */,
 				BC425EBD20A45D0E00CBBE56 /* CurvedButton.swift in Sources */,
-				BC425EB120A2E7E100CBBE56 /* DependencyContainer.swift in Sources */,
 				FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseLoginAuthenticating.swift in Sources */,
 				BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */,
@@ -1032,7 +1017,6 @@
 				A3E7197F209C55370081D5C1 /* ContactUsPresenterTests.swift in Sources */,
 				A30087C2209718F70095FAC1 /* ContactUsInteractableTests.swift in Sources */,
 				BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */,
-				BC02348020A1CFF8006E6E92 /* LoginRouterTests.swift in Sources */,
 				A389D67520A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift in Sources */,
 				BCE5DACE208A0908000458FD /* User.swift in Sources */,
 			);

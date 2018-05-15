@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
         keyBoardDelegate = self
         keyBoardObserver = self
+        notificationCenter = NotificationCenter.default
         loginScrollView.keyboardDismissMode = .interactive
         alertController = UIAlertController(title: "Can't log you in", message: "", preferredStyle: .alert)
         alertController?.addAction(retryAction)
@@ -50,6 +51,11 @@ class LoginViewController: UIViewController {
         self.loginPresenter?.login(withEmail: email, password: password)
     }
     
+    func showAlert(withTitle title: String,_ message: String) {
+        alertController?.title = title
+        alertController?.message = message
+        present(alertController!, animated: true, completion: nil)
+    }
 }
 
 extension LoginViewController: KeyBoardDelegate {
@@ -93,32 +99,24 @@ extension LoginViewController: KeyBoardDelegate {
 extension LoginViewController: LoginPresenterViewable {
     
     func showEmailValidationFailure(withError error: AuthenticationError) {
-        alertController?.title = "Invalid email."
-        alertController?.message = "Please provide a valid email."
-        present(alertController!, animated: true, completion: nil)
+        self.showAlert(withTitle: "Invalid email", "Please provide a valid email")
     }
     
     func showPasswordValidationFailure(withError error: AuthenticationError) {
-        alertController?.title = "Invalid password."
-        alertController?.message = "Please provide a strong password."
-        present(alertController!, animated: true, completion: nil)
+        self.showAlert(withTitle:"Invalid password.", "Please provide a strong password.")
     }
     
     func showInvalidInputsFailure(withError error: AuthenticationError) {
-        alertController?.title = "Invalid inputs."
-        alertController?.message = "Please make sure that you've provided valid inputs for username and password."
-        present(alertController!, animated: true, completion: nil)
+        self.showAlert(withTitle:  "Invalid inputs." , "Please make sure that you've provided valid inputs for username and password.")
     }
     
     func showAuthenticationFailure(withMessage message: String?) {
-        alertController?.message = message
-        present(alertController!, animated: true, completion: nil)
+        self.showAlert(withTitle: "Retry", message!)
     }
     
     func showSuccess() {
-        
+        performSegue(withIdentifier: "Home", sender: nil)
     }
-    
 }
 
 extension LoginViewController: KeyboardObservable {
