@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2018-05-14 13:59:05 +0000
 
 
 import Cuckoo
@@ -12,38 +12,6 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
     typealias Verification = __VerificationProxy_ContactUsInteractable
     let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
 
-    
-    // ["name": "dataReference", "stubType": "ProtocolToBeStubbedProperty", "@type": "InstanceVariable", "type": "DataReferenceable", "isReadOnly": false, "accessibility": ""]
-     var dataReference: DataReferenceable {
-        get {
-            
-            return cuckoo_manager.getter("dataReference", superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-        set {
-            
-            cuckoo_manager.setter("dataReference", value: newValue, superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-    }
-    
-    // ["name": "contactUsPresenter", "stubType": "ProtocolToBeStubbedProperty", "@type": "InstanceVariable", "type": "ContactUsPresentable", "isReadOnly": false, "accessibility": ""]
-     var contactUsPresenter: ContactUsPresentable {
-        get {
-            
-            return cuckoo_manager.getter("contactUsPresenter", superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-        set {
-            
-            cuckoo_manager.setter("contactUsPresenter", value: newValue, superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
-            
-        }
-        
-    }
     
 
     
@@ -69,14 +37,6 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 	        self.cuckoo_manager = manager
 	    }
 	    
-	    var dataReference: Cuckoo.ProtocolToBeStubbedProperty<MockContactUsInteractable, DataReferenceable> {
-	        return .init(manager: cuckoo_manager, name: "dataReference")
-	    }
-	    
-	    var contactUsPresenter: Cuckoo.ProtocolToBeStubbedProperty<MockContactUsInteractable, ContactUsPresentable> {
-	        return .init(manager: cuckoo_manager, name: "contactUsPresenter")
-	    }
-	    
 	    
 	    func retrieveContacts() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
@@ -97,14 +57,6 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 	    }
 	
 	    
-	    var dataReference: Cuckoo.VerifyProperty<DataReferenceable> {
-	        return .init(manager: cuckoo_manager, name: "dataReference", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
-	    var contactUsPresenter: Cuckoo.VerifyProperty<ContactUsPresentable> {
-	        return .init(manager: cuckoo_manager, name: "contactUsPresenter", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
 	
 	    
 	    @discardableResult
@@ -119,24 +71,6 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 
  class ContactUsInteractableStub: ContactUsInteractable {
     
-     var dataReference: DataReferenceable {
-        get {
-            return DefaultValueRegistry.defaultValue(for: (DataReferenceable).self)
-        }
-        
-        set { }
-        
-    }
-    
-     var contactUsPresenter: ContactUsPresentable {
-        get {
-            return DefaultValueRegistry.defaultValue(for: (ContactUsPresentable).self)
-        }
-        
-        set { }
-        
-    }
-    
 
     
 
@@ -148,7 +82,7 @@ class MockContactUsInteractable: ContactUsInteractable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2018-05-14 13:59:05 +0000
 
 
 import Cuckoo
@@ -259,7 +193,7 @@ class MockContactUsPresentable: ContactUsPresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/View/ContactUsPresenterViewable.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/View/ContactUsPresenterViewable.swift at 2018-05-14 13:59:05 +0000
 
 
 import Cuckoo
@@ -370,7 +304,7 @@ class MockContactUsPresenterViewable: ContactUsPresenterViewable, Cuckoo.Protoco
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  HomePresenterInteractable.swift
@@ -461,7 +395,7 @@ class MockHomePresenterInteractable: HomePresenterInteractable, Cuckoo.ProtocolM
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  HomePresentable.swift
@@ -579,7 +513,7 @@ class MockHomePresentable: HomePresentable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  HomePresenterViewable.swift
@@ -697,7 +631,7 @@ class MockHomePresenterViewable: HomePresenterViewable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2018-05-14 13:59:05 +0000
 
 
 import Cuckoo
@@ -837,7 +771,204 @@ class MockDataReferenceable: DataReferenceable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/FIRStoring.swift at 2018-05-14 13:59:05 +0000
+
+
+import Cuckoo
+@testable import Showcase_iOS
+
+import FirebaseStorage
+import Foundation
+
+class MockFIRStoring: FIRStoring, Cuckoo.ProtocolMock {
+    typealias MocksType = FIRStoring
+    typealias Stubbing = __StubbingProxy_FIRStoring
+    typealias Verification = __VerificationProxy_FIRStoring
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
+
+    
+
+    
+
+    
+    // ["name": "storageReference", "returnSignature": " -> StorageReferenceable?", "fullyQualifiedName": "storageReference() -> StorageReferenceable?", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Optional<StorageReferenceable>", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubFunction"]
+     func storageReference()  -> StorageReferenceable? {
+        
+            return cuckoo_manager.call("storageReference() -> StorageReferenceable?",
+                parameters: (),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_FIRStoring: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func storageReference() -> Cuckoo.ProtocolStubFunction<(), Optional<StorageReferenceable>> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockFIRStoring.self, method: "storageReference() -> StorageReferenceable?", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_FIRStoring: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func storageReference() -> Cuckoo.__DoNotUse<Optional<StorageReferenceable>> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("storageReference() -> StorageReferenceable?", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class FIRStoringStub: FIRStoring {
+    
+
+    
+
+    
+     func storageReference()  -> StorageReferenceable? {
+        return DefaultValueRegistry.defaultValue(for: Optional<StorageReferenceable>.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/StorageReferenceable.swift at 2018-05-14 13:59:05 +0000
+
+
+import Cuckoo
+@testable import Showcase_iOS
+
+import FirebaseStorage
+import Foundation
+
+class MockStorageReferenceable: StorageReferenceable, Cuckoo.ProtocolMock {
+    typealias MocksType = StorageReferenceable
+    typealias Stubbing = __StubbingProxy_StorageReferenceable
+    typealias Verification = __VerificationProxy_StorageReferenceable
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
+
+    
+
+    
+
+    
+    // ["name": "child", "returnSignature": " -> StorageReferenceable", "fullyQualifiedName": "child(from: String) -> StorageReferenceable", "parameterSignature": "from path: String", "parameterSignatureWithoutNames": "path: String", "inputTypes": "String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "path", "call": "from: path", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("from"), name: "path", type: "String", range: CountableRange(90..<107), nameRange: CountableRange(90..<94))], "returnType": "StorageReferenceable", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubFunction"]
+     func child(from path: String)  -> StorageReferenceable {
+        
+            return cuckoo_manager.call("child(from: String) -> StorageReferenceable",
+                parameters: (path),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "downloadImageUrl", "returnSignature": "", "fullyQualifiedName": "downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)", "parameterSignature": "completion: @escaping (URL?, Error?) -> Void", "parameterSignatureWithoutNames": "completion: @escaping (URL?, Error?) -> Void", "inputTypes": "(URL?, Error?) -> Void", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": true, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "completion", "call": "completion: completion", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("completion"), name: "completion", type: "@escaping (URL?, Error?) -> Void", range: CountableRange(159..<203), nameRange: CountableRange(159..<169))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)  {
+        
+            return cuckoo_manager.call("downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)",
+                parameters: (completion),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_StorageReferenceable: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func child<M1: Cuckoo.Matchable>(from path: M1) -> Cuckoo.ProtocolStubFunction<(String), StorageReferenceable> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: path) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockStorageReferenceable.self, method: "child(from: String) -> StorageReferenceable", parameterMatchers: matchers))
+	    }
+	    
+	    func downloadImageUrl<M1: Cuckoo.Matchable>(completion: M1) -> Cuckoo.ProtocolStubNoReturnFunction<((URL?, Error?) -> Void)> where M1.MatchedType == (URL?, Error?) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<((URL?, Error?) -> Void)>] = [wrap(matchable: completion) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockStorageReferenceable.self, method: "downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_StorageReferenceable: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func child<M1: Cuckoo.Matchable>(from path: M1) -> Cuckoo.__DoNotUse<StorageReferenceable> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: path) { $0 }]
+	        return cuckoo_manager.verify("child(from: String) -> StorageReferenceable", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func downloadImageUrl<M1: Cuckoo.Matchable>(completion: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == (URL?, Error?) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<((URL?, Error?) -> Void)>] = [wrap(matchable: completion) { $0 }]
+	        return cuckoo_manager.verify("downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class StorageReferenceableStub: StorageReferenceable {
+    
+
+    
+
+    
+     func child(from path: String)  -> StorageReferenceable {
+        return DefaultValueRegistry.defaultValue(for: StorageReferenceable.self)
+    }
+    
+     func downloadImageUrl(completion: @escaping (URL?, Error?) -> Void)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  PresenterInteractable.swift
@@ -859,11 +990,43 @@ class MockLoginPresenterInteractable: LoginPresenterInteractable, Cuckoo.Protoco
     let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
 
     
-
+    // ["name": "loginPresenter", "stubType": "ProtocolToBeStubbedProperty", "@type": "InstanceVariable", "type": "LoginInteractorPresentable?", "isReadOnly": false, "accessibility": ""]
+     var loginPresenter: LoginInteractorPresentable? {
+        get {
+            
+            return cuckoo_manager.getter("loginPresenter", superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
+            
+        }
+        
+        set {
+            
+            cuckoo_manager.setter("loginPresenter", value: newValue, superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
+            
+        }
+        
+    }
+    
+    // ["name": "userAuthenticator", "stubType": "ProtocolToBeStubbedProperty", "@type": "InstanceVariable", "type": "LoginAuthenticating?", "isReadOnly": false, "accessibility": ""]
+     var userAuthenticator: LoginAuthenticating? {
+        get {
+            
+            return cuckoo_manager.getter("userAuthenticator", superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
+            
+        }
+        
+        set {
+            
+            cuckoo_manager.setter("userAuthenticator", value: newValue, superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
+            
+        }
+        
+    }
     
 
     
-    // ["name": "signIn", "returnSignature": "", "fullyQualifiedName": "signIn(withEmail: String, password: String)", "parameterSignature": "withEmail email: String, password: String", "parameterSignatureWithoutNames": "email: String, password: String", "inputTypes": "String, String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "email, password", "call": "withEmail: email, password: password", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withEmail"), name: "email", type: "String", range: CountableRange(229..<252), nameRange: CountableRange(229..<238)), CuckooGeneratorFramework.MethodParameter(label: Optional("password"), name: "password", type: "String", range: CountableRange(254..<270), nameRange: CountableRange(254..<262))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+
+    
+    // ["name": "signIn", "returnSignature": "", "fullyQualifiedName": "signIn(withEmail: String, password: String)", "parameterSignature": "withEmail email: String, password: String", "parameterSignatureWithoutNames": "email: String, password: String", "inputTypes": "String, String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "email, password", "call": "withEmail: email, password: password", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withEmail"), name: "email", type: "String", range: CountableRange(351..<374), nameRange: CountableRange(351..<360)), CuckooGeneratorFramework.MethodParameter(label: Optional("password"), name: "password", type: "String", range: CountableRange(376..<392), nameRange: CountableRange(376..<384))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func signIn(withEmail email: String, password: String)  {
         
             return cuckoo_manager.call("signIn(withEmail: String, password: String)",
@@ -881,6 +1044,14 @@ class MockLoginPresenterInteractable: LoginPresenterInteractable, Cuckoo.Protoco
 	
 	    init(manager: Cuckoo.MockManager) {
 	        self.cuckoo_manager = manager
+	    }
+	    
+	    var loginPresenter: Cuckoo.ProtocolToBeStubbedProperty<MockLoginPresenterInteractable, LoginInteractorPresentable?> {
+	        return .init(manager: cuckoo_manager, name: "loginPresenter")
+	    }
+	    
+	    var userAuthenticator: Cuckoo.ProtocolToBeStubbedProperty<MockLoginPresenterInteractable, LoginAuthenticating?> {
+	        return .init(manager: cuckoo_manager, name: "userAuthenticator")
 	    }
 	    
 	    
@@ -903,6 +1074,14 @@ class MockLoginPresenterInteractable: LoginPresenterInteractable, Cuckoo.Protoco
 	    }
 	
 	    
+	    var loginPresenter: Cuckoo.VerifyProperty<LoginInteractorPresentable?> {
+	        return .init(manager: cuckoo_manager, name: "loginPresenter", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
+	    var userAuthenticator: Cuckoo.VerifyProperty<LoginAuthenticating?> {
+	        return .init(manager: cuckoo_manager, name: "userAuthenticator", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
 	
 	    
 	    @discardableResult
@@ -917,6 +1096,24 @@ class MockLoginPresenterInteractable: LoginPresenterInteractable, Cuckoo.Protoco
 
  class LoginPresenterInteractableStub: LoginPresenterInteractable {
     
+     var loginPresenter: LoginInteractorPresentable? {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (LoginInteractorPresentable?).self)
+        }
+        
+        set { }
+        
+    }
+    
+     var userAuthenticator: LoginAuthenticating? {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (LoginAuthenticating?).self)
+        }
+        
+        set { }
+        
+    }
+    
 
     
 
@@ -928,7 +1125,7 @@ class MockLoginPresenterInteractable: LoginPresenterInteractable, Cuckoo.Protoco
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  InteractorPresentable.swift
@@ -1046,7 +1243,7 @@ class MockLoginInteractorPresentable: LoginInteractorPresentable, Cuckoo.Protoco
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  FirebaseAuthenticating.swift
@@ -1137,7 +1334,7 @@ class MockFirebaseLoginAuthenticating: FirebaseLoginAuthenticating, Cuckoo.Proto
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  Authenticating.swift
@@ -1228,7 +1425,524 @@ class MockLoginAuthenticating: LoginAuthenticating, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyBoardDelegate.swift at 2018-05-14 13:59:05 +0000
+
+//
+//  KeyBoardDelegate.swift
+//  Showcase-iOSTests
+//
+//  Created by Lehlohonolo Mbele on 2018/05/10.
+//  Copyright © 2018 DVT. All rights reserved.
+//
+
+import Cuckoo
+@testable import Showcase_iOS
+
+import Foundation
+import UIKit
+
+class MockKeyBoardDelegate: KeyBoardDelegate, Cuckoo.ProtocolMock {
+    typealias MocksType = KeyBoardDelegate
+    typealias Stubbing = __StubbingProxy_KeyBoardDelegate
+    typealias Verification = __VerificationProxy_KeyBoardDelegate
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
+
+    
+
+    
+
+    
+    // ["name": "keyBoardWillShow", "returnSignature": "", "fullyQualifiedName": "keyBoardWillShow(_: Notification)", "parameterSignature": "_ notification: Notification", "parameterSignatureWithoutNames": "notification: Notification", "inputTypes": "Notification", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "notification", "call": "notification", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "notification", type: "Notification", range: CountableRange(248..<276), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func keyBoardWillShow(_ notification: Notification)  {
+        
+            return cuckoo_manager.call("keyBoardWillShow(_: Notification)",
+                parameters: (notification),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "keyBoardWillHide", "returnSignature": "", "fullyQualifiedName": "keyBoardWillHide(_: Notification)", "parameterSignature": "_ notification: Notification", "parameterSignatureWithoutNames": "notification: Notification", "inputTypes": "Notification", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "notification", "call": "notification", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "notification", type: "Notification", range: CountableRange(304..<332), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func keyBoardWillHide(_ notification: Notification)  {
+        
+            return cuckoo_manager.call("keyBoardWillHide(_: Notification)",
+                parameters: (notification),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "hideKeyboardWhenViewTapped", "returnSignature": "", "fullyQualifiedName": "hideKeyboardWhenViewTapped()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func hideKeyboardWhenViewTapped()  {
+        
+            return cuckoo_manager.call("hideKeyboardWhenViewTapped()",
+                parameters: (),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "hideKeyboard", "returnSignature": "", "fullyQualifiedName": "hideKeyboard(for: UITextField)", "parameterSignature": "for textField: UITextField", "parameterSignatureWithoutNames": "textField: UITextField", "inputTypes": "UITextField", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "textField", "call": "for: textField", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("for"), name: "textField", type: "UITextField", range: CountableRange(394..<420), nameRange: CountableRange(394..<397))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func hideKeyboard(for textField: UITextField)  {
+        
+            return cuckoo_manager.call("hideKeyboard(for: UITextField)",
+                parameters: (textField),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "hideKeyboardWhenTappedAround", "returnSignature": "", "fullyQualifiedName": "hideKeyboardWhenTappedAround()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func hideKeyboardWhenTappedAround()  {
+        
+            return cuckoo_manager.call("hideKeyboardWhenTappedAround()",
+                parameters: (),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "updateScrollViewContentInset", "returnSignature": "", "fullyQualifiedName": "updateScrollViewContentInset(_: UIEdgeInsets)", "parameterSignature": "_ contentInset: UIEdgeInsets", "parameterSignatureWithoutNames": "contentInset: UIEdgeInsets", "inputTypes": "UIEdgeInsets", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "contentInset", "call": "contentInset", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "contentInset", type: "UIEdgeInsets", range: CountableRange(500..<528), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func updateScrollViewContentInset(_ contentInset: UIEdgeInsets)  {
+        
+            return cuckoo_manager.call("updateScrollViewContentInset(_: UIEdgeInsets)",
+                parameters: (contentInset),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "updateContentInset", "returnSignature": " -> UIEdgeInsets", "fullyQualifiedName": "updateContentInset(keyBoardHeight: CGFloat) -> UIEdgeInsets", "parameterSignature": "keyBoardHeight height: CGFloat", "parameterSignatureWithoutNames": "height: CGFloat", "inputTypes": "CGFloat", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "height", "call": "keyBoardHeight: height", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("keyBoardHeight"), name: "height", type: "CGFloat", range: CountableRange(558..<588), nameRange: CountableRange(558..<572))], "returnType": "UIEdgeInsets", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubFunction"]
+     func updateContentInset(keyBoardHeight height: CGFloat)  -> UIEdgeInsets {
+        
+            return cuckoo_manager.call("updateContentInset(keyBoardHeight: CGFloat) -> UIEdgeInsets",
+                parameters: (height),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_KeyBoardDelegate: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func keyBoardWillShow<M1: Cuckoo.Matchable>(_ notification: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Notification)> where M1.MatchedType == Notification {
+	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockKeyBoardDelegate.self, method: "keyBoardWillShow(_: Notification)", parameterMatchers: matchers))
+	    }
+	    
+	    func keyBoardWillHide<M1: Cuckoo.Matchable>(_ notification: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Notification)> where M1.MatchedType == Notification {
+	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockKeyBoardDelegate.self, method: "keyBoardWillHide(_: Notification)", parameterMatchers: matchers))
+	    }
+	    
+	    func hideKeyboardWhenViewTapped() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockKeyBoardDelegate.self, method: "hideKeyboardWhenViewTapped()", parameterMatchers: matchers))
+	    }
+	    
+	    func hideKeyboard<M1: Cuckoo.Matchable>(for textField: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(UITextField)> where M1.MatchedType == UITextField {
+	        let matchers: [Cuckoo.ParameterMatcher<(UITextField)>] = [wrap(matchable: textField) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockKeyBoardDelegate.self, method: "hideKeyboard(for: UITextField)", parameterMatchers: matchers))
+	    }
+	    
+	    func hideKeyboardWhenTappedAround() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockKeyBoardDelegate.self, method: "hideKeyboardWhenTappedAround()", parameterMatchers: matchers))
+	    }
+	    
+	    func updateScrollViewContentInset<M1: Cuckoo.Matchable>(_ contentInset: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(UIEdgeInsets)> where M1.MatchedType == UIEdgeInsets {
+	        let matchers: [Cuckoo.ParameterMatcher<(UIEdgeInsets)>] = [wrap(matchable: contentInset) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockKeyBoardDelegate.self, method: "updateScrollViewContentInset(_: UIEdgeInsets)", parameterMatchers: matchers))
+	    }
+	    
+	    func updateContentInset<M1: Cuckoo.Matchable>(keyBoardHeight height: M1) -> Cuckoo.ProtocolStubFunction<(CGFloat), UIEdgeInsets> where M1.MatchedType == CGFloat {
+	        let matchers: [Cuckoo.ParameterMatcher<(CGFloat)>] = [wrap(matchable: height) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockKeyBoardDelegate.self, method: "updateContentInset(keyBoardHeight: CGFloat) -> UIEdgeInsets", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_KeyBoardDelegate: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func keyBoardWillShow<M1: Cuckoo.Matchable>(_ notification: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Notification {
+	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+	        return cuckoo_manager.verify("keyBoardWillShow(_: Notification)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func keyBoardWillHide<M1: Cuckoo.Matchable>(_ notification: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Notification {
+	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+	        return cuckoo_manager.verify("keyBoardWillHide(_: Notification)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func hideKeyboardWhenViewTapped() -> Cuckoo.__DoNotUse<Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("hideKeyboardWhenViewTapped()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func hideKeyboard<M1: Cuckoo.Matchable>(for textField: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == UITextField {
+	        let matchers: [Cuckoo.ParameterMatcher<(UITextField)>] = [wrap(matchable: textField) { $0 }]
+	        return cuckoo_manager.verify("hideKeyboard(for: UITextField)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func hideKeyboardWhenTappedAround() -> Cuckoo.__DoNotUse<Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("hideKeyboardWhenTappedAround()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func updateScrollViewContentInset<M1: Cuckoo.Matchable>(_ contentInset: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == UIEdgeInsets {
+	        let matchers: [Cuckoo.ParameterMatcher<(UIEdgeInsets)>] = [wrap(matchable: contentInset) { $0 }]
+	        return cuckoo_manager.verify("updateScrollViewContentInset(_: UIEdgeInsets)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func updateContentInset<M1: Cuckoo.Matchable>(keyBoardHeight height: M1) -> Cuckoo.__DoNotUse<UIEdgeInsets> where M1.MatchedType == CGFloat {
+	        let matchers: [Cuckoo.ParameterMatcher<(CGFloat)>] = [wrap(matchable: height) { $0 }]
+	        return cuckoo_manager.verify("updateContentInset(keyBoardHeight: CGFloat) -> UIEdgeInsets", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class KeyBoardDelegateStub: KeyBoardDelegate {
+    
+
+    
+
+    
+     func keyBoardWillShow(_ notification: Notification)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func keyBoardWillHide(_ notification: Notification)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func hideKeyboardWhenViewTapped()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func hideKeyboard(for textField: UITextField)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func hideKeyboardWhenTappedAround()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func updateScrollViewContentInset(_ contentInset: UIEdgeInsets)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func updateContentInset(keyBoardHeight height: CGFloat)  -> UIEdgeInsets {
+        return DefaultValueRegistry.defaultValue(for: UIEdgeInsets.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyboardObservable.swift at 2018-05-14 13:59:05 +0000
+
+//
+//  KeyboardObservable.swift
+//  Showcase-iOSTests
+//
+//  Created by Lehlohonolo Mbele on 2018/05/10.
+//  Copyright © 2018 DVT. All rights reserved.
+//
+
+import Cuckoo
+@testable import Showcase_iOS
+
+import Foundation
+
+class MockKeyboardObservable: KeyboardObservable, Cuckoo.ProtocolMock {
+    typealias MocksType = KeyboardObservable
+    typealias Stubbing = __StubbingProxy_KeyboardObservable
+    typealias Verification = __VerificationProxy_KeyboardObservable
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
+
+    
+
+    
+
+    
+    // ["name": "addObservers", "returnSignature": "", "fullyQualifiedName": "addObservers()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func addObservers()  {
+        
+            return cuckoo_manager.call("addObservers()",
+                parameters: (),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "removeObservers", "returnSignature": "", "fullyQualifiedName": "removeObservers()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func removeObservers()  {
+        
+            return cuckoo_manager.call("removeObservers()",
+                parameters: (),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_KeyboardObservable: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func addObservers() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockKeyboardObservable.self, method: "addObservers()", parameterMatchers: matchers))
+	    }
+	    
+	    func removeObservers() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockKeyboardObservable.self, method: "removeObservers()", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_KeyboardObservable: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func addObservers() -> Cuckoo.__DoNotUse<Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("addObservers()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func removeObservers() -> Cuckoo.__DoNotUse<Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("removeObservers()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class KeyboardObservableStub: KeyboardObservable {
+    
+
+    
+
+    
+     func addObservers()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func removeObservers()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/NotificationCenterDelegate.swift at 2018-05-14 13:59:05 +0000
+
+//
+//  NotificationCenterDelegate.swift
+//  Showcase-iOS
+//
+//  Created by Lehlohonolo Mbele on 2018/05/10.
+//  Copyright © 2018 DVT. All rights reserved.
+//
+
+import Cuckoo
+@testable import Showcase_iOS
+
+import Foundation
+
+class MockNotificationCenterDelegate: NotificationCenterDelegate, Cuckoo.ProtocolMock {
+    typealias MocksType = NotificationCenterDelegate
+    typealias Stubbing = __StubbingProxy_NotificationCenterDelegate
+    typealias Verification = __VerificationProxy_NotificationCenterDelegate
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
+
+    
+
+    
+
+    
+    // ["name": "removeObserver", "returnSignature": "", "fullyQualifiedName": "removeObserver(_: Any)", "parameterSignature": "_ observer: Any", "parameterSignatureWithoutNames": "observer: Any", "inputTypes": "Any", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "observer", "call": "observer", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "observer", type: "Any", range: CountableRange(248..<263), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func removeObserver(_ observer: Any)  {
+        
+            return cuckoo_manager.call("removeObserver(_: Any)",
+                parameters: (observer),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "addObserver", "returnSignature": "", "fullyQualifiedName": "addObserver(_: Any, selector: Selector, name: NSNotification.Name?, object: Any?)", "parameterSignature": "_ observer: Any, selector: Selector, name: NSNotification.Name?, object: Any?", "parameterSignatureWithoutNames": "observer: Any, selector: Selector, name: NSNotification.Name?, object: Any?", "inputTypes": "Any, Selector, NSNotification.Name?, Any?", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "observer, selector, name, object", "call": "observer, selector: selector, name: name, object: object", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "observer", type: "Any", range: CountableRange(286..<301), nameRange: CountableRange(0..<0)), CuckooGeneratorFramework.MethodParameter(label: Optional("selector"), name: "selector", type: "Selector", range: CountableRange(303..<321), nameRange: CountableRange(303..<311)), CuckooGeneratorFramework.MethodParameter(label: Optional("name"), name: "name", type: "NSNotification.Name?", range: CountableRange(323..<349), nameRange: CountableRange(323..<327)), CuckooGeneratorFramework.MethodParameter(label: Optional("object"), name: "object", type: "Any?", range: CountableRange(351..<363), nameRange: CountableRange(351..<357))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func addObserver(_ observer: Any, selector: Selector, name: NSNotification.Name?, object: Any?)  {
+        
+            return cuckoo_manager.call("addObserver(_: Any, selector: Selector, name: NSNotification.Name?, object: Any?)",
+                parameters: (observer, selector, name, object),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+    // ["name": "post", "returnSignature": "", "fullyQualifiedName": "post(_: Notification)", "parameterSignature": "_ notification: Notification", "parameterSignatureWithoutNames": "notification: Notification", "inputTypes": "Notification", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "notification", "call": "notification", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "notification", type: "Notification", range: CountableRange(379..<407), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func post(_ notification: Notification)  {
+        
+            return cuckoo_manager.call("post(_: Notification)",
+                parameters: (notification),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_NotificationCenterDelegate: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func removeObserver<M1: Cuckoo.Matchable>(_ observer: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Any)> where M1.MatchedType == Any {
+	        let matchers: [Cuckoo.ParameterMatcher<(Any)>] = [wrap(matchable: observer) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockNotificationCenterDelegate.self, method: "removeObserver(_: Any)", parameterMatchers: matchers))
+	    }
+	    
+	    func addObserver<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable, M4: Cuckoo.Matchable>(_ observer: M1, selector: M2, name: M3, object: M4) -> Cuckoo.ProtocolStubNoReturnFunction<(Any, Selector, NSNotification.Name?, Any?)> where M1.MatchedType == Any, M2.MatchedType == Selector, M3.MatchedType == NSNotification.Name?, M4.MatchedType == Any? {
+	        let matchers: [Cuckoo.ParameterMatcher<(Any, Selector, NSNotification.Name?, Any?)>] = [wrap(matchable: observer) { $0.0 }, wrap(matchable: selector) { $0.1 }, wrap(matchable: name) { $0.2 }, wrap(matchable: object) { $0.3 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockNotificationCenterDelegate.self, method: "addObserver(_: Any, selector: Selector, name: NSNotification.Name?, object: Any?)", parameterMatchers: matchers))
+	    }
+	    
+	    func post<M1: Cuckoo.Matchable>(_ notification: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Notification)> where M1.MatchedType == Notification {
+	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockNotificationCenterDelegate.self, method: "post(_: Notification)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_NotificationCenterDelegate: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func removeObserver<M1: Cuckoo.Matchable>(_ observer: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Any {
+	        let matchers: [Cuckoo.ParameterMatcher<(Any)>] = [wrap(matchable: observer) { $0 }]
+	        return cuckoo_manager.verify("removeObserver(_: Any)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func addObserver<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable, M4: Cuckoo.Matchable>(_ observer: M1, selector: M2, name: M3, object: M4) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Any, M2.MatchedType == Selector, M3.MatchedType == NSNotification.Name?, M4.MatchedType == Any? {
+	        let matchers: [Cuckoo.ParameterMatcher<(Any, Selector, NSNotification.Name?, Any?)>] = [wrap(matchable: observer) { $0.0 }, wrap(matchable: selector) { $0.1 }, wrap(matchable: name) { $0.2 }, wrap(matchable: object) { $0.3 }]
+	        return cuckoo_manager.verify("addObserver(_: Any, selector: Selector, name: NSNotification.Name?, object: Any?)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func post<M1: Cuckoo.Matchable>(_ notification: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Notification {
+	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+	        return cuckoo_manager.verify("post(_: Notification)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class NotificationCenterDelegateStub: NotificationCenterDelegate {
+    
+
+    
+
+    
+     func removeObserver(_ observer: Any)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func addObserver(_ observer: Any, selector: Selector, name: NSNotification.Name?, object: Any?)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func post(_ notification: Notification)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  PresenterViewable.swift
@@ -1250,11 +1964,27 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
     let cuckoo_manager = Cuckoo.MockManager(hasParent: false)
 
     
-
+    // ["name": "loginPresenter", "stubType": "ProtocolToBeStubbedProperty", "@type": "InstanceVariable", "type": "LoginPresentable?", "isReadOnly": false, "accessibility": ""]
+     var loginPresenter: LoginPresentable? {
+        get {
+            
+            return cuckoo_manager.getter("loginPresenter", superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
+            
+        }
+        
+        set {
+            
+            cuckoo_manager.setter("loginPresenter", value: newValue, superclassCall: Cuckoo.MockManager.crashOnProtocolSuperclassCall())
+            
+        }
+        
+    }
     
 
     
-    // ["name": "showEmailValidationFailure", "returnSignature": "", "fullyQualifiedName": "showEmailValidationFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(240..<276), nameRange: CountableRange(240..<249))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+
+    
+    // ["name": "showEmailValidationFailure", "returnSignature": "", "fullyQualifiedName": "showEmailValidationFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(293..<329), nameRange: CountableRange(293..<302))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func showEmailValidationFailure(withError error: AuthenticationError)  {
         
             return cuckoo_manager.call("showEmailValidationFailure(withError: AuthenticationError)",
@@ -1266,7 +1996,7 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
         
     }
     
-    // ["name": "showPasswordValidationFailure", "returnSignature": "", "fullyQualifiedName": "showPasswordValidationFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(317..<353), nameRange: CountableRange(317..<326))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    // ["name": "showPasswordValidationFailure", "returnSignature": "", "fullyQualifiedName": "showPasswordValidationFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(370..<406), nameRange: CountableRange(370..<379))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func showPasswordValidationFailure(withError error: AuthenticationError)  {
         
             return cuckoo_manager.call("showPasswordValidationFailure(withError: AuthenticationError)",
@@ -1278,7 +2008,7 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
         
     }
     
-    // ["name": "showInvalidInputsFailure", "returnSignature": "", "fullyQualifiedName": "showInvalidInputsFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(389..<425), nameRange: CountableRange(389..<398))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    // ["name": "showInvalidInputsFailure", "returnSignature": "", "fullyQualifiedName": "showInvalidInputsFailure(withError: AuthenticationError)", "parameterSignature": "withError error: AuthenticationError", "parameterSignatureWithoutNames": "error: AuthenticationError", "inputTypes": "AuthenticationError", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "withError: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withError"), name: "error", type: "AuthenticationError", range: CountableRange(442..<478), nameRange: CountableRange(442..<451))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func showInvalidInputsFailure(withError error: AuthenticationError)  {
         
             return cuckoo_manager.call("showInvalidInputsFailure(withError: AuthenticationError)",
@@ -1290,11 +2020,11 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
         
     }
     
-    // ["name": "showAuthenticationFailure", "returnSignature": "", "fullyQualifiedName": "showAuthenticationFailure(withMessage: String?)", "parameterSignature": "withMessage: String?", "parameterSignatureWithoutNames": "withMessage: String?", "inputTypes": "String?", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "withMessage", "call": "withMessage: withMessage", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withMessage"), name: "withMessage", type: "String?", range: CountableRange(462..<482), nameRange: CountableRange(462..<473))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
-     func showAuthenticationFailure(withMessage: String?)  {
+    // ["name": "showAuthenticationFailure", "returnSignature": "", "fullyQualifiedName": "showAuthenticationFailure(withMessage: String?)", "parameterSignature": "withMessage message: String?", "parameterSignatureWithoutNames": "message: String?", "inputTypes": "String?", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "message", "call": "withMessage: message", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("withMessage"), name: "message", type: "String?", range: CountableRange(515..<543), nameRange: CountableRange(515..<526))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func showAuthenticationFailure(withMessage message: String?)  {
         
             return cuckoo_manager.call("showAuthenticationFailure(withMessage: String?)",
-                parameters: (withMessage),
+                parameters: (message),
                 superclassCall:
                     
                     Cuckoo.MockManager.crashOnProtocolSuperclassCall()
@@ -1322,6 +2052,10 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
 	        self.cuckoo_manager = manager
 	    }
 	    
+	    var loginPresenter: Cuckoo.ProtocolToBeStubbedProperty<MockLoginPresenterViewable, LoginPresentable?> {
+	        return .init(manager: cuckoo_manager, name: "loginPresenter")
+	    }
+	    
 	    
 	    func showEmailValidationFailure<M1: Cuckoo.Matchable>(withError error: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(AuthenticationError)> where M1.MatchedType == AuthenticationError {
 	        let matchers: [Cuckoo.ParameterMatcher<(AuthenticationError)>] = [wrap(matchable: error) { $0 }]
@@ -1338,8 +2072,8 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
 	        return .init(stub: cuckoo_manager.createStub(for: MockLoginPresenterViewable.self, method: "showInvalidInputsFailure(withError: AuthenticationError)", parameterMatchers: matchers))
 	    }
 	    
-	    func showAuthenticationFailure<M1: Cuckoo.Matchable>(withMessage: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String?)> where M1.MatchedType == String? {
-	        let matchers: [Cuckoo.ParameterMatcher<(String?)>] = [wrap(matchable: withMessage) { $0 }]
+	    func showAuthenticationFailure<M1: Cuckoo.Matchable>(withMessage message: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String?)> where M1.MatchedType == String? {
+	        let matchers: [Cuckoo.ParameterMatcher<(String?)>] = [wrap(matchable: message) { $0 }]
 	        return .init(stub: cuckoo_manager.createStub(for: MockLoginPresenterViewable.self, method: "showAuthenticationFailure(withMessage: String?)", parameterMatchers: matchers))
 	    }
 	    
@@ -1362,6 +2096,10 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
 	    }
 	
 	    
+	    var loginPresenter: Cuckoo.VerifyProperty<LoginPresentable?> {
+	        return .init(manager: cuckoo_manager, name: "loginPresenter", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
 	
 	    
 	    @discardableResult
@@ -1383,8 +2121,8 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
 	    }
 	    
 	    @discardableResult
-	    func showAuthenticationFailure<M1: Cuckoo.Matchable>(withMessage: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String? {
-	        let matchers: [Cuckoo.ParameterMatcher<(String?)>] = [wrap(matchable: withMessage) { $0 }]
+	    func showAuthenticationFailure<M1: Cuckoo.Matchable>(withMessage message: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String? {
+	        let matchers: [Cuckoo.ParameterMatcher<(String?)>] = [wrap(matchable: message) { $0 }]
 	        return cuckoo_manager.verify("showAuthenticationFailure(withMessage: String?)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
@@ -1399,6 +2137,15 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
 }
 
  class LoginPresenterViewableStub: LoginPresenterViewable {
+    
+     var loginPresenter: LoginPresentable? {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (LoginPresentable?).self)
+        }
+        
+        set { }
+        
+    }
     
 
     
@@ -1416,7 +2163,7 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
-     func showAuthenticationFailure(withMessage: String?)  {
+     func showAuthenticationFailure(withMessage message: String?)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
@@ -1427,7 +2174,7 @@ class MockLoginPresenterViewable: LoginPresenterViewable, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-05-08 13:01:00 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2018-05-14 13:59:05 +0000
 
 //
 //  Viewable.swift
