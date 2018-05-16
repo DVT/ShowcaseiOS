@@ -76,6 +76,9 @@
 		FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */; };
 		FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E28B2099DAE5006EA459 /* HomePresentable.swift */; };
 		FD37E28F2099EC94006EA459 /* HomeInteractableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E28E2099EC94006EA459 /* HomeInteractableTests.swift */; };
+		FD3EFBC720AC56BC00587BDB /* CustomActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3EFBC620AC56BC00587BDB /* CustomActivityView.swift */; };
+		FD3EFBC920AC56CE00587BDB /* CustomActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD3EFBC820AC56CE00587BDB /* CustomActivityView.xib */; };
+		FD3EFBCB20AC667A00587BDB /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3EFBCA20AC667A00587BDB /* ActivityIndicatorView.swift */; };
 		FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */; };
 		FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */; };
 		FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD71315E208DD3EA0090E2E7 /* Path.swift */; };
@@ -174,6 +177,9 @@
 		FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractorImplementation.swift; sourceTree = "<group>"; };
 		FD37E28B2099DAE5006EA459 /* HomePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresentable.swift; sourceTree = "<group>"; };
 		FD37E28E2099EC94006EA459 /* HomeInteractableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractableTests.swift; sourceTree = "<group>"; };
+		FD3EFBC620AC56BC00587BDB /* CustomActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityView.swift; sourceTree = "<group>"; };
+		FD3EFBC820AC56CE00587BDB /* CustomActivityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomActivityView.xib; sourceTree = "<group>"; };
+		FD3EFBCA20AC667A00587BDB /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceableImplementation.swift; sourceTree = "<group>"; };
 		FD71315E208DD3EA0090E2E7 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 		99FB7FE62085F25100B300BA /* Showcase-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FD3EFBC520AC569600587BDB /* CustomView */,
 				BC425EAF20A2E7C000CBBE56 /* Container */,
 				BC02347420A06DD0006E6E92 /* Router */,
 				FD37E2812099DA20006EA459 /* Dashboard */,
@@ -679,6 +686,16 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		FD3EFBC520AC569600587BDB /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				FD3EFBC620AC56BC00587BDB /* CustomActivityView.swift */,
+				FD3EFBC820AC56CE00587BDB /* CustomActivityView.xib */,
+				FD3EFBCA20AC667A00587BDB /* ActivityIndicatorView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		FD71315D208DD3AD0090E2E7 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -740,6 +757,7 @@
 				99FB7FE12085F25100B300BA /* Frameworks */,
 				99FB7FE22085F25100B300BA /* Resources */,
 				2E6B2CB2CC8D4E4243BEC491 /* [CP] Embed Pods Frameworks */,
+				D9208508FF2F212691F7F83C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -760,6 +778,7 @@
 				99FB7FF52085F25300B300BA /* Frameworks */,
 				99FB7FF62085F25300B300BA /* Resources */,
 				353869C5DF9BBD23E9FC7AD2 /* [CP] Embed Pods Frameworks */,
+				87674F858AC79CF3514AF6D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -816,6 +835,7 @@
 			files = (
 				99FB7FF22085F25200B300BA /* LaunchScreen.storyboard in Resources */,
 				BC02346920A0472A006E6E92 /* About.storyboard in Resources */,
+				FD3EFBC920AC56CE00587BDB /* CustomActivityView.xib in Resources */,
 				99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */,
 				99FB7FEF2085F25200B300BA /* Assets.xcassets in Resources */,
 				BC02346720A04661006E6E92 /* Home.storyboard in Resources */,
@@ -862,6 +882,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -872,6 +893,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -907,6 +929,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		87674F858AC79CF3514AF6D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		99FB80092086078700B300BA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -936,6 +973,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9208508FF2F212691F7F83C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -985,6 +1037,8 @@
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
 				FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */,
 				A339977F208D12D8004776AB /* Office.swift in Sources */,
+				FD3EFBC720AC56BC00587BDB /* CustomActivityView.swift in Sources */,
+				FD3EFBCB20AC667A00587BDB /* ActivityIndicatorView.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
 				A389D66320A59471008DB6FE /* FirebaseStorageExtension.swift in Sources */,
 				BC31C0FA20A4697100F8B543 /* KeyboardObservable.swift in Sources */,

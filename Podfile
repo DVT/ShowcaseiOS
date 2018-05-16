@@ -15,6 +15,7 @@ target 'Showcase-iOS' do
    pod 'RxSwift','~> 4.0'
    pod 'Swinject'
    pod 'RxCocoa','~> 4.0'
+   pod 'NVActivityIndicatorView'
    
   target 'Showcase-iOSTests' do
     inherit! :search_paths
