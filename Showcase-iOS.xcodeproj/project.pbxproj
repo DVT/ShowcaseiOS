@@ -70,6 +70,9 @@
 		BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD2208A1B9B000458FD /* LoginInteractor.swift */; };
 		BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD6208A23D5000458FD /* LoginAuthenticating.swift */; };
 		BCE5DADC208A2756000458FD /* LoginInteractorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DADB208A2756000458FD /* LoginInteractorPresentable.swift */; };
+		BCEDE50120AC46AE005E1F4D /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE50020AC46AE005E1F4D /* Routable.swift */; };
+		BCEDE50420AC46DA005E1F4D /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE50320AC46DA005E1F4D /* LoginRouter.swift */; };
+		BCEDE50820AC4836005E1F4D /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE50720AC4836005E1F4D /* DependencyContainer.swift */; };
 		D3CA0C259152F306ADF67208 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF1C54E1532810CCB2C516E /* Pods_Showcase_iOSTests.framework */; };
 		FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2852099DA52006EA459 /* ShowcaseApp.swift */; };
 		FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */; };
@@ -168,6 +171,9 @@
 		BCE5DAD2208A1B9B000458FD /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		BCE5DAD6208A23D5000458FD /* LoginAuthenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticating.swift; sourceTree = "<group>"; };
 		BCE5DADB208A2756000458FD /* LoginInteractorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorPresentable.swift; sourceTree = "<group>"; };
+		BCEDE50020AC46AE005E1F4D /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		BCEDE50320AC46DA005E1F4D /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		BCEDE50720AC4836005E1F4D /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		DCFA1459AB0697F9EB2E7C36 /* Pods-Showcase-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD37E2852099DA52006EA459 /* ShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseApp.swift; sourceTree = "<group>"; };
 		FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractable.swift; sourceTree = "<group>"; };
@@ -228,8 +234,8 @@
 		99FB7FE62085F25100B300BA /* Showcase-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				BC425EAF20A2E7C000CBBE56 /* Container */,
-				BC02347420A06DD0006E6E92 /* Router */,
+				BCEDE50620AC481A005E1F4D /* DependencyContainer */,
+				BCEDE4FF20AC469B005E1F4D /* Router */,
 				FD37E2812099DA20006EA459 /* Dashboard */,
 				BC4D82C8208F599E003EFB06 /* Helpers */,
 				A3399789208E0514004776AB /* Contact Us */,
@@ -427,34 +433,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BC02347420A06DD0006E6E92 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		BC02347920A071BD006E6E92 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		BC02347E20A1CFE0006E6E92 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		BC425EAF20A2E7C000CBBE56 /* Container */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Container;
-			sourceTree = "<group>";
-		};
 		BC425EBB20A45CDA00CBBE56 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,7 +520,7 @@
 		BCE5DA822087A93B000458FD /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				BC02347920A071BD006E6E92 /* Router */,
+				BCEDE50220AC46CB005E1F4D /* Router */,
 				BC4D82CB208F601B003EFB06 /* View */,
 				BCE5DADA208A25BA000458FD /* Presenter */,
 				BCE5DACF208A1AEB000458FD /* Interactor */,
@@ -567,7 +545,6 @@
 			isa = PBXGroup;
 			children = (
 				BC425EBE20A461B200CBBE56 /* View */,
-				BC02347E20A1CFE0006E6E92 /* Router */,
 				BC4D82C1208F4C87003EFB06 /* Presenter */,
 				BC9253E8208DCEA4003EACBE /* Interactor */,
 				BCE5DA8B2087AB3A000458FD /* Service */,
@@ -601,6 +578,30 @@
 				BCE5DADB208A2756000458FD /* LoginInteractorPresentable.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BCEDE4FF20AC469B005E1F4D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BCEDE50020AC46AE005E1F4D /* Routable.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BCEDE50220AC46CB005E1F4D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BCEDE50320AC46DA005E1F4D /* LoginRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BCEDE50620AC481A005E1F4D /* DependencyContainer */ = {
+			isa = PBXGroup;
+			children = (
+				BCEDE50720AC4836005E1F4D /* DependencyContainer.swift */,
+			);
+			path = DependencyContainer;
 			sourceTree = "<group>";
 		};
 		C55D84FE98E7C7D0A5487DDD /* Pods */ = {
@@ -973,6 +974,7 @@
 				A389D66520A594EB008DB6FE /* FIRStoring.swift in Sources */,
 				FDE1AE7E209B2D5A00D383C4 /* ShowcaseAppViewModel.swift in Sources */,
 				BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */,
+				BCEDE50120AC46AE005E1F4D /* Routable.swift in Sources */,
 				BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */,
 				A3E71971209B1A200081D5C1 /* ContactUsPresenterViewable.swift in Sources */,
 				BCE5DADC208A2756000458FD /* LoginInteractorPresentable.swift in Sources */,
@@ -980,6 +982,7 @@
 				BC31C0F920A4696D00F8B543 /* KeyBoardDelegate.swift in Sources */,
 				FDE1AE78209B244C00D383C4 /* HomePresenter.swift in Sources */,
 				BC02347320A051B2006E6E92 /* UIViewController+Extensions.swift in Sources */,
+				BCEDE50820AC4836005E1F4D /* DependencyContainer.swift in Sources */,
 				BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */,
 				BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */,
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
@@ -994,6 +997,7 @@
 				BCE5DAC32089D962000458FD /* FirebaseLoginAuthenticating.swift in Sources */,
 				BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */,
 				FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */,
+				BCEDE50420AC46DA005E1F4D /* LoginRouter.swift in Sources */,
 				A3E7196B209B06F40081D5C1 /* ContactUsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
