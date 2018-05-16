@@ -9,71 +9,24 @@
 import UIKit
 
 class HomeViewController: UICollectionViewController {
-    @IBOutlet private weak var searchBar: UISearchBar!
-    
     var presenter: HomePresentable?
     var showcaseAppsViewModels: [ShowcaseAppViewModel] = [ShowcaseAppViewModel]()
     var firebaseStorage:FIRStoring?
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.topItem?.title = "DVT Showcase"
-        self.setupCollectionViewNib()
+        self.setupViewTitle()
+        self.registerCollectionViewNib()
         self.presenter?.fetchShowcaseApps()
-        self.mockFectchApps()
     }
     
-    func setupCollectionViewNib() {
+    func setupViewTitle() {
+        self.navigationController?.navigationBar.topItem?.title = "DVT Showcase"
+    }
+    
+    func registerCollectionViewNib() {
         let nib = UINib(nibName: "ShowcaseAppCollectionViewCell", bundle: nil)
         self.collectionView?.register(nib, forCellWithReuseIdentifier: "ShowcaseAppViewIdentifier")
-    }
-    
-    func mockFectchApps() {
-        let showcaseViewModel = ShowcaseApp(with: self.setupShowcaseAppDictionary())
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        showcaseAppsViewModels.append(ShowcaseAppViewModel(with: showcaseViewModel))
-        self.collectionView?.reloadData()
-    }
-    
-    func setupShowcaseAppDictionary() -> [String: Any] {
-        var dictionary = [String: Any]()
-        dictionary["client"] = "Group Five"
-        dictionary["functionality"] = "Asset data capture on Windows Mobile devices."
-        dictionary["iconUrl"] = "app-images/group-five/group_five_logo.jpg"
-        dictionary["id"] = "group-five"
-        dictionary["industry"] = "Asset Management"
-        dictionary["shortDescription"] = "Asset data capturing application"
-        dictionary["technologyUsed"] = "Windows Phone \n.NET Development "
-        dictionary["screenshots"] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
-        return dictionary
     }
 }
 
@@ -122,6 +75,7 @@ extension HomeViewController: HomePresenterViewable {
     }
     
     func showOnFailure(with error: DatabaseError) {
+        print("To present Error view here.")
     }
 }
 

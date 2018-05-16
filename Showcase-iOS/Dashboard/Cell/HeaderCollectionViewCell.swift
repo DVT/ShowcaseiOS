@@ -17,15 +17,4 @@ class HeaderCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension HeaderCollectionViewCell: UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
-    }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
-}
-
 
