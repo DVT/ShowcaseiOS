@@ -19,7 +19,10 @@ class ContactUsPresenterTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        systemUNderTest = ContactUsPresenter(contactUsInteractor: mockContactUsInteractor, contactUsView: mockPresenterViewable)
+        let contactUsPresenter = ContactUsPresenter()
+        contactUsPresenter.contactUsInteractor = mockContactUsInteractor
+        contactUsPresenter.contactUsView = mockPresenterViewable
+        systemUNderTest = contactUsPresenter
     }
 
     //MARK: Tests

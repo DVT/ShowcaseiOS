@@ -18,7 +18,9 @@ class LoginInteractorTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        systemUnderTest = LoginInteractor(mockLoginPresenter, mockUserAuthenticator)
+        systemUnderTest = LoginInteractor()
+        systemUnderTest.userAuthenticator = mockUserAuthenticator
+        systemUnderTest.loginPresenter = mockLoginPresenter
     }
     
     func testThatTheSignedInSuccesfullyMethodOfTheLoginPresenterGetsCalledWhenUserIsAuthorized() {
