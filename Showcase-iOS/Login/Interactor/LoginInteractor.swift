@@ -9,20 +9,15 @@
 import Foundation
 
 class LoginInteractor: LoginPresenterInteractable {
-    var loginPresenter: LoginInteractorPresentable
-    var userAuthenticator: LoginAuthenticating
-    
-    init(_ loginPresenter: LoginInteractorPresentable,_ userAuthenticator: LoginAuthenticating) {
-        self.loginPresenter = loginPresenter
-        self.userAuthenticator = userAuthenticator
-    }
+    var loginPresenter: LoginInteractorPresentable?
+    var userAuthenticator: LoginAuthenticating?
     
     func signIn(withEmail email: String, password: String) {
-        self.userAuthenticator.signIn(withEmail: email, password: password) { [weak self] (user, error) in
+        self.userAuthenticator?.signIn(withEmail: email, password: password) { [weak self] (user, error) in
             if let error = error {
-                self?.loginPresenter.failedToSign(withError: error)
+                self?.loginPresenter?.failedToSign(withError: error)
             } else if let _ = user {
-                self?.loginPresenter.signedInSuccessfully()
+                self?.loginPresenter?.signedInSuccessfully()
             }
         }
     }
