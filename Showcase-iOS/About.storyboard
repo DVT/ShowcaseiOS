@@ -32,9 +32,6 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="est_view" translatesAutoresizingMaskIntoConstraints="NO" id="029-DB-R5w">
                                                 <rect key="frame" x="24" y="200" width="327" height="59"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="employees_count_view" translatesAutoresizingMaskIntoConstraints="NO" id="rsG-Ph-643">
-                                                <rect key="frame" x="165" y="309" width="186" height="88"/>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="offices_view" translatesAutoresizingMaskIntoConstraints="NO" id="SfR-BR-Ew7">
                                                 <rect key="frame" x="24" y="447" width="327" height="72"/>
                                             </imageView>
@@ -127,6 +124,9 @@
                                                     <constraint firstAttribute="height" constant="60" id="Shy-GK-d0T"/>
                                                 </constraints>
                                             </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="employees_count_view" translatesAutoresizingMaskIntoConstraints="NO" id="rsG-Ph-643">
+                                                <rect key="frame" x="131" y="309" width="198" height="88"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -137,12 +137,14 @@
                                             <constraint firstItem="rsG-Ph-643" firstAttribute="top" secondItem="029-DB-R5w" secondAttribute="bottom" constant="50" id="Bl2-5z-VYG"/>
                                             <constraint firstItem="lbL-Vg-gaY" firstAttribute="leading" secondItem="i7X-rC-Efs" secondAttribute="leading" constant="24" id="FOz-z5-0Yj"/>
                                             <constraint firstItem="Vaj-xv-LEt" firstAttribute="top" secondItem="mgv-lk-oWQ" secondAttribute="bottom" constant="50" id="H6h-F3-8XT"/>
+                                            <constraint firstAttribute="trailing" secondItem="rsG-Ph-643" secondAttribute="trailing" constant="46" id="MCS-Gb-PB0"/>
                                             <constraint firstItem="Vaj-xv-LEt" firstAttribute="centerX" secondItem="i7X-rC-Efs" secondAttribute="centerX" id="MZG-Iu-W3G"/>
                                             <constraint firstItem="SfR-BR-Ew7" firstAttribute="top" secondItem="rsG-Ph-643" secondAttribute="bottom" constant="50" id="OYt-cT-uoG"/>
                                             <constraint firstItem="029-DB-R5w" firstAttribute="top" secondItem="lbL-Vg-gaY" secondAttribute="bottom" constant="50" id="Obb-Dp-qe7"/>
                                             <constraint firstAttribute="trailing" secondItem="Vaj-xv-LEt" secondAttribute="trailing" constant="24" id="OqO-yw-2cs"/>
                                             <constraint firstItem="4KB-7Q-5vK" firstAttribute="centerX" secondItem="Vaj-xv-LEt" secondAttribute="centerX" id="RDo-Ot-Rj6"/>
                                             <constraint firstItem="4KB-7Q-5vK" firstAttribute="trailing" secondItem="Vaj-xv-LEt" secondAttribute="trailing" id="RuP-4V-wKG"/>
+                                            <constraint firstItem="rsG-Ph-643" firstAttribute="leading" secondItem="i7X-rC-Efs" secondAttribute="leading" constant="131" id="SbR-RE-k5L"/>
                                             <constraint firstAttribute="trailing" secondItem="SfR-BR-Ew7" secondAttribute="trailing" constant="24" id="Suf-9w-ZGM"/>
                                             <constraint firstItem="029-DB-R5w" firstAttribute="centerX" secondItem="i7X-rC-Efs" secondAttribute="centerX" id="U30-Q1-o7Z"/>
                                             <constraint firstItem="lbL-Vg-gaY" firstAttribute="top" secondItem="i7X-rC-Efs" secondAttribute="top" constant="50" id="Up3-M4-tjX"/>
@@ -152,8 +154,8 @@
                                             <constraint firstAttribute="height" constant="1100" id="ZFQ-K6-CE7"/>
                                             <constraint firstItem="SfR-BR-Ew7" firstAttribute="leading" secondItem="i7X-rC-Efs" secondAttribute="leading" constant="24" id="a3I-YX-Yut"/>
                                             <constraint firstAttribute="trailing" secondItem="lbL-Vg-gaY" secondAttribute="trailing" constant="24" id="aPx-k5-LQs"/>
+                                            <constraint firstItem="rsG-Ph-643" firstAttribute="centerX" secondItem="i7X-rC-Efs" secondAttribute="centerX" constant="42.5" id="cqy-BB-eh6"/>
                                             <constraint firstAttribute="trailing" secondItem="029-DB-R5w" secondAttribute="trailing" constant="24" id="eJd-jx-QwL"/>
-                                            <constraint firstAttribute="trailing" secondItem="rsG-Ph-643" secondAttribute="trailing" constant="24" id="gs3-4z-Es2"/>
                                             <constraint firstItem="lbL-Vg-gaY" firstAttribute="centerX" secondItem="i7X-rC-Efs" secondAttribute="centerX" id="hM8-oQ-bLG"/>
                                             <constraint firstItem="SfR-BR-Ew7" firstAttribute="centerX" secondItem="i7X-rC-Efs" secondAttribute="centerX" id="mvu-H6-aHR"/>
                                             <constraint firstAttribute="trailing" secondItem="mgv-lk-oWQ" secondAttribute="trailing" constant="24" id="zNe-g4-Bzq"/>
