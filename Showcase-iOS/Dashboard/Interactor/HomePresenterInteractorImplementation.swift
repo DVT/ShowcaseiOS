@@ -21,8 +21,9 @@ class HomeInteractor: HomePresenterInteractable {
                 self.homePresenter?.onFetchShowcaseAppsFailure(with: .childNotFound)
             } else {
                 let result = snapshot as? DataSnapshot
-                result?.children.forEach { child in
-                    showcaseApps.append(ShowcaseApp(with: child as? [String: Any]))
+                if result?.value != nil {
+                    let showcaseApp = result?.value as? [String: Any]
+                    showcaseApps.append(ShowcaseApp(with: showcaseApp))
                 }
                 self.homePresenter?.onFetchShowcaseAppsSuccess(with: showcaseApps)
             }
