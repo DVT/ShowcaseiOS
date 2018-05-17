@@ -93,6 +93,9 @@
 		FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */; };
 		FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E28B2099DAE5006EA459 /* HomePresentable.swift */; };
 		FD37E28F2099EC94006EA459 /* HomeInteractableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E28E2099EC94006EA459 /* HomeInteractableTests.swift */; };
+		FD3EFBC720AC56BC00587BDB /* CustomActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3EFBC620AC56BC00587BDB /* CustomActivityView.swift */; };
+		FD3EFBC920AC56CE00587BDB /* CustomActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD3EFBC820AC56CE00587BDB /* CustomActivityView.xib */; };
+		FD3EFBCB20AC667A00587BDB /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3EFBCA20AC667A00587BDB /* ActivityIndicatorView.swift */; };
 		FD4E0EC820AACD6F00B97FF7 /* ShowcaseAppCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD4E0EC720AACD6F00B97FF7 /* ShowcaseAppCollectionViewCell.xib */; };
 		FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */; };
 		FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */; };
@@ -213,6 +216,9 @@
 		FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractorImplementation.swift; sourceTree = "<group>"; };
 		FD37E28B2099DAE5006EA459 /* HomePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresentable.swift; sourceTree = "<group>"; };
 		FD37E28E2099EC94006EA459 /* HomeInteractableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractableTests.swift; sourceTree = "<group>"; };
+		FD3EFBC620AC56BC00587BDB /* CustomActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityView.swift; sourceTree = "<group>"; };
+		FD3EFBC820AC56CE00587BDB /* CustomActivityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomActivityView.xib; sourceTree = "<group>"; };
+		FD3EFBCA20AC667A00587BDB /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		FD4E0EC720AACD6F00B97FF7 /* ShowcaseAppCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowcaseAppCollectionViewCell.xib; sourceTree = "<group>"; };
 		FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceableImplementation.swift; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 				A3AC3FC820AC5D3B00D4B07A /* Poppins-SemiBold.otf */,
 				A3AC3FBF20AC55CC00D4B07A /* ShowcaseError */,
 				BC40834B20AA07D500A2D49C /* About */,
+				FD3EFBC520AC569600587BDB /* CustomView */,
 				FD37E2812099DA20006EA459 /* Dashboard */,
 				BC4D82C8208F599E003EFB06 /* Helpers */,
 				A3399789208E0514004776AB /* Contact Us */,
@@ -765,6 +772,16 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		FD3EFBC520AC569600587BDB /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				FD3EFBC620AC56BC00587BDB /* CustomActivityView.swift */,
+				FD3EFBC820AC56CE00587BDB /* CustomActivityView.xib */,
+				FD3EFBCA20AC667A00587BDB /* ActivityIndicatorView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		FD71315D208DD3AD0090E2E7 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,6 +934,7 @@
 				FD4E0EC820AACD6F00B97FF7 /* ShowcaseAppCollectionViewCell.xib in Resources */,
 				99FB7FF22085F25200B300BA /* LaunchScreen.storyboard in Resources */,
 				BC02346920A0472A006E6E92 /* About.storyboard in Resources */,
+				FD3EFBC920AC56CE00587BDB /* CustomActivityView.xib in Resources */,
 				99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */,
 				A3B502FB20A2FD3700FA8546 /* Poppins-Medium.otf in Resources */,
 				99FB7FEF2085F25200B300BA /* Assets.xcassets in Resources */,
@@ -951,6 +969,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -962,6 +981,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -1132,6 +1152,8 @@
 				FD98CA7F20A99F4D00FDF031 /* TabBarViewController.swift in Sources */,
 				A30146FE20AD600E00E8DE4E /* UIView+Utilities.swift in Sources */,
 				A339977F208D12D8004776AB /* Office.swift in Sources */,
+				FD3EFBC720AC56BC00587BDB /* CustomActivityView.swift in Sources */,
+				FD3EFBCB20AC667A00587BDB /* ActivityIndicatorView.swift in Sources */,
 				A389D66020A444B3008DB6FE /* ContactUsDelegate.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
 				FD98CA7D20A99F2800FDF031 /* HomeViewController.swift in Sources */,
