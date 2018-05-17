@@ -11,4 +11,5 @@ import Foundation
 protocol HomePresentable {
     func onFetchShowcaseAppsSuccess(with showcaseApps: [ShowcaseApp])
     func onFetchShowcaseAppsFailure(with error: DatabaseError)
+    func fetchShowcaseApps()
 }
