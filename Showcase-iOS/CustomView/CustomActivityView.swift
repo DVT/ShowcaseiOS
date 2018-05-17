@@ -11,8 +11,18 @@ import NVActivityIndicatorView
 
 class CustomActivityView: UIView {
 
-    @IBOutlet weak var activityView: NVActivityIndicatorView!
-    @IBOutlet weak var activityTitle: UILabel!
+    @IBOutlet private weak var activityView: NVActivityIndicatorView!
+    @IBOutlet private weak var activityTitle: UILabel!
+    
+    var loadingStatus: String? {
+        didSet {
+            self.activityTitle.text = loadingStatus
+        }
+    }
+    
+    var activityIndicatorView: NVActivityIndicatorView? {
+        return activityView
+    }
     
     func instatiate() -> CustomActivityView {
         return UINib(nibName: "CustomActivityView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! CustomActivityView

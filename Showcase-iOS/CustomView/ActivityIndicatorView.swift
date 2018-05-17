@@ -21,24 +21,24 @@ extension UIViewController {
 
     func startAnimating(with title:String) {
         self.onMainThread {
-            guard let view = self.customActivityIndicatorView else {
+            guard let activity = self.customActivityIndicatorView else {
                 return
             }
             UIApplication.shared.beginIgnoringInteractionEvents()
-            self.view.addSubview(view)
+            self.view.addSubview(activity)
             let xAxis = (Int(UIScreen.main.bounds.width) / 2)
             let yAxis = (Int(UIScreen.main.bounds.height) / 2)
-            view.center = CGPoint( x: xAxis, y: yAxis)
-            view.activityView.color = UIColor.blue
-            view.activityView.type = .circleStrokeSpin
-            view.activityTitle.text = title
-            view.activityView.startAnimating()
+            activity.center = CGPoint( x: xAxis, y: yAxis)
+            activity.activityIndicatorView?.color = .blue
+            activity.activityIndicatorView?.type = .circleStrokeSpin
+            activity.loadingStatus = title
+            activity.activityIndicatorView?.startAnimating()
         }
     }
     
     func stopAnimating() {
         self.onMainThread {
-            self.customActivityIndicatorView?.activityView.stopAnimating()
+            self.customActivityIndicatorView?.activityIndicatorView?.stopAnimating()
             self.customActivityIndicatorView?.removeFromSuperview()
             UIApplication.shared.endIgnoringInteractionEvents()
         }
