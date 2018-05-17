@@ -25,7 +25,7 @@ extension UIView {
     
     // MARK: Round edges
     
-    func roundCorners(with radius: CGFloat = Constants.UI.Layer.cornerRadius) {
+    func roundCorners(with radius: CGFloat = 4) {
         let center = self.center
         layer.cornerRadius = radius
         self.center = center
