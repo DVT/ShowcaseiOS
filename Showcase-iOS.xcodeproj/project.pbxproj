@@ -56,6 +56,7 @@
 		BC31C0FA20A4697100F8B543 /* KeyboardObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EC420A4687300CBBE56 /* KeyboardObservable.swift */; };
 		BC31C0FC20A46FB400F8B543 /* NotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC31C0FB20A46FB400F8B543 /* NotificationCenterDelegate.swift */; };
 		BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */; };
+		BC40834D20AA07F400A2D49C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40834C20AA07F400A2D49C /* AboutViewController.swift */; };
 		BC425EBD20A45D0E00CBBE56 /* CurvedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */; };
 		BC425EC020A461CE00CBBE56 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBF20A461CE00CBBE56 /* LoginViewControllerTests.swift */; };
 		BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */; };
@@ -160,6 +161,7 @@
 		BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		BC31C0FB20A46FB400F8B543 /* NotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterDelegate.swift; sourceTree = "<group>"; };
 		BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUserProtocol.swift; sourceTree = "<group>"; };
+		BC40834C20AA07F400A2D49C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedButton.swift; sourceTree = "<group>"; };
 		BC425EBF20A461CE00CBBE56 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		BC425EC220A4675800CBBE56 /* KeyBoardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				A3B502F920A2FD1400FA8546 /* Utils */,
+				BC40834B20AA07D500A2D49C /* About */,
 				FD37E2812099DA20006EA459 /* Dashboard */,
 				BC4D82C8208F599E003EFB06 /* Helpers */,
 				A3399789208E0514004776AB /* Contact Us */,
@@ -475,11 +478,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BC02347E20A1CFE0006E6E92 /* Router */ = {
+		BC02347920A071BD006E6E92 /* Router */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		BC40834B20AA07D500A2D49C /* About */ = {
+			isa = PBXGroup;
+			children = (
+				BC40834C20AA07F400A2D49C /* AboutViewController.swift */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		BC425EBB20A45CDA00CBBE56 /* Custom Views */ = {
@@ -594,7 +605,6 @@
 			isa = PBXGroup;
 			children = (
 				BC425EBE20A461B200CBBE56 /* View */,
-				BC02347E20A1CFE0006E6E92 /* Router */,
 				BC4D82C1208F4C87003EFB06 /* Presenter */,
 				BC9253E8208DCEA4003EACBE /* Interactor */,
 				BCE5DA8B2087AB3A000458FD /* Service */,
@@ -1029,6 +1039,7 @@
 				BC425EBD20A45D0E00CBBE56 /* CurvedButton.swift in Sources */,
 				FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseLoginAuthenticating.swift in Sources */,
+				BC40834D20AA07F400A2D49C /* AboutViewController.swift in Sources */,
 				BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */,
 				FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */,
 				A3E7196B209B06F40081D5C1 /* ContactUsPresenter.swift in Sources */,
