@@ -15,6 +15,7 @@
 		99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99FB80072085FAC300B300BA /* GoogleService-Info.plist */; };
 		99FB800B20860C4500B300BA /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB800A20860C4500B300BA /* Viewable.swift */; };
 		A30087C2209718F70095FAC1 /* ContactUsInteractableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30087C1209718F70095FAC1 /* ContactUsInteractableTests.swift */; };
+		A30146FE20AD600E00E8DE4E /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30146FD20AD600E00E8DE4E /* UIView+Utilities.swift */; };
 		A339977F208D12D8004776AB /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = A339977E208D12D8004776AB /* Office.swift */; };
 		A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */; };
 		A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34475432088B318001734CA /* DatabaseReferenceTests.swift */; };
@@ -28,6 +29,11 @@
 		A389D66C20A598B9008DB6FE /* FIRImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D66B20A598B9008DB6FE /* FIRImageFetcher.swift */; };
 		A389D67520A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D67420A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift */; };
 		A3AC3FBE20AC2DCB00D4B07A /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AC3FBD20AC2DCB00D4B07A /* ContactUsViewController.swift */; };
+		A3AC3FC420AC565100D4B07A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AC3FC320AC565100D4B07A /* ErrorView.swift */; };
+		A3AC3FC620AC566100D4B07A /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3AC3FC520AC566100D4B07A /* ErrorView.xib */; };
+		A3AC3FC920AC5D3B00D4B07A /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3AC3FC720AC5D3B00D4B07A /* Poppins-Regular.otf */; };
+		A3AC3FCA20AC5D3B00D4B07A /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3AC3FC820AC5D3B00D4B07A /* Poppins-SemiBold.otf */; };
+		A3AC3FCC20AC673C00D4B07A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AC3FCB20AC673C00D4B07A /* UIColor+Extension.swift */; };
 		A3B502FB20A2FD3700FA8546 /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3B502FA20A2FD3700FA8546 /* Poppins-Medium.otf */; };
 		A3B502FE20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B502FC20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift */; };
 		A3B502FF20A31CAE00FA8546 /* ContactUsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3B502FD20A31CAE00FA8546 /* ContactUsCollectionViewCell.xib */; };
@@ -129,6 +135,7 @@
 		99FB80072085FAC300B300BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		99FB800A20860C4500B300BA /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 		A30087C1209718F70095FAC1 /* ContactUsInteractableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsInteractableTests.swift; sourceTree = "<group>"; };
+		A30146FD20AD600E00E8DE4E /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
 		A339977E208D12D8004776AB /* Office.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
 		A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Extension.swift"; sourceTree = "<group>"; };
 		A34475432088B318001734CA /* DatabaseReferenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceTests.swift; sourceTree = "<group>"; };
@@ -142,6 +149,11 @@
 		A389D66B20A598B9008DB6FE /* FIRImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRImageFetcher.swift; sourceTree = "<group>"; };
 		A389D67420A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageFetcherTests.swift; sourceTree = "<group>"; };
 		A3AC3FBD20AC2DCB00D4B07A /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		A3AC3FC320AC565100D4B07A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		A3AC3FC520AC566100D4B07A /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		A3AC3FC720AC5D3B00D4B07A /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
+		A3AC3FC820AC5D3B00D4B07A /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
+		A3AC3FCB20AC673C00D4B07A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A3B502FA20A2FD3700FA8546 /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
 		A3B502FC20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A3B502FD20A31CAE00FA8546 /* ContactUsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactUsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -261,6 +273,9 @@
 			isa = PBXGroup;
 			children = (
 				A3B502F920A2FD1400FA8546 /* Utils */,
+				A3AC3FC720AC5D3B00D4B07A /* Poppins-Regular.otf */,
+				A3AC3FC820AC5D3B00D4B07A /* Poppins-SemiBold.otf */,
+				A3AC3FBF20AC55CC00D4B07A /* ShowcaseError */,
 				BC40834B20AA07D500A2D49C /* About */,
 				FD37E2812099DA20006EA459 /* Dashboard */,
 				BC4D82C8208F599E003EFB06 /* Helpers */,
@@ -309,6 +324,14 @@
 				459C8BC1AC39C3E51A8A77B1 /* Pods-Showcase-iOSTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A30146FC20AD5FE800E8DE4E /* UIVIewUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				A30146FD20AD600E00E8DE4E /* UIView+Utilities.swift */,
+			);
+			path = UIVIewUtilities;
 			sourceTree = "<group>";
 		};
 		A3399789208E0514004776AB /* Contact Us */ = {
@@ -408,6 +431,23 @@
 			path = FIRStorageTests;
 			sourceTree = "<group>";
 		};
+		A3AC3FBF20AC55CC00D4B07A /* ShowcaseError */ = {
+			isa = PBXGroup;
+			children = (
+				A3AC3FC020AC561000D4B07A /* View */,
+			);
+			path = ShowcaseError;
+			sourceTree = "<group>";
+		};
+		A3AC3FC020AC561000D4B07A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3AC3FC320AC565100D4B07A /* ErrorView.swift */,
+				A3AC3FC520AC566100D4B07A /* ErrorView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A3B502F920A2FD1400FA8546 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,15 +538,9 @@
 			isa = PBXGroup;
 			children = (
 				BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */,
+				A3AC3FCB20AC673C00D4B07A /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		BC02347920A071BD006E6E92 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		BC40834B20AA07D500A2D49C /* About */ = {
@@ -555,6 +589,7 @@
 		BC4D82C8208F599E003EFB06 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A30146FC20AD5FE800E8DE4E /* UIVIewUtilities */,
 				BC02347120A0519F006E6E92 /* Extensions */,
 				BC02346E20A050DC006E6E92 /* AppStoryBoards */,
 				BC6D073B2091C87F00FFE9DD /* Errors */,
@@ -802,8 +837,8 @@
 				99FB7FE02085F25100B300BA /* Sources */,
 				99FB7FE12085F25100B300BA /* Frameworks */,
 				99FB7FE22085F25100B300BA /* Resources */,
-				2E6B2CB2CC8D4E4243BEC491 /* [CP] Embed Pods Frameworks */,
 				D7D54775A53779F06BB5B30B /* [CP] Copy Pods Resources */,
+				061B3ECDAC2CCF48BA99C4D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -823,8 +858,8 @@
 				99FB7FF42085F25300B300BA /* Sources */,
 				99FB7FF52085F25300B300BA /* Frameworks */,
 				99FB7FF62085F25300B300BA /* Resources */,
-				353869C5DF9BBD23E9FC7AD2 /* [CP] Embed Pods Frameworks */,
 				D327EEA2D38250BF99E9744F /* [CP] Copy Pods Resources */,
+				4A98A59792CF61E5CCF79AE6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -885,9 +920,12 @@
 				99FB80082085FAC300B300BA /* GoogleService-Info.plist in Resources */,
 				A3B502FB20A2FD3700FA8546 /* Poppins-Medium.otf in Resources */,
 				99FB7FEF2085F25200B300BA /* Assets.xcassets in Resources */,
+				A3AC3FC920AC5D3B00D4B07A /* Poppins-Regular.otf in Resources */,
 				A3B502FF20A31CAE00FA8546 /* ContactUsCollectionViewCell.xib in Resources */,
 				BC02346720A04661006E6E92 /* Home.storyboard in Resources */,
 				BC02346B20A0474D006E6E92 /* Contact.storyboard in Resources */,
+				A3AC3FCA20AC5D3B00D4B07A /* Poppins-SemiBold.otf in Resources */,
+				A3AC3FC620AC566100D4B07A /* ErrorView.xib in Resources */,
 				BC02346520A045DE006E6E92 /* Login.storyboard in Resources */,
 				99FB7FED2085F25100B300BA /* Main.storyboard in Resources */,
 			);
@@ -903,7 +941,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3B504963FB0FEA218ACB3CBD /* [CP] Embed Pods Frameworks */ = {
+		061B3ECDAC2CCF48BA99C4D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A98A59792CF61E5CCF79AE6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -925,21 +995,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		522675DC2558BF4A5C8957BA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6C64BE071CA45E0CB5773509 /* [CP] Check Pods Manifest.lock */ = {
@@ -1032,6 +1087,7 @@
 				A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */,
 				A389D66920A595F7008DB6FE /* StorageReferenceExtension.swift in Sources */,
 				BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */,
+				A3AC3FC420AC565100D4B07A /* ErrorView.swift in Sources */,
 				A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */,
 				BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */,
 				A3B502FE20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift in Sources */,
@@ -1054,6 +1110,7 @@
 				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
 				A389D66C20A598B9008DB6FE /* FIRImageFetcher.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
+				A3AC3FCC20AC673C00D4B07A /* UIColor+Extension.swift in Sources */,
 				BC31C0FC20A46FB400F8B543 /* NotificationCenterDelegate.swift in Sources */,
 				FDE1AE7B209B26A300D383C4 /* HomePresenterViewable.swift in Sources */,
 				A36A55562099E4990037C4BF /* DataReferenceable.swift in Sources */,
@@ -1073,6 +1130,7 @@
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
 				FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */,
 				FD98CA7F20A99F4D00FDF031 /* TabBarViewController.swift in Sources */,
+				A30146FE20AD600E00E8DE4E /* UIView+Utilities.swift in Sources */,
 				A339977F208D12D8004776AB /* Office.swift in Sources */,
 				A389D66020A444B3008DB6FE /* ContactUsDelegate.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
