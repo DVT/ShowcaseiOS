@@ -16,7 +16,7 @@ class UserAuthentication: LoginAuthenticating {
         self.authenticator = authenticator
     }
     
-    func signIn(withEmail email: String, password: String, completion: @escaping (FirUserProtocol?, Error?) -> Void) {
+    func signIn(withEmail email: String, password: String, completion: @escaping (AuthDataResultProtocol?, Error?) -> Void) {
         authenticator.signIn(withEmail: email, password: password) { (user, error) in
             completion(user,error)
         }
