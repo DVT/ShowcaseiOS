@@ -115,7 +115,7 @@ extension LoginViewController: LoginPresenterViewable {
     }
     
     func showSuccess() {
-        performSegue(withIdentifier: "Home", sender: nil)
+        performSegue(withIdentifier: "showHome", sender: nil)
     }
 }
 

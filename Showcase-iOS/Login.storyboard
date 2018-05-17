@@ -143,11 +143,20 @@
                         <outlet property="loginScrollView" destination="jpw-3I-m6k" id="8eG-B4-SAL"/>
                         <outlet property="missingLoginDetailsLabel" destination="eeI-1N-jsP" id="U7Z-zV-5Lk"/>
                         <outlet property="passwordTextField" destination="kWO-Am-Q7l" id="IqP-kE-M7Q"/>
+                        <segue destination="DIN-Hg-pOF" kind="show" identifier="showHome" id="g7n-qA-iM1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="60" y="-89"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="zuR-0R-gPz">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="tabBar" storyboardName="Main" id="DIN-Hg-pOF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vGR-ku-j6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="-32"/>
         </scene>
     </scenes>
     <resources>
