@@ -24,23 +24,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="345" height="236"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3UM-WF-QqQ">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="office" translatesAutoresizingMaskIntoConstraints="NO" id="3UM-WF-QqQ">
+                        <rect key="frame" x="4" y="8" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="ByE-1f-etB"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johannesburg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yt-pM-IGt">
-                        <rect key="frame" x="0.0" y="110" width="126" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="2y3-f3-j0a"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
+                        <rect key="frame" x="4" y="108" width="111" height="25"/>
+                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9E-fK-Qk6">
-                        <rect key="frame" x="220" y="105" width="29" height="32"/>
+                        <rect key="frame" x="213" y="108" width="29" height="32"/>
                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                         <state key="normal" title="Call"/>
                         <connections>
@@ -48,21 +45,24 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Yl-6r-XEu">
-                        <rect key="frame" x="279" y="105" width="66" height="32"/>
+                        <rect key="frame" x="272" y="108" width="69" height="32"/>
                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                         <state key="normal" title="Navigate"/>
                         <connections>
                             <action selector="navigatePressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Neq-Nl-syc"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecy-VL-3V6">
-                        <rect key="frame" x="0.0" y="135" width="218" height="80"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecy-VL-3V6">
+                        <rect key="frame" x="4" y="143" width="337" height="93"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="93" id="oy9-1A-3q7"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a49-CS-4y5">
-                        <rect key="frame" x="150" y="110" width="40" height="22"/>
+                        <rect key="frame" x="143" y="108" width="40" height="32"/>
                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                         <state key="normal" title="Email"/>
                         <connections>
@@ -70,37 +70,41 @@
                         </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WrP-Fj-oE9">
-                        <rect key="frame" x="110" y="0.0" width="235" height="100"/>
+                        <rect key="frame" x="114" y="8" width="227" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="227" id="cvT-xo-mWe"/>
+                        </constraints>
                     </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="WrP-Fj-oE9" firstAttribute="leading" secondItem="3UM-WF-QqQ" secondAttribute="trailing" constant="10" id="0O7-UG-fcV"/>
-                <constraint firstItem="3UM-WF-QqQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0qs-Ww-gve"/>
+                <constraint firstItem="3UM-WF-QqQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="0qs-Ww-gve"/>
                 <constraint firstItem="ecy-VL-3V6" firstAttribute="top" secondItem="a49-CS-4y5" secondAttribute="bottom" constant="3" id="4Li-Vl-r9j"/>
-                <constraint firstAttribute="trailing" secondItem="ecy-VL-3V6" secondAttribute="trailing" constant="127" id="5Yj-6S-7gH"/>
-                <constraint firstAttribute="bottom" secondItem="C9E-fK-Qk6" secondAttribute="bottom" constant="99" id="5hn-zm-ptJ"/>
-                <constraint firstItem="3UM-WF-QqQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7ji-K0-pLr"/>
-                <constraint firstItem="0Yl-6r-XEu" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="153" id="Dxo-u7-a2y"/>
-                <constraint firstItem="a49-CS-4y5" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="24" id="Elh-sU-wtP"/>
-                <constraint firstAttribute="trailing" secondItem="WrP-Fj-oE9" secondAttribute="trailing" id="FwF-q8-WjE"/>
-                <constraint firstAttribute="bottom" secondItem="ecy-VL-3V6" secondAttribute="bottom" constant="21" id="GeB-lv-pQr"/>
+                <constraint firstAttribute="trailing" secondItem="ecy-VL-3V6" secondAttribute="trailing" constant="4" id="5Yj-6S-7gH"/>
+                <constraint firstAttribute="bottom" secondItem="C9E-fK-Qk6" secondAttribute="bottom" constant="96" id="5hn-zm-ptJ"/>
+                <constraint firstItem="0Yl-6r-XEu" firstAttribute="top" secondItem="WrP-Fj-oE9" secondAttribute="bottom" id="6nK-Pl-F4r"/>
+                <constraint firstItem="3UM-WF-QqQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="7ji-K0-pLr"/>
+                <constraint firstItem="0Yl-6r-XEu" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="157" id="Dxo-u7-a2y"/>
+                <constraint firstItem="a49-CS-4y5" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="28" id="Elh-sU-wtP"/>
+                <constraint firstAttribute="trailing" secondItem="WrP-Fj-oE9" secondAttribute="trailing" constant="4" id="FwF-q8-WjE"/>
                 <constraint firstItem="7yt-pM-IGt" firstAttribute="leading" secondItem="ecy-VL-3V6" secondAttribute="leading" id="Go2-yo-VPS"/>
+                <constraint firstItem="C9E-fK-Qk6" firstAttribute="top" secondItem="WrP-Fj-oE9" secondAttribute="bottom" id="Gzu-gc-JEc"/>
                 <constraint firstItem="C9E-fK-Qk6" firstAttribute="leading" secondItem="a49-CS-4y5" secondAttribute="trailing" constant="30" id="OF8-rV-ijf"/>
                 <constraint firstItem="ecy-VL-3V6" firstAttribute="top" secondItem="7yt-pM-IGt" secondAttribute="bottom" constant="10" id="OFg-Om-UPW"/>
-                <constraint firstAttribute="trailing" secondItem="0Yl-6r-XEu" secondAttribute="trailing" id="Q1K-CU-YSO"/>
+                <constraint firstAttribute="trailing" secondItem="0Yl-6r-XEu" secondAttribute="trailing" constant="4" id="Q1K-CU-YSO"/>
                 <constraint firstItem="a49-CS-4y5" firstAttribute="baseline" secondItem="C9E-fK-Qk6" secondAttribute="firstBaseline" id="Q4d-Tj-y8G"/>
-                <constraint firstItem="ecy-VL-3V6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YHy-5w-QMy"/>
-                <constraint firstItem="WrP-Fj-oE9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YXp-8a-2OT"/>
+                <constraint firstItem="ecy-VL-3V6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="YHy-5w-QMy"/>
+                <constraint firstItem="WrP-Fj-oE9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="YXp-8a-2OT"/>
                 <constraint firstItem="C9E-fK-Qk6" firstAttribute="baseline" secondItem="0Yl-6r-XEu" secondAttribute="baseline" id="ZZW-iP-l3D"/>
                 <constraint firstItem="C9E-fK-Qk6" firstAttribute="baseline" secondItem="0Yl-6r-XEu" secondAttribute="firstBaseline" id="f37-fR-Vhk"/>
-                <constraint firstItem="C9E-fK-Qk6" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="94" id="gBi-bX-az5"/>
+                <constraint firstItem="C9E-fK-Qk6" firstAttribute="leading" secondItem="7yt-pM-IGt" secondAttribute="trailing" constant="98" id="gBi-bX-az5"/>
                 <constraint firstItem="0Yl-6r-XEu" firstAttribute="leading" secondItem="C9E-fK-Qk6" secondAttribute="trailing" constant="30" id="lGB-yF-Zdj"/>
                 <constraint firstItem="a49-CS-4y5" firstAttribute="baseline" secondItem="C9E-fK-Qk6" secondAttribute="baseline" id="owh-e6-cHe"/>
                 <constraint firstItem="7yt-pM-IGt" firstAttribute="top" secondItem="a49-CS-4y5" secondAttribute="top" id="ueF-as-Yu5"/>
                 <constraint firstItem="C9E-fK-Qk6" firstAttribute="baseline" secondItem="a49-CS-4y5" secondAttribute="firstBaseline" id="wjf-mh-aQj"/>
-                <constraint firstItem="a49-CS-4y5" firstAttribute="top" secondItem="WrP-Fj-oE9" secondAttribute="bottom" constant="10" id="xQF-aq-4H7"/>
-                <constraint firstItem="7yt-pM-IGt" firstAttribute="top" secondItem="3UM-WF-QqQ" secondAttribute="bottom" constant="10" id="zRV-1y-Z92"/>
+                <constraint firstItem="a49-CS-4y5" firstAttribute="top" secondItem="WrP-Fj-oE9" secondAttribute="bottom" id="xQF-aq-4H7"/>
+                <constraint firstItem="7yt-pM-IGt" firstAttribute="top" secondItem="3UM-WF-QqQ" secondAttribute="bottom" id="zRV-1y-Z92"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="349" height="236"/>
@@ -110,7 +114,10 @@
                 <outlet property="locationDescription" destination="ecy-VL-3V6" id="6pp-vK-FUS"/>
                 <outlet property="mapImage" destination="WrP-Fj-oE9" id="N0C-G9-eus"/>
             </connections>
-            <point key="canvasLocation" x="94" y="-182"/>
+            <point key="canvasLocation" x="93.5" y="-182"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="office" width="297" height="127"/>
+    </resources>
 </document>
