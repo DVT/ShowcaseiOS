@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import FirebaseStorage
+import FirebaseDatabase
 import FirebaseAuth
 import Swinject
 
@@ -24,6 +26,26 @@ struct DependencyContainer {
             loginPresenter.loginViewer = loginViewController
             loginViewController.loginPresenter = loginPresenter
             return loginViewController
+        }
+        
+        container.register(HomePresenterViewable.self) { r in
+            let homeViewController = HomeViewController()
+            homeViewController.presenter = r.resolve(HomePresentable.self)
+            homeViewController.firebaseStorage = Storage.storage()
+            return homeViewController
+        }
+        
+        container.register(FIRStoring.self) { r in
+            return Storage.storage()
+        }
+        
+        container.register(HomePresentable.self) {r in
+            let homePresenter = HomePresenter()
+            let homeInteractor = HomeInteractor()
+            homeInteractor.firebaseDatabaseReference = Database.database().reference()
+            homePresenter.homePresenterInteractable = homeInteractor
+            homeInteractor.homePresenter = homePresenter
+            return homePresenter
         }
         return container
     }

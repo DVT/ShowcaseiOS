@@ -115,7 +115,9 @@ extension LoginViewController: LoginPresenterViewable {
     }
     
     func showSuccess() {
-        performSegue(withIdentifier: "showHome", sender: nil)
+        let tabBarViewController = TabBarViewController.instantiate(fromAppStoryboard: .Main)
+        let navigationController = UINavigationController(rootViewController:tabBarViewController)
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
 
