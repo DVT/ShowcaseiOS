@@ -277,7 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				A37BD16420AE9DCE009C23A0 /* Fonts */,
-				A3B502F920A2FD1400FA8546 /* Utils */,
 				A3AC3FBF20AC55CC00D4B07A /* ShowcaseError */,
 				BC40834B20AA07D500A2D49C /* About */,
 				FD37E2812099DA20006EA459 /* Dashboard */,
@@ -461,13 +460,6 @@
 				A3AC3FC520AC566100D4B07A /* ErrorView.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		A3B502F920A2FD1400FA8546 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		A3BA5EC4208F4FF200E0D34F /* Interactor */ = {

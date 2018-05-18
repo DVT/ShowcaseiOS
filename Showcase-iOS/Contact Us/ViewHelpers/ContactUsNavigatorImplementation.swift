@@ -3,8 +3,9 @@ import MapKit
 import Foundation
 
 class ContactUsNavigatorDelegateImplemetation: ContactUsNavigatorDelegate {
-    func navigate(with latitude: Double, longitude: Double, branch: String, errorViewFrame: CGRect) {
+    func navigate(with latitude: Double, longitude: Double, branch: String) {
         if latitude == 0.0 || longitude == 0.0 {
+            
             return
         } else {
             openMapApp(latitude: latitude, longitude: longitude, branch: branch)

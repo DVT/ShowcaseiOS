@@ -58,7 +58,7 @@ class ContactUsCellViewModel: ContactUsDelegate {
     }
     
     func navigate() {
-        contactUsNavigator?.navigate(with: latitude!, longitude: longitude!, branch: branch!, errorViewFrame: UIScreen.main.bounds)
+        contactUsNavigator?.navigate(with: latitude!, longitude: longitude!, branch: branch!)
     }
     
    
