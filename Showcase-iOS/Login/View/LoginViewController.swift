@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
         keyBoardDelegate = self
         keyBoardObserver = self
+        self.navigationController?.navigationBar.isHidden = true
         notificationCenter = NotificationCenter.default
         loginScrollView.keyboardDismissMode = .interactive
         alertController = UIAlertController(title: "Can't log you in", message: "", preferredStyle: .alert)
