@@ -18,7 +18,7 @@ class ContactUsNavigatorDelegateImplemetation: ContactUsNavigatorDelegate {
     
    private func openMapApp(latitude: Double, longitude: Double, branch: String) {
         let regionDistance: CLLocationDistance = 1000
-        let coordinates = CLLocationCoordinate2DMake(latitude, latitude)
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
         let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
         let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
                        MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
