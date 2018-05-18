@@ -4,12 +4,7 @@ import Foundation
 
 class ContactUsNavigatorDelegateImplemetation: ContactUsNavigatorDelegate {
     func navigate(with latitude: Double, longitude: Double, branch: String, errorViewFrame: CGRect) {
-        let errorView = ErrorView(frame: errorViewFrame)
-
         if latitude == 0.0 || longitude == 0.0 {
-            errorView.onActionButtonTouched = {[weak self] in
-                self?.navigate(with: latitude, longitude: longitude, branch: branch, errorViewFrame: errorViewFrame)
-            }
             return
         } else {
             openMapApp(latitude: latitude, longitude: longitude, branch: branch)
