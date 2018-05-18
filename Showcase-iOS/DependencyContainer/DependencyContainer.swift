@@ -15,17 +15,15 @@ import Swinject
 struct DependencyContainer {
     static func container() -> Container {
         let container = Container()
-        container.register(LoginPresenterViewable.self) { r in
-            let loginViewController = LoginViewController.instantiate(fromAppStoryboard: .Login)
+        
+        container.register(LoginPresentable.self) { r in
             let userAuthentication = UserAuthentication(Auth.auth())
             let loginInteractor = LoginInteractor()
             let loginPresenter = LoginPresenter()
             loginInteractor.userAuthenticator = userAuthentication
             loginInteractor.loginPresenter = loginPresenter
             loginPresenter.loginInteractor = loginInteractor
-            loginPresenter.loginViewer = loginViewController
-            loginViewController.loginPresenter = loginPresenter
-            return loginViewController
+            return loginPresenter
         }
         
         container.register(HomePresenterViewable.self) { r in
