@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
         keyBoardDelegate = self
         keyBoardObserver = self
+        self.navigationController?.navigationBar.isHidden = true
         notificationCenter = NotificationCenter.default
         loginScrollView.keyboardDismissMode = .interactive
         alertController = UIAlertController(title: "Can't log you in", message: "", preferredStyle: .alert)
@@ -115,7 +116,9 @@ extension LoginViewController: LoginPresenterViewable {
     }
     
     func showSuccess() {
-        performSegue(withIdentifier: "Home", sender: nil)
+        let tabBarViewController = TabBarViewController.instantiate(fromAppStoryboard: .Main)
+        let navigationController = UINavigationController(rootViewController:tabBarViewController)
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
 

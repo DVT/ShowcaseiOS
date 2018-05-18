@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39E1F52AC0D64A1C1128757B /* Pods_Showcase_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4C7B03B35181B9EAC7E9BE /* Pods_Showcase_iOS.framework */; };
 		4EBC1048D475CDDB64A2C22F /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8575F69F2508AC86277FA687 /* Pods_Showcase_iOSTests.framework */; };
 		99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB7FE72085F25100B300BA /* AppDelegate.swift */; };
 		99FB7FED2085F25100B300BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB7FEB2085F25100B300BA /* Main.storyboard */; };
@@ -42,7 +43,7 @@
 		A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA5ECA208F631100E0D34F /* ContactUsInteractableImplementation.swift */; };
 		A3DBE44A209F891600561CE0 /* LoginPresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBE449209F891600561CE0 /* LoginPresenterViewable.swift */; };
 		A3DBE44C209F8BC300561CE0 /* GeneratedShowcaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBE44B209F8BC300561CE0 /* GeneratedShowcaseMocks.swift */; };
-		A3E71966209AFEE10081D5C1 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		A3E71966209AFEE10081D5C1 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E71967209AFEF80081D5C1 /* LoginPresenterInteractable.swift */; };
 		A3E7196B209B06F40081D5C1 /* ContactUsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7196A209B06F30081D5C1 /* ContactUsPresenter.swift */; };
 		A3E7196E209B072A0081D5C1 /* OfficeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7196D209B072A0081D5C1 /* OfficeViewModel.swift */; };
@@ -87,7 +88,11 @@
 		BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD2208A1B9B000458FD /* LoginInteractor.swift */; };
 		BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DAD6208A23D5000458FD /* LoginAuthenticating.swift */; };
 		BCE5DADC208A2756000458FD /* LoginInteractorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DADB208A2756000458FD /* LoginInteractorPresentable.swift */; };
+		BCEDE50120AC46AE005E1F4D /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE50020AC46AE005E1F4D /* Routable.swift */; };
+		BCEDE50820AC4836005E1F4D /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE50720AC4836005E1F4D /* DependencyContainer.swift */; };
 		BCEDE50A20AC5D1A005E1F4D /* AuthDataResultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE50920AC5D1A005E1F4D /* AuthDataResultProtocol.swift */; };
+		BCEDE51120AEEFE3005E1F4D /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE51020AEEFE3005E1F4D /* LoginNavigationController.swift */; };
+		FB0EE7F65FAF1782422E4431 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F34FA43F1070C363C19DD6 /* Pods_Showcase_iOSTests.framework */; };
 		FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2852099DA52006EA459 /* ShowcaseApp.swift */; };
 		FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */; };
 		FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */; };
@@ -120,8 +125,11 @@
 
 /* Begin PBXFileReference section */
 		459C8BC1AC39C3E51A8A77B1 /* Pods-Showcase-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		4B4C7B03B35181B9EAC7E9BE /* Pods_Showcase_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50F34FA43F1070C363C19DD6 /* Pods_Showcase_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		522062A06BC78E80B1E4A3C9 /* Pods-Showcase-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		6459A849754B0955D19FACF6 /* Pods_Showcase_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D6050B0886C0B0AA0559001 /* Pods-Showcase-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8575F69F2508AC86277FA687 /* Pods_Showcase_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		955A8584B6EB37219340E49C /* Pods-Showcase-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99FB7FE42085F25100B300BA /* Showcase-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Showcase-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,8 +214,10 @@
 		BCE5DAD2208A1B9B000458FD /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		BCE5DAD6208A23D5000458FD /* LoginAuthenticating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticating.swift; sourceTree = "<group>"; };
 		BCE5DADB208A2756000458FD /* LoginInteractorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorPresentable.swift; sourceTree = "<group>"; };
+		BCEDE50020AC46AE005E1F4D /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		BCEDE50720AC4836005E1F4D /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		BCEDE50920AC5D1A005E1F4D /* AuthDataResultProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultProtocol.swift; sourceTree = "<group>"; };
-		EBBA312FEB09D50132A20A12 /* Pods-Showcase-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BCEDE51020AEEFE3005E1F4D /* LoginNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
 		FD37E2852099DA52006EA459 /* ShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseApp.swift; sourceTree = "<group>"; };
 		FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractable.swift; sourceTree = "<group>"; };
 		FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractorImplementation.swift; sourceTree = "<group>"; };
@@ -234,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7914E97872789169122EAF3 /* Pods_Showcase_iOS.framework in Frameworks */,
+				39E1F52AC0D64A1C1128757B /* Pods_Showcase_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EBC1048D475CDDB64A2C22F /* Pods_Showcase_iOSTests.framework in Frameworks */,
+				FB0EE7F65FAF1782422E4431 /* Pods_Showcase_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +268,7 @@
 				99FB7FE52085F25100B300BA /* Products */,
 				FD0880512090923C00B814FE /* Recovered References */,
 				A220CF04203886F47A11B2C8 /* Pods */,
-				D236BCC0A3FE144A55690628 /* Frameworks */,
+				F8B264866339C04A655A574F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -277,6 +289,8 @@
 				A3AC3FC820AC5D3B00D4B07A /* Poppins-SemiBold.otf */,
 				A3AC3FBF20AC55CC00D4B07A /* ShowcaseError */,
 				BC40834B20AA07D500A2D49C /* About */,
+				BCEDE50620AC481A005E1F4D /* DependencyContainer */,
+				BCEDE4FF20AC469B005E1F4D /* Router */,
 				FD37E2812099DA20006EA459 /* Dashboard */,
 				BC4D82C8208F599E003EFB06 /* Helpers */,
 				A3399789208E0514004776AB /* Contact Us */,
@@ -318,10 +332,10 @@
 		A220CF04203886F47A11B2C8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EBBA312FEB09D50132A20A12 /* Pods-Showcase-iOS.debug.xcconfig */,
 				522062A06BC78E80B1E4A3C9 /* Pods-Showcase-iOS.release.xcconfig */,
 				955A8584B6EB37219340E49C /* Pods-Showcase-iOSTests.debug.xcconfig */,
 				459C8BC1AC39C3E51A8A77B1 /* Pods-Showcase-iOSTests.release.xcconfig */,
+				6D6050B0886C0B0AA0559001 /* Pods-Showcase-iOS.debug.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -605,6 +619,7 @@
 				BC425EBB20A45CDA00CBBE56 /* Custom Views */,
 				A3DBE449209F891600561CE0 /* LoginPresenterViewable.swift */,
 				BC02346C20A049BF006E6E92 /* LoginViewController.swift */,
+				BCEDE51020AEEFE3005E1F4D /* LoginNavigationController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -699,11 +714,27 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		D236BCC0A3FE144A55690628 /* Frameworks */ = {
+		BCEDE4FF20AC469B005E1F4D /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				6459A849754B0955D19FACF6 /* Pods_Showcase_iOS.framework */,
-				8575F69F2508AC86277FA687 /* Pods_Showcase_iOSTests.framework */,
+				BCEDE50020AC46AE005E1F4D /* Routable.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BCEDE50620AC481A005E1F4D /* DependencyContainer */ = {
+			isa = PBXGroup;
+			children = (
+				BCEDE50720AC4836005E1F4D /* DependencyContainer.swift */,
+			);
+			path = DependencyContainer;
+			sourceTree = "<group>";
+		};
+		F8B264866339C04A655A574F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B4C7B03B35181B9EAC7E9BE /* Pods_Showcase_iOS.framework */,
+				50F34FA43F1070C363C19DD6 /* Pods_Showcase_iOSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -712,6 +743,8 @@
 			isa = PBXGroup;
 			children = (
 				BCE5DAC42089DA2A000458FD /* GeneratedShowcaseMocks.swift */,
+				6459A849754B0955D19FACF6 /* Pods_Showcase_iOS.framework */,
+				8575F69F2508AC86277FA687 /* Pods_Showcase_iOSTests.framework */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -837,7 +870,6 @@
 				99FB7FE02085F25100B300BA /* Sources */,
 				99FB7FE12085F25100B300BA /* Frameworks */,
 				99FB7FE22085F25100B300BA /* Resources */,
-				D7D54775A53779F06BB5B30B /* [CP] Copy Pods Resources */,
 				061B3ECDAC2CCF48BA99C4D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -858,7 +890,6 @@
 				99FB7FF42085F25300B300BA /* Sources */,
 				99FB7FF52085F25300B300BA /* Frameworks */,
 				99FB7FF62085F25300B300BA /* Resources */,
-				D327EEA2D38250BF99E9744F /* [CP] Copy Pods Resources */,
 				4A98A59792CF61E5CCF79AE6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -1046,36 +1077,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D327EEA2D38250BF99E9744F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D7D54775A53779F06BB5B30B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1087,6 +1088,7 @@
 				A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */,
 				A389D66920A595F7008DB6FE /* StorageReferenceExtension.swift in Sources */,
 				BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */,
+				BCEDE51120AEEFE3005E1F4D /* LoginNavigationController.swift in Sources */,
 				A3AC3FC420AC565100D4B07A /* ErrorView.swift in Sources */,
 				A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */,
 				BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */,
@@ -1095,7 +1097,7 @@
 				A3FB58C120A989260093506E /* SharedApplicationDelegate.swift in Sources */,
 				FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */,
 				A389D65D20A4444A008DB6FE /* ContactUsCellViewModel.swift in Sources */,
-				A3E71966209AFEE10081D5C1 /* BuildFile in Sources */,
+				A3E71966209AFEE10081D5C1 /* (null) in Sources */,
 				A3E7196E209B072A0081D5C1 /* OfficeViewModel.swift in Sources */,
 				FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */,
 				BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */,
@@ -1117,6 +1119,7 @@
 				A389D66520A594EB008DB6FE /* FIRStoring.swift in Sources */,
 				FDE1AE7E209B2D5A00D383C4 /* ShowcaseAppViewModel.swift in Sources */,
 				BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */,
+				BCEDE50120AC46AE005E1F4D /* Routable.swift in Sources */,
 				BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */,
 				FD852BD320AB0FA7005A958F /* HeaderCollectionViewCell.swift in Sources */,
 				A3E71971209B1A200081D5C1 /* ContactUsPresenterViewable.swift in Sources */,
@@ -1125,6 +1128,7 @@
 				BC31C0F920A4696D00F8B543 /* KeyBoardDelegate.swift in Sources */,
 				FDE1AE78209B244C00D383C4 /* HomePresenter.swift in Sources */,
 				BC02347320A051B2006E6E92 /* UIViewController+Extensions.swift in Sources */,
+				BCEDE50820AC4836005E1F4D /* DependencyContainer.swift in Sources */,
 				BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */,
 				BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */,
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
@@ -1326,7 +1330,7 @@
 		};
 		99FB80022085F25300B300BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBBA312FEB09D50132A20A12 /* Pods-Showcase-iOS.debug.xcconfig */;
+			baseConfigurationReference = 6D6050B0886C0B0AA0559001 /* Pods-Showcase-iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1335,7 +1339,10 @@
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = "Showcase-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.ShowcaseiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1356,7 +1363,10 @@
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = "Showcase-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.ShowcaseiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1378,7 +1388,11 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = "Showcase-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "za.co.dvt.showcase.Showcase-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1402,7 +1416,11 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = "Showcase-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "za.co.dvt.showcase.Showcase-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
