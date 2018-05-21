@@ -21,7 +21,7 @@
 		A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */; };
 		A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34475432088B318001734CA /* DatabaseReferenceTests.swift */; };
 		A36A55562099E4990037C4BF /* DataReferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A55552099E4990037C4BF /* DataReferenceable.swift */; };
-		A37BD16620AE9E15009C23A0 /* ContactUsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37BD16520AE9E15009C23A0 /* ContactUsNavigator.swift */; };
+		A37BD16620AE9E15009C23A0 /* ContactUsNavigatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37BD16520AE9E15009C23A0 /* ContactUsNavigatorDelegate.swift */; };
 		A37BD16820AE9E98009C23A0 /* ContactUsNavigatorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37BD16720AE9E98009C23A0 /* ContactUsNavigatorImplementation.swift */; };
 		A389D65D20A4444A008DB6FE /* ContactUsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D65C20A4444A008DB6FE /* ContactUsCellViewModel.swift */; };
 		A389D66020A444B3008DB6FE /* ContactUsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389D65F20A444B3008DB6FE /* ContactUsDelegate.swift */; };
@@ -150,7 +150,7 @@
 		A33D79B220887BAA00D272E7 /* DatabaseReference+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Extension.swift"; sourceTree = "<group>"; };
 		A34475432088B318001734CA /* DatabaseReferenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceTests.swift; sourceTree = "<group>"; };
 		A36A55552099E4990037C4BF /* DataReferenceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceable.swift; sourceTree = "<group>"; };
-		A37BD16520AE9E15009C23A0 /* ContactUsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsNavigator.swift; sourceTree = "<group>"; };
+		A37BD16520AE9E15009C23A0 /* ContactUsNavigatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsNavigatorDelegate.swift; sourceTree = "<group>"; };
 		A37BD16720AE9E98009C23A0 /* ContactUsNavigatorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsNavigatorImplementation.swift; sourceTree = "<group>"; };
 		A389D65C20A4444A008DB6FE /* ContactUsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsCellViewModel.swift; sourceTree = "<group>"; };
 		A389D65F20A444B3008DB6FE /* ContactUsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsDelegate.swift; sourceTree = "<group>"; };
@@ -426,7 +426,7 @@
 				A389D65F20A444B3008DB6FE /* ContactUsDelegate.swift */,
 				A3FB58C020A989260093506E /* SharedApplicationDelegate.swift */,
 				A3FB58C820A9C4F60093506E /* SharedApplicationDelegateImplementation.swift */,
-				A37BD16520AE9E15009C23A0 /* ContactUsNavigator.swift */,
+				A37BD16520AE9E15009C23A0 /* ContactUsNavigatorDelegate.swift */,
 				A37BD16720AE9E98009C23A0 /* ContactUsNavigatorImplementation.swift */,
 			);
 			path = ViewHelpers;
@@ -1063,7 +1063,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseLoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginInteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FIRStoring.swift)\" \\\n\"$INPUT_DIR/$(find . -name StorageReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name KeyBoardDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name KeyboardObservable.swift)\" \\\n\"$INPUT_DIR/$(find . -name NotificationCenterDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name SharedApplicationDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name AuthDataResultProtocol.swift)\"";
+			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseLoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginInteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FIRStoring.swift)\" \\\n\"$INPUT_DIR/$(find . -name StorageReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name KeyBoardDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name KeyboardObservable.swift)\" \\\n\"$INPUT_DIR/$(find . -name NotificationCenterDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name SharedApplicationDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name AuthDataResultProtocol.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsNavigatorDelegate.swift)\"\n";
 		};
 		A9569BE43A8392DD64389346 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1145,7 +1145,7 @@
 				A339977F208D12D8004776AB /* Office.swift in Sources */,
 				A389D66020A444B3008DB6FE /* ContactUsDelegate.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
-				A37BD16620AE9E15009C23A0 /* ContactUsNavigator.swift in Sources */,
+				A37BD16620AE9E15009C23A0 /* ContactUsNavigatorDelegate.swift in Sources */,
 				FD98CA7D20A99F2800FDF031 /* HomeViewController.swift in Sources */,
 				A389D66320A59471008DB6FE /* FirebaseStorageExtension.swift in Sources */,
 				A3FB58C920A9C4F60093506E /* SharedApplicationDelegateImplementation.swift in Sources */,
