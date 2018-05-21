@@ -14,12 +14,12 @@ class ContactUsCellViewModel: ContactUsDelegate {
     
     var longitude: Double? {
         guard let longitudeCoordinate = officeViewModel?.longitude else { return 0.0 }
-        return Double(longitudeCoordinate)
+        return Double(longitudeCoordinate)!
     }
     
     var latitude: Double? {
         guard let latitudeCoordinate = officeViewModel?.latitude else { return 0.0 }
-        return Double(latitudeCoordinate)
+        return Double(latitudeCoordinate)!
     }
     
     var branch: String? {
@@ -42,13 +42,15 @@ class ContactUsCellViewModel: ContactUsDelegate {
     
     func call() {
         guard let telephone = officeViewModel?.telephoneNumber else {return}
-        let telephoneUrl = URL(string: telephone)
+        let telephoneNumber = "tel://\(telephone)"
+        let telephoneUrl = URL(string: telephoneNumber)
         sharedApplication?.openSharedApplication(with: telephoneUrl!)
     }
     
     func email() {
         guard let emailAddress = officeViewModel?.emailAddress else {return}
-        let email = URL(string: emailAddress)
+        let emailvalue = "mailto:\(emailAddress)"
+        let email = URL(string: emailvalue)
         if emailValidator.isValid(emailAddress) {
             sharedApplication?.openSharedApplication(with: email!)
         }

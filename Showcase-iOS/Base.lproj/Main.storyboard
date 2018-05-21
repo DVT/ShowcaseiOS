@@ -11,7 +11,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="mxt-yw-Lcb">
             <objects>
-                <tabBarController storyboardIdentifier="tabBar" id="0GL-De-Z92" customClass="TabBarViewController" customModule="Showcase_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0GL-De-Z92" customClass="TabBarViewController" customModule="Showcase_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="76u-8N-NO1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
