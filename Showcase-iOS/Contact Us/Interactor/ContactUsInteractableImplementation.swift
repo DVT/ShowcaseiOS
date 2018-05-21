@@ -13,7 +13,7 @@ class ContactUsInteractableImplementation: ContactUsInteractable {
         databaseReference.fetchFirebaseData(from: .office) { (snapshot, error) in
             if let error = error {
                 self.contactUsPresenter?.onRetrieveOfficesFailed(with: error)
-            } else if let result = snapshot as? DataSnapshot {
+            } else if let result = snapshot as? DataSnapshotProtocol {
                 if result.value != nil {
                     let office = result.value as? [String: Any]
                     offices.append(Office(with: office))
