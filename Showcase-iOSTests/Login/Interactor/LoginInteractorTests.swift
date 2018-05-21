@@ -18,7 +18,9 @@ class LoginInteractorTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        systemUnderTest = LoginInteractor(mockLoginPresenter, mockUserAuthenticator)
+        systemUnderTest = LoginInteractor()
+        systemUnderTest.userAuthenticator = mockUserAuthenticator
+        systemUnderTest.loginPresenter = mockLoginPresenter
     }
     
     func testThatTheSignedInSuccesfullyMethodOfTheLoginPresenterGetsCalledWhenUserIsAuthorized() {
@@ -27,8 +29,8 @@ class LoginInteractorTests: XCTestCase {
         }
         stub(mockUserAuthenticator) { (mock) in
             let _ = when(mock.signIn(withEmail: anyString(), password: anyString(), completion: any()).then({ (email, password, completion) in
-                let fakeUser = MockUser()
-                completion(fakeUser, nil)
+                let fakeUserResults = MockAuthDataResultProtocol()
+                completion(fakeUserResults, nil)
             }))
         }
         systemUnderTest.signIn(withEmail: "", password: "")

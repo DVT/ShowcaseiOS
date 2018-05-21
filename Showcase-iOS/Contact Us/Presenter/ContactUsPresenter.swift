@@ -4,7 +4,6 @@ import Foundation
 import Firebase
 
 class ContactUsPresenter: ContactUsPresentable {
-    
     //MARK: Injectable Properties
     
     var contactUsInteractor: ContactUsInteractable?
@@ -26,6 +25,10 @@ class ContactUsPresenter: ContactUsPresentable {
     
     func onRetrieveOfficesFailed(with error: Error) {
         contactUsView?.showOnFailure(with: error)
+    }
+    
+    func retrieveContacts() {
+        contactUsInteractor?.retrieveContacts()
     }
     
 }
