@@ -10,8 +10,9 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     
     static let identifier = String(describing: ContactUsCollectionViewCell.self)
     var firebaseStorage: FIRStoring?
-    let staticMapbaseUrl = "https://maps.googleapis.com/maps/api/staticmap?&zoom=13&size=600x300&maptype=roadmap&markers=color:red%7C"
+    let staticMapbaseUrl = "https://maps.googleapis.com/maps/api/staticmap?&zoom=15&size=600x300&maptype=roadmap&markers=color:red%7C"
     var viewModel: ContactUsCellViewModel!
+    var errorView: ErrorView!
     
     //MARK: @IBOutlets
     
@@ -31,6 +32,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func navigatePressed(_ sender: Any) {
+        viewModel?.navigate()
     }
     
     //MARK: Operations
@@ -48,7 +50,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         let imageFetcher = ImageFetcher(from: firStorage)
         imageFetcher.fetchImage(imagePath) {[weak self] (url, error) in
             if error != nil {
-                //TO DO: Present error or placeholder image
+                //TODO add place holder image
             } else {
                 guard let imageUrl = url else{return}
                 let resource = ImageResource(downloadURL: imageUrl, cacheKey: imagePath)

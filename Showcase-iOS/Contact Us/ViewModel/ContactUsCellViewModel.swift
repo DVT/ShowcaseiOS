@@ -9,6 +9,7 @@ class ContactUsCellViewModel: ContactUsDelegate {
     //MARK: Properties
     
     var sharedApplication: SharedApplicationDelegate?
+    var contactUsNavigator: ContactUsNavigatorDelegate?
     var officeViewModel: OfficeViewModel?
     var emailValidator = EmailValidator()
     
@@ -54,6 +55,10 @@ class ContactUsCellViewModel: ContactUsDelegate {
         if emailValidator.isValid(emailAddress) {
             sharedApplication?.openSharedApplication(with: email!)
         }
+    }
+    
+    func navigate() {
+        contactUsNavigator?.navigate(with: latitude!, longitude: longitude!, branch: branch!)
     }
     
    
