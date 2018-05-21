@@ -3,16 +3,12 @@ import MapKit
 import Foundation
 
 class ContactUsNavigatorDelegateImplemetation: ContactUsNavigatorDelegate {
+    
     func navigate(with latitude: Double, longitude: Double, branch: String) {
-        if latitude == 0.0 || longitude == 0.0 {
-            
-            return
-        } else {
-            openMapApp(latitude: latitude, longitude: longitude, branch: branch)
-        }
+        openMapApp(latitude: latitude, longitude: longitude, branch: branch)
     }
     
-   private func openMapApp(latitude: Double, longitude: Double, branch: String) {
+    private func openMapApp(latitude: Double, longitude: Double, branch: String) {
         let regionDistance: CLLocationDistance = 1000
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
         let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
