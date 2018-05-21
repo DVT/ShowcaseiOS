@@ -12,7 +12,6 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     var firebaseStorage: FIRStoring?
     let staticMapbaseUrl = "https://maps.googleapis.com/maps/api/staticmap?&zoom=15&size=600x300&maptype=roadmap&markers=color:red%7C"
     var viewModel: ContactUsCellViewModel!
-    var errorView: ErrorView!
     
     //MARK: @IBOutlets
     
@@ -60,9 +59,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     }
     
     private func populateStaticMap(){
-        guard let longitudeCoord = viewModel.longitude else { return  }
-        guard let latitudeCoord = viewModel.latitude else { return  }
-        let temp = "\(staticMapbaseUrl)\(latitudeCoord),\(longitudeCoord)"
+        let temp = "\(staticMapbaseUrl)\(viewModel.latitude),\(viewModel.longitude)"
         guard let mapUrl = URL(string: temp) else {return}
         mapImage.kf.setImage(with: mapUrl)
     }
