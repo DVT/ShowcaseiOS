@@ -7,6 +7,7 @@ import Cuckoo
 class ContactUsCellViewModelTests: XCTestCase {
     
     var mockSharedApplicationDelegate = MockSharedApplicationDelegate()
+    var mockContactUsNavigatorDelegate = MockContactUsNavigatorDelegate()
     var systemUnderTest: ContactUsCellViewModel?
     var mockOfficeViewModel: OfficeViewModel?
     var mockInvalidOfficeViewModel: OfficeViewModel?
@@ -21,7 +22,34 @@ class ContactUsCellViewModelTests: XCTestCase {
         mockInvalidOfficeViewModel = mockInvalidOfficeResponse()
         systemUnderTest = ContactUsCellViewModel(with: mockOfficeViewModel)
         systemUnderTest?.sharedApplication = mockSharedApplicationDelegate
+        systemUnderTest?.contactUsNavigator = mockContactUsNavigatorDelegate
         mockUrl = URL(string: mockUrlString)
+    }
+
+    func testThatWhenNavigateMethodExecutesWithLatitudeThatIsEmptyThenNavigateDoesNotExecute() {
+        systemUnderTest = ContactUsCellViewModel(with: mockOfficeResponseWithNilLatitude())
+        stub(mockContactUsNavigatorDelegate) { mock in
+            _ = when(mock.navigate(with: any(), longitude: any(), branch: any()).thenDoNothing())
+        }
+        systemUnderTest?.navigate()
+        verify(mockContactUsNavigatorDelegate, never()).navigate(with: any(), longitude: any(), branch: any())
+    }
+    
+    func testThatWhenNavigateMethodExecutesWithLongitudeThatIsEmptyThenNavigateDoesNotExecute() {
+        systemUnderTest = ContactUsCellViewModel(with: mockOfficeResponseWithNilLongitude())
+        stub(mockContactUsNavigatorDelegate) { mock in
+            _ = when(mock.navigate(with: any(), longitude: any(), branch: any()).thenDoNothing())
+        }
+        systemUnderTest?.navigate()
+        verify(mockContactUsNavigatorDelegate, never()).navigate(with: any(), longitude: any(), branch: any())
+    }
+    
+    func testThatWhenNavigateMethodExecutesWithLongitudeAndLongitudeThatAreNotNilThenNavigateExecutes() {
+        stub(mockContactUsNavigatorDelegate) { mock in
+            _ = when(mock.navigate(with: any(), longitude: any(), branch: any()).thenDoNothing())
+        }
+        systemUnderTest?.navigate()
+        verify(mockContactUsNavigatorDelegate, times(1)).navigate(with: any(), longitude: any(), branch: any())
     }
     
     func testThatWhenCallMethodExecutesOpenSharedApplicationExecutesWithURL() {
@@ -106,12 +134,12 @@ class ContactUsCellViewModelTests: XCTestCase {
     }
     
     func mockValidOfficeResponse() -> OfficeViewModel {
-        let mockJhbOffice: [String: Any] = ["latitude":"-26.122743", "name":"Johannesburg","image":"offices/dvt_hyde_park.png",
+        let mockJhbOffice: [String: Any] = ["latitude":-26.122743, "name":"Johannesburg","image":"offices/dvt_hyde_park.png",
                                             "googleMapsPlaceId":"ChIJF0f-kTdzlR4RioXEaM2-a10",
                                             "address":"Ground Floor,Victoria Gate South,Hyde Lane Office Park,Hyde Park Lane,Hydepark,Johannesburg,2196",
                                             "googleMapsName":"DVT Johannesburg",
                                             "emailAddress":"jvandermerwe@jhb.dvt.co.za",
-                                            "longitude":"28.03149899999994",
+                                            "longitude":28.03149899999994,
                                             "telephone":"+2773444000"]
         return OfficeViewModel(with: Office(with: mockJhbOffice))
     }
@@ -127,7 +155,30 @@ class ContactUsCellViewModelTests: XCTestCase {
                                             "telephone":nilValue as Any]
         return OfficeViewModel(with: Office(with: mockJhbOffice))
     }
+    
+    func mockOfficeResponseWithNilLatitude() -> OfficeViewModel {
+        let nilValue: Any? = nil
+        let mockJhbOffice: [String: Any] = ["latitude":nilValue as Any, "name":"Johannesburg","image":"offices/dvt_hyde_park.png",
+                                            "googleMapsPlaceId":"ChIJF0f-kTdzlR4RioXEaM2-a10",
+                                            "address":"Ground Floor,Victoria Gate South,Hyde Lane Office Park,Hyde Park Lane,Hydepark,Johannesburg,2196",
+                                            "googleMapsName":"DVT Johannesburg",
+                                            "emailAddress":"jvandermerwe@jhb.dvt.co.za",
+                                            "longitude":"",
+                                            "telephone":"+2773444000"]
+        return OfficeViewModel(with: Office(with: mockJhbOffice))
+    }
   
+    func mockOfficeResponseWithNilLongitude() -> OfficeViewModel {
+        let nilValue: Any? = nil
+        let mockJhbOffice: [String: Any] = ["latitude":-23.44333, "name":"Johannesburg","image":"offices/dvt_hyde_park.png",
+                                            "googleMapsPlaceId":"ChIJF0f-kTdzlR4RioXEaM2-a10",
+                                            "address":"Ground Floor,Victoria Gate South,Hyde Lane Office Park,Hyde Park Lane,Hydepark,Johannesburg,2196",
+                                            "googleMapsName":"DVT Johannesburg",
+                                            "emailAddress":"jvandermerwe@jhb.dvt.co.za",
+                                            "longitude":nilValue as Any,
+                                            "telephone":"+2773444000"]
+        return OfficeViewModel(with: Office(with: mockJhbOffice))
+    }
     
     
     
