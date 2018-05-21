@@ -15,12 +15,12 @@ class ContactUsCellViewModel: ContactUsDelegate {
     
     var longitude: Double? {
         guard let longitudeCoordinate = officeViewModel?.longitude else { return 0.0 }
-        return Double(longitudeCoordinate)!
+        return longitudeCoordinate
     }
     
     var latitude: Double? {
         guard let latitudeCoordinate = officeViewModel?.latitude else { return 0.0 }
-        return Double(latitudeCoordinate)!
+        return latitudeCoordinate
     }
     
     var branch: String? {
@@ -58,9 +58,13 @@ class ContactUsCellViewModel: ContactUsDelegate {
     }
     
     func navigate() {
-        contactUsNavigator?.navigate(with: latitude!, longitude: longitude!, branch: branch!)
+        if longitude! == 0.0 || latitude! == 0.0 {
+            //TO DO: Present Error
+        } else {
+            contactUsNavigator?.navigate(with: latitude!, longitude: longitude!, branch: branch!)
+        }
     }
     
-   
+    
 }
 
