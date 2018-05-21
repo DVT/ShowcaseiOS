@@ -18,13 +18,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g0H-1U-aFI">
                             <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="50" height="56"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShowcaseAppViewIdentifier" id="5Zz-6U-ujH" customClass="ShowcaseAppCollectionViewCell" customModule="Showcase_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="118" height="132"/>
+                                <rect key="frame" x="0.0" y="0.0" width="118" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="118" height="132"/>
@@ -33,30 +33,11 @@
                                 <size key="customSize" width="118" height="132"/>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HeaderCollectionViewCellIdentifier" id="Hf8-YI-U5N" customClass="HeaderCollectionViewCell" customModule="Showcase_iOS" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="q1s-3E-yPb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="e4t-d9-pmX" id="CFx-t1-S6V"/>
-                                    </connections>
-                                </searchBar>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="q1s-3E-yPb" firstAttribute="leading" secondItem="Hf8-YI-U5N" secondAttribute="leading" id="JcO-nb-8NX"/>
-                                <constraint firstAttribute="trailing" secondItem="q1s-3E-yPb" secondAttribute="trailing" id="o8p-vb-xRs"/>
-                                <constraint firstItem="q1s-3E-yPb" firstAttribute="top" secondItem="Hf8-YI-U5N" secondAttribute="top" id="xeN-eF-BdV"/>
-                            </constraints>
-                            <connections>
-                                <outlet property="searchBar" destination="q1s-3E-yPb" id="0Ne-kH-ohb"/>
-                            </connections>
-                        </collectionReusableView>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Home" id="vYk-zP-Bok"/>
+                    <connections>
+                        <outlet property="collectionView" destination="4WA-hn-exU" id="Wvo-bt-nKR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5iO-9e-OLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,18 +10,26 @@ import UIKit
 
 class HomeViewController: UICollectionViewController {
     var presenter: HomePresentable?
-    var showcaseAppsViewModels: [ShowcaseAppViewModel] = [ShowcaseAppViewModel]()
+    var showcaseAppsViewModels = [ShowcaseAppViewModel]()
+    var filteredShowcaseAppsViewModels = [ShowcaseAppViewModel]()
     var firebaseStorage:FIRStoring?
+    let searchController = UISearchController(searchResultsController: nil)
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupViewTitle()
+        self.setupNavigationBar()
         self.registerCollectionViewNib()
         self.presenter?.fetchShowcaseApps()
     }
     
-    func setupViewTitle() {
+    func setupNavigationBar() {
         self.navigationController?.navigationBar.topItem?.title = "DVT Showcase"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.delegate = self
+        searchController.definesPresentationContext = true
+        self.navigationController?.navigationBar.items?.first?.searchController = searchController
     }
     
     func registerCollectionViewNib() {
@@ -33,25 +41,18 @@ class HomeViewController: UICollectionViewController {
 extension HomeViewController : UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return showcaseAppsViewModels.count
+        return filteredShowcaseAppsViewModels.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseAppViewIdentifier", for: indexPath) as! ShowcaseAppCollectionViewCell
         cell.firebaseStorage = firebaseStorage
-        cell.populateCell(with: showcaseAppsViewModels[indexPath.row])
+        cell.populateCell(with: filteredShowcaseAppsViewModels[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width:collectionView.frame.size.width, height:50)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind:
-        String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:
-            "HeaderCollectionViewCellIdentifier", for: indexPath) as! HeaderCollectionViewCell
-        return header
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -71,6 +72,7 @@ extension HomeViewController: HomePresenterViewable {
     
     func showOnSuccess(with showcaseApps: [ShowcaseAppViewModel]) {
         self.showcaseAppsViewModels = showcaseApps
+        self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels
         self.collectionView?.reloadData()
     }
     
@@ -79,5 +81,20 @@ extension HomeViewController: HomePresenterViewable {
     }
 }
 
-
-
+extension HomeViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+   
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+        if text.count > 0 {
+            self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels.filter {
+                app in
+                return (app.client?.lowercased().contains(text.lowercased()))!
+            }
+        } else {
+            self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels
+        }
+        self.collectionView?.reloadData()
+    }
+}
