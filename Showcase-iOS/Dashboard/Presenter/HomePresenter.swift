@@ -9,6 +9,7 @@
 import Foundation
 
 class HomePresenter: HomePresentable {
+    var showcaseAppViewModels: [ShowcaseAppViewModel] = [ShowcaseAppViewModel]()
     var homePresenterViewable: HomePresenterViewable?
     var homePresenterInteractable: HomePresenterInteractable?
     
@@ -17,14 +18,31 @@ class HomePresenter: HomePresentable {
     }
     
     func onFetchShowcaseAppsSuccess(with showcaseApps: [ShowcaseApp]) {
-        var showcaseAppsViewModel = [ShowcaseAppViewModel]()
+        var showcaseAppViewModel = [ShowcaseAppViewModel]()
         showcaseApps.forEach { showcaseApp in
-            showcaseAppsViewModel.append(ShowcaseAppViewModel(with: showcaseApp))
+            showcaseAppViewModel.append(ShowcaseAppViewModel(with: showcaseApp))
         }
-        self.homePresenterViewable?.showOnSuccess(with: showcaseAppsViewModel)
+        self.showcaseAppViewModels = showcaseAppViewModel
+        self.homePresenterViewable?.showOnSuccess(with: showcaseAppViewModel)
     }
     
     func onFetchShowcaseAppsFailure(with error: DatabaseError) {
         self.homePresenterViewable?.showOnFailure(with: error)
+    }
+    
+    func search(text: String?) -> [ShowcaseAppViewModel] {
+        var filteredShowcaseAppsViewModels = [ShowcaseAppViewModel]()
+        guard let searchText = text, searchText.count > 0 else {
+            return self.showcaseAppViewModels
+        }
+        let showcaseApps = self.showcaseAppViewModels.filter {
+            showcaseApp in
+            guard let filtered = showcaseApp.client?.lowercased().contains(searchText.lowercased()) else {
+                return false
+            }
+            return filtered
+        }
+        filteredShowcaseAppsViewModels = showcaseApps        
+        return filteredShowcaseAppsViewModels
     }
 }

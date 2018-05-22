@@ -84,20 +84,10 @@ extension HomeViewController: HomePresenterViewable {
 extension HomeViewController: UISearchResultsUpdating, UISearchControllerDelegate {
    
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
+        guard let filteredShowcaseApps = self.presenter?.search(text: searchController.searchBar.text) else {
             return
         }
-        if text.count > 0 {
-            self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels.filter {
-                showcaseApp in
-                guard let filtered = showcaseApp.client?.lowercased().contains(text.lowercased()) else {
-                    return false
-                }
-                return filtered
-            }
-        } else {
-            self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels
-        }
+        self.filteredShowcaseAppsViewModels = filteredShowcaseApps
         self.collectionView?.reloadData()
     }
 }
