@@ -77,6 +77,7 @@
 		BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82C9208F59B1003EFB06 /* EmailValidator.swift */; };
 		BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */; };
 		BC4D82D3208F6FB6003EFB06 /* PasswordValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */; };
+		BC56761320B41D36005CC3C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56761220B41D36005CC3C3 /* Constants.swift */; };
 		BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D07352090683F00FFE9DD /* AuthenticationError.swift */; };
 		BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D073C2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift */; };
 		BC6D073F209246D400FFE9DD /* AuthErrorCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */; };
@@ -204,6 +205,7 @@
 		BC4D82C9208F59B1003EFB06 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorTests.swift; sourceTree = "<group>"; };
+		BC56761220B41D36005CC3C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BC6D07352090683F00FFE9DD /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		BC6D073C2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthErrorCode+Extension.swift"; sourceTree = "<group>"; };
 		BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorCodeTests.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 		A3399789208E0514004776AB /* Contact Us */ = {
 			isa = PBXGroup;
 			children = (
+				BC56761120B41D0A005CC3C3 /* Constants */,
 				A389D65E20A4447C008DB6FE /* ViewHelpers */,
 				A3E7196F209B19060081D5C1 /* View */,
 				A3E7196C209B071B0081D5C1 /* ViewModel */,
@@ -609,6 +612,7 @@
 		BC4D82C8208F599E003EFB06 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				BC56761020B41D02005CC3C3 /* New Group */,
 				A30146FC20AD5FE800E8DE4E /* UIVIewUtilities */,
 				BC02347120A0519F006E6E92 /* Extensions */,
 				BC02346E20A050DC006E6E92 /* AppStoryBoards */,
@@ -637,6 +641,21 @@
 				BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */,
 			);
 			path = Validators;
+			sourceTree = "<group>";
+		};
+		BC56761020B41D02005CC3C3 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		BC56761120B41D0A005CC3C3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BC56761220B41D36005CC3C3 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		BC6D073B2091C87F00FFE9DD /* Errors */ = {
@@ -1101,6 +1120,7 @@
 				A3B502FE20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift in Sources */,
 				FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */,
 				A3FB58C120A989260093506E /* SharedApplicationDelegate.swift in Sources */,
+				BC56761320B41D36005CC3C3 /* Constants.swift in Sources */,
 				FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */,
 				A389D65D20A4444A008DB6FE /* ContactUsCellViewModel.swift in Sources */,
 				A3E71966209AFEE10081D5C1 /* (null) in Sources */,

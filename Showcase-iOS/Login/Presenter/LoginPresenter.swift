@@ -12,7 +12,7 @@ import FirebaseAuth
 class LoginPresenter: LoginPresentable {
     var loginViewer: LoginPresenterViewable?
     var loginInteractor: LoginPresenterInteractable?
-    
+    let userDefaults = UserDefaults.standard
     let emailValidator = EmailValidator()
     let passwordValidator = PasswordValidator()
 
@@ -31,6 +31,7 @@ class LoginPresenter: LoginPresentable {
 
 extension LoginPresenter: LoginInteractorPresentable {
     func signedInSuccessfully() {
+        userDefaults.set(true, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
         loginViewer?.showSuccess()
     }
     
