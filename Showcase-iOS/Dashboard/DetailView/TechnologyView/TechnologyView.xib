@@ -14,7 +14,12 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TechnologyView" customModule="Showcase_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="KyP-hU-Yvc" id="ieV-7r-o2i"/>
+                <outlet property="technology" destination="G7Y-oy-3dr" id="arO-XQ-P3S"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="KyP-hU-Yvc">
             <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
