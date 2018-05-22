@@ -13,6 +13,7 @@ class MainDetailSubView: UIView {
     @IBOutlet weak var shortDescription: UILabel!
     
     //MARK: Properties
+    
     var firebaseStorage: FIRStoring?
     
     //MARK: LifeCycle
@@ -33,9 +34,11 @@ class MainDetailSubView: UIView {
         addSubviewPinnedToEdges(contentView)
     }
     
+    //MARK: Operations
+    
     func populateView(with showcaseApp: ShowcaseApp?) {
        
-        productName.text = showcaseApp?.client //TODO: Update Showcase app model eith name and use name here as the pro
+        productName.text = showcaseApp?.client //TODO: Update Showcase app model either name and use name here as the pro
         clientName.text = showcaseApp?.client
         shortDescription.text = showcaseApp?.shortDescription
         guard let imagePath = showcaseApp?.iconUrl else {return}

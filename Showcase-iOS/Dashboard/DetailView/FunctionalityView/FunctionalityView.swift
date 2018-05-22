@@ -28,6 +28,8 @@ class FunctionalityView: UIView {
         addSubviewPinnedToEdges(contentView)
     }
     
+    //MARK: Operations
+    
     func populateView(with shoecaseApp: ShowcaseApp?) {
         functionality.text = shoecaseApp?.functionality
     }

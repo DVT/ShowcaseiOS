@@ -26,6 +26,8 @@ class TechnologyView: UIView {
         addSubviewPinnedToEdges(contentView)
     }
     
+    //MARK: Operations
+    
     func populateView(with showcaseApp: ShowcaseApp?) {
         technology.text = showcaseApp?.technologyUsed
     }
