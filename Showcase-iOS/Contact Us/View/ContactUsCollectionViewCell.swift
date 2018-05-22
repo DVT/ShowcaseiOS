@@ -7,10 +7,12 @@ import MapKit
 class ContactUsCollectionViewCell: UICollectionViewCell {
     
     //MARK: Properties
+    
     static let identifier = String(describing: ContactUsCollectionViewCell.self)
     var firebaseStorage: FIRStoring?
-    let staticMapbaseUrl = "https://maps.googleapis.com/maps/api/staticmap?zoom=13&maptype=roadmap&markers=color:red%7C"
-    var viewModel: ContactUsCellViewModel?
+    let staticMapbaseUrl = "https://maps.googleapis.com/maps/api/staticmap?&zoom=15&size=600x300&maptype=roadmap&markers=color:red%7C"
+    var viewModel: ContactUsCellViewModel!
+    
     //MARK: @IBOutlets
     
     @IBOutlet weak var image: UIImageView!
@@ -29,7 +31,10 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func navigatePressed(_ sender: Any) {
+        viewModel?.navigate()
     }
+    
+    //MARK: Operations
     
     func populateView() {
         guard let imagePath = viewModel?.officeViewModel?.imageUrl else { return }
@@ -44,7 +49,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         let imageFetcher = ImageFetcher(from: firStorage)
         imageFetcher.fetchImage(imagePath) {[weak self] (url, error) in
             if error != nil {
-                //TO DO: Present error or placeholder image
+                //TODO add place holder image
             } else {
                 guard let imageUrl = url else{return}
                 let resource = ImageResource(downloadURL: imageUrl, cacheKey: imagePath)
@@ -54,10 +59,8 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     }
     
     private func populateStaticMap(){
-        let staticMapPath = staticMapbaseUrl + "\(String(describing: viewModel?.latitude)),\(String(describing: viewModel?.longitude))&size=\(mapImage.frame.size.width)x\(mapImage.frame.size.height)"
-        guard let urlString = staticMapPath.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
-        guard let mapUrl = URL(string: urlString) else {return}
-        let imageData = try! Data(contentsOf: mapUrl)
-        mapImage.image = UIImage(data: imageData)
+        let temp = "\(staticMapbaseUrl)\(viewModel.latitude),\(viewModel.longitude)"
+        guard let mapUrl = URL(string: temp) else {return}
+        mapImage.kf.setImage(with: mapUrl)
     }
 }

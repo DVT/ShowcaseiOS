@@ -41,9 +41,14 @@ parsers:
         macro: no
 
 ignore:
-- "Showcase-iOS/AppDelegate.swift"
-- "Showcase-iOS/*ViewController.swift"
+- Showcase-iOS/AppDelegate.*
+- Showcase-iOS/*ViewController.*
+- Showcase-iOS/*.storyboard
 - "Showcase-iOSTests/*"
+- Showcase-iOS/Login/View/.*
+- Showcase-iOS/Contact Us/View/.*
+- Showcase-iOS/Contact Us/View/ViewHelpers/.*
+- Showcase-iOS/Dashboard/View/.*
 
 comment:
     layout: "header, diff, flags, files, footer"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mgD-4J-JZ5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpw-3I-m6k">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-dW-JDf">
                                         <rect key="frame" x="0.0" y="20" width="375" height="435.5"/>
@@ -137,17 +137,45 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="SYX-KV-hpc"/>
                     <connections>
                         <outlet property="emailTextField" destination="ZRd-o0-oQc" id="XVf-ao-wEA"/>
                         <outlet property="loginContainer" destination="9Rb-dW-JDf" id="ri7-8l-qTb"/>
                         <outlet property="loginScrollView" destination="jpw-3I-m6k" id="8eG-B4-SAL"/>
                         <outlet property="missingLoginDetailsLabel" destination="eeI-1N-jsP" id="U7Z-zV-5Lk"/>
                         <outlet property="passwordTextField" destination="kWO-Am-Q7l" id="IqP-kE-M7Q"/>
+                        <segue destination="DIN-Hg-pOF" kind="show" identifier="showHome" id="g7n-qA-iM1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="-89"/>
+            <point key="canvasLocation" x="999.20000000000005" y="-89.505247376311857"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="zuR-0R-gPz">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="tabBar" storyboardName="Main" id="DIN-Hg-pOF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vGR-ku-j6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1814.4000000000001" y="-32.383808095952027"/>
+        </scene>
+        <!--Login Navigation Controller-->
+        <scene sceneID="zAu-eT-dfE">
+            <objects>
+                <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mgD-4J-JZ5" customClass="LoginNavigationController" customModule="Showcase_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nk9-aa-ANt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tDD-97-gZ1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wxs-AO-yAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="-90"/>
         </scene>
     </scenes>
     <resources>
