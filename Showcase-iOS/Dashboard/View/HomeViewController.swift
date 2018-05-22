@@ -15,12 +15,12 @@ class HomeViewController: UICollectionViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupViewTitle()
         self.registerCollectionViewNib()
         self.presenter?.fetchShowcaseApps()
     }
     
-    func setupViewTitle() {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.navigationController?.navigationBar.topItem?.title = "DVT Showcase"
     }
     
