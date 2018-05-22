@@ -89,8 +89,11 @@ extension HomeViewController: UISearchResultsUpdating, UISearchControllerDelegat
         }
         if text.count > 0 {
             self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels.filter {
-                app in
-                return (app.client?.lowercased().contains(text.lowercased()))!
+                showcaseApp in
+                guard let filtered = showcaseApp.client?.lowercased().contains(text.lowercased()) else {
+                    return false
+                }
+                return filtered
             }
         } else {
             self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels
