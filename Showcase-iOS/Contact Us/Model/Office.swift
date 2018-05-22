@@ -9,8 +9,8 @@ class Office {
     var googleMapsName: String?
     var googleMapsPlaceId: String?
     var image: String?
-    var latitude: String?
-    var longitude: String?
+    var latitude: Double?
+    var longitude: Double?
     var name: String?
     var telephone: String?
     
@@ -20,8 +20,8 @@ class Office {
         self.googleMapsName = snapShotValue?["googleMapsName"] as? String
         self.googleMapsPlaceId = snapShotValue?["googleMapsPlaceId"] as? String
         self.image = snapShotValue?["image"] as? String
-        self.latitude = snapShotValue?["latitude"] as? String
-        self.longitude = snapShotValue?["longitude"] as? String
+        self.latitude = snapShotValue?["latitude"] as? Double
+        self.longitude = snapShotValue?["longitude"] as? Double
         self.name = snapShotValue?["name"] as? String
         self.telephone = snapShotValue?["telephone"] as? String
     }

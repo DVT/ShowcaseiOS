@@ -36,11 +36,11 @@ class OfficeViewModelTests: XCTestCase {
     }
     
     func testThatLatitudeInOfficeViewModelHasTheExpectedValue() {
-        XCTAssertEqual(jhbOfficeViewModel.latitude, "-26.122743")
+        XCTAssertEqual(jhbOfficeViewModel.latitude, -26.122743)
     }
     
     func testThatLongitudeInOfficeViewModelHasTheExpectedValue() {
-        XCTAssertEqual(jhbOfficeViewModel.longitude, "28.03149899999994")
+        XCTAssertEqual(jhbOfficeViewModel.longitude, 28.03149899999994)
     }
     
     func testThatImageInOfficeViewModelHasTheExpectedValue() {
@@ -109,12 +109,12 @@ class OfficeViewModelTests: XCTestCase {
     //MARK: Mocking Firebase response dictionary
     
     func mockValidOfficeResponse() -> [String:Any] {
-        let mockJhbOffice: [String: Any] = ["latitude":"-26.122743", "name":"Johannesburg","image":"offices/dvt_hyde_park.png",
+        let mockJhbOffice: [String: Any] = ["latitude":-26.122743, "name":"Johannesburg","image":"offices/dvt_hyde_park.png",
                                             "googleMapsPlaceId":"ChIJF0f-kTdzlR4RioXEaM2-a10",
                                             "address":"Ground Floor,Victoria Gate South,Hyde Lane Office Park,Hyde Park Lane,Hydepark,Johannesburg,2196",
                                             "googleMapsName":"DVT Johannesburg",
                                             "emailAddress":"jvandermerwe@jhb.dvt.co.za",
-                                            "longitude":"28.03149899999994",
+                                            "longitude":28.03149899999994,
                                             "telephone":"+27117595930"]
         return mockJhbOffice
     }
