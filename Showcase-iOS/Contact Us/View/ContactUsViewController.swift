@@ -76,6 +76,7 @@ extension ContactUsViewController: UICollectionViewDelegate, UICollectionViewDat
         cellViewModel = ContactUsCellViewModel(with: officeViewModels[indexPath.row])
         cell.viewModel = cellViewModel
         cell.viewModel?.sharedApplication = SharedApplicationDelegateImplementation()
+        cell.viewModel?.contactUsNavigator = ContactUsNavigatorDelegateImplemetation()
         cell.populateView()
         return cell
         
