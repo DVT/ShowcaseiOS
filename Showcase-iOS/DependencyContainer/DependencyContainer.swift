@@ -29,22 +29,43 @@ struct DependencyContainer {
         container.register(HomePresenterViewable.self) { r in
             let homeViewController = HomeViewController()
             homeViewController.presenter = r.resolve(HomePresentable.self)
-            homeViewController.firebaseStorage = Storage.storage()
+            homeViewController.firebaseStorage = r.resolve(FIRStoring.self)
             return homeViewController
+        }
+        
+        container.register(ContactUsPresenterViewable.self) { r in
+            let contactUsController = ContactUsViewController()
+            contactUsController.contactUsPresenter = r.resolve(ContactUsPresentable.self)
+            contactUsController.firebaseStorage = r.resolve(FIRStoring.self)
+            return contactUsController
         }
         
         container.register(FIRStoring.self) { r in
             return Storage.storage()
         }
         
+        container.register(DataReferenceable.self) { r in
+            return Database.database().reference()
+        }
+        
         container.register(HomePresentable.self) {r in
             let homePresenter = HomePresenter()
             let homeInteractor = HomeInteractor()
-            homeInteractor.firebaseDatabaseReference = Database.database().reference()
+            homeInteractor.firebaseDatabaseReference = r.resolve(DataReferenceable.self)
             homePresenter.homePresenterInteractable = homeInteractor
             homeInteractor.homePresenter = homePresenter
             return homePresenter
         }
+        
+        container.register(ContactUsPresentable.self) {r in
+            let contactUsPresenter = ContactUsPresenter()
+            let contactUsInteractor = ContactUsInteractableImplementation()
+            contactUsInteractor.dataReference =  r.resolve(DataReferenceable.self)
+            contactUsPresenter.contactUsInteractor = contactUsInteractor
+            contactUsInteractor.contactUsPresenter = contactUsPresenter
+            return contactUsPresenter
+        }
+        
         return container
     }
 }
