@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,49 +18,62 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FJU-a9-G3x">
                     <rect key="frame" x="4" y="4" width="100" height="100"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utj-Ya-FtB">
-                    <rect key="frame" x="119" y="4" width="137" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enterprise Mobility Forum" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utj-Ya-FtB">
+                    <rect key="frame" x="119" y="4" width="155" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="MzO-vJ-cCe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5s-nm-wc2">
                     <rect key="frame" x="282" y="4" width="93" height="51"/>
-                    <state key="normal" title="Button"/>
+                    <color key="backgroundColor" red="0.16732002039999999" green="0.55073246840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="INSTALL">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN0-SI-bsi">
-                    <rect key="frame" x="119" y="31.5" width="77" height="15"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nomadic Verve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN0-SI-bsi">
+                    <rect key="frame" x="119" y="39" width="77" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="S5p-t5-6xp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTi-pm-csV">
-                    <rect key="frame" x="119" y="71.5" width="230" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="A yearly exclusive event targeted at decision makers and executives" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTi-pm-csV">
+                    <rect key="frame" x="119" y="70" width="240" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="OEh-bX-dRa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="utj-Ya-FtB" secondAttribute="trailing" constant="119" id="2Jk-cf-GSi"/>
-                <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="LTi-pm-csV" secondAttribute="trailing" constant="26" id="2Wq-q9-USJ"/>
-                <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="ZN0-SI-bsi" secondAttribute="trailing" constant="179" id="4As-g0-ARs"/>
-                <constraint firstItem="Kac-2G-cNu" firstAttribute="bottom" secondItem="FJU-a9-G3x" secondAttribute="bottom" constant="18" id="65i-oM-cLn"/>
-                <constraint firstItem="Kac-2G-cNu" firstAttribute="bottom" secondItem="A5s-nm-wc2" secondAttribute="bottom" constant="67" id="CLq-cZ-FnI"/>
-                <constraint firstItem="A5s-nm-wc2" firstAttribute="leading" secondItem="utj-Ya-FtB" secondAttribute="trailing" constant="26" id="Fnd-0h-kPf"/>
-                <constraint firstItem="A5s-nm-wc2" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="4" id="FxM-Xd-Z8g"/>
-                <constraint firstItem="A5s-nm-wc2" firstAttribute="leading" secondItem="ZN0-SI-bsi" secondAttribute="trailing" constant="86" id="OTl-7m-D7e"/>
-                <constraint firstItem="utj-Ya-FtB" firstAttribute="leading" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="15" id="TWL-QM-ReX"/>
-                <constraint firstItem="Kac-2G-cNu" firstAttribute="bottom" secondItem="LTi-pm-csV" secondAttribute="bottom" constant="30" id="WVX-R2-5ts"/>
-                <constraint firstItem="ZN0-SI-bsi" firstAttribute="leading" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="15" id="cCo-hV-5zv"/>
-                <constraint firstItem="LTi-pm-csV" firstAttribute="top" secondItem="ZN0-SI-bsi" secondAttribute="bottom" constant="19.5" id="cw9-EW-CUl"/>
-                <constraint firstItem="FJU-a9-G3x" firstAttribute="leading" secondItem="Kac-2G-cNu" secondAttribute="leading" constant="4" id="eEZ-Rg-5gB"/>
-                <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="271" id="lQq-0e-jJM"/>
-                <constraint firstItem="utj-Ya-FtB" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="4" id="m0o-1Q-3aO"/>
-                <constraint firstItem="A5s-nm-wc2" firstAttribute="trailing" secondItem="Kac-2G-cNu" secondAttribute="trailing" id="qv7-ze-QfP"/>
-                <constraint firstItem="LTi-pm-csV" firstAttribute="leading" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="15" id="rVN-CQ-rDf"/>
-                <constraint firstItem="FJU-a9-G3x" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="4" id="rVc-eD-tgb"/>
+                <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="271" id="4aS-YB-WB7"/>
+                <constraint firstItem="ZN0-SI-bsi" firstAttribute="top" secondItem="utj-Ya-FtB" secondAttribute="bottom" constant="5" id="9dO-Vs-rIc"/>
+                <constraint firstItem="Kac-2G-cNu" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LTi-pm-csV" secondAttribute="bottom" constant="18" id="JAo-CR-TE3"/>
+                <constraint firstItem="Kac-2G-cNu" firstAttribute="bottom" secondItem="FJU-a9-G3x" secondAttribute="bottom" constant="18" id="N1f-3R-Xds"/>
+                <constraint firstItem="A5s-nm-wc2" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="4" id="NTe-me-vc9"/>
+                <constraint firstItem="utj-Ya-FtB" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="4" id="OA0-S1-mvh"/>
+                <constraint firstItem="A5s-nm-wc2" firstAttribute="trailing" secondItem="Kac-2G-cNu" secondAttribute="trailing" id="Tol-i1-jYD"/>
+                <constraint firstItem="A5s-nm-wc2" firstAttribute="leading" secondItem="ZN0-SI-bsi" secondAttribute="trailing" constant="86" id="TsN-Ij-hQX"/>
+                <constraint firstItem="LTi-pm-csV" firstAttribute="top" secondItem="A5s-nm-wc2" secondAttribute="bottom" constant="15" id="WfR-Bp-FPI"/>
+                <constraint firstItem="utj-Ya-FtB" firstAttribute="leading" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="15" id="Zh7-9A-sr9"/>
+                <constraint firstItem="ZN0-SI-bsi" firstAttribute="leading" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="15" id="dTj-HI-Yhl"/>
+                <constraint firstItem="LTi-pm-csV" firstAttribute="top" secondItem="ZN0-SI-bsi" secondAttribute="bottom" constant="16" id="mZe-sg-YRa"/>
+                <constraint firstItem="A5s-nm-wc2" firstAttribute="leading" secondItem="utj-Ya-FtB" secondAttribute="trailing" constant="8" id="o2f-LJ-ZOV"/>
+                <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="LTi-pm-csV" secondAttribute="trailing" constant="16" id="oYw-aM-KD9"/>
+                <constraint firstItem="FJU-a9-G3x" firstAttribute="leading" secondItem="Kac-2G-cNu" secondAttribute="leading" constant="4" id="p4U-po-NTg"/>
+                <constraint firstItem="LTi-pm-csV" firstAttribute="leading" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="15" id="xgz-ht-3b6"/>
+                <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="ZN0-SI-bsi" secondAttribute="trailing" constant="179" id="yDB-5n-vo2"/>
+                <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="utj-Ya-FtB" secondAttribute="trailing" constant="101" id="yDm-ud-YBk"/>
+                <constraint firstItem="FJU-a9-G3x" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="4" id="z3U-oD-mFS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="Kac-2G-cNu"/>
