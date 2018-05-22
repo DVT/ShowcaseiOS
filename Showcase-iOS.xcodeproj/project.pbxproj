@@ -78,6 +78,7 @@
 		BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */; };
 		BC4D82D3208F6FB6003EFB06 /* PasswordValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */; };
 		BC5675ED20B2B64B005CC3C3 /* DataSnapshotProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5675EC20B2B64B005CC3C3 /* DataSnapshotProtocol.swift */; };
+		BC5675EF20B2C869005CC3C3 /* SocialMediaEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5675EE20B2C869005CC3C3 /* SocialMediaEndPoint.swift */; };
 		BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D07352090683F00FFE9DD /* AuthenticationError.swift */; };
 		BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D073C2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift */; };
 		BC6D073F209246D400FFE9DD /* AuthErrorCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */; };
@@ -206,6 +207,7 @@
 		BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorTests.swift; sourceTree = "<group>"; };
 		BC5675EC20B2B64B005CC3C3 /* DataSnapshotProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSnapshotProtocol.swift; sourceTree = "<group>"; };
+		BC5675EE20B2C869005CC3C3 /* SocialMediaEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaEndPoint.swift; sourceTree = "<group>"; };
 		BC6D07352090683F00FFE9DD /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		BC6D073C2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthErrorCode+Extension.swift"; sourceTree = "<group>"; };
 		BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorCodeTests.swift; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 			isa = PBXGroup;
 			children = (
 				BC40834C20AA07F400A2D49C /* AboutViewController.swift */,
+				BC5675EE20B2C869005CC3C3 /* SocialMediaEndPoint.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -1181,6 +1184,7 @@
 				A389D66020A444B3008DB6FE /* ContactUsDelegate.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
 				A37BD16620AE9E15009C23A0 /* ContactUsNavigatorDelegate.swift in Sources */,
+				BC5675EF20B2C869005CC3C3 /* SocialMediaEndPoint.swift in Sources */,
 				FD98CA7D20A99F2800FDF031 /* HomeViewController.swift in Sources */,
 				A389D66320A59471008DB6FE /* FirebaseStorageExtension.swift in Sources */,
 				A3FB58C920A9C4F60093506E /* SharedApplicationDelegateImplementation.swift in Sources */,
