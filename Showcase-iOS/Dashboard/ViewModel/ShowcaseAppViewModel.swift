@@ -44,6 +44,10 @@ class ShowcaseAppViewModel {
         return showcaseApp.technologyUsed
     }
     
+    var name: String? {
+        return showcaseApp.name
+    }
+    
     init(with showcaseApp: ShowcaseApp) {
         self.showcaseApp = showcaseApp
     }

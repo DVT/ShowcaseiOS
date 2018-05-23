@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginScrollView: UIScrollView!
     var loginPresenter: LoginPresentable?
     var alertController: UIAlertController?
+    let userDefaults = UserDefaults.standard
     let retryAction = UIAlertAction(title: "Retry", style: .destructive, handler: nil)
     
     override func viewDidLoad() {
@@ -25,6 +26,7 @@ class LoginViewController: UIViewController {
         loginScrollView.keyboardDismissMode = .interactive
         alertController = UIAlertController(title: "Can't log you in", message: "", preferredStyle: .alert)
         alertController?.addAction(retryAction)
+        loginPresenter?.showSuccesWhenUserIsAlreadyAuthenticated()
     }
     
     override func viewWillAppear(_ animated: Bool) {
