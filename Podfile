@@ -16,7 +16,7 @@ target 'Showcase-iOS' do
    pod 'Swinject'
    pod 'RxCocoa','~> 4.0'
    pod 'Kingfisher'
-   pod 'IQKeyboardManagerSwift', '5.0.0'
+   pod 'IQKeyboardManager','~> 5.0.8'
    
   target 'Showcase-iOSTests' do
     inherit! :search_paths

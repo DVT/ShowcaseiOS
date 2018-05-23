@@ -39,7 +39,7 @@ PODS:
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GTMSessionFetcher/Core (1.1.15)
-  - IQKeyboardManagerSwift (5.0.0)
+  - IQKeyboardManager (5.0.8)
   - Kingfisher (4.7.0)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -64,7 +64,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
-  - IQKeyboardManagerSwift (= 5.0.0)
+  - IQKeyboardManager (~> 5.0.8)
   - Kingfisher
   - RxBlocking (~> 4.0)
   - RxCocoa (~> 4.0)
@@ -86,7 +86,7 @@ SPEC REPOS:
     - FirebaseStorage
     - GoogleToolboxForMac
     - GTMSessionFetcher
-    - IQKeyboardManagerSwift
+    - IQKeyboardManager
     - Kingfisher
     - leveldb-library
     - nanopb
@@ -109,7 +109,7 @@ SPEC CHECKSUMS:
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
-  IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
+  IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
@@ -119,6 +119,6 @@ SPEC CHECKSUMS:
   RxTest: e634f15fd2c2cd0e0120132ef7a4f7be69ad0393
   Swinject: a1364b0f66c2736bb03c1c7cab54809e16df25da
 
-PODFILE CHECKSUM: bad0f20c155fa47cf0a58f61cb44fa436cdd2725
+PODFILE CHECKSUM: 58e207d9f1356b7aad37a47aa06749be11199edb
 
 COCOAPODS: 1.5.2
