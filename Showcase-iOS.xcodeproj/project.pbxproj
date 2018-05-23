@@ -66,7 +66,6 @@
 		BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */; };
 		BC40834D20AA07F400A2D49C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40834C20AA07F400A2D49C /* AboutViewController.swift */; };
 		BC425EBD20A45D0E00CBBE56 /* CurvedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */; };
-		BC425EC020A461CE00CBBE56 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBF20A461CE00CBBE56 /* LoginViewControllerTests.swift */; };
 		BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */; };
 		BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */; };
 		BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82C4208F4CB8003EFB06 /* LoginPresenterTests.swift */; };
@@ -193,7 +192,6 @@
 		BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUserProtocol.swift; sourceTree = "<group>"; };
 		BC40834C20AA07F400A2D49C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedButton.swift; sourceTree = "<group>"; };
-		BC425EBF20A461CE00CBBE56 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentable.swift; sourceTree = "<group>"; };
 		BC4D82C4208F4CB8003EFB06 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
@@ -582,15 +580,6 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
-		BC425EBE20A461B200CBBE56 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BC425EBF20A461CE00CBBE56 /* LoginViewControllerTests.swift */,
-			);
-			name = View;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		BC4D82C1208F4C87003EFB06 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,7 +665,6 @@
 		BCE5DA8A2087AB31000458FD /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				BC425EBE20A461B200CBBE56 /* View */,
 				BC4D82C1208F4C87003EFB06 /* Presenter */,
 				BC9253E8208DCEA4003EACBE /* Interactor */,
 				BCE5DA8B2087AB3A000458FD /* Service */,
@@ -1173,7 +1161,6 @@
 				A3DBE44C209F8BC300561CE0 /* GeneratedShowcaseMocks.swift in Sources */,
 				A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */,
 				A3FB58C520A98A030093506E /* ContactUsCellViewModelTests.swift in Sources */,
-				BC425EC020A461CE00CBBE56 /* LoginViewControllerTests.swift in Sources */,
 				A3E7197F209C55370081D5C1 /* ContactUsPresenterTests.swift in Sources */,
 				A30087C2209718F70095FAC1 /* ContactUsInteractableTests.swift in Sources */,
 				BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */,
