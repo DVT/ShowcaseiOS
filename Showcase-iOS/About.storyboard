@@ -41,92 +41,125 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="culture_view" translatesAutoresizingMaskIntoConstraints="NO" id="Vaj-xv-LEt">
                                                 <rect key="frame" x="24" y="715" width="327" height="221"/>
                                             </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="employees_count_view" translatesAutoresizingMaskIntoConstraints="NO" id="rsG-Ph-643">
+                                                <rect key="frame" x="131" y="309" width="198" height="88"/>
+                                            </imageView>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="4KB-7Q-5vK">
                                                 <rect key="frame" x="24" y="986" width="327" height="60"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1xI-5k-UfA">
                                                         <rect key="frame" x="0.0" y="0.0" width="79" height="60"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="gridWorld" translatesAutoresizingMaskIntoConstraints="NO" id="S2L-OH-pFq">
-                                                                <rect key="frame" x="22" y="0.0" width="35" height="35"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZH-E1-aFt">
+                                                                <rect key="frame" x="16.5" y="0.0" width="46" height="49"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="35" id="S9H-I4-6De"/>
-                                                                    <constraint firstAttribute="height" constant="35" id="k3a-4f-UTu"/>
+                                                                    <constraint firstAttribute="width" constant="46" id="S4h-j0-Yw3"/>
+                                                                    <constraint firstAttribute="height" constant="49" id="nsU-LW-GYh"/>
                                                                 </constraints>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Website" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tn-az-FTC">
-                                                                <rect key="frame" x="21.5" y="35" width="35.5" height="25"/>
+                                                                <state key="normal" image="gridWorld"/>
+                                                                <connections>
+                                                                    <action selector="websiteTapped:" destination="m2W-01-DQY" eventType="touchUpInside" id="hWs-t2-vgW"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCI-ai-b7F">
+                                                                <rect key="frame" x="21.5" y="49" width="36" height="11"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <state key="normal" title="Website">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="websiteTapped:" destination="m2W-01-DQY" eventType="touchUpInside" id="Nrf-hi-6Ji"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <viewLayoutGuide key="safeArea" id="oon-ri-8Rh"/>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ub4-mj-Qg1">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tlW-a1-M8s">
                                                         <rect key="frame" x="83" y="0.0" width="78.5" height="60"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="twitterLogoButton" translatesAutoresizingMaskIntoConstraints="NO" id="cUI-Cr-neg">
-                                                                <rect key="frame" x="21.5" y="0.0" width="35" height="35"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRp-ei-GOe">
+                                                                <rect key="frame" x="16" y="0.0" width="46" height="49"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="35" id="7pU-AC-25c"/>
-                                                                    <constraint firstAttribute="height" constant="35" id="wzA-k0-u41"/>
+                                                                    <constraint firstAttribute="height" constant="49" id="2rP-Ue-P8e"/>
+                                                                    <constraint firstAttribute="width" constant="46" id="zJf-LY-28u"/>
                                                                 </constraints>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMp-gZ-M7V">
-                                                                <rect key="frame" x="23.5" y="35" width="31" height="25"/>
+                                                                <state key="normal" image="twitterLogoButton"/>
+                                                                <connections>
+                                                                    <action selector="twitterTapped:" destination="m2W-01-DQY" eventType="touchUpInside" id="N9a-bW-Q55"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ub4-wD-pp4">
+                                                                <rect key="frame" x="23.5" y="49" width="31" height="11"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <state key="normal" title="Twitter">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="twitterTapped:" destination="m2W-01-DQY" eventType="touchUpInside" id="TkX-LC-5Xj"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
-                                                        <viewLayoutGuide key="safeArea" id="cfP-s0-0aV"/>
+                                                        <viewLayoutGuide key="safeArea" id="GFB-ce-do8"/>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="110-M5-XqN">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4bW-i9-6Zz">
                                                         <rect key="frame" x="165.5" y="0.0" width="79" height="60"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="facebookLogoButton" translatesAutoresizingMaskIntoConstraints="NO" id="ed4-13-1p5">
-                                                                <rect key="frame" x="22" y="0.0" width="35" height="35"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-8k-U1f">
+                                                                <rect key="frame" x="16.5" y="0.0" width="46" height="49"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="CDi-dn-2ZK"/>
-                                                                    <constraint firstAttribute="width" constant="35" id="DMw-ID-IsD"/>
+                                                                    <constraint firstAttribute="height" constant="49" id="PZ0-fI-eJd"/>
+                                                                    <constraint firstAttribute="width" constant="46" id="gft-uW-xyg"/>
                                                                 </constraints>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlO-nt-Usq">
-                                                                <rect key="frame" x="18" y="35" width="42.5" height="25"/>
+                                                                <state key="normal" image="facebookLogoButton"/>
+                                                                <connections>
+                                                                    <action selector="facebookTapped:" destination="m2W-01-DQY" eventType="touchUpInside" id="bfb-vq-4sW"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIo-ov-isY">
+                                                                <rect key="frame" x="18" y="49" width="43" height="11"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <state key="normal" title="Facebook">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="facebookTapped:" destination="m2W-01-DQY" eventType="touchUpInside" id="uQv-A3-mfV"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
-                                                        <viewLayoutGuide key="safeArea" id="EtW-W2-eA7"/>
+                                                        <viewLayoutGuide key="safeArea" id="gwC-Hn-1mu"/>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="giW-pQ-iyp">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ab1-Xq-AIo">
                                                         <rect key="frame" x="248.5" y="0.0" width="78.5" height="60"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="instagramLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ko0-TZ-KKh">
-                                                                <rect key="frame" x="21.5" y="0.0" width="35" height="35"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yO-uT-oEq">
+                                                                <rect key="frame" x="16" y="0.0" width="46" height="49"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="35" id="8l7-T9-avS"/>
-                                                                    <constraint firstAttribute="height" constant="35" id="c9w-gT-j9Q"/>
+                                                                    <constraint firstAttribute="width" constant="46" id="Q8Z-mP-m89"/>
+                                                                    <constraint firstAttribute="height" constant="49" id="db0-NK-Wp9"/>
                                                                 </constraints>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKH-WN-Spt">
-                                                                <rect key="frame" x="17" y="35" width="44" height="25"/>
+                                                                <state key="normal" image="instagramLogo"/>
+                                                                <connections>
+                                                                    <action selector="instagramTapped:" destination="m2W-01-DQY" eventType="touchUpInside" id="JlH-pB-359"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhG-6x-1aK">
+                                                                <rect key="frame" x="17" y="49" width="44" height="11"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <state key="normal" title="Instagram">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="instagramTapped:" destination="m2W-01-DQY" eventType="touchUpInside" id="STZ-nT-dfS"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
+                                                        <viewLayoutGuide key="safeArea" id="NY9-h3-RDq"/>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="Shy-GK-d0T"/>
                                                 </constraints>
                                             </stackView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="employees_count_view" translatesAutoresizingMaskIntoConstraints="NO" id="rsG-Ph-643">
-                                                <rect key="frame" x="131" y="309" width="198" height="88"/>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>

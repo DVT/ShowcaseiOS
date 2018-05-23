@@ -18,12 +18,12 @@ class HomeInteractor: HomePresenterInteractable {
         let databaseReference = FirebaseRetrieverableImplementation(reference: self.firebaseDatabaseReference)
         databaseReference.fetchFirebaseData(from: .apps) { snapshot, error in
             if error != nil {
-                self.homePresenter?.onFetchShowcaseAppsFailure(with: .childNotFound)
+        self.homePresenter?.onFetchShowcaseAppsFailure(with: .childNotFound)
             } else {
-                let result = snapshot as? DataSnapshot
+                let result = snapshot as? DataSnapshotProtocol
                 if result?.value != nil {
-                    let office = result?.value as? [String: Any]
-                    showcaseApps.append(ShowcaseApp(with: office))
+                    let showcaseApp = result?.value as? [String: Any]
+                    showcaseApps.append(ShowcaseApp(with: showcaseApp))
                 }
                 self.homePresenter?.onFetchShowcaseAppsSuccess(with: showcaseApps)
             }

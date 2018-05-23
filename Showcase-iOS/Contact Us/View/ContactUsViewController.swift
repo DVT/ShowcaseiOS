@@ -7,9 +7,10 @@ class ContactUsViewController: UIViewController {
     
     //MARK: Properties
     
-    var contactUsPresenter: ContactUsPresenter?
+    var contactUsPresenter: ContactUsPresentable?
     var cellViewModel: ContactUsCellViewModel?
     var officeViewModels = [OfficeViewModel]()
+    var firebaseStorage: FIRStoring?
     
     //MARK: @IBOutlets
     
@@ -19,10 +20,15 @@ class ContactUsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.topItem?.title = "Contact Us"
         setCollectionView()
         registerContactUsCell()
         contactUsPresenter?.retrieveContacts()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.items?.first?.searchController = nil
+        self.navigationController?.navigationBar.topItem?.title = "Contact Us"
     }
     
     //MARK: Operations
@@ -76,6 +82,8 @@ extension ContactUsViewController: UICollectionViewDelegate, UICollectionViewDat
         cellViewModel = ContactUsCellViewModel(with: officeViewModels[indexPath.row])
         cell.viewModel = cellViewModel
         cell.viewModel?.sharedApplication = SharedApplicationDelegateImplementation()
+        cell.viewModel?.contactUsNavigator = ContactUsNavigatorDelegateImplemetation()
+        cell.firebaseStorage = firebaseStorage
         cell.populateView()
         return cell
         

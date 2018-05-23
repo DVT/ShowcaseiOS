@@ -36,11 +36,11 @@ class OfficeViewModel {
         return office.image
     }
     
-    var latitude: String? {
+    var latitude: Double? {
         return office.latitude
     }
     
-    var longitude: String? {
+    var longitude: Double? {
         return office.longitude
     }
     

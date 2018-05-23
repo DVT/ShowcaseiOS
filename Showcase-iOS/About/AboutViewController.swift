@@ -13,4 +13,27 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.items?.first?.searchController = nil
+        self.navigationController?.navigationBar.topItem?.title = "About"
+    }
+    
+    @IBAction func websiteTapped(_ sender: Any) {
+        UIApplication.shared.open(SocialMediaEndpoint.website.url, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func twitterTapped(_ sender: Any) {
+        UIApplication.shared.open(SocialMediaEndpoint.twitter.url, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func facebookTapped(_ sender: Any) {
+        UIApplication.shared.open(SocialMediaEndpoint.facebook.url, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func instagramTapped(_ sender: Any) {
+        UIApplication.shared.open(SocialMediaEndpoint.instagram.url, options: [:], completionHandler: nil)
+    }
+    
 }

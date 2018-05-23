@@ -22,14 +22,20 @@ class HomeViewController: UICollectionViewController {
         self.presenter?.fetchShowcaseApps()
     }
     
-    func setupNavigationBar() {
-        self.navigationController?.navigationBar.topItem?.title = "DVT Showcase"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.delegate = self
-        searchController.definesPresentationContext = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.searchController.delegate = self
+        self.searchController.searchResultsUpdater = self
         self.navigationController?.navigationBar.items?.first?.searchController = searchController
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        self.tabBarController?.navigationItem.title = "DVT Showcase"
     }
     
     func registerCollectionViewNib() {
