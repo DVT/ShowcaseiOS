@@ -72,6 +72,11 @@ class LoginPresenterTests: XCTestCase {
         stub(mockLoginViewer) { mock in
             let _ = when(mock.showSuccess().thenDoNothing())
         }
+        
+        stub(mockUserDefaults) { (mock) in
+            _ = when(mock.set(value: any(), forKey: any()).thenDoNothing())
+        }
+        
         systemUnderTest.signedInSuccessfully()
         verify(mockLoginViewer, times(1)).showSuccess()
     }
