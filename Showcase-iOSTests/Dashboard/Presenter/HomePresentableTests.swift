@@ -16,14 +16,15 @@ class HomePresentableTests: XCTestCase {
     var mockHomeInteractor = MockHomePresenterInteractable()
     var homePresenter = MockHomePresentable()
     var mockShowcaseApps = [ShowcaseApp]()
-    var systeUnderTest: HomePresenter?
+    var systemUnderTest: HomePresenter?
+    var mockShowcassAppViewModels = [ShowcaseAppViewModel]()
     
     override func setUp() {
         super.setUp()
         let homePresenter = HomePresenter()
         homePresenter.homePresenterInteractable = mockHomeInteractor
         homePresenter.homePresenterViewable = mockHomeViewer
-        systeUnderTest = homePresenter
+        systemUnderTest = homePresenter
     }
     
     func testThatGivenFetchShowcaseAppsFailsThenShowOnFailureIsPresentedWithAnError() {
@@ -32,7 +33,7 @@ class HomePresentableTests: XCTestCase {
                 XCTAssertEqual(error as DatabaseError, .childNotFound)
             })
         }
-        self.systeUnderTest?.onFetchShowcaseAppsFailure(with: .childNotFound)
+        self.systemUnderTest?.onFetchShowcaseAppsFailure(with: .childNotFound)
         verify(mockHomeViewer, times(1)).showOnFailure(with: any())
     }
     
@@ -42,7 +43,7 @@ class HomePresentableTests: XCTestCase {
                 XCTAssertTrue(showcaseApps.isEmpty)
             }))
         }
-        self.systeUnderTest?.onFetchShowcaseAppsSuccess(with: [ShowcaseApp]())
+        self.systemUnderTest?.onFetchShowcaseAppsSuccess(with: [ShowcaseApp]())
         verify(mockHomeViewer, times(1)).showOnSuccess(with: any())
     }
     
@@ -54,8 +55,30 @@ class HomePresentableTests: XCTestCase {
                 XCTAssertTrue(showcaseApps.count > 0)
             }))
         }
-        self.systeUnderTest?.onFetchShowcaseAppsSuccess(with: self.mockShowcaseApps)
+        self.systemUnderTest?.onFetchShowcaseAppsSuccess(with: self.mockShowcaseApps)
         verify(mockHomeViewer, times(1)).showOnSuccess(with: any())
+    }
+    
+    func testThatGivenSearchTextThenSearchdShouldReturnWihAListOfShowcaseApps() {
+        self.setupMockShowcaseAppViewModels()
+        systemUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
+        let filteredShowcassApps = self.systemUnderTest?.search(text: "Group")
+        XCTAssertTrue((filteredShowcassApps?.count)! == 1)
+    }
+    
+    func testThatGivenEmptySearchTextThenSearchShouldReturnTheAllShowcaseApps() {
+        self.setupMockShowcaseAppViewModels()
+        systemUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
+        let filteredShowcassApps = self.systemUnderTest?.search(text: "")
+        XCTAssertTrue((filteredShowcassApps?.count)! == 2)
+    }
+    
+    func testThatGivenSearchTextWithAnInvalidShowcaseAppListThenSearchShouldReturnAnEmptyList() {
+        let showcaseapp = ShowcaseApp(with: [String: Any]())
+        mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
+        systemUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
+        let filteredShowcassApps = self.systemUnderTest?.search(text: "Group Five")
+        XCTAssertTrue((filteredShowcassApps?.count)! == 0)
     }
     
     func setupMockShowcaseAppDictionary() -> [String: Any] {
@@ -69,5 +92,22 @@ class HomePresentableTests: XCTestCase {
         dictionary["technologyUsed"] = "Windows Phone \n.NET Development "
         dictionary["screenshots"] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
         return dictionary
+    }
+    
+    func setupMockShowcaseAppViewModels() {
+        var dictionary = [String: Any]()
+        dictionary["client"] = "Absa"
+        dictionary["functionality"] = "Asset data capture on Windows Mobile devices."
+        dictionary["iconUrl"] = "app-images/group-five/group_five_logo.jpg"
+        dictionary["id"] = "group-five"
+        dictionary["industry"] = "Asset Management"
+        dictionary["shortDescription"] = "Asset data capturing application"
+        dictionary["technologyUsed"] = "Windows Phone \n.NET Development "
+        dictionary["screenshots"] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
+        
+        var showcaseapp = ShowcaseApp(with: setupMockShowcaseAppDictionary())
+        mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
+        showcaseapp = ShowcaseApp(with: dictionary)
+        mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
     }
 }

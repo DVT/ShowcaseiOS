@@ -106,7 +106,6 @@
 		FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */; };
 		FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */; };
 		FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD71315E208DD3EA0090E2E7 /* Path.swift */; };
-		FD852BD320AB0FA7005A958F /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD852BD120AB0FA7005A958F /* HeaderCollectionViewCell.swift */; };
 		FD98CA7D20A99F2800FDF031 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA7C20A99F2800FDF031 /* HomeViewController.swift */; };
 		FD98CA7F20A99F4D00FDF031 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA7E20A99F4D00FDF031 /* TabBarViewController.swift */; };
 		FD98CA8E20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA8C20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift */; };
@@ -235,7 +234,6 @@
 		FD5BA71B208DFD0A0002A1A9 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceableImplementation.swift; sourceTree = "<group>"; };
 		FD71315E208DD3EA0090E2E7 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
-		FD852BD120AB0FA7005A958F /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD98CA7C20A99F2800FDF031 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FD98CA7E20A99F4D00FDF031 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FD98CA8C20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseAppCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -824,7 +822,6 @@
 			children = (
 				FD4E0EC720AACD6F00B97FF7 /* ShowcaseAppCollectionViewCell.xib */,
 				FD98CA8C20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift */,
-				FD852BD120AB0FA7005A958F /* HeaderCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1057,6 +1054,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6AF9A78FD8CE7AAB20B99BFE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6C64BE071CA45E0CB5773509 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1166,7 +1178,6 @@
 				BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */,
 				BCEDE50120AC46AE005E1F4D /* Routable.swift in Sources */,
 				BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */,
-				FD852BD320AB0FA7005A958F /* HeaderCollectionViewCell.swift in Sources */,
 				A3E71971209B1A200081D5C1 /* ContactUsPresenterViewable.swift in Sources */,
 				BCE5DADC208A2756000458FD /* LoginInteractorPresentable.swift in Sources */,
 				BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */,
