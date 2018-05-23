@@ -20,6 +20,12 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var branch: UILabel!
     @IBOutlet weak var locationDescription: UILabel!
     
+    @IBOutlet weak var email: UIButton!
+    @IBOutlet weak var call: UIButton!
+    @IBOutlet weak var navigate: UIButton!
+    
+    
+    
     //MARK: @IBActions
     
     @IBAction func emailPressed(_ sender: Any) {
@@ -42,6 +48,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         branch.text = viewModel?.branch
         locationDescription.text = viewModel?.locationDescription
         populateStaticMap()
+        styleView()
     }
     
     private func populateImageView(with imagePath: String) {
@@ -62,5 +69,12 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         let temp = "\(staticMapbaseUrl)\(viewModel.latitude),\(viewModel.longitude)"
         guard let mapUrl = URL(string: temp) else {return}
         mapImage.kf.setImage(with: mapUrl)
+    }
+    
+    private func styleView() {
+        email.setTitleColor(UIColor.DvtBlueColor, for: .normal)
+        call.setTitleColor(UIColor.DvtBlueColor, for: .normal)
+        navigate.setTitleColor(UIColor.DvtBlueColor, for: .normal)
+        
     }
 }
