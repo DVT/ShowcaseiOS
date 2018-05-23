@@ -23,6 +23,7 @@ struct DependencyContainer {
             loginInteractor.userAuthenticator = userAuthentication
             loginInteractor.loginPresenter = loginPresenter
             loginPresenter.loginInteractor = loginInteractor
+            loginPresenter.userDefaults = UserDefaultsImplementation()
             return loginPresenter
         }
         

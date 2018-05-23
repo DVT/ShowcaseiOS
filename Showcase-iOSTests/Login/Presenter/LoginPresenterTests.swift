@@ -17,12 +17,14 @@ class LoginPresenterTests: XCTestCase {
     var mockLoginViewer = MockLoginPresenterViewable()
     var mockLoginInteractor = MockLoginPresenterInteractable()
     let mockLoginPresenter = MockLoginInteractorPresentable()
+    let mockUserDefaults = MockUserDefaultsProtocol()
     
     override func setUp() {
         super.setUp()
         systemUnderTest = LoginPresenter()
         systemUnderTest.loginViewer = mockLoginViewer
         systemUnderTest.loginInteractor = mockLoginInteractor
+        systemUnderTest.userDefaults = mockUserDefaults
     }
 
     func testThatTheSignInMethodOfTheLoginInteractorGetsCalled() {
@@ -72,6 +74,50 @@ class LoginPresenterTests: XCTestCase {
         }
         systemUnderTest.signedInSuccessfully()
         verify(mockLoginViewer, times(1)).showSuccess()
+    }
+    
+    func testThatWhenShowSuccessIfAlreadyLoggedInGetsCalledAndTheUserHasLoggedInBeforeThatTheShowSuccessWillBeInvoked() {
+        stub(mockLoginViewer) { (mock) in
+            let _ = when(mock.showSuccess().thenDoNothing())
+        }
+        
+        stub(mockUserDefaults) { (mock) in
+            _ = when(mock.bool(forKey: any()).thenReturn(true))
+        }
+        
+        systemUnderTest.showSuccesWhenUserIsAlreadyAuthenticated()
+        verify(mockLoginViewer, times(1)).showSuccess()
+    }
+    
+    
+    func testThatWhenShowSuccessIfAlreadyLoggedInGetsCalledAndTheUserHasNotLoggedInBeforeThatTheShowSuccessWillNotBeInvoked() {
+        stub(mockLoginViewer) { (mock) in
+            let _ = when(mock.showSuccess().thenDoNothing())
+        }
+        
+        stub(mockUserDefaults) { (mock) in
+            _ = when(mock.bool(forKey: any()).thenReturn(false))
+        }
+        
+        systemUnderTest.showSuccesWhenUserIsAlreadyAuthenticated()
+        verify(mockLoginViewer, times(0)).showSuccess()
+    }
+    
+    func testThatWhenSignedInSuccesfullyMethodGetsCalledThenTheUserDefaultsValueGetsSetToTrueWithValidKeyValuePair() {
+        var userDefaultsDictionary:[String: Bool] = [:]
+        
+        stub(mockLoginViewer) { (mock) in
+            let _ = when(mock.showSuccess().thenDoNothing())
+        }
+        
+        stub(mockUserDefaults) { (mock) in
+            _ = when(mock.set(value: any(), forKey: any()).then({ (value, key) in
+                userDefaultsDictionary["\(key)"] = value
+            }))
+        }
+        systemUnderTest.signedInSuccessfully()
+        XCTAssertTrue(userDefaultsDictionary["\(UserDefaultsKeys.isLoggedIn.rawValue)"]!)
+        verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
     }
 
 }

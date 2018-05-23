@@ -34,9 +34,7 @@ class LoginViewController: UIViewController {
         loginScrollView.keyboardDismissMode = .interactive
         alertController = UIAlertController(title: "Can't log you in", message: "", preferredStyle: .alert)
         alertController?.addAction(retryAction)
-        if userDefaults.bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue) {
-            self.showSuccess()
-        }
+        loginPresenter?.showSuccesWhenUserIsAlreadyAuthenticated()
     }
     
     override func viewWillAppear(_ animated: Bool) {

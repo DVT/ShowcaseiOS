@@ -10,12 +10,13 @@ import Foundation
 import FirebaseAuth
 
 class LoginPresenter: LoginPresentable {
+    var userDefaults: UserDefaultsProtocol?
     var loginViewer: LoginPresenterViewable?
     var loginInteractor: LoginPresenterInteractable?
-    let userDefaults = UserDefaults.standard
+    
     let emailValidator = EmailValidator()
     let passwordValidator = PasswordValidator()
-
+    
     func login(withEmail email: String, password: String) {
         if emailValidator.isValid(email) && passwordValidator.isValid(password) {
             loginInteractor?.signIn(withEmail: email, password: password)
@@ -27,11 +28,19 @@ class LoginPresenter: LoginPresentable {
             loginViewer?.showPasswordValidationFailure(withError: AuthenticationError.invalidPassword)
         }
     }
+    
+    func showSuccesWhenUserIsAlreadyAuthenticated() {
+        if let isUserAlreadyLoggedIn = userDefaults?.bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue) {
+            if isUserAlreadyLoggedIn {
+                loginViewer?.showSuccess()
+            }
+        }
+    }
 }
 
 extension LoginPresenter: LoginInteractorPresentable {
     func signedInSuccessfully() {
-        userDefaults.set(true, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
+        userDefaults?.set(value: true, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
         loginViewer?.showSuccess()
     }
     
