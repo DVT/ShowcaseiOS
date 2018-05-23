@@ -11,11 +11,11 @@ class ContactUsPresenter: ContactUsPresentable {
     
     //MARK: Properties
     
-    var officeViewModels: [OfficeViewModel] = [OfficeViewModel]()
     
     //MARK: Operations
     
     func onRetrieveOfficesComplete(with offices: [Office]) {
+        var officeViewModels: [OfficeViewModel] = [OfficeViewModel]()
         offices.forEach { (office) in
             let officeViewModel = OfficeViewModel(with: office)
             officeViewModels.append(officeViewModel)
