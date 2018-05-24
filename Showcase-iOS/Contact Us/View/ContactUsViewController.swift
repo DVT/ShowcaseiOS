@@ -42,19 +42,6 @@ class ContactUsViewController: UIViewController {
         let contactUsNib  = UINib(nibName: ContactUsCollectionViewCell.identifier, bundle: nil)
         collectionView.register(contactUsNib, forCellWithReuseIdentifier: ContactUsCollectionViewCell.identifier)
     }
-    
-    //MARK: MockData
-    
-    func mockValidOfficeResponse() -> OfficeViewModel {
-        let mockJhbOffice: [String: Any] = ["latitude":"-26.1159126", "name":"Johannesburg","image":"offices/dvt_hyde_park.png",
-                                            "googleMapsPlaceId":"ChIJF0f-kTdzlR4RioXEaM2-a10",
-                                            "address":"Ground Floor,Victoria Gate South,Hyde Lane Office Park,Hyde Park Lane,Hydepark,Johannesburg,2196",
-                                            "googleMapsName":"DVT Johannesburg",
-                                            "emailAddress":"jvandermerwe@jhb.dvt.co.za",
-                                            "longitude":"28.0328262",
-                                            "telephone":"+2773444000"]
-        return OfficeViewModel(with: Office(with: mockJhbOffice))
-    }
 }
 
 //MARK: CollectionView extension
@@ -62,7 +49,7 @@ class ContactUsViewController: UIViewController {
 extension ContactUsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 236)
+        return CGSize(width: collectionView.frame.width, height: 240)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
