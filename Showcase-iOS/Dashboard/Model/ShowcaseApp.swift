@@ -18,6 +18,7 @@ class ShowcaseApp {
     var screenshots: [String]?
     var shortDescription: String?
     var technologyUsed: String?
+    var name: String?
     
     init(with dictionary: [String: Any]?) {
         self.client = dictionary?["client"] as? String
@@ -28,5 +29,6 @@ class ShowcaseApp {
         self.screenshots = dictionary?["screenshots"] as? [String]
         self.shortDescription = dictionary?["shortDescription"] as? String
         self.technologyUsed = dictionary?["technologyUsed"] as? String
+        self.name = dictionary?["name"] as? String
     }
 }

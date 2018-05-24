@@ -30,7 +30,6 @@ class TabBarViewController: UITabBarController {
         contactUsContoller.contactUsPresenter = contactUsPresenter
         contactUsPresenter.contactUsView = contactUsContoller
         contactUsContoller.firebaseStorage = firebaseStorage
-        contactUsContoller.navigationController?.navigationBar.prefersLargeTitles = true
         contactUsContoller.tabBarItem.title = "Contact Us"
     }
 }

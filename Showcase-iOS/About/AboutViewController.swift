@@ -12,15 +12,11 @@ class AboutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigationBar()
     }
     
-    func setupNavigationBar() {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.items?.first?.searchController = nil
         self.navigationController?.navigationBar.topItem?.title = "About"
     }
     

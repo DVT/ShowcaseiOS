@@ -57,6 +57,10 @@ class ShowcaseAppViewModelTests: XCTestCase {
         XCTAssertEqual(self.mockShowcaseAppViewModel.screenshots!, screenshots)
     }
     
+    func testThatGivenADictionaryThenAShowcaseAppViewModelNameFieldShoulHaveAValue() {
+        XCTAssertEqual(self.mockShowcaseAppViewModel.name, "Group Five")
+    }
+    
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelClientFieldShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.client, nil)
     }
@@ -89,9 +93,14 @@ class ShowcaseAppViewModelTests: XCTestCase {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.screenshots!, [String]())
     }
     
+    func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelNameFieldShoulBeNil() {
+        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.name, nil)
+    }
+    
     func setupShowcaseAppDictionary() -> [String: Any] {
         var dictionary = [String: Any]()
         dictionary["client"] = "Group Five"
+        dictionary["name"] = "Group Five"
         dictionary["functionality"] = "Asset data capture on Windows Mobile devices."
         dictionary["iconUrl"] = "app-images/group-five/group_five_logo.jpg"
         dictionary["id"] = "group-five"

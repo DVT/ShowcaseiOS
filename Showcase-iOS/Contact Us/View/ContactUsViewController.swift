@@ -25,11 +25,10 @@ class ContactUsViewController: UIViewController {
         contactUsPresenter?.retrieveContacts()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.topItem?.title = "Contact"
-        let titleTextAttributes: NSDictionary = [NSAttributedStringKey.foregroundColor: UIColor.DvtBlueColor]
-        self.navigationController?.navigationBar.titleTextAttributes = titleTextAttributes as? [NSAttributedStringKey : Any]
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.items?.first?.searchController = nil
+        self.navigationController?.navigationBar.topItem?.title = "Contact Us"
     }
     
     //MARK: Operations
