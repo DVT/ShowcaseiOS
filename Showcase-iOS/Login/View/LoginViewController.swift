@@ -15,9 +15,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginContainer: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginScrollView: UIScrollView!
-    weak var keyBoardDelegate: KeyBoardDelegate!
-    weak var keyBoardObserver: KeyboardObservable!
-    weak var notificationCenter: NotificationCenterDelegate?
     var loginPresenter: LoginPresentable?
     var alertController: UIAlertController?
     let userDefaults = UserDefaults.standard
@@ -25,12 +22,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        keyBoardDelegate = self
-        keyBoardObserver = self
         self.navigationController?.navigationBar.isHidden = true
-        notificationCenter = NotificationCenter.default
         loginScrollView.keyboardDismissMode = .interactive
         alertController = UIAlertController(title: "Can't log you in", message: "", preferredStyle: .alert)
         alertController?.addAction(retryAction)
@@ -39,13 +31,10 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        keyBoardObserver.addObservers()
-        keyBoardDelegate.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        keyBoardObserver.removeObservers()
     }
     
     @IBAction func didTapLoginButton(_ sender: Any) {
@@ -59,44 +48,6 @@ class LoginViewController: UIViewController {
         alertController?.message = message
         present(alertController!, animated: true, completion: nil)
     }
-}
-
-extension LoginViewController: KeyBoardDelegate {
-    
-    @objc func keyBoardWillShow(_ notification: Notification) {
-        if let keyBoardHeight = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.height {
-            let contentInset = updateContentInset(keyBoardHeight: keyBoardHeight)
-            updateScrollViewContentInset(contentInset)
-        }
-    }
-    
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardWhenViewTapped))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func hideKeyboardWhenViewTapped() {
-        view.endEditing(true)
-    }
-    
-    @objc func keyBoardWillHide(_ notification: Notification) {
-        let contentInset = updateContentInset(keyBoardHeight: 0)
-        updateScrollViewContentInset(contentInset)
-    }
-    
-    func hideKeyboard(for textField: UITextField) {
-       textField.resignFirstResponder()
-    }
-    
-    func updateScrollViewContentInset(_ contentInset: UIEdgeInsets) {
-        loginScrollView.contentInset = contentInset
-    }
-    
-    func updateContentInset(keyBoardHeight height: CGFloat) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: height, right: 0)
-    }
-    
 }
 
 extension LoginViewController: LoginPresenterViewable {
@@ -123,24 +74,3 @@ extension LoginViewController: LoginPresenterViewable {
         self.present(navigationController, animated: true, completion: nil)
     }
 }
-
-extension LoginViewController: KeyboardObservable {
-    
-    func addObservers() {
-        notificationCenter?.addObserver(self, selector: #selector(keyBoardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        notificationCenter?.addObserver(self, selector: #selector(keyBoardWillShow(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
-    }
-    
-    func removeObservers() {
-        notificationCenter?.removeObserver(self)
-    }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        hideKeyboard(for: textField)
-        return true
-    }
-}
-
-

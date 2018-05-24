@@ -63,13 +63,9 @@
 		BC02346D20A049BF006E6E92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346C20A049BF006E6E92 /* LoginViewController.swift */; };
 		BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */; };
 		BC02347320A051B2006E6E92 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */; };
-		BC31C0F920A4696D00F8B543 /* KeyBoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EC220A4675800CBBE56 /* KeyBoardDelegate.swift */; };
-		BC31C0FA20A4697100F8B543 /* KeyboardObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EC420A4687300CBBE56 /* KeyboardObservable.swift */; };
-		BC31C0FC20A46FB400F8B543 /* NotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC31C0FB20A46FB400F8B543 /* NotificationCenterDelegate.swift */; };
 		BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */; };
 		BC40834D20AA07F400A2D49C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40834C20AA07F400A2D49C /* AboutViewController.swift */; };
 		BC425EBD20A45D0E00CBBE56 /* CurvedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */; };
-		BC425EC020A461CE00CBBE56 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBF20A461CE00CBBE56 /* LoginViewControllerTests.swift */; };
 		BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */; };
 		BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */; };
 		BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82C4208F4CB8003EFB06 /* LoginPresenterTests.swift */; };
@@ -81,6 +77,7 @@
 		BC5675EF20B2C869005CC3C3 /* SocialMediaEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5675EE20B2C869005CC3C3 /* SocialMediaEndPoint.swift */; };
 		BC56761320B41D36005CC3C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56761220B41D36005CC3C3 /* Constants.swift */; };
 		BC56761A20B54E4E005CC3C3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56761920B54E4E005CC3C3 /* UserDefaultsProtocol.swift */; };
+		BC56761820B45A81005CC3C3 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56761720B45A81005CC3C3 /* LoginTextField.swift */; };
 		BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D07352090683F00FFE9DD /* AuthenticationError.swift */; };
 		BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D073C2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift */; };
 		BC6D073F209246D400FFE9DD /* AuthErrorCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */; };
@@ -193,13 +190,9 @@
 		BC02346C20A049BF006E6E92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStoryboard+Enum.swift"; sourceTree = "<group>"; };
 		BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		BC31C0FB20A46FB400F8B543 /* NotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterDelegate.swift; sourceTree = "<group>"; };
 		BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUserProtocol.swift; sourceTree = "<group>"; };
 		BC40834C20AA07F400A2D49C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedButton.swift; sourceTree = "<group>"; };
-		BC425EBF20A461CE00CBBE56 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
-		BC425EC220A4675800CBBE56 /* KeyBoardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardDelegate.swift; sourceTree = "<group>"; };
-		BC425EC420A4687300CBBE56 /* KeyboardObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObservable.swift; sourceTree = "<group>"; };
 		BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentable.swift; sourceTree = "<group>"; };
 		BC4D82C4208F4CB8003EFB06 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
@@ -211,6 +204,7 @@
 		BC5675EE20B2C869005CC3C3 /* SocialMediaEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaEndPoint.swift; sourceTree = "<group>"; };
 		BC56761220B41D36005CC3C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BC56761920B54E4E005CC3C3 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		BC56761720B45A81005CC3C3 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		BC6D07352090683F00FFE9DD /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		BC6D073C2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthErrorCode+Extension.swift"; sourceTree = "<group>"; };
 		BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorCodeTests.swift; sourceTree = "<group>"; };
@@ -583,28 +577,10 @@
 		BC425EBB20A45CDA00CBBE56 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				BC56761720B45A81005CC3C3 /* LoginTextField.swift */,
 				BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */,
 			);
 			path = "Custom Views";
-			sourceTree = "<group>";
-		};
-		BC425EBE20A461B200CBBE56 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BC425EBF20A461CE00CBBE56 /* LoginViewControllerTests.swift */,
-			);
-			name = View;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		BC425EC120A4673900CBBE56 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				BC425EC220A4675800CBBE56 /* KeyBoardDelegate.swift */,
-				BC425EC420A4687300CBBE56 /* KeyboardObservable.swift */,
-				BC31C0FB20A46FB400F8B543 /* NotificationCenterDelegate.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BC4D82C1208F4C87003EFB06 /* Presenter */ = {
@@ -630,7 +606,6 @@
 		BC4D82CB208F601B003EFB06 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BC425EC120A4673900CBBE56 /* Extensions */,
 				BC425EBB20A45CDA00CBBE56 /* Custom Views */,
 				A3DBE449209F891600561CE0 /* LoginPresenterViewable.swift */,
 				BC02346C20A049BF006E6E92 /* LoginViewController.swift */,
@@ -701,7 +676,6 @@
 		BCE5DA8A2087AB31000458FD /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				BC425EBE20A461B200CBBE56 /* View */,
 				BC4D82C1208F4C87003EFB06 /* Presenter */,
 				BC9253E8208DCEA4003EACBE /* Interactor */,
 				BCE5DA8B2087AB3A000458FD /* Service */,
@@ -894,7 +868,6 @@
 				99FB7FE12085F25100B300BA /* Frameworks */,
 				99FB7FE22085F25100B300BA /* Resources */,
 				061B3ECDAC2CCF48BA99C4D9 /* [CP] Embed Pods Frameworks */,
-				ABBA78CC4DFDF9D7B2CAA202 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -915,7 +888,6 @@
 				99FB7FF52085F25300B300BA /* Frameworks */,
 				99FB7FF62085F25300B300BA /* Resources */,
 				4A98A59792CF61E5CCF79AE6 /* [CP] Embed Pods Frameworks */,
-				30A7914D6A8B3B142ECC7D09 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1006,6 +978,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -1017,6 +990,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -1027,21 +1001,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		30A7914D6A8B3B142ECC7D09 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4A98A59792CF61E5CCF79AE6 /* [CP] Embed Pods Frameworks */ = {
@@ -1132,21 +1091,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ABBA78CC4DFDF9D7B2CAA202 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1185,7 +1129,6 @@
 				A389D66C20A598B9008DB6FE /* FIRImageFetcher.swift in Sources */,
 				99FB7FE82085F25100B300BA /* AppDelegate.swift in Sources */,
 				A3AC3FCC20AC673C00D4B07A /* UIColor+Extension.swift in Sources */,
-				BC31C0FC20A46FB400F8B543 /* NotificationCenterDelegate.swift in Sources */,
 				FDE1AE7B209B26A300D383C4 /* HomePresenterViewable.swift in Sources */,
 				A36A55562099E4990037C4BF /* DataReferenceable.swift in Sources */,
 				A389D66520A594EB008DB6FE /* FIRStoring.swift in Sources */,
@@ -1196,10 +1139,10 @@
 				A3E71971209B1A200081D5C1 /* ContactUsPresenterViewable.swift in Sources */,
 				BCE5DADC208A2756000458FD /* LoginInteractorPresentable.swift in Sources */,
 				BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */,
-				BC31C0F920A4696D00F8B543 /* KeyBoardDelegate.swift in Sources */,
 				FDE1AE78209B244C00D383C4 /* HomePresenter.swift in Sources */,
 				BC02347320A051B2006E6E92 /* UIViewController+Extensions.swift in Sources */,
 				BCEDE50820AC4836005E1F4D /* DependencyContainer.swift in Sources */,
+				BC56761820B45A81005CC3C3 /* LoginTextField.swift in Sources */,
 				BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */,
 				BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */,
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
@@ -1246,7 +1189,6 @@
 				A3DBE44C209F8BC300561CE0 /* GeneratedShowcaseMocks.swift in Sources */,
 				A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */,
 				A3FB58C520A98A030093506E /* ContactUsCellViewModelTests.swift in Sources */,
-				BC425EC020A461CE00CBBE56 /* LoginViewControllerTests.swift in Sources */,
 				A3E7197F209C55370081D5C1 /* ContactUsPresenterTests.swift in Sources */,
 				A30087C2209718F70095FAC1 /* ContactUsInteractableTests.swift in Sources */,
 				BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */,
