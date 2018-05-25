@@ -14,5 +14,7 @@ protocol LoginPresenterViewable {
     func showPasswordValidationFailure(withError error: AuthenticationError)
     func showInvalidInputsFailure(withError error: AuthenticationError)
     func showAuthenticationFailure(withMessage message: String?)
+    func startLoadingAnimation()
+    func stopLoadingAnimation()
     func showSuccess()
 }

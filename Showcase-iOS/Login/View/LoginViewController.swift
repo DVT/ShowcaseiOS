@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginContainer: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginScrollView: UIScrollView!
+    @IBOutlet weak var loadingAnimationView: UIView!
     var loginPresenter: LoginPresentable?
     var alertController: UIAlertController?
     let userDefaults = UserDefaults.standard
@@ -51,6 +52,14 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginPresenterViewable {
+    func startLoadingAnimation() {
+        self.loadingAnimationView.isHidden = false
+    }
+    
+    func stopLoadingAnimation() {
+        self.loadingAnimationView.isHidden = true
+    }
+    
     
     func showEmailValidationFailure(withError error: AuthenticationError) {
         self.showAlert(withTitle: "Invalid email", "Please provide a valid email")
