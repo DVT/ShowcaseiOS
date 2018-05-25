@@ -45,7 +45,7 @@
 		A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA5ECA208F631100E0D34F /* ContactUsInteractableImplementation.swift */; };
 		A3DBE44A209F891600561CE0 /* LoginPresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBE449209F891600561CE0 /* LoginPresenterViewable.swift */; };
 		A3DBE44C209F8BC300561CE0 /* GeneratedShowcaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBE44B209F8BC300561CE0 /* GeneratedShowcaseMocks.swift */; };
-		A3E71966209AFEE10081D5C1 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		A3E71966209AFEE10081D5C1 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E71967209AFEF80081D5C1 /* LoginPresenterInteractable.swift */; };
 		A3E7196B209B06F40081D5C1 /* ContactUsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7196A209B06F30081D5C1 /* ContactUsPresenter.swift */; };
 		A3E7196E209B072A0081D5C1 /* OfficeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7196D209B072A0081D5C1 /* OfficeViewModel.swift */; };
@@ -76,8 +76,11 @@
 		BC5675ED20B2B64B005CC3C3 /* DataSnapshotProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5675EC20B2B64B005CC3C3 /* DataSnapshotProtocol.swift */; };
 		BC5675EF20B2C869005CC3C3 /* SocialMediaEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5675EE20B2C869005CC3C3 /* SocialMediaEndPoint.swift */; };
 		BC56761320B41D36005CC3C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56761220B41D36005CC3C3 /* Constants.swift */; };
-		BC56761A20B54E4E005CC3C3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56761920B54E4E005CC3C3 /* UserDefaultsProtocol.swift */; };
 		BC56761820B45A81005CC3C3 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56761720B45A81005CC3C3 /* LoginTextField.swift */; };
+		BC56761A20B54E4E005CC3C3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56761920B54E4E005CC3C3 /* UserDefaultsProtocol.swift */; };
+		BC5F20CF20B7FFEE000EABE6 /* KeyboardObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F20CC20B7FFEE000EABE6 /* KeyboardObservable.swift */; };
+		BC5F20D020B7FFEE000EABE6 /* KeyBoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F20CD20B7FFEE000EABE6 /* KeyBoardDelegate.swift */; };
+		BC5F20D120B7FFEE000EABE6 /* NotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F20CE20B7FFEE000EABE6 /* NotificationCenterDelegate.swift */; };
 		BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D07352090683F00FFE9DD /* AuthenticationError.swift */; };
 		BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D073C2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift */; };
 		BC6D073F209246D400FFE9DD /* AuthErrorCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */; };
@@ -203,8 +206,11 @@
 		BC5675EC20B2B64B005CC3C3 /* DataSnapshotProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSnapshotProtocol.swift; sourceTree = "<group>"; };
 		BC5675EE20B2C869005CC3C3 /* SocialMediaEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaEndPoint.swift; sourceTree = "<group>"; };
 		BC56761220B41D36005CC3C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		BC56761920B54E4E005CC3C3 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
 		BC56761720B45A81005CC3C3 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		BC56761920B54E4E005CC3C3 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		BC5F20CC20B7FFEE000EABE6 /* KeyboardObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObservable.swift; sourceTree = "<group>"; };
+		BC5F20CD20B7FFEE000EABE6 /* KeyBoardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyBoardDelegate.swift; sourceTree = "<group>"; };
+		BC5F20CE20B7FFEE000EABE6 /* NotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenterDelegate.swift; sourceTree = "<group>"; };
 		BC6D07352090683F00FFE9DD /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		BC6D073C2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthErrorCode+Extension.swift"; sourceTree = "<group>"; };
 		BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorCodeTests.swift; sourceTree = "<group>"; };
@@ -606,6 +612,7 @@
 		BC4D82CB208F601B003EFB06 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC5F20CB20B7FFD4000EABE6 /* Extensions */,
 				BC425EBB20A45CDA00CBBE56 /* Custom Views */,
 				A3DBE449209F891600561CE0 /* LoginPresenterViewable.swift */,
 				BC02346C20A049BF006E6E92 /* LoginViewController.swift */,
@@ -629,6 +636,16 @@
 				BC56761220B41D36005CC3C3 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		BC5F20CB20B7FFD4000EABE6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC5F20CD20B7FFEE000EABE6 /* KeyBoardDelegate.swift */,
+				BC5F20CC20B7FFEE000EABE6 /* KeyboardObservable.swift */,
+				BC5F20CE20B7FFEE000EABE6 /* NotificationCenterDelegate.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BC6D073B2091C87F00FFE9DD /* Errors */ = {
@@ -978,7 +995,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -990,7 +1006,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -1025,21 +1040,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOSTests/Pods-Showcase-iOSTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6AF9A78FD8CE7AAB20B99BFE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase-iOS/Pods-Showcase-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6C64BE071CA45E0CB5773509 /* [CP] Check Pods Manifest.lock */ = {
@@ -1107,21 +1107,24 @@
 				A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */,
 				BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */,
 				A3B502FE20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift in Sources */,
+				BC5F20CF20B7FFEE000EABE6 /* KeyboardObservable.swift in Sources */,
 				FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */,
 				A3FB58C120A989260093506E /* SharedApplicationDelegate.swift in Sources */,
 				BC56761320B41D36005CC3C3 /* Constants.swift in Sources */,
 				FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */,
 				A389D65D20A4444A008DB6FE /* ContactUsCellViewModel.swift in Sources */,
-				A3E71966209AFEE10081D5C1 /* (null) in Sources */,
+				A3E71966209AFEE10081D5C1 /* BuildFile in Sources */,
 				A3E7196E209B072A0081D5C1 /* OfficeViewModel.swift in Sources */,
 				FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */,
 				BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */,
+				BC5F20D020B7FFEE000EABE6 /* KeyBoardDelegate.swift in Sources */,
 				FD98CA8E20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift in Sources */,
 				99FB800B20860C4500B300BA /* Viewable.swift in Sources */,
 				A3DBE44A209F891600561CE0 /* LoginPresenterViewable.swift in Sources */,
 				A37BD16820AE9E98009C23A0 /* ContactUsNavigatorImplementation.swift in Sources */,
 				BC02346D20A049BF006E6E92 /* LoginViewController.swift in Sources */,
 				FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */,
+				BC5F20D120B7FFEE000EABE6 /* NotificationCenterDelegate.swift in Sources */,
 				A3BA5EC9208F54BB00E0D34F /* ContactUsPresentable.swift in Sources */,
 				BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */,
 				A389D66720A59556008DB6FE /* StorageReferenceable.swift in Sources */,
@@ -1159,7 +1162,6 @@
 				A3FB58C920A9C4F60093506E /* SharedApplicationDelegateImplementation.swift in Sources */,
 				BCEDE50A20AC5D1A005E1F4D /* AuthDataResultProtocol.swift in Sources */,
 				BC56761A20B54E4E005CC3C3 /* UserDefaultsProtocol.swift in Sources */,
-				BC31C0FA20A4697100F8B543 /* KeyboardObservable.swift in Sources */,
 				A3BA5EC6208F50FA00E0D34F /* ContactUsInteractable.swift in Sources */,
 				BC5675ED20B2B64B005CC3C3 /* DataSnapshotProtocol.swift in Sources */,
 				BC425EBD20A45D0E00CBBE56 /* CurvedButton.swift in Sources */,
@@ -1356,10 +1358,7 @@
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = "Showcase-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.ShowcaseiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1380,10 +1379,7 @@
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = "Showcase-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.ShowcaseiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1405,11 +1401,7 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = "Showcase-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "za.co.dvt.showcase.Showcase-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1433,11 +1425,7 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = "Showcase-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "za.co.dvt.showcase.Showcase-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
