@@ -118,12 +118,42 @@
                                             <constraint firstItem="q21-sE-oZX" firstAttribute="top" secondItem="Crg-K0-c9m" secondAttribute="bottom" constant="30" id="yGH-j2-kIH"/>
                                         </constraints>
                                     </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mko-cY-ibu">
+                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWX-B0-Su5" customClass="SpinnerView" customModule="Showcase_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="137.5" y="201.5" width="100" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="8ah-QR-aRG"/>
+                                                    <constraint firstAttribute="width" constant="100" id="8gG-v9-OAX"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6j3-gO-HOW">
+                                                <rect key="frame" x="148" y="339" width="78.5" height="24"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                                <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="6j3-gO-HOW" firstAttribute="top" secondItem="wWX-B0-Su5" secondAttribute="bottom" constant="37.5" id="Txx-cy-q2I"/>
+                                            <constraint firstItem="6j3-gO-HOW" firstAttribute="centerX" secondItem="wWX-B0-Su5" secondAttribute="centerX" id="X4m-x3-KuF"/>
+                                            <constraint firstItem="wWX-B0-Su5" firstAttribute="centerX" secondItem="mko-cY-ibu" secondAttribute="centerX" id="uBy-et-Str"/>
+                                            <constraint firstItem="wWX-B0-Su5" firstAttribute="centerY" secondItem="mko-cY-ibu" secondAttribute="centerY" constant="-50" id="xf4-Cx-eHX"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="9Rb-dW-JDf" firstAttribute="top" secondItem="jpw-3I-m6k" secondAttribute="top" constant="20" symbolic="YES" id="5lA-sT-fPi"/>
+                                    <constraint firstItem="mko-cY-ibu" firstAttribute="centerY" secondItem="jpw-3I-m6k" secondAttribute="centerY" id="6pg-u2-0ts"/>
                                     <constraint firstItem="9Rb-dW-JDf" firstAttribute="centerX" secondItem="jpw-3I-m6k" secondAttribute="centerX" id="9jr-k1-yYE"/>
+                                    <constraint firstItem="mko-cY-ibu" firstAttribute="height" secondItem="jpw-3I-m6k" secondAttribute="height" id="GVO-jh-so3"/>
+                                    <constraint firstItem="mko-cY-ibu" firstAttribute="width" secondItem="jpw-3I-m6k" secondAttribute="width" id="bZf-2L-m7A"/>
                                     <constraint firstAttribute="bottom" secondItem="9Rb-dW-JDf" secondAttribute="bottom" constant="20" symbolic="YES" id="fb1-33-aYQ"/>
+                                    <constraint firstItem="mko-cY-ibu" firstAttribute="centerX" secondItem="jpw-3I-m6k" secondAttribute="centerX" id="v6c-xv-6e5"/>
                                     <constraint firstItem="9Rb-dW-JDf" firstAttribute="leading" secondItem="jpw-3I-m6k" secondAttribute="leading" id="vIZ-JI-gIq"/>
                                     <constraint firstAttribute="trailing" secondItem="9Rb-dW-JDf" secondAttribute="trailing" id="xhJ-zU-7HY"/>
                                 </constraints>
@@ -141,6 +171,7 @@
                     <navigationItem key="navigationItem" id="SYX-KV-hpc"/>
                     <connections>
                         <outlet property="emailTextField" destination="ZRd-o0-oQc" id="XVf-ao-wEA"/>
+                        <outlet property="loadingAnimationView" destination="mko-cY-ibu" id="zW8-Eo-Aqf"/>
                         <outlet property="loginContainer" destination="9Rb-dW-JDf" id="ri7-8l-qTb"/>
                         <outlet property="loginScrollView" destination="jpw-3I-m6k" id="8eG-B4-SAL"/>
                         <outlet property="passwordTextField" destination="kWO-Am-Q7l" id="IqP-kE-M7Q"/>
