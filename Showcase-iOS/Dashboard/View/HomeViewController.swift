@@ -20,7 +20,7 @@ class HomeViewController: UICollectionViewController {
         self.setupNavigationBar()
         self.registerCollectionViewNib()
         self.presenter?.fetchShowcaseApps()
-    }
+    }    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,7 +62,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/3 - 1, height: collectionView.frame.height/3)
+        return CGSize(width: collectionView.frame.width/3 - 1, height: 200)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
