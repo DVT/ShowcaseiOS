@@ -6,18 +6,15 @@
 //  Copyright © 2018 DVT. All rights reserved.
 //
 
-import UIKit
 import Foundation
 
-class Wireframe {
-    
-    static let sharedInstance = Wireframe()
+class Wireframe: WireframeDelegate {
     
     func onMainThread(block: @escaping ()-> Void) {
         DispatchQueue.main.async(execute: block)
     }
     
-    func  transitionToShowcaseAppDetailView(_ controller:UIViewController, with showcaseAppViewModel: ShowcaseAppViewModel) {
+    func  transitionToShowcaseAppDetailView(_ controller:HomeViewController, with showcaseAppViewModel: ShowcaseAppViewModel) {
         self.onMainThread {
             let navigationController = controller.navigationController
             guard let newController = controller.storyboard?.instantiateViewController(withIdentifier: "DetailView") as? ShowcaseAppDetailViewController else {

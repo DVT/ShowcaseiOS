@@ -74,9 +74,8 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let wireframe = Wireframe.sharedInstance
         let showcaseAppViewModel = self.filteredShowcaseAppsViewModels[indexPath.row]
-        wireframe.transitionToShowcaseAppDetailView(self, with: showcaseAppViewModel)
+        self.presenter?.transitionToShowcaseAppDetailView(with: showcaseAppViewModel)
     }
 }
 

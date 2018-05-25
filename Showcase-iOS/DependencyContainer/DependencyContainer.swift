@@ -49,11 +49,16 @@ struct DependencyContainer {
             return Database.database().reference()
         }
         
+        container.register(WireframeDelegate.self) { r in
+            return Wireframe()
+        }
+        
         container.register(HomePresentable.self) {r in
             let homePresenter = HomePresenter()
             let homeInteractor = HomeInteractor()
             homeInteractor.firebaseDatabaseReference = r.resolve(DataReferenceable.self)
             homePresenter.homePresenterInteractable = homeInteractor
+            homePresenter.wireframe = r.resolve(WireframeDelegate.self)
             homeInteractor.homePresenter = homePresenter
             return homePresenter
         }

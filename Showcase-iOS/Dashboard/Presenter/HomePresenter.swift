@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 class HomePresenter: HomePresentable {
     var showcaseAppViewModels: [ShowcaseAppViewModel] = [ShowcaseAppViewModel]()
     var homePresenterViewable: HomePresenterViewable?
     var homePresenterInteractable: HomePresenterInteractable?
+    var wireframe: WireframeDelegate?
     
     func fetchShowcaseApps() {
         self.homePresenterInteractable?.fetchShowcaseApps()
@@ -44,5 +46,12 @@ class HomePresenter: HomePresentable {
         }
         filteredShowcaseAppsViewModels = showcaseApps        
         return filteredShowcaseAppsViewModels
+    }
+    
+    func  transitionToShowcaseAppDetailView(with showcaseAppViewModel: ShowcaseAppViewModel) {
+        guard let controller = homePresenterViewable as? HomeViewController else {
+            return
+        }
+        self.wireframe?.transitionToShowcaseAppDetailView(controller, with: showcaseAppViewModel)
     }
 }

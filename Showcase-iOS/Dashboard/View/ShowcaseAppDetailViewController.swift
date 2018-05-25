@@ -25,8 +25,7 @@ class ShowcaseAppDetailViewController: UIViewController {
         self.screenShotsScrollView.dataSource = self
         self.registerScreenshotsCell()
         self.initViews()
-        self.title = showcaseAppViewModel?.name
-        
+        self.title = showcaseAppViewModel?.name        
     }
     
     func initViews() {
@@ -56,7 +55,11 @@ class ShowcaseAppDetailViewController: UIViewController {
     }
 }
 
-extension ShowcaseAppDetailViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+extension ShowcaseAppDetailViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return screenshots.count
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScreenshotCollectionViewCell", for: indexPath) as! ScreenshotCollectionViewCell
@@ -64,12 +67,12 @@ extension ShowcaseAppDetailViewController : UICollectionViewDelegate, UICollecti
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return screenshots.count
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 3.0
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width:collectionView.frame.size.width, height:50)
-    }    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section:Int) -> CGFloat {
+        return 3.0
+    }
 }
 

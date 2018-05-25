@@ -121,6 +121,7 @@
 		FDA1875920B6EB8300F849D0 /* FunctionalityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA1875820B6EB8300F849D0 /* FunctionalityView.xib */; };
 		FDA1875B20B6EC6300F849D0 /* TechnologyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA1875A20B6EC6300F849D0 /* TechnologyView.xib */; };
 		FDA1875D20B6FD0600F849D0 /* ScreenshotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1875C20B6FD0600F849D0 /* ScreenshotCollectionViewCell.swift */; };
+		FDA1875F20B836C300F849D0 /* WireframeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1875E20B836C300F849D0 /* WireframeDelegate.swift */; };
 		FDE1AE78209B244C00D383C4 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE1AE77209B244C00D383C4 /* HomePresenter.swift */; };
 		FDE1AE7B209B26A300D383C4 /* HomePresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE1AE7A209B26A300D383C4 /* HomePresenterViewable.swift */; };
 		FDE1AE7E209B2D5A00D383C4 /* ShowcaseAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE1AE7D209B2D5A00D383C4 /* ShowcaseAppViewModel.swift */; };
@@ -261,6 +262,7 @@
 		FDA1875820B6EB8300F849D0 /* FunctionalityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FunctionalityView.xib; sourceTree = "<group>"; };
 		FDA1875A20B6EC6300F849D0 /* TechnologyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TechnologyView.xib; sourceTree = "<group>"; };
 		FDA1875C20B6FD0600F849D0 /* ScreenshotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCollectionViewCell.swift; sourceTree = "<group>"; };
+		FDA1875E20B836C300F849D0 /* WireframeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireframeDelegate.swift; sourceTree = "<group>"; };
 		FDE1AE77209B244C00D383C4 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		FDE1AE7A209B26A300D383C4 /* HomePresenterViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterViewable.swift; sourceTree = "<group>"; };
 		FDE1AE7D209B2D5A00D383C4 /* ShowcaseAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseAppViewModel.swift; sourceTree = "<group>"; };
@@ -336,7 +338,6 @@
 				99FB7FF02085F25200B300BA /* LaunchScreen.storyboard */,
 				99FB7FF32085F25200B300BA /* Info.plist */,
 				99FB800A20860C4500B300BA /* Viewable.swift */,
-				FD39F1B120B6A56A00C69D2D /* Wireframe.swift */,
 			);
 			path = "Showcase-iOS";
 			sourceTree = "<group>";
@@ -809,7 +810,9 @@
 		BCEDE4FF20AC469B005E1F4D /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				FD39F1B120B6A56A00C69D2D /* Wireframe.swift */,
 				BCEDE50020AC46AE005E1F4D /* Routable.swift */,
+				FDA1875E20B836C300F849D0 /* WireframeDelegate.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -1276,6 +1279,7 @@
 				BC5675EF20B2C869005CC3C3 /* SocialMediaEndPoint.swift in Sources */,
 				FD98CA7D20A99F2800FDF031 /* HomeViewController.swift in Sources */,
 				A389D66320A59471008DB6FE /* FirebaseStorageExtension.swift in Sources */,
+				FDA1875F20B836C300F849D0 /* WireframeDelegate.swift in Sources */,
 				A3FB58C920A9C4F60093506E /* SharedApplicationDelegateImplementation.swift in Sources */,
 				BCEDE50A20AC5D1A005E1F4D /* AuthDataResultProtocol.swift in Sources */,
 				BC56761A20B54E4E005CC3C3 /* UserDefaultsProtocol.swift in Sources */,

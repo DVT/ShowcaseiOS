@@ -24,19 +24,19 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FJU-a9-G3x">
-                    <rect key="frame" x="8" y="11" width="100" height="100"/>
+                    <rect key="frame" x="8" y="8" width="100" height="103"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="ZMc-HA-MSb"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enterprise Mobility Forum" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utj-Ya-FtB">
-                    <rect key="frame" x="116" y="11" width="204" height="17"/>
+                    <rect key="frame" x="116" y="8" width="204" height="17"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8E-BV-Ruw">
-                    <rect key="frame" x="328" y="11" width="48" height="28"/>
+                    <rect key="frame" x="328" y="8" width="48" height="28"/>
                     <color key="backgroundColor" red="0.0" green="0.49803921569999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="48" id="aF0-yV-sdV"/>
@@ -47,13 +47,13 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nomadic Verve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN0-SI-bsi">
-                    <rect key="frame" x="116" y="33" width="73" height="12"/>
+                    <rect key="frame" x="116" y="30" width="73" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="A yearly exclusive event targeted at decision makers and executives" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTi-pm-csV">
-                    <rect key="frame" x="116" y="60.000000000000007" width="260" height="31.333333333333336"/>
+                    <rect key="frame" x="116" y="57.000000000000007" width="260" height="31.333333333333336"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -68,11 +68,11 @@
                 <constraint firstItem="ZN0-SI-bsi" firstAttribute="top" secondItem="utj-Ya-FtB" secondAttribute="bottom" constant="5.3333333333333357" id="Lk0-XZ-19V"/>
                 <constraint firstItem="LTi-pm-csV" firstAttribute="top" secondItem="ZN0-SI-bsi" secondAttribute="bottom" constant="15" id="bck-08-t2I"/>
                 <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="Y8E-BV-Ruw" secondAttribute="trailing" constant="8" id="dSc-hJ-zgE"/>
-                <constraint firstItem="Y8E-BV-Ruw" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="11" id="ijc-As-eTv"/>
+                <constraint firstItem="Y8E-BV-Ruw" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="8" id="ijc-As-eTv"/>
                 <constraint firstItem="LTi-pm-csV" firstAttribute="leading" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="8" id="kqd-v6-qpx"/>
                 <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="LTi-pm-csV" secondAttribute="trailing" constant="8" id="l37-yf-cc5"/>
-                <constraint firstItem="FJU-a9-G3x" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="11" id="l8k-iN-Uk6"/>
-                <constraint firstItem="utj-Ya-FtB" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="11" id="ltY-kP-078"/>
+                <constraint firstItem="FJU-a9-G3x" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="8" id="l8k-iN-Uk6"/>
+                <constraint firstItem="utj-Ya-FtB" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="8" id="ltY-kP-078"/>
                 <constraint firstItem="utj-Ya-FtB" firstAttribute="leading" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="8.0000000000000142" id="o5Y-NG-bbH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
