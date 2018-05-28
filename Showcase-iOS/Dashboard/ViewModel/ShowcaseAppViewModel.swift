@@ -48,6 +48,10 @@ class ShowcaseAppViewModel {
         return showcaseApp.name
     }
     
+    var iosPackageName: String? {
+        return showcaseApp.iosPackageName
+    }
+    
     init(with showcaseApp: ShowcaseApp) {
         self.showcaseApp = showcaseApp
     }
