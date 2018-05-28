@@ -30,7 +30,7 @@ class ShowcaseAppDetailViewController: UIViewController {
     
     func initViews() {
         let main = MainDetailView(frame: mainDetailSubView.bounds)
-        main.populateView(with: showcaseAppViewModel)
+        main.showcaseApp = showcaseAppViewModel
         mainDetailSubView.addSubviewPinnedToEdges(main)
         let functionality = FunctionalityView(frame: functionalityView.bounds)
         functionality.populateView(with: showcaseAppViewModel)

@@ -53,6 +53,10 @@ struct DependencyContainer {
             return Wireframe()
         }
         
+        container.register(SharedApplicationDelegate.self) { r in
+            return SharedApplicationDelegateImplementation()
+        }
+        
         container.register(HomePresentable.self) {r in
             let homePresenter = HomePresenter()
             let homeInteractor = HomeInteractor()
