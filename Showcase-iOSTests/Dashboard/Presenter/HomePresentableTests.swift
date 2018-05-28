@@ -14,6 +14,7 @@ import Firebase
 class HomePresentableTests: XCTestCase {
     var mockHomeViewer = MockHomePresenterViewable()
     var mockHomeInteractor = MockHomePresenterInteractable()
+    var mockWireFrameDelegate = MockWireframeDelegate()
     var homePresenter = MockHomePresentable()
     var mockShowcaseApps = [ShowcaseApp]()
     var systemUnderTest: HomePresenter?
@@ -24,6 +25,7 @@ class HomePresentableTests: XCTestCase {
         let homePresenter = HomePresenter()
         homePresenter.homePresenterInteractable = mockHomeInteractor
         homePresenter.homePresenterViewable = mockHomeViewer
+        homePresenter.wireframe = mockWireFrameDelegate
         systemUnderTest = homePresenter
     }
     
@@ -79,6 +81,27 @@ class HomePresentableTests: XCTestCase {
         systemUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
         let filteredShowcassApps = self.systemUnderTest?.search(text: "Group Five")
         XCTAssertTrue((filteredShowcassApps?.count)! == 0)
+    }
+    
+    func testThatWhentransitionToShowcaseAppDetailViewGetsCalledThenATransitionToDetailViewTakesPlace(){
+        let showcaseapp = ShowcaseApp(with: [String: Any]())
+        mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
+        systemUnderTest?.homePresenterViewable = HomeViewController()
+        stub(mockWireFrameDelegate) { (mock) in
+            _ = when(mock.transitionToShowcaseAppDetailView(any(), with: any()).thenDoNothing())
+        }
+        systemUnderTest?.transitionToShowcaseAppDetailView(with: mockShowcassAppViewModels.first!)
+        verify(mockWireFrameDelegate, times(1)).transitionToShowcaseAppDetailView(any(), with: any())
+    }
+    
+    func testThatWhentransitonToShowcaseAppDetailViewGetsCalledWhenHomeViewerIsNotAHomeViewControllerThenTransitioningToDetailViewDoesNotTakePlace(){
+        let showcaseapp = ShowcaseApp(with: [String: Any]())
+        mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
+        stub(mockWireFrameDelegate) { (mock) in
+            _ = when(mock.transitionToShowcaseAppDetailView(any(), with: any()).thenDoNothing())
+        }
+        systemUnderTest?.transitionToShowcaseAppDetailView(with: mockShowcassAppViewModels.first!)
+        verify(mockWireFrameDelegate, times(0)).transitionToShowcaseAppDetailView(any(), with: any())
     }
     
     func setupMockShowcaseAppDictionary() -> [String: Any] {

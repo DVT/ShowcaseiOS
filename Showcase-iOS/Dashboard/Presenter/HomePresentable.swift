@@ -14,4 +14,5 @@ protocol HomePresentable {
     func onFetchShowcaseAppsFailure(with error: DatabaseError)
     func fetchShowcaseApps()
     func search(text:String?) -> [ShowcaseAppViewModel]
+    func transitionToShowcaseAppDetailView(with showcaseAppViewModel: ShowcaseAppViewModel)
 }
