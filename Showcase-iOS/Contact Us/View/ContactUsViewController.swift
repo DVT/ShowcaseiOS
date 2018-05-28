@@ -11,6 +11,7 @@ class ContactUsViewController: UIViewController {
     var cellViewModel: ContactUsCellViewModel?
     var officeViewModels = [OfficeViewModel]()
     var firebaseStorage: FIRStoring?
+    var errorView: ErrorView?
     
     //MARK: @IBOutlets
     
@@ -86,7 +87,13 @@ extension ContactUsViewController: ContactUsPresenterViewable {
     }
     
     func showOnFailure(with error: Error) {
-        //TO DO: Present error view
+        errorView = ErrorView(frame: self.view.bounds)
+        errorView?.message.text = error.localizedDescription
+        errorView?.onActionButtonTouched = {[weak self] in
+            self?.contactUsPresenter?.retrieveContacts()
+            self?.errorView?.removeFromSuperview()
+        }
+        self.view.addSubviewPinnedToEdges(errorView!)
     }
     
     

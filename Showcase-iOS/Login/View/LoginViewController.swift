@@ -15,6 +15,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginContainer: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginScrollView: UIScrollView!
+    weak var keyBoardDelegate: KeyBoardDelegate!
+    weak var keyBoardObserver: KeyboardObservable!
+    weak var notificationCenter: NotificationCenterDelegate?
     @IBOutlet weak var loadingAnimationView: UIView!
     var loginPresenter: LoginPresentable?
     var alertController: UIAlertController?
@@ -27,15 +30,23 @@ class LoginViewController: UIViewController {
         loginScrollView.keyboardDismissMode = .interactive
         alertController = UIAlertController(title: "Can't log you in", message: "", preferredStyle: .alert)
         alertController?.addAction(retryAction)
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        keyBoardDelegate = self
+        keyBoardObserver = self
+        notificationCenter = NotificationCenter.default
         loginPresenter?.showSuccesWhenUserIsAlreadyAuthenticated()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        keyBoardObserver.addObservers()
+        keyBoardDelegate.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        keyBoardObserver.removeObservers()
     }
     
     @IBAction func didTapLoginButton(_ sender: Any) {
@@ -83,3 +94,65 @@ extension LoginViewController: LoginPresenterViewable {
         self.present(navigationController, animated: true, completion: nil)
     }
 }
+
+extension LoginViewController: KeyBoardDelegate {
+    @objc func keyBoardDidShow(_ notification: Notification) {
+        if let keyBoardHeight = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.height {
+            let heightFromButtonToTopTextField = CGFloat(170)
+            let contentInset = updateContentInset(keyBoardHeight: keyBoardHeight + heightFromButtonToTopTextField)
+            updateScrollViewContentInset(contentInset)
+        }
+    }
+    
+    @objc func keyBoardDidHide(_ notification: Notification) {
+        let contentInset = updateContentInset(keyBoardHeight: 0)
+        updateScrollViewContentInset(contentInset)
+    }
+    
+    @objc func hideKeyboardWhenViewTapped() {
+        view.endEditing(true)
+    }
+    
+    func hideKeyboard(for textField: UITextField) {
+       textField.resignFirstResponder()
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardWhenViewTapped))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func updateScrollViewContentInset(_ contentInset: UIEdgeInsets) {
+        UIView.animate(withDuration: 0.5) {
+            self.loginScrollView.contentInset = contentInset
+        }
+    }
+    
+    func updateContentInset(keyBoardHeight height: CGFloat) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: height, right: 0)
+    }
+    
+}
+
+extension LoginViewController: KeyboardObservable {
+    
+    func addObservers() {
+        notificationCenter?.addObserver(self, selector: #selector(keyBoardDidShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter?.addObserver(self, selector: #selector(keyBoardDidHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    }
+    
+    func removeObservers() {
+        notificationCenter?.removeObserver(self)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboard(for: textField)
+        return true
+    }
+}
+
+
+

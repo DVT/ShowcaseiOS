@@ -14,6 +14,7 @@ class HomeViewController: UICollectionViewController {
     var filteredShowcaseAppsViewModels = [ShowcaseAppViewModel]()
     var firebaseStorage:FIRStoring?
     let searchController = UISearchController(searchResultsController: nil)
+    var errorView: ErrorView?
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +84,13 @@ extension HomeViewController: HomePresenterViewable {
     }
     
     func showOnFailure(with error: DatabaseError) {
-        print("To present Error view here.")
+        errorView = ErrorView(frame: self.view.bounds)
+        errorView?.message.text = error.localizedDescription
+        errorView?.onActionButtonTouched = {[weak self] in
+            self?.presenter?.fetchShowcaseApps()
+            self?.errorView?.removeFromSuperview()
+        }
+        self.view.addSubviewPinnedToEdges(errorView!)
     }
 }
 
