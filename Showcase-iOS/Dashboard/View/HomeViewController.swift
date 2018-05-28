@@ -14,13 +14,14 @@ class HomeViewController: UICollectionViewController {
     var filteredShowcaseAppsViewModels = [ShowcaseAppViewModel]()
     var firebaseStorage:FIRStoring?
     let searchController = UISearchController(searchResultsController: nil)
+    var errorView: ErrorView?
    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavigationBar()
         self.registerCollectionViewNib()
         self.presenter?.fetchShowcaseApps()
-    }
+    }    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,7 +63,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/3 - 1, height: collectionView.frame.height/3)
+        return CGSize(width: collectionView.frame.width/3 - 1, height: 200)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -88,7 +89,13 @@ extension HomeViewController: HomePresenterViewable {
     }
     
     func showOnFailure(with error: DatabaseError) {
-        print("To present Error view here.")
+        errorView = ErrorView(frame: self.view.bounds)
+        errorView?.message.text = error.localizedDescription
+        errorView?.onActionButtonTouched = {[weak self] in
+            self?.presenter?.fetchShowcaseApps()
+            self?.errorView?.removeFromSuperview()
+        }
+        self.view.addSubviewPinnedToEdges(errorView!)
     }
 }
 

@@ -17,6 +17,12 @@ class ErrorView: UIView {
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var title: UILabel!
     
+    //MARK: @IBAction(s)
+    
+    @IBAction func retryPressed(_ sender: Any) {
+        onActionButtonTouched?()
+    }
+    
     // MARK: - Properties
    
     var errorMessage: String = "" {
@@ -27,6 +33,7 @@ class ErrorView: UIView {
         }
     }
     
+    
     var onActionButtonTouched: (() -> Void)? {
         didSet {
             actionButton.isHidden = onActionButtonTouched == nil
@@ -36,14 +43,21 @@ class ErrorView: UIView {
     // MARK: - Lifecycle
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        commonInit()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        Bundle.main.loadNibNamed("ErrorView", owner: self, options: nil)
+        commonInit()
+    }
+    
+    func commonInit() {
+        let nib = UINib(nibName: String(describing: type(of: self)), bundle: nil)
+        contentView = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         addSubviewPinnedToEdges(contentView)
         actionButton.roundCorners()
     }
+    
 
 }
