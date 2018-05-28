@@ -18,11 +18,11 @@ class LoginViewController: UIViewController {
     weak var keyBoardDelegate: KeyBoardDelegate!
     weak var keyBoardObserver: KeyboardObservable!
     weak var notificationCenter: NotificationCenterDelegate?
-    @IBOutlet weak var loadingAnimationView: UIView!
     var loginPresenter: LoginPresentable?
     var alertController: UIAlertController?
     let userDefaults = UserDefaults.standard
     let retryAction = UIAlertAction(title: "Retry", style: .destructive, handler: nil)
+    @IBOutlet weak var loadingView: LoadingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,11 +64,11 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginPresenterViewable {
     func startLoadingAnimation() {
-        self.loadingAnimationView.isHidden = false
+        loadingView.isHidden = false
     }
     
     func stopLoadingAnimation() {
-        self.loadingAnimationView.isHidden = true
+       loadingView.isHidden = true
     }
     
     
