@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     var alertController: UIAlertController?
     let userDefaults = UserDefaults.standard
     let retryAction = UIAlertAction(title: "Retry", style: .destructive, handler: nil)
+    @IBOutlet weak var loadingView: LoadingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,14 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginPresenterViewable {
+    func startLoadingAnimation() {
+        loadingView.isHidden = false
+    }
+    
+    func stopLoadingAnimation() {
+       loadingView.isHidden = true
+    }
+    
     
     func showEmailValidationFailure(withError error: AuthenticationError) {
         self.showAlert(withTitle: "Invalid email", "Please provide a valid email")
