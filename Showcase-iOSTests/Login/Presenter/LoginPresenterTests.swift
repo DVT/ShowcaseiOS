@@ -25,11 +25,15 @@ class LoginPresenterTests: XCTestCase {
         systemUnderTest.loginViewer = mockLoginViewer
         systemUnderTest.loginInteractor = mockLoginInteractor
         systemUnderTest.userDefaults = mockUserDefaults
+        systemUnderTest.loginViewer = mockLoginViewer
     }
 
     func testThatTheSignInMethodOfTheLoginInteractorGetsCalled() {
         stub(mockLoginInteractor) { (mock) in
             let _  = when(mock.signIn(withEmail: anyString(), password: anyString()).thenDoNothing())
+        }
+        stub(mockLoginViewer) { (mock) in
+            _ = when(mock.startLoadingAnimation().thenDoNothing())
         }
         systemUnderTest.login(withEmail: "hloks@gmail.com", password: "dbhjbdhjb")
         verify(mockLoginInteractor, times(1)).signIn(withEmail: anyString(), password: anyString())
@@ -64,6 +68,9 @@ class LoginPresenterTests: XCTestCase {
         stub(mockLoginViewer) { (mock) in
             let _ = when(mock.showAuthenticationFailure(withMessage: any()).thenDoNothing())
         }
+        stub(mockLoginViewer) { (mock) in
+            _ = when(mock.stopLoadingAnimation().thenDoNothing())
+        }
         systemUnderTest.failedToSign(withError: AuthenticationError.notAuthenticated)
         verify(mockLoginViewer, times(1)).showAuthenticationFailure(withMessage: any())
     }
@@ -75,6 +82,10 @@ class LoginPresenterTests: XCTestCase {
         
         stub(mockUserDefaults) { (mock) in
             _ = when(mock.set(value: any(), forKey: any()).thenDoNothing())
+        }
+        
+        stub(mockLoginViewer) { (mock) in
+            _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
         
         systemUnderTest.signedInSuccessfully()
@@ -120,6 +131,11 @@ class LoginPresenterTests: XCTestCase {
                 userDefaultsDictionary["\(key)"] = value
             }))
         }
+        
+        stub(mockLoginViewer) { (mock) in
+            _ = when(mock.stopLoadingAnimation().thenDoNothing())
+        }
+        
         systemUnderTest.signedInSuccessfully()
         XCTAssertTrue(userDefaultsDictionary["\(UserDefaultsKeys.isLoggedIn.rawValue)"]!)
         verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
