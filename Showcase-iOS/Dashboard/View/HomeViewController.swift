@@ -73,6 +73,11 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section:Int) -> CGFloat {
         return 1.0
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let showcaseAppViewModel = self.filteredShowcaseAppsViewModels[indexPath.row]
+        self.presenter?.transitionToShowcaseAppDetailView(with: showcaseAppViewModel)
+    }
 }
 
 extension HomeViewController: HomePresenterViewable {
