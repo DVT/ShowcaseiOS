@@ -67,7 +67,11 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     
     private func populateStaticMap(){
         let temp = "\(staticMapbaseUrl)\(viewModel.latitude),\(viewModel.longitude)"
-        guard let mapUrl = URL(string: temp) else {return}
+        guard let mapUrl = URL(string: temp) else {
+            mapImage.image = #imageLiteral(resourceName: "placeHolder")
+            mapImage.contentMode = .scaleAspectFit
+            return
+        }
         mapImage.kf.setImage(with: mapUrl)
     }
     
