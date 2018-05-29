@@ -20,5 +20,6 @@ class LoginNavigationController: UINavigationController {
         var loginPresenter = DependencyContainer.container().resolve(LoginPresentable.self)
         loginPresenter?.loginViewer = loginViewController
         loginViewController?.loginPresenter = loginPresenter
+        loginViewController?.sharedApplication = SharedApplicationDelegateImplementation()
     }
 }
