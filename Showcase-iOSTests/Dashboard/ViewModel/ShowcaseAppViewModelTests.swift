@@ -61,6 +61,10 @@ class ShowcaseAppViewModelTests: XCTestCase {
         XCTAssertEqual(self.mockShowcaseAppViewModel.name, "Group Five")
     }
     
+    func testThatGivenADictionaryThenAShowcaseAppViewModeliOSPackageNameFieldShoulHaveAValue() {
+        XCTAssertEqual(self.mockShowcaseAppViewModel.iosPackageName, "https://itunes.apple.com/za/app/tracker-connect/id973821442?mt=8")
+    }
+    
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelClientFieldShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.client, nil)
     }
@@ -97,6 +101,10 @@ class ShowcaseAppViewModelTests: XCTestCase {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.name, nil)
     }
     
+    func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModeliOSPackageNameFieldShoulBeNil() {
+        XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.iosPackageName, nil)
+    }
+    
     func setupShowcaseAppDictionary() -> [String: Any] {
         var dictionary = [String: Any]()
         dictionary["client"] = "Group Five"
@@ -108,6 +116,7 @@ class ShowcaseAppViewModelTests: XCTestCase {
         dictionary["shortDescription"] = "Asset data capturing application"
         dictionary["technologyUsed"] = "Windows Phone \n.NET Development "
         dictionary["screenshots"] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
+        dictionary["iosPackageName"] = "https://itunes.apple.com/za/app/tracker-connect/id973821442?mt=8"
         return dictionary
     }
 }

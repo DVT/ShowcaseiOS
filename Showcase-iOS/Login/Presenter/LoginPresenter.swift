@@ -20,6 +20,7 @@ class LoginPresenter: LoginPresentable {
     
     func login(withEmail email: String, password: String) {
         if emailValidator.isValid(email) && passwordValidator.isValid(password) {
+            loginViewer?.startLoadingAnimation()
             loginInteractor?.signIn(withEmail: email, password: password)
         } else if (!emailValidator.isValid(email) && !passwordValidator.isValid(password)){
             loginViewer?.showInvalidInputsFailure(withError: AuthenticationError.invalidInputs)
@@ -41,11 +42,13 @@ class LoginPresenter: LoginPresentable {
 
 extension LoginPresenter: LoginInteractorPresentable {
     func signedInSuccessfully() {
+        loginViewer?.stopLoadingAnimation()
         userDefaults?.set(value: true, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
         loginViewer?.showSuccess()
     }
     
     func failedToSign(withError error: Error) {
+        self.loginViewer?.stopLoadingAnimation()
         let authenticationError = AuthErrorCode(rawValue: error._code)
         loginViewer?.showAuthenticationFailure(withMessage: authenticationError?.errorMessage)
     }

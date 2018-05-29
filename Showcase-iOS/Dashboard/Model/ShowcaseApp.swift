@@ -19,6 +19,7 @@ class ShowcaseApp {
     var shortDescription: String?
     var technologyUsed: String?
     var name: String?
+    var iosPackageName: String?
     
     init(with dictionary: [String: Any]?) {
         self.client = dictionary?["client"] as? String
@@ -30,5 +31,6 @@ class ShowcaseApp {
         self.shortDescription = dictionary?["shortDescription"] as? String
         self.technologyUsed = dictionary?["technologyUsed"] as? String
         self.name = dictionary?["name"] as? String
+        self.iosPackageName = dictionary?["iosPackageName"] as? String
     }
 }

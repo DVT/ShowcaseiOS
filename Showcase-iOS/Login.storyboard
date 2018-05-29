@@ -121,13 +121,21 @@
                                             <constraint firstItem="q21-sE-oZX" firstAttribute="top" secondItem="Crg-K0-c9m" secondAttribute="bottom" constant="30" id="yGH-j2-kIH"/>
                                         </constraints>
                                     </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeE-1y-XjS" customClass="LoadingView" customModule="Showcase_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="359" height="479"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="xeE-1y-XjS" secondAttribute="bottom" id="5du-fH-2yX"/>
                                     <constraint firstItem="9Rb-dW-JDf" firstAttribute="top" secondItem="jpw-3I-m6k" secondAttribute="top" constant="20" symbolic="YES" id="5lA-sT-fPi"/>
                                     <constraint firstItem="9Rb-dW-JDf" firstAttribute="centerX" secondItem="jpw-3I-m6k" secondAttribute="centerX" id="9jr-k1-yYE"/>
+                                    <constraint firstItem="xeE-1y-XjS" firstAttribute="leading" secondItem="jpw-3I-m6k" secondAttribute="leadingMargin" id="EHc-7V-2am"/>
                                     <constraint firstAttribute="bottom" secondItem="9Rb-dW-JDf" secondAttribute="bottom" constant="20" symbolic="YES" id="fb1-33-aYQ"/>
+                                    <constraint firstItem="xeE-1y-XjS" firstAttribute="top" secondItem="jpw-3I-m6k" secondAttribute="topMargin" id="pZx-Bk-MWb"/>
                                     <constraint firstItem="9Rb-dW-JDf" firstAttribute="leading" secondItem="jpw-3I-m6k" secondAttribute="leading" id="vIZ-JI-gIq"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="xeE-1y-XjS" secondAttribute="trailing" id="wVB-1f-CIY"/>
                                     <constraint firstAttribute="trailing" secondItem="9Rb-dW-JDf" secondAttribute="trailing" id="xhJ-zU-7HY"/>
                                 </constraints>
                             </scrollView>
@@ -144,6 +152,7 @@
                     <navigationItem key="navigationItem" id="SYX-KV-hpc"/>
                     <connections>
                         <outlet property="emailTextField" destination="ZRd-o0-oQc" id="XVf-ao-wEA"/>
+                        <outlet property="loadingView" destination="xeE-1y-XjS" id="4Nt-ic-RSj"/>
                         <outlet property="loginContainer" destination="9Rb-dW-JDf" id="ri7-8l-qTb"/>
                         <outlet property="loginScrollView" destination="jpw-3I-m6k" id="8eG-B4-SAL"/>
                         <outlet property="passwordTextField" destination="kWO-Am-Q7l" id="IqP-kE-M7Q"/>
