@@ -46,6 +46,9 @@ class MainDetailView: UIView {
         shortDescription.text = showcaseApp?.shortDescription
         guard let imagePath = showcaseApp?.iconUrl else {return}
         populateImageView(with: imagePath)
+        if showcaseApp?.iosPackageName == nil {
+            self.installButton.isHidden = true
+        }
     }
     
     private func populateImageView(with imagePath: String) {
