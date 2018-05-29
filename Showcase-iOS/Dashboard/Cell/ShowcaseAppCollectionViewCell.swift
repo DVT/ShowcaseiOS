@@ -33,13 +33,15 @@ class ShowcaseAppCollectionViewCell: UICollectionViewCell {
             return
         }
         let imageFetcher = ImageFetcher(from: firStorage)
-        imageFetcher.fetchImage(imageUrl) { (url, error) in
+        imageFetcher.fetchImage(imageUrl) {[weak self] (url, error) in
             if error == nil {
                 guard let imageURL = url else {
                     return
                 }
                 let resource = ImageResource(downloadURL: imageURL, cacheKey: imageUrl)
-                self.imageView.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                self?.imageView.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            } else {
+                self?.imageView.image = #imageLiteral(resourceName: "placeHolder")
             }
         }
     }

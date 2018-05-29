@@ -56,7 +56,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         let imageFetcher = ImageFetcher(from: firStorage)
         imageFetcher.fetchImage(imagePath) {[weak self] (url, error) in
             if error != nil {
-                //TODO add place holder image
+                self?.image.image = #imageLiteral(resourceName: "placeHolder")
             } else {
                 guard let imageUrl = url else{return}
                 let resource = ImageResource(downloadURL: imageUrl, cacheKey: imagePath)
@@ -67,7 +67,11 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     
     private func populateStaticMap(){
         let temp = "\(staticMapbaseUrl)\(viewModel.latitude),\(viewModel.longitude)"
-        guard let mapUrl = URL(string: temp) else {return}
+        guard let mapUrl = URL(string: temp) else {
+            mapImage.image = #imageLiteral(resourceName: "placeHolder")
+            mapImage.contentMode = .scaleAspectFit
+            return
+        }
         mapImage.kf.setImage(with: mapUrl)
     }
     

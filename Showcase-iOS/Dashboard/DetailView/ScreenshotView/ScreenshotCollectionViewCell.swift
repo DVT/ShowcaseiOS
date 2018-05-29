@@ -21,7 +21,7 @@ class ScreenshotCollectionViewCell: UICollectionViewCell {
         let imageFetcher = ImageFetcher(from: firStorage)
         imageFetcher.fetchImage(imagePath) {[weak self] (url, error) in
             if error != nil {
-                //TODO add place holder image
+                self?.image.image = #imageLiteral(resourceName: "placeHolder")
             } else {
                 guard let imageUrl = url else{return}
                 let resource = ImageResource(downloadURL: imageUrl, cacheKey: imagePath)
