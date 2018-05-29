@@ -49,6 +49,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         locationDescription.text = viewModel?.locationDescription
         populateStaticMap()
         styleView()
+        addTapRecogniserToStaticImage()
     }
     
     private func populateImageView(with imagePath: String) {
@@ -79,6 +80,17 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         email.setTitleColor(UIColor.DvtBlueColor, for: .normal)
         call.setTitleColor(UIColor.DvtBlueColor, for: .normal)
         navigate.setTitleColor(UIColor.DvtBlueColor, for: .normal)
+        
+    }
+    
+    private func addTapRecogniserToStaticImage() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(staticMapImageTapped(tapGestureRecognizer:)))
+        mapImage.isUserInteractionEnabled = true
+        mapImage.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func staticMapImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        viewModel?.navigate()
         
     }
 }
