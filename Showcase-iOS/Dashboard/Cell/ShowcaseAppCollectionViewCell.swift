@@ -13,25 +13,22 @@ class ShowcaseAppCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var shortDescriptionLabel: UILabel!
     @IBOutlet private weak var clientLabel: UILabel!
-    
-    var firebaseStorage: FIRStoring?
+    let showcaseAppCellViewModel = ShowcaseAppCellViewModel()
     
     func populateCell(with showcaseViewModel: ShowcaseAppViewModel, imageDictionary: [String: URL]) {
         self.shortDescriptionLabel.text = showcaseViewModel.name
         self.clientLabel.text = showcaseViewModel.client
-        if let showcaseAppID = showcaseViewModel.id {
-            if let imageURL = imageDictionary[showcaseAppID] {
-                populateImageView(with: imageURL)
-            }
-        } else {
-            self.imageView.image = #imageLiteral(resourceName: "placeHolder")
-        }
+        populateImageView(showcaseViewModel: showcaseViewModel, imageDictionary: imageDictionary)
         self.imageView.clipsToBounds = true
         self.imageView.layer.borderColor = UIColor.lightGray.cgColor
         self.imageView.layer.borderWidth = 1
     }
     
-    func populateImageView(with imageURL: URL) {
+    func populateImageView(showcaseViewModel: ShowcaseAppViewModel, imageDictionary: [String: URL]) {
+        guard let imageURL = showcaseAppCellViewModel.getImageURL(showcaseViewModel, imageDictionary) else {
+            self.imageView.image = #imageLiteral(resourceName: "placeHolder")
+            return
+        }
         let resource = ImageResource(downloadURL: imageURL, cacheKey: imageURL.absoluteString)
         self.imageView.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
     }

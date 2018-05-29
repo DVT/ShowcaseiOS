@@ -50,7 +50,6 @@
 		A3DBE44A209F891600561CE0 /* LoginPresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBE449209F891600561CE0 /* LoginPresenterViewable.swift */; };
 		A3DBE44C209F8BC300561CE0 /* GeneratedShowcaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBE44B209F8BC300561CE0 /* GeneratedShowcaseMocks.swift */; };
 		A3DEBB5020B3FABD0020EA44 /* ScreenshotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3DEBB4F20B3FABD0020EA44 /* ScreenshotCollectionViewCell.xib */; };
-		A3E71966209AFEE10081D5C1 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		A3E71966209AFEE10081D5C1 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E71967209AFEF80081D5C1 /* LoginPresenterInteractable.swift */; };
 		A3E7196B209B06F40081D5C1 /* ContactUsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7196A209B06F30081D5C1 /* ContactUsPresenter.swift */; };
@@ -90,6 +89,8 @@
 		BC5F20D320B82AA9000EABE6 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F20D220B82AA9000EABE6 /* SpinnerView.swift */; };
 		BC5F20D820BBE8FD000EABE6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F20D720BBE8FD000EABE6 /* LoadingView.swift */; };
 		BC5F20DA20BBE954000EABE6 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5F20D920BBE954000EABE6 /* LoadingView.xib */; };
+		BC5F20DC20BDBF72000EABE6 /* ShowcaseAppCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F20DB20BDBF72000EABE6 /* ShowcaseAppCellViewModel.swift */; };
+		BC5F20DE20BDC028000EABE6 /* ShowcaseAppCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F20DD20BDC028000EABE6 /* ShowcaseAppCellViewModelTests.swift */; };
 		BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D07352090683F00FFE9DD /* AuthenticationError.swift */; };
 		BC6D073D2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D073C2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift */; };
 		BC6D073F209246D400FFE9DD /* AuthErrorCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */; };
@@ -235,6 +236,8 @@
 		BC5F20D220B82AA9000EABE6 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		BC5F20D720BBE8FD000EABE6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BC5F20D920BBE954000EABE6 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		BC5F20DB20BDBF72000EABE6 /* ShowcaseAppCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseAppCellViewModel.swift; sourceTree = "<group>"; };
+		BC5F20DD20BDC028000EABE6 /* ShowcaseAppCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseAppCellViewModelTests.swift; sourceTree = "<group>"; };
 		BC6D07352090683F00FFE9DD /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		BC6D073C2091C8AA00FFE9DD /* AuthErrorCode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthErrorCode+Extension.swift"; sourceTree = "<group>"; };
 		BC6D073E209246D400FFE9DD /* AuthErrorCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorCodeTests.swift; sourceTree = "<group>"; };
@@ -920,6 +923,7 @@
 			children = (
 				FD4E0EC720AACD6F00B97FF7 /* ShowcaseAppCollectionViewCell.xib */,
 				FD98CA8C20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift */,
+				BC5F20DB20BDBF72000EABE6 /* ShowcaseAppCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -963,6 +967,7 @@
 			isa = PBXGroup;
 			children = (
 				FDE1AE86209C987D00D383C4 /* ShowcaseAppViewModelTests.swift */,
+				BC5F20DD20BDC028000EABE6 /* ShowcaseAppCellViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1248,6 +1253,7 @@
 				BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */,
 				FDE1AE78209B244C00D383C4 /* HomePresenter.swift in Sources */,
 				BC02347320A051B2006E6E92 /* UIViewController+Extensions.swift in Sources */,
+				BC5F20DC20BDBF72000EABE6 /* ShowcaseAppCellViewModel.swift in Sources */,
 				BCEDE50820AC4836005E1F4D /* DependencyContainer.swift in Sources */,
 				BC56761820B45A81005CC3C3 /* LoginTextField.swift in Sources */,
 				BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */,
@@ -1290,6 +1296,7 @@
 				A3E71979209B49CF0081D5C1 /* OfficeViewModelTests.swift in Sources */,
 				BC8406F1208DE32E00B15318 /* LoginInteractorTests.swift in Sources */,
 				BC4D82C7208F598C003EFB06 /* EmailValidatorTests.swift in Sources */,
+				BC5F20DE20BDC028000EABE6 /* ShowcaseAppCellViewModelTests.swift in Sources */,
 				FDE1AE87209C987D00D383C4 /* ShowcaseAppViewModelTests.swift in Sources */,
 				BCE5DA8D2087AB69000458FD /* UserAuthenticationTests.swift in Sources */,
 				BC6D073F209246D400FFE9DD /* AuthErrorCodeTests.swift in Sources */,
