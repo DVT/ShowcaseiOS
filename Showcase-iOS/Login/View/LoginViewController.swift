@@ -7,8 +7,9 @@
 //
 import Foundation
 import UIKit
+import MessageUI
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, MFMailComposeViewControllerDelegate{
     
     @IBOutlet weak var missingLoginDetailsLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -19,6 +20,7 @@ class LoginViewController: UIViewController {
     weak var keyBoardObserver: KeyboardObservable!
     weak var notificationCenter: NotificationCenterDelegate?
     var loginPresenter: LoginPresentable?
+    var sharedApplication: SharedApplicationDelegate?
     var alertController: UIAlertController?
     let userDefaults = UserDefaults.standard
     let retryAction = UIAlertAction(title: "Retry", style: .destructive, handler: nil)
@@ -35,6 +37,17 @@ class LoginViewController: UIViewController {
         keyBoardObserver = self
         notificationCenter = NotificationCenter.default
         loginPresenter?.showSuccesWhenUserIsAlreadyAuthenticated()
+    }
+    
+    @IBAction func didMissingLoginDetails(_ sender: Any) {
+        let loginPresentor = loginPresenter as! MailComposable
+        loginPresentor.openMailClient()
+    }
+    
+    // MARK: MailComposeViewControllerDelegate
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,7 +118,7 @@ extension LoginViewController: KeyBoardDelegate {
     }
     
     func hideKeyboard(for textField: UITextField) {
-       textField.resignFirstResponder()
+        textField.resignFirstResponder()
     }
     
     func hideKeyboardWhenTappedAround() {
