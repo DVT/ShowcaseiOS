@@ -15,6 +15,7 @@ class HomeViewController: UICollectionViewController {
     var firebaseStorage:FIRStoring?
     let searchController = UISearchController(searchResultsController: nil)
     var errorView: ErrorView?
+    var loadingView: LoadingView?
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class HomeViewController: UICollectionViewController {
         self.searchController.delegate = self
         self.searchController.searchResultsUpdater = self
         self.navigationController?.navigationBar.items?.first?.searchController = searchController
+        self.addLoadingAnimationView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,6 +44,12 @@ class HomeViewController: UICollectionViewController {
     func registerCollectionViewNib() {
         let nib = UINib(nibName: "ShowcaseAppCollectionViewCell", bundle: nil)
         self.collectionView?.register(nib, forCellWithReuseIdentifier: "ShowcaseAppViewIdentifier")
+    }
+    
+    func addLoadingAnimationView() {
+        loadingView = LoadingView(frame: self.view.frame)
+         loadingView?.isHidden = false
+        self.view.addSubview(loadingView!)
     }
 }
 
@@ -81,6 +89,14 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeViewController: HomePresenterViewable {
+    func startLoadingAnimation() {
+       loadingView?.isHidden = false
+    }
+    
+    func stopLoadingAnimation() {
+        loadingView?.isHidden = true
+    }
+    
     
     func showOnSuccess(with showcaseApps: [ShowcaseAppViewModel]) {
         self.showcaseAppsViewModels = showcaseApps

@@ -10,7 +10,16 @@ class MainDetailView: UIView {
     @IBOutlet private weak var productName: UILabel!
     @IBOutlet private weak var clientName: UILabel!
     @IBOutlet private weak var shortDescription: UILabel!
+    @IBOutlet private weak var installButton: UIButton!
     //MARK: LifeCycle
+    
+    var mainDetailViewModel: MainDetailViewCellDelegate?
+    
+    var showcaseApp: ShowcaseAppViewModel? {
+        didSet {
+            self.populateView()
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -30,12 +39,15 @@ class MainDetailView: UIView {
         addSubviewPinnedToEdges(contentView)
     }
     
-    func populateView(with showcaseApp: ShowcaseAppViewModel?) {
+    func populateView() {
         productName.text = showcaseApp?.name
         clientName.text = showcaseApp?.client
         shortDescription.text = showcaseApp?.shortDescription
         guard let imagePath = showcaseApp?.iconUrl else {return}
         populateImageView(with: imagePath)
+        if showcaseApp?.iosPackageName == nil {
+            self.installButton.isHidden = true
+        }
     }
     
     private func populateImageView(with imagePath: String) {
@@ -53,6 +65,10 @@ class MainDetailView: UIView {
                 self?.image.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
             }
         }
+    }
+    
+    @IBAction func onInstallButtonTapped(_ sender: Any) {
+        self.mainDetailViewModel?.openURL(iOSPackageName: showcaseApp?.iosPackageName)
     }
 }
 
