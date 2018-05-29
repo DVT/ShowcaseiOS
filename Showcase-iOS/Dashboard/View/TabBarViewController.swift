@@ -23,6 +23,7 @@ class TabBarViewController: UITabBarController {
         let firebaseStorage = dependencyContainer.resolve(FIRStoring.self)
         homeViewContoller.presenter = homePresenter
         homePresenter.homePresenterViewable = homeViewContoller
+        homePresenter.firebaseStorage = firebaseStorage
         homeViewContoller.firebaseStorage = firebaseStorage
         
         let contactUsContoller = self.viewControllers?.last as! ContactUsViewController

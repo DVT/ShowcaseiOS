@@ -14,9 +14,25 @@ class HomePresenter: HomePresentable {
     var homePresenterViewable: HomePresenterViewable?
     var homePresenterInteractable: HomePresenterInteractable?
     var wireframe: WireframeDelegate?
+    var firebaseStorage: FIRStoring?
+    private var imagesDictionary: [String: URL] = [:]
     
     func fetchShowcaseApps() {
         self.homePresenterInteractable?.fetchShowcaseApps()
+    }
+    
+    func fetchAllImages(for showcaseAppViewModels: [ShowcaseAppViewModel], completed: @escaping (([String: URL]) -> ())) {
+        let imageFetcher = ImageFetcher(from: firebaseStorage!)
+        showcaseAppViewModels.forEach { showcaseApp in
+            imageFetcher.fetchImage(showcaseApp.iconUrl!, { (imageURL, error) in
+                if let _ = error {
+                    self.imagesDictionary[showcaseApp.id!] = nil
+                } else if let imageURL = imageURL {
+                    self.imagesDictionary[showcaseApp.id!] = imageURL
+                }
+                completed(self.imagesDictionary)
+            })
+        }
     }
     
     func onFetchShowcaseAppsSuccess(with showcaseApps: [ShowcaseApp]) {

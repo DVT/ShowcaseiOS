@@ -16,33 +16,23 @@ class ShowcaseAppCollectionViewCell: UICollectionViewCell {
     
     var firebaseStorage: FIRStoring?
     
-    func populateCell(with showcaseViewModel: ShowcaseAppViewModel) {
+    func populateCell(with showcaseViewModel: ShowcaseAppViewModel, imageDictionary: [String: URL]) {
         self.shortDescriptionLabel.text = showcaseViewModel.name
         self.clientLabel.text = showcaseViewModel.client
-        self.populateImageView(with: showcaseViewModel.iconUrl)
+        if let showcaseAppID = showcaseViewModel.id {
+            if let imageURL = imageDictionary[showcaseAppID] {
+                populateImageView(with: imageURL)
+            }
+        } else {
+            self.imageView.image = #imageLiteral(resourceName: "placeHolder")
+        }
         self.imageView.clipsToBounds = true
         self.imageView.layer.borderColor = UIColor.lightGray.cgColor
         self.imageView.layer.borderWidth = 1
     }
     
-    func populateImageView(with iconUrl: String?) {
-        guard let imageUrl = iconUrl else {
-            return
-        }
-        guard let firStorage = self.firebaseStorage else  {
-            return
-        }
-        let imageFetcher = ImageFetcher(from: firStorage)
-        imageFetcher.fetchImage(imageUrl) {[weak self] (url, error) in
-            if error == nil {
-                guard let imageURL = url else {
-                    return
-                }
-                let resource = ImageResource(downloadURL: imageURL, cacheKey: imageUrl)
-                self?.imageView.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
-            } else {
-                self?.imageView.image = #imageLiteral(resourceName: "placeHolder")
-            }
-        }
+    func populateImageView(with imageURL: URL) {
+        let resource = ImageResource(downloadURL: imageURL, cacheKey: imageURL.absoluteString)
+        self.imageView.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
     }
 }
