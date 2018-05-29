@@ -15,6 +15,7 @@ class ContactUsViewController: UIViewController {
     
     //MARK: @IBOutlets
     
+    @IBOutlet weak var loadingView: LoadingView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: Lifecycle
@@ -81,6 +82,14 @@ extension ContactUsViewController: UICollectionViewDelegate, UICollectionViewDat
 //MARK: Extension Presentable
 
 extension ContactUsViewController: ContactUsPresenterViewable {
+    func startLoadingAnimation() {
+        loadingView.isHidden = false
+    }
+    
+    func stopLoadingAnimation() {
+        loadingView.isHidden = true
+    }
+    
     func showOnSuccess(with officeViewModels: [OfficeViewModel]) {
         self.officeViewModels = officeViewModels
         collectionView.reloadData()
