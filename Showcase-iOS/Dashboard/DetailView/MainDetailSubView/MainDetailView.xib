@@ -14,6 +14,7 @@
                 <outlet property="clientName" destination="ZN0-SI-bsi" id="yFR-bB-ID8"/>
                 <outlet property="contentView" destination="Ps3-yo-k7R" id="bEe-m5-8Ww"/>
                 <outlet property="image" destination="FJU-a9-G3x" id="31C-Nd-1vf"/>
+                <outlet property="installButton" destination="Y8E-BV-Ruw" id="zfP-qQ-kCr"/>
                 <outlet property="productName" destination="utj-Ya-FtB" id="WbS-aM-OYL"/>
                 <outlet property="shortDescription" destination="LTi-pm-csV" id="4Em-zv-xGe"/>
             </connections>
@@ -45,6 +46,9 @@
                     <state key="normal" title="Install">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="onInstallButtonTapped:" destination="-1" eventType="touchUpInside" id="0GM-zv-kgv"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nomadic Verve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN0-SI-bsi">
                     <rect key="frame" x="116" y="30" width="73" height="12"/>

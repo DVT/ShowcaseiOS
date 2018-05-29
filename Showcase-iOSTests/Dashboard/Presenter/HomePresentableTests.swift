@@ -34,8 +34,10 @@ class HomePresentableTests: XCTestCase {
             _ = when(mock.showOnFailure(with: any())).then({ error in
                 XCTAssertEqual(error as DatabaseError, .childNotFound)
             })
+            _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
         self.systemUnderTest?.onFetchShowcaseAppsFailure(with: .childNotFound)
+        verify(mockHomeViewer, times(1)).stopLoadingAnimation()
         verify(mockHomeViewer, times(1)).showOnFailure(with: any())
     }
     
@@ -44,8 +46,10 @@ class HomePresentableTests: XCTestCase {
             _ = when(mock.showOnSuccess(with: any()).then({ showcaseApps in
                 XCTAssertTrue(showcaseApps.isEmpty)
             }))
+            _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
         self.systemUnderTest?.onFetchShowcaseAppsSuccess(with: [ShowcaseApp]())
+        verify(mockHomeViewer, times(1)).stopLoadingAnimation()
         verify(mockHomeViewer, times(1)).showOnSuccess(with: any())
     }
     
@@ -56,8 +60,10 @@ class HomePresentableTests: XCTestCase {
             _ = when(mock.showOnSuccess(with: any()).then({ showcaseApps in
                 XCTAssertTrue(showcaseApps.count > 0)
             }))
+            _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
         self.systemUnderTest?.onFetchShowcaseAppsSuccess(with: self.mockShowcaseApps)
+        verify(mockHomeViewer, times(1)).stopLoadingAnimation()
         verify(mockHomeViewer, times(1)).showOnSuccess(with: any())
     }
     
@@ -103,6 +109,20 @@ class HomePresentableTests: XCTestCase {
         systemUnderTest?.transitionToShowcaseAppDetailView(with: mockShowcassAppViewModels.first!)
         verify(mockWireFrameDelegate, times(0)).transitionToShowcaseAppDetailView(any(), with: any())
     }
+    
+    func testThatFetchShowcaseAppsInvokesTheInteractorToFetchShowcaseAppsAndTheViewToShowLoadingAnimation() {
+        stub(mockHomeInteractor) { (mock) in
+            _ = when(mock.fetchShowcaseApps().thenDoNothing())
+        }
+        stub(mockHomeViewer) { (mock) in
+            _ = when(mock.startLoadingAnimation().thenDoNothing())
+        }
+        
+        systemUnderTest?.fetchShowcaseApps()
+        verify(mockHomeViewer, times(1)).startLoadingAnimation()
+        verify(mockHomeInteractor, times(1)).fetchShowcaseApps()
+    }
+    
     
     func setupMockShowcaseAppDictionary() -> [String: Any] {
         var dictionary = [String: Any]()
