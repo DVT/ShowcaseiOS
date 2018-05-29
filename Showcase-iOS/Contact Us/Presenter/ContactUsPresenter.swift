@@ -20,14 +20,17 @@ class ContactUsPresenter: ContactUsPresentable {
             let officeViewModel = OfficeViewModel(with: office)
             officeViewModels.append(officeViewModel)
         }
+        contactUsView?.stopLoadingAnimation()
         contactUsView?.showOnSuccess(with: officeViewModels)
     }
     
     func onRetrieveOfficesFailed(with error: Error) {
+        contactUsView?.stopLoadingAnimation()
         contactUsView?.showOnFailure(with: error)
     }
     
     func retrieveContacts() {
+        contactUsView?.startLoadingAnimation()
         contactUsInteractor?.retrieveContacts()
     }
     

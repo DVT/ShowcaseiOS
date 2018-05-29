@@ -33,8 +33,10 @@ class ContactUsPresenterTests: XCTestCase {
                 XCTAssertNotNil(error)
                 XCTAssertEqual(error as NSError, self.mockError)
             }))
+            _  = when(mock.stopLoadingAnimation().thenDoNothing())
         }
         systemUNderTest.onRetrieveOfficesFailed(with: mockError)
+        verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
         verify(mockPresenterViewable, times(1)).showOnFailure(with: any())
     }
 
@@ -44,8 +46,10 @@ class ContactUsPresenterTests: XCTestCase {
                 print(officeViewModels)
                 XCTAssertNotNil(officeViewModels)
             }))
+            _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
         systemUNderTest.onRetrieveOfficesComplete(with: mockOffices())
+        verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
         verify(mockPresenterViewable, times(1)).showOnSuccess(with: any())
     }
 
