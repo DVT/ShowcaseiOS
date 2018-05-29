@@ -110,6 +110,20 @@ class HomePresentableTests: XCTestCase {
         verify(mockWireFrameDelegate, times(0)).transitionToShowcaseAppDetailView(any(), with: any())
     }
     
+    func testThatFetchShowcaseAppsInvokesTheInteractorToFetchShowcaseAppsAndTheViewToShowLoadingAnimation() {
+        stub(mockHomeInteractor) { (mock) in
+            _ = when(mock.fetchShowcaseApps().thenDoNothing())
+        }
+        stub(mockHomeViewer) { (mock) in
+            _ = when(mock.startLoadingAnimation().thenDoNothing())
+        }
+        
+        systemUnderTest?.fetchShowcaseApps()
+        verify(mockHomeViewer, times(1)).startLoadingAnimation()
+        verify(mockHomeInteractor, times(1)).fetchShowcaseApps()
+    }
+    
+    
     func setupMockShowcaseAppDictionary() -> [String: Any] {
         var dictionary = [String: Any]()
         dictionary["client"] = "Group Five"
