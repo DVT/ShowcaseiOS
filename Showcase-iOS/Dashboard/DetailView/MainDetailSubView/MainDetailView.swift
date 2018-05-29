@@ -13,8 +13,7 @@ class MainDetailView: UIView {
     @IBOutlet private weak var installButton: UIButton!
     //MARK: LifeCycle
     
-    private let dependencyContainer = DependencyContainer.container()
-    private var sharedApplication: SharedApplicationDelegate?
+    var mainDetailViewModel: MainDetailViewCellDelegate?
     
     var showcaseApp: ShowcaseAppViewModel? {
         didSet {
@@ -52,6 +51,7 @@ class MainDetailView: UIView {
     }
     
     private func populateImageView(with imagePath: String) {
+        let dependencyContainer = DependencyContainer.container()
         guard let firStorage = dependencyContainer.resolve(FIRStoring.self) else {
             return
         }
@@ -68,11 +68,7 @@ class MainDetailView: UIView {
     }
     
     @IBAction func onInstallButtonTapped(_ sender: Any) {
-        guard let iOSPackageName = showcaseApp?.iosPackageName, let url = URL(string: iOSPackageName) else {
-            return
-        }
-        self.sharedApplication = dependencyContainer.resolve(SharedApplicationDelegate.self)
-        self.sharedApplication?.openSharedApplication(with: url)
+        self.mainDetailViewModel?.openURL(iOSPackageName: showcaseApp?.iosPackageName)
     }
 }
 

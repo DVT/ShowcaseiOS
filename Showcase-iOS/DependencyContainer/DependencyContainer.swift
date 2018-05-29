@@ -57,6 +57,10 @@ struct DependencyContainer {
             return SharedApplicationDelegateImplementation()
         }
         
+        container.register(MainDetailViewCellDelegate.self) { r in
+            return MainDetailViewModel()
+        }
+        
         container.register(HomePresentable.self) {r in
             let homePresenter = HomePresenter()
             let homeInteractor = HomeInteractor()

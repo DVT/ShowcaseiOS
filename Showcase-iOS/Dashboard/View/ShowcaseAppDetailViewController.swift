@@ -31,6 +31,9 @@ class ShowcaseAppDetailViewController: UIViewController {
     func initViews() {
         let main = MainDetailView(frame: mainDetailSubView.bounds)
         main.showcaseApp = showcaseAppViewModel
+        let dependencyContainer = DependencyContainer.container()
+        main.mainDetailViewModel = dependencyContainer.resolve(MainDetailViewCellDelegate.self)
+        main.mainDetailViewModel?.sharedApplication = dependencyContainer.resolve(SharedApplicationDelegate.self)
         mainDetailSubView.addSubviewPinnedToEdges(main)
         let functionality = FunctionalityView(frame: functionalityView.bounds)
         functionality.populateView(with: showcaseAppViewModel)
