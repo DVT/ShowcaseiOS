@@ -16,6 +16,7 @@ class HomePresenter: HomePresentable {
     var wireframe: WireframeDelegate?
     
     func fetchShowcaseApps() {
+        self.homePresenterViewable?.startLoadingAnimation()
         self.homePresenterInteractable?.fetchShowcaseApps()
     }
     
@@ -24,11 +25,13 @@ class HomePresenter: HomePresentable {
         showcaseApps.forEach { showcaseApp in
             showcaseAppViewModel.append(ShowcaseAppViewModel(with: showcaseApp))
         }
+        self.homePresenterViewable?.stopLoadingAnimation()
         self.showcaseAppViewModels = showcaseAppViewModel
         self.homePresenterViewable?.showOnSuccess(with: showcaseAppViewModel)
     }
     
     func onFetchShowcaseAppsFailure(with error: DatabaseError) {
+        self.homePresenterViewable?.stopLoadingAnimation()
         self.homePresenterViewable?.showOnFailure(with: error)
     }
     
