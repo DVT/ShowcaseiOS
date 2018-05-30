@@ -19,17 +19,28 @@ class HomeViewController: UICollectionViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.resolveInjectables()
         self.setupNavigationBar()
         self.registerCollectionViewNib()
+        self.addLoadingAnimationView()
         self.presenter?.fetchShowcaseApps()
-    }    
+    }
+    
+    func resolveInjectables() {
+        let dependencyContainer = DependencyContainer.container()
+        let homePresenter = dependencyContainer.resolve(HomePresentable.self) as! HomePresenter
+        let firebaseStorage = dependencyContainer.resolve(FIRStoring.self)
+        self.presenter = homePresenter
+        homePresenter.homePresenterViewable = self
+        self.firebaseStorage = firebaseStorage
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.searchController.delegate = self
         self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
         self.navigationController?.navigationBar.items?.first?.searchController = searchController
-        self.addLoadingAnimationView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,7 +49,7 @@ class HomeViewController: UICollectionViewController {
     }
     
     func setupNavigationBar() {
-        self.tabBarController?.navigationItem.title = "DVT Showcase"
+        self.navigationItem.title = "DVT Showcase"
     }
     
     func registerCollectionViewNib() {
@@ -48,7 +59,7 @@ class HomeViewController: UICollectionViewController {
     
     func addLoadingAnimationView() {
         loadingView = LoadingView(frame: self.view.frame)
-         loadingView?.isHidden = false
+        loadingView?.isHidden = false
         self.view.addSubview(loadingView!)
     }
 }

@@ -12,6 +12,7 @@ class ContactUsViewController: UIViewController {
     var officeViewModels = [OfficeViewModel]()
     var firebaseStorage: FIRStoring?
     var errorView: ErrorView?
+    let dependencyContainer = DependencyContainer.container()
     
     //MARK: @IBOutlets
     
@@ -22,15 +23,23 @@ class ContactUsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupInjectables()
         setCollectionView()
         registerContactUsCell()
         contactUsPresenter?.retrieveContacts()
     }
     
+    func setupInjectables() {
+        let contactUsPresenter = dependencyContainer.resolve(ContactUsPresentable.self) as! ContactUsPresenter
+        let firebaseStorage = dependencyContainer.resolve(FIRStoring.self)
+        self.contactUsPresenter = contactUsPresenter
+        contactUsPresenter.contactUsView = self
+        self.firebaseStorage = firebaseStorage
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.items?.first?.searchController = nil
-        self.navigationController?.navigationBar.topItem?.title = "Contact Us"
+        self.navigationItem.title = "Contact"
     }
     
     //MARK: Operations

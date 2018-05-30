@@ -16,8 +16,7 @@ class AboutViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.items?.first?.searchController = nil
-        self.navigationController?.navigationBar.topItem?.title = "About"
+        self.navigationItem.title = "About"
     }
     
     @IBAction func websiteTapped(_ sender: Any) {
