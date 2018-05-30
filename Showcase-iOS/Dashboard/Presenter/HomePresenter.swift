@@ -23,16 +23,26 @@ class HomePresenter: HomePresentable {
     }
     
     func fetchAllImages(for showcaseAppViewModels: [ShowcaseAppViewModel], completed: @escaping (([String: URL]) -> ())) {
-        let imageFetcher = ImageFetcher(from: firebaseStorage!)
-        showcaseAppViewModels.forEach { showcaseApp in
-            imageFetcher.fetchImage(showcaseApp.iconUrl!, { (imageURL, error) in
-                if let _ = error {
-                    self.imagesDictionary[showcaseApp.id!] = nil
-                } else if let imageURL = imageURL {
-                    self.imagesDictionary[showcaseApp.id!] = imageURL
+        guard let firebaseStorage = firebaseStorage else {
+            completed(self.imagesDictionary)
+            return
+        }
+        let imageFetcher = ImageFetcher(from: firebaseStorage)
+        if showcaseAppViewModels.isEmpty {
+            completed(self.imagesDictionary)
+        } else {
+            showcaseAppViewModels.forEach { showcaseApp in
+                if let showcaseAppIconURL = showcaseApp.iconUrl, let showcaseID = showcaseApp.id {
+                    imageFetcher.fetchImage(showcaseAppIconURL, { (imageURL, error) in
+                        if let _ = error {
+                            self.imagesDictionary[showcaseID] = nil
+                        } else if let imageURL = imageURL {
+                            self.imagesDictionary[showcaseID] = imageURL
+                        }
+                        completed(self.imagesDictionary)
+                    })
                 }
-                completed(self.imagesDictionary)
-            })
+            }
         }
     }
     
