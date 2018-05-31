@@ -38,9 +38,6 @@ class ShowcaseAppDetailViewController: UIViewController {
         let functionality = FunctionalityView(frame: functionalityView.bounds)
         functionality.populateView(with: showcaseAppViewModel)
         functionalityView.addSubviewPinnedToEdges(functionality)
-        let technology = TechnologyView(frame: technologyView.bounds)
-        technology.populateView(with: showcaseAppViewModel)
-        technologyView.addSubviewPinnedToEdges(technology)
         guard let screenshots = showcaseAppViewModel?.screenshots else {
             return
         }

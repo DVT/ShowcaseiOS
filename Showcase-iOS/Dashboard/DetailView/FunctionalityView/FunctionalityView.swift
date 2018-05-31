@@ -9,6 +9,7 @@ class FunctionalityView: UIView {
     
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var functionality: UILabel!
+    @IBOutlet private weak var technology: UILabel!
     
     //MARK: Lifecycle
     
@@ -32,6 +33,7 @@ class FunctionalityView: UIView {
     
     func populateView(with shoecaseApp: ShowcaseAppViewModel?) {
         functionality.text = shoecaseApp?.functionality
+        technology.text = shoecaseApp?.technologyUsed
     }
     
 }

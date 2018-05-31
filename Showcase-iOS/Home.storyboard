@@ -59,9 +59,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2Q-fn-hns">
-                                                <rect key="frame" x="0.0" y="372" width="375" height="215"/>
+                                                <rect key="frame" x="0.0" y="372" width="375" height="620"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="215" id="U1J-ex-jF7"/>
+                                                    <constraint firstAttribute="height" constant="620" id="t9G-tO-PS0"/>
                                                 </constraints>
                                                 <viewLayoutGuide key="safeArea" id="lMe-PE-bEi"/>
                                             </view>
@@ -109,13 +109,6 @@
                                                 </constraints>
                                                 <viewLayoutGuide key="safeArea" id="oib-ei-3vc"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkJ-6S-9k2">
-                                                <rect key="frame" x="0.0" y="595" width="375" height="224"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="224" id="Dkk-Mc-YhJ"/>
-                                                </constraints>
-                                                <viewLayoutGuide key="safeArea" id="tQZ-Y6-g2j"/>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -124,19 +117,17 @@
                                             <constraint firstAttribute="trailing" secondItem="9dn-py-UxA" secondAttribute="trailing" id="7AA-4G-u0H"/>
                                             <constraint firstItem="BEy-Sq-aLS" firstAttribute="leading" secondItem="ltj-sK-eeQ" secondAttribute="leading" id="7is-S2-7CT"/>
                                             <constraint firstItem="BEy-Sq-aLS" firstAttribute="top" secondItem="ltj-sK-eeQ" secondAttribute="top" constant="8" id="B3r-bJ-szc"/>
-                                            <constraint firstItem="EkJ-6S-9k2" firstAttribute="leading" secondItem="ltj-sK-eeQ" secondAttribute="leading" id="CrS-5d-dEX"/>
                                             <constraint firstAttribute="trailing" secondItem="BEy-Sq-aLS" secondAttribute="trailing" id="ZsC-Hd-jE9"/>
                                             <constraint firstAttribute="trailing" secondItem="H2Q-fn-hns" secondAttribute="trailing" id="cE2-V4-fxU"/>
                                             <constraint firstItem="9dn-py-UxA" firstAttribute="leading" secondItem="ltj-sK-eeQ" secondAttribute="leading" id="fvE-Co-8pt"/>
-                                            <constraint firstAttribute="trailing" secondItem="EkJ-6S-9k2" secondAttribute="trailing" id="sr6-Kf-xkr"/>
-                                            <constraint firstItem="EkJ-6S-9k2" firstAttribute="top" secondItem="H2Q-fn-hns" secondAttribute="bottom" constant="8" id="tcO-NE-j9x"/>
+                                            <constraint firstAttribute="height" constant="1000" id="lJd-TK-YvO"/>
                                             <constraint firstItem="H2Q-fn-hns" firstAttribute="top" secondItem="9dn-py-UxA" secondAttribute="bottom" constant="8" id="vJi-zL-tEc"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ltj-sK-eeQ" firstAttribute="width" secondItem="3hZ-tx-otT" secondAttribute="width" id="6Kb-BT-0tp"/>
-                                    <constraint firstAttribute="bottom" secondItem="ltj-sK-eeQ" secondAttribute="bottom" id="Kmz-0e-tvF"/>
+                                    <constraint firstAttribute="bottom" secondItem="ltj-sK-eeQ" secondAttribute="bottom" constant="230" id="Kmz-0e-tvF"/>
                                     <constraint firstItem="ltj-sK-eeQ" firstAttribute="top" secondItem="3hZ-tx-otT" secondAttribute="top" id="NTU-Jl-g3Z"/>
                                     <constraint firstItem="ltj-sK-eeQ" firstAttribute="leading" secondItem="3hZ-tx-otT" secondAttribute="leading" id="V2d-Jz-dbF"/>
                                     <constraint firstAttribute="trailing" secondItem="ltj-sK-eeQ" secondAttribute="trailing" id="jJR-oD-HFe"/>
@@ -147,7 +138,6 @@
                         <constraints>
                             <constraint firstItem="3hZ-tx-otT" firstAttribute="leading" secondItem="9fO-d4-AEf" secondAttribute="leading" id="DQ3-oE-VGL"/>
                             <constraint firstItem="3hZ-tx-otT" firstAttribute="top" secondItem="9fO-d4-AEf" secondAttribute="top" id="WSB-in-CqL"/>
-                            <constraint firstItem="ltj-sK-eeQ" firstAttribute="height" secondItem="TGN-Nm-OJ2" secondAttribute="height" id="Xfz-cw-9a3"/>
                             <constraint firstItem="3hZ-tx-otT" firstAttribute="trailing" secondItem="9fO-d4-AEf" secondAttribute="trailing" id="sM2-i8-nKA"/>
                             <constraint firstItem="9fO-d4-AEf" firstAttribute="bottom" secondItem="3hZ-tx-otT" secondAttribute="bottom" id="zdp-1a-fgg"/>
                         </constraints>
@@ -160,12 +150,11 @@
                         <outlet property="mainDetailSubView" destination="BEy-Sq-aLS" id="ggD-cl-Xxt"/>
                         <outlet property="screenShotsScrollView" destination="aLD-0L-B09" id="QMg-4W-6m0"/>
                         <outlet property="scrollView" destination="3hZ-tx-otT" id="IZz-Aa-PK3"/>
-                        <outlet property="technologyView" destination="EkJ-6S-9k2" id="vJK-d2-3pD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcK-F8-UXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648.8" y="-1174.8125937031484"/>
+            <point key="canvasLocation" x="1456.8" y="-1039.8800599700151"/>
         </scene>
     </scenes>
 </document>
