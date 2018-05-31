@@ -30,7 +30,7 @@ class HomeViewController: UICollectionViewController {
         self.searchController.delegate = self
         self.searchController.searchResultsUpdater = self
         self.navigationController?.navigationBar.items?.first?.searchController = searchController
-        self.addLoadingAnimationView()
+       // self.addLoadingAnimationView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
