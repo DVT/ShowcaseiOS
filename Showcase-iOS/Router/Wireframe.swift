@@ -21,6 +21,7 @@ class Wireframe: WireframeDelegate {
                 return
             }
             newController.showcaseAppViewModel = showcaseAppViewModel
+            navigationController?.tabBarController?.tabBar.isHidden = true
             navigationController?.pushViewController(newController, animated: true)
         }
     }

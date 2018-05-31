@@ -13,36 +13,23 @@ class ShowcaseAppCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var shortDescriptionLabel: UILabel!
     @IBOutlet private weak var clientLabel: UILabel!
+    let showcaseAppCellViewModel = ShowcaseAppCellViewModel()
     
-    var firebaseStorage: FIRStoring?
-    
-    func populateCell(with showcaseViewModel: ShowcaseAppViewModel) {
+    func populateCell(with showcaseViewModel: ShowcaseAppViewModel, imageDictionary: [String: URL]) {
         self.shortDescriptionLabel.text = showcaseViewModel.name
         self.clientLabel.text = showcaseViewModel.client
-        self.populateImageView(with: showcaseViewModel.iconUrl)
+        populateImageView(showcaseViewModel: showcaseViewModel, imageDictionary: imageDictionary)
         self.imageView.clipsToBounds = true
         self.imageView.layer.borderColor = UIColor.lightGray.cgColor
         self.imageView.layer.borderWidth = 1
     }
     
-    func populateImageView(with iconUrl: String?) {
-        guard let imageUrl = iconUrl else {
+    func populateImageView(showcaseViewModel: ShowcaseAppViewModel, imageDictionary: [String: URL]) {
+        guard let imageURL = showcaseAppCellViewModel.getImageURL(showcaseViewModel, imageDictionary) else {
+            self.imageView.image = #imageLiteral(resourceName: "placeHolder")
             return
         }
-        guard let firStorage = self.firebaseStorage else  {
-            return
-        }
-        let imageFetcher = ImageFetcher(from: firStorage)
-        imageFetcher.fetchImage(imageUrl) {[weak self] (url, error) in
-            if error == nil {
-                guard let imageURL = url else {
-                    return
-                }
-                let resource = ImageResource(downloadURL: imageURL, cacheKey: imageUrl)
-                self?.imageView.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
-            } else {
-                self?.imageView.image = #imageLiteral(resourceName: "placeHolder")
-            }
-        }
+        let resource = ImageResource(downloadURL: imageURL, cacheKey: imageURL.absoluteString)
+        self.imageView.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
     }
 }
