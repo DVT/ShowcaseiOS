@@ -16,6 +16,7 @@ class HomeViewController: UICollectionViewController {
     let searchController = UISearchController(searchResultsController: nil)
     var errorView: ErrorView?
     var loadingView: LoadingView?
+    var imagesDictionary: [String: URL] = [:]
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +62,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseAppViewIdentifier", for: indexPath) as! ShowcaseAppCollectionViewCell
-        cell.firebaseStorage = firebaseStorage
-        cell.populateCell(with: filteredShowcaseAppsViewModels[indexPath.row])
+        cell.populateCell(with: filteredShowcaseAppsViewModels[indexPath.row], imageDictionary: self.imagesDictionary)
         return cell
     }
     
@@ -100,8 +100,11 @@ extension HomeViewController: HomePresenterViewable {
     
     func showOnSuccess(with showcaseApps: [ShowcaseAppViewModel]) {
         self.showcaseAppsViewModels = showcaseApps
-        self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels
-        self.collectionView?.reloadData()
+        presenter?.fetchAllImages(for: self.showcaseAppsViewModels, completed: { (imageDictionary) in
+            self.imagesDictionary = imageDictionary
+            self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels
+            self.collectionView?.reloadData()
+        })
     }
     
     func showOnFailure(with error: DatabaseError) {
