@@ -18,6 +18,8 @@ class HomePresentableTests: XCTestCase {
     var homePresenter = MockHomePresentable()
     var mockFirebaseStorage = MockFIRStoring()
     var mockStorageReference = MockStorageReferenceable()
+    var mockSignOutInteractor = MockSignOutInteractor()
+    var mockUserDefaults = MockUserDefaultsProtocol()
     var mockShowcaseApps = [ShowcaseApp]()
     var systemUnderTest: HomePresenter?
     var mockShowcassAppViewModels = [ShowcaseAppViewModel]()
@@ -29,6 +31,8 @@ class HomePresentableTests: XCTestCase {
         homePresenter.homePresenterViewable = mockHomeViewer
         homePresenter.wireframe = mockWireFrameDelegate
         homePresenter.firebaseStorage = mockFirebaseStorage
+        homePresenter.signOutInteractor = mockSignOutInteractor
+        homePresenter.userDefaults = mockUserDefaults
         systemUnderTest = homePresenter
     }
     
@@ -177,6 +181,38 @@ class HomePresentableTests: XCTestCase {
         })
     }
 
+    func testThatTheSignOutUserMethodOfTheSignOutInteractorGetInvokedWhenSignGetsCalled() {
+        stub(mockSignOutInteractor) { (mock) in
+            _ = when(mock.signOut().thenDoNothing())
+        }
+        systemUnderTest?.signOutUser()
+        verify(mockSignOutInteractor, times(1)).signOut()
+    }
+    
+    func testThatWhenTheHomeViewIsNotAHomeViewControllerThenTheTransitionToLoginViewIsNotInvokedWhenTheSignOutGetsCalled() {
+        stub(mockWireFrameDelegate) { (mock) in
+            _ = when(mock.transitionToLoginView(controller: any()).thenDoNothing())
+        }
+        stub(mockUserDefaults) { (mock) in
+            _ = when(mock.set(value: any(), forKey: any()).thenDoNothing())
+        }
+        systemUnderTest?.signedOut()
+        verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
+        verify(mockWireFrameDelegate, never()).transitionToLoginView(controller: any())
+    }
+    
+    func testThatWhenTheHomeViewIsAHomeViewControllerThenTheTransitionToLoginViewIsNotInvokedWhenTheSignOutGetsCalled() {
+        systemUnderTest?.homePresenterViewable = HomeViewController()
+        stub(mockWireFrameDelegate) { (mock) in
+            _ = when(mock.transitionToLoginView(controller: any()).thenDoNothing())
+        }
+        stub(mockUserDefaults) { (mock) in
+            _ = when(mock.set(value: any(), forKey: any()).thenDoNothing())
+        }
+        systemUnderTest?.signedOut()
+        verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
+        verify(mockWireFrameDelegate, times(1)).transitionToLoginView(controller: any())
+    }
     
     func setupMockShowcaseAppDictionary() -> [String: Any] {
         var dictionary = [String: Any]()

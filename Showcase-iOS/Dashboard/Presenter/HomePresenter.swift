@@ -10,11 +10,14 @@ import Foundation
 import UIKit
 
 class HomePresenter: HomePresentable {
+    
     var showcaseAppViewModels: [ShowcaseAppViewModel] = [ShowcaseAppViewModel]()
     var homePresenterViewable: HomePresenterViewable?
     var homePresenterInteractable: HomePresenterInteractable?
     var wireframe: WireframeDelegate?
     var firebaseStorage: FIRStoring?
+    var signOutInteractor: SignOutInteractor?
+    var userDefaults: UserDefaultsProtocol?
     private var imagesDictionary: [String: URL] = [:]
     
     func fetchShowcaseApps() {
@@ -83,4 +86,17 @@ class HomePresenter: HomePresentable {
         }
         self.wireframe?.transitionToShowcaseAppDetailView(controller, with: showcaseAppViewModel)
     }
+    
+    func signOutUser() {
+        signOutInteractor?.signOut()
+    }
+    
+    func signedOut() {
+        userDefaults?.set(value: false, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
+        guard let homeViewController = homePresenterViewable as? HomeViewController else {
+            return
+        }
+        wireframe?.transitionToLoginView(controller: homeViewController)
+    }
+    
 }

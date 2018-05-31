@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Wireframe: WireframeDelegate {
     
@@ -24,4 +25,13 @@ class Wireframe: WireframeDelegate {
             navigationController?.pushViewController(newController, animated: true)
         }
     }
+    
+    func transitionToLoginView(controller:HomeViewController) {
+        self.onMainThread {
+                let newController = LoginViewController.instantiate(fromAppStoryboard: .Login)
+                let navigationController = UINavigationController(rootViewController:newController)
+                controller.present(navigationController, animated: true, completion: nil)
+        }
+    }
+
 }
