@@ -123,7 +123,6 @@
 		FD64491020BD6C8A009CEDB9 /* MainDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD64490F20BD6C8A009CEDB9 /* MainDetailViewModel.swift */; };
 		FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */; };
 		FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD71315E208DD3EA0090E2E7 /* Path.swift */; };
-		FD84DA9220BBF86400ABE936 /* WireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD84DA9120BBF86400ABE936 /* WireframeTests.swift */; };
 		FD98CA7D20A99F2800FDF031 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA7C20A99F2800FDF031 /* HomeViewController.swift */; };
 		FD98CA7F20A99F4D00FDF031 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA7E20A99F4D00FDF031 /* TabBarViewController.swift */; };
 		FD98CA8E20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98CA8C20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift */; };
@@ -273,7 +272,6 @@
 		FD64490F20BD6C8A009CEDB9 /* MainDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailViewModel.swift; sourceTree = "<group>"; };
 		FD6FAA9A208E1C1700D108C5 /* DataReferenceableImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReferenceableImplementation.swift; sourceTree = "<group>"; };
 		FD71315E208DD3EA0090E2E7 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
-		FD84DA9120BBF86400ABE936 /* WireframeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireframeTests.swift; sourceTree = "<group>"; };
 		FD98CA7C20A99F2800FDF031 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FD98CA7E20A99F4D00FDF031 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FD98CA8C20A9BAEF00FDF031 /* ShowcaseAppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseAppCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -363,7 +361,6 @@
 		99FB7FFB2085F25300B300BA /* Showcase-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				FD84DA9020BBF82A00ABE936 /* Wireframe */,
 				A389D66D20A59EDF008DB6FE /* FIRStorageTests */,
 				A3DBE44B209F8BC300561CE0 /* GeneratedShowcaseMocks.swift */,
 				FD37E28D2099EC5F006EA459 /* Dashboard */,
@@ -927,14 +924,6 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
-		FD84DA9020BBF82A00ABE936 /* Wireframe */ = {
-			isa = PBXGroup;
-			children = (
-				FD84DA9120BBF86400ABE936 /* WireframeTests.swift */,
-			);
-			path = Wireframe;
-			sourceTree = "<group>";
-		};
 		FD98CA8B20A9BAA200FDF031 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1356,7 +1345,6 @@
 				FD4D307520BD738F00D1AE58 /* MainDetailCellViewModelTests.swift in Sources */,
 				FDE1AE82209B50A300D383C4 /* HomePresentableTests.swift in Sources */,
 				A3DBE44C209F8BC300561CE0 /* GeneratedShowcaseMocks.swift in Sources */,
-				FD84DA9220BBF86400ABE936 /* WireframeTests.swift in Sources */,
 				A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */,
 				A3FB58C520A98A030093506E /* ContactUsCellViewModelTests.swift in Sources */,
 				A3E7197F209C55370081D5C1 /* ContactUsPresenterTests.swift in Sources */,
