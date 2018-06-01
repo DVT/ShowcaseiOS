@@ -99,7 +99,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: HomePresenterViewable {
     func startLoadingAnimation() {
-       loadingView?.isHidden = false
+        loadingView?.isHidden = false
     }
     
     func stopLoadingAnimation() {
@@ -126,7 +126,7 @@ extension HomeViewController: HomePresenterViewable {
 }
 
 extension HomeViewController: UISearchResultsUpdating, UISearchControllerDelegate {
-   
+    
     func updateSearchResults(for searchController: UISearchController) {
         guard let filteredShowcaseApps = self.presenter?.search(text: searchController.searchBar.text) else {
             return

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Wireframe: WireframeDelegate {
     
@@ -23,6 +24,14 @@ class Wireframe: WireframeDelegate {
             newController.showcaseAppViewModel = showcaseAppViewModel
             navigationController?.tabBarController?.tabBar.isHidden = true
             navigationController?.pushViewController(newController, animated: true)
+        }
+    }
+    
+    func transitionToLoginView(_ controller:HomeViewController) {
+        self.onMainThread {
+            let newController = LoginViewController.instantiate(fromAppStoryboard: .Login)
+            let navigationController = UINavigationController(rootViewController: newController)
+            navigationController.present(newController, animated: true)
         }
     }
 }
