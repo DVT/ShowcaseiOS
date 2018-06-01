@@ -22,6 +22,7 @@ class HomeViewController: UICollectionViewController {
         super.viewDidLoad()
         self.setupNavigationBar()
         self.registerCollectionViewNib()
+        self.addLoadingAnimationView()
         self.presenter?.fetchShowcaseApps()
     }    
     
@@ -30,7 +31,6 @@ class HomeViewController: UICollectionViewController {
         self.searchController.delegate = self
         self.searchController.searchResultsUpdater = self
         self.navigationController?.navigationBar.items?.first?.searchController = searchController
-        self.addLoadingAnimationView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -49,7 +49,7 @@ class HomeViewController: UICollectionViewController {
     
     func addLoadingAnimationView() {
         loadingView = LoadingView(frame: self.view.frame)
-         loadingView?.isHidden = false
+        loadingView?.isHidden = false
         self.view.addSubview(loadingView!)
     }
 }
@@ -90,7 +90,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: HomePresenterViewable {
     func startLoadingAnimation() {
-       loadingView?.isHidden = false
+        loadingView?.isHidden = false
     }
     
     func stopLoadingAnimation() {
@@ -119,7 +119,7 @@ extension HomeViewController: HomePresenterViewable {
 }
 
 extension HomeViewController: UISearchResultsUpdating, UISearchControllerDelegate {
-   
+    
     func updateSearchResults(for searchController: UISearchController) {
         guard let filteredShowcaseApps = self.presenter?.search(text: searchController.searchBar.text) else {
             return
