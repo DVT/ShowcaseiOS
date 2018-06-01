@@ -96,7 +96,7 @@ class HomePresenter: HomePresentable {
         guard let homeViewController = homePresenterViewable as? HomeViewController else {
             return
         }
-        wireframe?.transitionToLoginView(controller: homeViewController)
+        wireframe?.transitionToLoginView(homeViewController)
     }
     
 }

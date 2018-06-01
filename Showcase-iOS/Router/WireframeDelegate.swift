@@ -11,5 +11,5 @@ import UIKit
 
 protocol WireframeDelegate {
     func  transitionToShowcaseAppDetailView(_ controller:HomeViewController, with showcaseAppViewModel: ShowcaseAppViewModel)
-    func transitionToLoginView(controller: HomeViewController)
+    func transitionToLoginView(_ controller:HomeViewController)
 }
