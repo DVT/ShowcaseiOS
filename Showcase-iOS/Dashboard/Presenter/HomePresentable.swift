@@ -16,4 +16,6 @@ protocol HomePresentable {
     func fetchShowcaseApps()
     func search(text:String?) -> [ShowcaseAppViewModel]
     func transitionToShowcaseAppDetailView(with showcaseAppViewModel: ShowcaseAppViewModel)
+    func signOutUser()
+    func signedOut()
 }
