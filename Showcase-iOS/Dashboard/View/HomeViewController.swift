@@ -11,7 +11,6 @@ import UIKit
 class HomeViewController: UICollectionViewController {
     var presenter: HomePresentable?
     var showcaseAppsViewModels = [ShowcaseAppViewModel]()
-    var filteredShowcaseAppsViewModels = [ShowcaseAppViewModel]()
     var firebaseStorage:FIRStoring?
     let searchController = UISearchController(searchResultsController: nil)
     var errorView: ErrorView?
@@ -20,26 +19,36 @@ class HomeViewController: UICollectionViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigationBar()
+        self.resolveInjectables()
         self.registerCollectionViewNib()
         self.addLoadingAnimationView()
         self.presenter?.fetchShowcaseApps()
-    }    
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.searchController.isActive = false
+    }
+    
+    func resolveInjectables() {
+        let dependencyContainer = DependencyContainer.container()
+        let homePresenter = dependencyContainer.resolve(HomePresentable.self) as! HomePresenter
+        let firebaseStorage = dependencyContainer.resolve(FIRStoring.self)
+        self.presenter = homePresenter
+        homePresenter.homePresenterViewable = self
+        homePresenter.firebaseStorage = firebaseStorage
+        self.firebaseStorage = firebaseStorage
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.definesPresentationContext = true
         self.searchController.delegate = self
         self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
         self.navigationController?.navigationBar.items?.first?.searchController = searchController
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.setupNavigationBar()
-    }
-    
-    func setupNavigationBar() {
-        self.tabBarController?.navigationItem.title = "DVT Showcase"
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationItem.title = "DVT Showcase"
     }
     
     func registerCollectionViewNib() {
@@ -57,12 +66,12 @@ class HomeViewController: UICollectionViewController {
 extension HomeViewController : UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filteredShowcaseAppsViewModels.count
+        return self.showcaseAppsViewModels.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseAppViewIdentifier", for: indexPath) as! ShowcaseAppCollectionViewCell
-        cell.populateCell(with: filteredShowcaseAppsViewModels[indexPath.row], imageDictionary: self.imagesDictionary)
+        cell.populateCell(with: self.showcaseAppsViewModels[indexPath.row], imageDictionary: self.imagesDictionary)
         return cell
     }
     
@@ -83,7 +92,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let showcaseAppViewModel = self.filteredShowcaseAppsViewModels[indexPath.row]
+        let showcaseAppViewModel = self.showcaseAppsViewModels[indexPath.row]
         self.presenter?.transitionToShowcaseAppDetailView(with: showcaseAppViewModel)
     }
 }
@@ -97,12 +106,10 @@ extension HomeViewController: HomePresenterViewable {
         loadingView?.isHidden = true
     }
     
-    
     func showOnSuccess(with showcaseApps: [ShowcaseAppViewModel]) {
-        self.showcaseAppsViewModels = showcaseApps
-        presenter?.fetchAllImages(for: self.showcaseAppsViewModels, completed: { (imageDictionary) in
+        presenter?.fetchAllImages(for: showcaseApps, completed: { (imageDictionary) in
             self.imagesDictionary = imageDictionary
-            self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels
+            self.showcaseAppsViewModels = showcaseApps
             self.collectionView?.reloadData()
         })
     }
@@ -124,7 +131,7 @@ extension HomeViewController: UISearchResultsUpdating, UISearchControllerDelegat
         guard let filteredShowcaseApps = self.presenter?.search(text: searchController.searchBar.text) else {
             return
         }
-        self.filteredShowcaseAppsViewModels = filteredShowcaseApps
+        self.showcaseAppsViewModels = filteredShowcaseApps
         self.collectionView?.reloadData()
     }
 }

@@ -24,8 +24,11 @@ class ShowcaseAppDetailViewController: UIViewController {
         self.screenShotsScrollView.delegate = self
         self.screenShotsScrollView.dataSource = self
         self.registerScreenshotsCell()
-        self.initViews()
         self.title = showcaseAppViewModel?.name        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.initViews()
     }
     
     func initViews() {

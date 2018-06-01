@@ -76,7 +76,7 @@ class HomePresenter: HomePresentable {
             }
             return filtered
         }
-        filteredShowcaseAppsViewModels = showcaseApps        
+        filteredShowcaseAppsViewModels = showcaseApps
         return filteredShowcaseAppsViewModels
     }
     
