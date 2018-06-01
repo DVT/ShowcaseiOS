@@ -191,27 +191,27 @@ class HomePresentableTests: XCTestCase {
     
     func testThatWhenTheHomeViewIsNotAHomeViewControllerThenTheTransitionToLoginViewIsNotInvokedWhenTheSignOutGetsCalled() {
         stub(mockWireFrameDelegate) { (mock) in
-            _ = when(mock.transitionToLoginView(controller: any()).thenDoNothing())
+            _ = when(mock.transitionToLoginView(any()).thenDoNothing())
         }
         stub(mockUserDefaults) { (mock) in
             _ = when(mock.set(value: any(), forKey: any()).thenDoNothing())
         }
         systemUnderTest?.signedOut()
         verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
-        verify(mockWireFrameDelegate, never()).transitionToLoginView(controller: any())
+        verify(mockWireFrameDelegate, never()).transitionToLoginView(any())
     }
     
     func testThatWhenTheHomeViewIsAHomeViewControllerThenTheTransitionToLoginViewIsNotInvokedWhenTheSignOutGetsCalled() {
         systemUnderTest?.homePresenterViewable = HomeViewController()
         stub(mockWireFrameDelegate) { (mock) in
-            _ = when(mock.transitionToLoginView(controller: any()).thenDoNothing())
+            _ = when(mock.transitionToLoginView(any()).thenDoNothing())
         }
         stub(mockUserDefaults) { (mock) in
             _ = when(mock.set(value: any(), forKey: any()).thenDoNothing())
         }
         systemUnderTest?.signedOut()
         verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
-        verify(mockWireFrameDelegate, times(1)).transitionToLoginView(controller: any())
+        verify(mockWireFrameDelegate, times(1)).transitionToLoginView(any())
     }
     
     func setupMockShowcaseAppDictionary() -> [String: Any] {
