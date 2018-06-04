@@ -90,8 +90,7 @@ extension LoginViewController: LoginPresenterViewable {
     
     func showSuccess() {
         let tabBarViewController = TabBarViewController.instantiate(fromAppStoryboard: .Main)
-        let navigationController = UINavigationController(rootViewController:tabBarViewController)
-        self.present(navigationController, animated: true, completion: nil)
+        self.present(tabBarViewController, animated: true, completion: nil)
     }
 }
 

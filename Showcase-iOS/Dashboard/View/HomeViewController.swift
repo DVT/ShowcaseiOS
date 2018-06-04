@@ -20,26 +20,28 @@ class HomeViewController: UICollectionViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigationBar()
+        self.resolveInjectables()
+        self.navigationItem.title = "DVT Showcase"
         self.registerCollectionViewNib()
         self.addLoadingAnimationView()
         self.presenter?.fetchShowcaseApps()
-    }    
+    }
+    
+    func resolveInjectables() {
+        let dependencyContainer = DependencyContainer.container()
+        let homePresenter = dependencyContainer.resolve(HomePresentable.self) as! HomePresenter
+        let firebaseStorage = dependencyContainer.resolve(FIRStoring.self)
+        self.presenter = homePresenter
+        homePresenter.homePresenterViewable = self
+        homePresenter.firebaseStorage = firebaseStorage
+        self.firebaseStorage = firebaseStorage
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.searchController.delegate = self
         self.searchController.searchResultsUpdater = self
         self.navigationController?.navigationBar.items?.first?.searchController = searchController
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.setupNavigationBar()
-    }
-    
-    func setupNavigationBar() {
-        self.tabBarController?.navigationItem.title = "DVT Showcase"
     }
     
     func registerCollectionViewNib() {
