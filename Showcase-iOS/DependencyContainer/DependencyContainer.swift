@@ -23,7 +23,7 @@ struct DependencyContainer {
             loginInteractor.userAuthenticator = userAuthentication
             loginInteractor.loginPresenter = loginPresenter
             loginPresenter.loginInteractor = loginInteractor
-            loginPresenter.userDefaults = UserDefaultsImplementation()
+            loginPresenter.userDefaults = r.resolve(UserDefaultsProtocol.self)
             return loginPresenter
         }
         
@@ -32,6 +32,10 @@ struct DependencyContainer {
             homeViewController.presenter = r.resolve(HomePresentable.self)
             homeViewController.firebaseStorage = r.resolve(FIRStoring.self)
             return homeViewController
+        }
+        
+        container.register(UserDefaultsProtocol.self) { r in
+            return UserDefaultsImplementation()
         }
         
         container.register(ContactUsPresenterViewable.self) { r in
@@ -61,12 +65,21 @@ struct DependencyContainer {
             return MainDetailViewModel()
         }
         
+        container.register(UserSignOut.self) { r in
+            return SignOut(Auth.auth())
+        }
+        
         container.register(HomePresentable.self) {r in
             let homePresenter = HomePresenter()
             let homeInteractor = HomeInteractor()
+            let signOutInteractor = SignOutInteractor()
             homeInteractor.firebaseDatabaseReference = r.resolve(DataReferenceable.self)
             homePresenter.homePresenterInteractable = homeInteractor
             homePresenter.wireframe = r.resolve(WireframeDelegate.self)
+            homePresenter.userDefaults = r.resolve(UserDefaultsProtocol.self)
+            homePresenter.signOutInteractor = signOutInteractor
+            homePresenter.signOutInteractor?.userSignOut = r.resolve(UserSignOut.self)
+            homePresenter.signOutInteractor?.homePresenter = homePresenter
             homeInteractor.homePresenter = homePresenter
             return homePresenter
         }
