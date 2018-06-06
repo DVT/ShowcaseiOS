@@ -39,9 +39,13 @@ class HomeViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.definesPresentationContext = true
         self.searchController.delegate = self
         self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
         self.navigationController?.navigationBar.items?.first?.searchController = searchController
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationItem.title = "DVT Showcase"
     }
     
     func registerCollectionViewNib() {
