@@ -28,9 +28,8 @@ class Wireframe: WireframeDelegate {
     
     func transitionToLoginView(_ controller:HomeViewController) {
         self.onMainThread {
-            let newController = LoginViewController.instantiate(fromAppStoryboard: .Login)
-            let navigationController = UINavigationController(rootViewController: newController)
-            navigationController.present(newController, animated: true)
+            let newController = LoginNavigationController.instantiate(fromAppStoryboard: .Login)
+            controller.present(newController, animated: true)
         }
     }
 }
