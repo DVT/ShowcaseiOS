@@ -12,6 +12,14 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBarColorPallete()
+    }
+    
+    func setupNavigationBarColorPallete() {
+        UINavigationBar.appearance().tintColor = .DvtBlueColor
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.DvtBlueColor]
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .defaultPrompt)        
+        UINavigationBar.appearance().isTranslucent = false
     }
 }
 
