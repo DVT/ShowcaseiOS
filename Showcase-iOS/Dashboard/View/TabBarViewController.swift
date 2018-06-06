@@ -16,10 +16,11 @@ class TabBarViewController: UITabBarController {
     }
     
     func setupNavigationBarColorPallete() {
-        UINavigationBar.appearance().tintColor = .DvtBlueColor
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.DvtBlueColor]
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .defaultPrompt)        
-        UINavigationBar.appearance().isTranslucent = false
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.tintColor = .DvtBlueColor
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.DvtBlueColor]
+        navigationBar.setBackgroundImage(UIImage(), for: .defaultPrompt)
+        navigationBar.isTranslucent = false
     }
 }
 
