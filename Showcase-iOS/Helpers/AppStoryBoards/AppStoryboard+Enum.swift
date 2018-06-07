@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum AppStoryBoard: String {
-    case Login, Main, Home, About, Contact
+    case Login, Main, Home, About, Contact, DetailView
     
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

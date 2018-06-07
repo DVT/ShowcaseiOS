@@ -20,10 +20,6 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eKp-qa-Msu">
                         <rect key="frame" x="0.0" y="0.0" width="113" height="200"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="200" id="05F-Bp-F4n"/>
-                            <constraint firstAttribute="width" constant="113" id="KQ8-gI-8L5"/>
-                        </constraints>
                     </imageView>
                 </subviews>
             </view>

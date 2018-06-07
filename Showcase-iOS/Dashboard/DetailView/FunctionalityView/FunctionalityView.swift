@@ -9,7 +9,7 @@ class FunctionalityView: UIView {
     
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var functionality: UILabel!
-    
+    @IBOutlet private weak var technology: UILabel!
     //MARK: Lifecycle
     
     override init(frame: CGRect) {
@@ -32,6 +32,7 @@ class FunctionalityView: UIView {
     
     func populateView(with shoecaseApp: ShowcaseAppViewModel?) {
         functionality.text = shoecaseApp?.functionality
+        technology.text = shoecaseApp?.technologyUsed
     }
     
 }

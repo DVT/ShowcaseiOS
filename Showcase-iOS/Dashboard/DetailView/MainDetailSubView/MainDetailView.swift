@@ -48,6 +48,7 @@ class MainDetailView: UIView {
         if showcaseApp?.iosPackageName == nil {
             self.installButton.isHidden = true
         }
+        installButton.layer.cornerRadius = 10
     }
     
     private func populateImageView(with imagePath: String) {
