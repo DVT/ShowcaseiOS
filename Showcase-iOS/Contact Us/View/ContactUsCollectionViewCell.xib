@@ -76,7 +76,7 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ia4-fh-egg">
-                        <rect key="frame" x="16" y="249" width="326" height="1"/>
+                        <rect key="frame" x="16" y="249" width="342" height="1"/>
                         <color key="backgroundColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="whi-D9-xPR"/>
@@ -113,7 +113,7 @@
                 <constraint firstItem="a49-CS-4y5" firstAttribute="top" secondItem="WrP-Fj-oE9" secondAttribute="bottom" constant="15" id="av7-YL-Rov"/>
                 <constraint firstItem="3UM-WF-QqQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="ejU-oQ-ow4"/>
                 <constraint firstItem="3UM-WF-QqQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="g60-V4-6NG"/>
-                <constraint firstAttribute="trailing" secondItem="Ia4-fh-egg" secondAttribute="trailing" constant="16" id="lfq-mA-IGW"/>
+                <constraint firstAttribute="trailing" secondItem="Ia4-fh-egg" secondAttribute="trailing" id="lfq-mA-IGW"/>
                 <constraint firstItem="0Yl-6r-XEu" firstAttribute="top" secondItem="WrP-Fj-oE9" secondAttribute="bottom" constant="15" id="n7S-Kf-WeA"/>
                 <constraint firstItem="0Yl-6r-XEu" firstAttribute="leading" secondItem="C9E-fK-Qk6" secondAttribute="trailing" constant="30" id="ozu-7C-Xi6"/>
                 <constraint firstItem="7yt-pM-IGt" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="16" id="r3v-Cp-o58"/>

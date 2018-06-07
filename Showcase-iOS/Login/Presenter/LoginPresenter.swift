@@ -8,12 +8,12 @@
 
 import Foundation
 import FirebaseAuth
-import MessageUI
 
 class LoginPresenter: LoginPresentable {
     var userDefaults: UserDefaultsProtocol?
     var loginViewer: LoginPresenterViewable?
     var loginInteractor: LoginPresenterInteractable?
+    var wireframe: WireframeDelegate?
     
     let emailValidator = EmailValidator()
     let passwordValidator = PasswordValidator()
@@ -38,6 +38,13 @@ class LoginPresenter: LoginPresentable {
             }
         }
     }
+    
+    func openMailClient() {
+        guard let loginViewController = loginViewer as? LoginViewController else {
+            return
+        }
+        self.wireframe?.transitionToMailComposer(loginViewController)
+    }
 }
 
 extension LoginPresenter: LoginInteractorPresentable {
@@ -54,23 +61,5 @@ extension LoginPresenter: LoginInteractorPresentable {
     }
 }
 
-extension LoginPresenter: MailComposable {
-    func openMailClient() {
-        let loginViewController = loginViewer as! LoginViewController
-        let emailvalue = "mobile@dvt.co.za" //TODO: Maybe this email can come from firebase at a later stage
-        if !MFMailComposeViewController.canSendMail() {
-            let emailValidator = EmailValidator()
-            if emailValidator.isValid(emailvalue) {
-                guard let emailAddress = URL(string: "mailto:\(emailvalue)") else {return}
-                loginViewController.sharedApplication?.openSharedApplication(with: emailAddress)
-            }
-        }
-        let mailClient = MFMailComposeViewController()
-        mailClient.mailComposeDelegate = loginViewController
-        mailClient.setToRecipients([emailvalue])
-        mailClient.setSubject("New User Registration")
-        loginViewController.present(mailClient, animated: true, completion: nil)
-    }
-}
 
 

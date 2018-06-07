@@ -18,6 +18,7 @@ class LoginPresenterTests: XCTestCase {
     var mockLoginInteractor = MockLoginPresenterInteractable()
     let mockLoginPresenter = MockLoginInteractorPresentable()
     let mockUserDefaults = MockUserDefaultsProtocol()
+    var mockWireFrameDelegate = MockWireframeDelegate()
     
     override func setUp() {
         super.setUp()
@@ -26,6 +27,7 @@ class LoginPresenterTests: XCTestCase {
         systemUnderTest.loginInteractor = mockLoginInteractor
         systemUnderTest.userDefaults = mockUserDefaults
         systemUnderTest.loginViewer = mockLoginViewer
+        systemUnderTest.wireframe = mockWireFrameDelegate
     }
 
     func testThatTheSignInMethodOfTheLoginInteractorGetsCalled() {
@@ -137,5 +139,22 @@ class LoginPresenterTests: XCTestCase {
         XCTAssertTrue(userDefaultsDictionary["\(UserDefaultsKeys.isLoggedIn.rawValue)"]!)
         verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
     }
-
+    
+    func testThatWhenLoginViewIsNotALoginViewControllerThenTransitionToMailComposerIsNotInvokedWhenOpenMailClientGetsCalled() {
+        systemUnderTest?.loginViewer = nil
+        stub(mockWireFrameDelegate) { (mock) in
+            _ = when(mock.transitionToMailComposer(any()).thenDoNothing())
+        }
+        systemUnderTest?.openMailClient()
+        verify(mockWireFrameDelegate, times(0)).transitionToMailComposer(any())
+    }
+    
+    func testThatWhenLoginViewIsALoginViewControllerThenTransitionToMailComposerIsInvokedWhenOpenMailClientGetsCalled() {
+        systemUnderTest?.loginViewer = LoginViewController()
+        stub(mockWireFrameDelegate) { (mock) in
+            _ = when(mock.transitionToMailComposer(any()).thenDoNothing())
+        }
+        systemUnderTest?.openMailClient()
+        verify(mockWireFrameDelegate, times(1)).transitionToMailComposer(any())
+    }
 }

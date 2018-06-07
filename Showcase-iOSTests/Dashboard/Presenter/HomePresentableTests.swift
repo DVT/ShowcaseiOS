@@ -16,6 +16,10 @@ class HomePresentableTests: XCTestCase {
     var mockHomeInteractor = MockHomePresenterInteractable()
     var mockWireFrameDelegate = MockWireframeDelegate()
     var homePresenter = MockHomePresentable()
+    var mockFirebaseStorage = MockFIRStoring()
+    var mockStorageReference = MockStorageReferenceable()
+    var mockSignOutInteractor = MockSignOutInteractor()
+    var mockUserDefaults = MockUserDefaultsProtocol()
     var mockShowcaseApps = [ShowcaseApp]()
     var systemUnderTest: HomePresenter?
     var mockShowcassAppViewModels = [ShowcaseAppViewModel]()
@@ -26,6 +30,9 @@ class HomePresentableTests: XCTestCase {
         homePresenter.homePresenterInteractable = mockHomeInteractor
         homePresenter.homePresenterViewable = mockHomeViewer
         homePresenter.wireframe = mockWireFrameDelegate
+        homePresenter.firebaseStorage = mockFirebaseStorage
+        homePresenter.signOutInteractor = mockSignOutInteractor
+        homePresenter.userDefaults = mockUserDefaults
         systemUnderTest = homePresenter
     }
     
@@ -123,6 +130,89 @@ class HomePresentableTests: XCTestCase {
         verify(mockHomeInteractor, times(1)).fetchShowcaseApps()
     }
     
+    func testThatIfHomePresenterDoesNotHaveAFirebaseStorageThenFetchAllImagesCompletesWithAnEmptyDictionary() {
+        systemUnderTest?.firebaseStorage = nil
+        systemUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
+            XCTAssertTrue(dictionary.isEmpty)
+        })
+    }
+    
+    func testThatIfHomePresenterHasAFirebaseStorageThenFetchAllImagesCompleteseWithAnEmptyDictionaryIfTheShowcaseAppViewModelsAreEmpty() {
+        stub(mockFirebaseStorage) { (mock) in
+            _ = when(mock.storageReference().thenReturn(mockStorageReference))
+        }
+        systemUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
+            XCTAssertTrue(dictionary.isEmpty)
+        })
+    }
+    
+    
+    func testThatFetchAllImagesCompletesWithADictionaryOfImageURLSWhenShowcaseAppViewModelsEmptyWhenTheImageFetcherReturnsErrors() {
+        self.setupMockShowcaseAppViewModels()
+        stub(mockFirebaseStorage) { (mock) in
+            _ = when(mock.storageReference().thenReturn(mockStorageReference))
+        }
+        stub(mockStorageReference) { (mock) in
+            _ = when(mock.child(from: any()).thenReturn(mockStorageReference))
+            _ = when(mock.downloadImageUrl(completion: any()).then({ completion in
+                let error = NSError(domain: "error", code: 1, userInfo: nil)
+                completion(nil, error)
+            }))
+        }
+        systemUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
+            XCTAssertTrue(dictionary.isEmpty)
+        })
+    }
+    
+    func testThatFetchAllImagesCompletesWithADictionaryOfImageURLSWhenShowcaseAppViewModelsNotEmptyWhenTheImageFetcherReturnsValidImageURLSFromFirebase() {
+        self.setupMockShowcaseAppViewModels()
+        stub(mockFirebaseStorage) { (mock) in
+            _ = when(mock.storageReference().thenReturn(mockStorageReference))
+        }
+        stub(mockStorageReference) { (mock) in
+            _ = when(mock.child(from: any()).thenReturn(mockStorageReference))
+            _ = when(mock.downloadImageUrl(completion: any()).then({ completion in
+                let imageURL = URL(string: "https://www.testUrl.png")
+                completion(imageURL, nil)
+            }))
+        }
+        systemUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
+            XCTAssertTrue(!dictionary.isEmpty)
+        })
+    }
+
+    func testThatTheSignOutUserMethodOfTheSignOutInteractorGetInvokedWhenSignGetsCalled() {
+        stub(mockSignOutInteractor) { (mock) in
+            _ = when(mock.signOut().thenDoNothing())
+        }
+        systemUnderTest?.signOutUser()
+        verify(mockSignOutInteractor, times(1)).signOut()
+    }
+    
+    func testThatWhenTheHomeViewIsNotAHomeViewControllerThenTheTransitionToLoginViewIsNotInvokedWhenTheSignOutGetsCalled() {
+        stub(mockWireFrameDelegate) { (mock) in
+            _ = when(mock.transitionToLoginView(any()).thenDoNothing())
+        }
+        stub(mockUserDefaults) { (mock) in
+            _ = when(mock.set(value: any(), forKey: any()).thenDoNothing())
+        }
+        systemUnderTest?.signedOut()
+        verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
+        verify(mockWireFrameDelegate, never()).transitionToLoginView(any())
+    }
+    
+    func testThatWhenTheHomeViewIsAHomeViewControllerThenTheTransitionToLoginViewIsNotInvokedWhenTheSignOutGetsCalled() {
+        systemUnderTest?.homePresenterViewable = HomeViewController()
+        stub(mockWireFrameDelegate) { (mock) in
+            _ = when(mock.transitionToLoginView(any()).thenDoNothing())
+        }
+        stub(mockUserDefaults) { (mock) in
+            _ = when(mock.set(value: any(), forKey: any()).thenDoNothing())
+        }
+        systemUnderTest?.signedOut()
+        verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
+        verify(mockWireFrameDelegate, times(1)).transitionToLoginView(any())
+    }
     
     func setupMockShowcaseAppDictionary() -> [String: Any] {
         var dictionary = [String: Any]()

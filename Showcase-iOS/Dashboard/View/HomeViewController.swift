@@ -16,29 +16,41 @@ class HomeViewController: UICollectionViewController {
     let searchController = UISearchController(searchResultsController: nil)
     var errorView: ErrorView?
     var loadingView: LoadingView?
+    var imagesDictionary: [String: URL] = [:]
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigationBar()
+        self.resolveInjectables()
+        self.addRightUIBarButtonItem()
+        self.navigationItem.title = "DVT Showcase"
         self.registerCollectionViewNib()
+        self.addLoadingAnimationView()
         self.presenter?.fetchShowcaseApps()
-    }    
+    }
+    
+    func addRightUIBarButtonItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
+    }
+    
+    func resolveInjectables() {
+        let dependencyContainer = DependencyContainer.container()
+        let homePresenter = dependencyContainer.resolve(HomePresentable.self) as! HomePresenter
+        let firebaseStorage = dependencyContainer.resolve(FIRStoring.self)
+        self.presenter = homePresenter
+        homePresenter.homePresenterViewable = self
+        homePresenter.firebaseStorage = firebaseStorage
+        self.firebaseStorage = firebaseStorage
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.definesPresentationContext = true
         self.searchController.delegate = self
         self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
         self.navigationController?.navigationBar.items?.first?.searchController = searchController
-        self.addLoadingAnimationView()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.setupNavigationBar()
-    }
-    
-    func setupNavigationBar() {
-        self.tabBarController?.navigationItem.title = "DVT Showcase"
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationItem.title = "DVT Showcase"
     }
     
     func registerCollectionViewNib() {
@@ -48,8 +60,25 @@ class HomeViewController: UICollectionViewController {
     
     func addLoadingAnimationView() {
         loadingView = LoadingView(frame: self.view.frame)
-         loadingView?.isHidden = false
+        loadingView?.isHidden = false
         self.view.addSubview(loadingView!)
+    }
+    
+    @objc func logoutTapped() {
+        self.onMainThread {
+            let message = "Are you sure you want to logout?"
+            let alertController = UIAlertController(title: "Logout", message: message, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: {
+                (action: UIAlertAction) in
+                self.presenter?.signOutUser()
+            }))
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func onMainThread(block:@escaping () -> Void) {
+        DispatchQueue.main.async(execute: block)
     }
 }
 
@@ -61,8 +90,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseAppViewIdentifier", for: indexPath) as! ShowcaseAppCollectionViewCell
-        cell.firebaseStorage = firebaseStorage
-        cell.populateCell(with: filteredShowcaseAppsViewModels[indexPath.row])
+        cell.populateCell(with: filteredShowcaseAppsViewModels[indexPath.row], imageDictionary: self.imagesDictionary)
         return cell
     }
     
@@ -90,7 +118,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: HomePresenterViewable {
     func startLoadingAnimation() {
-       loadingView?.isHidden = false
+        loadingView?.isHidden = false
     }
     
     func stopLoadingAnimation() {
@@ -100,8 +128,11 @@ extension HomeViewController: HomePresenterViewable {
     
     func showOnSuccess(with showcaseApps: [ShowcaseAppViewModel]) {
         self.showcaseAppsViewModels = showcaseApps
-        self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels
-        self.collectionView?.reloadData()
+        presenter?.fetchAllImages(for: self.showcaseAppsViewModels, completed: { (imageDictionary) in
+            self.imagesDictionary = imageDictionary
+            self.filteredShowcaseAppsViewModels = self.showcaseAppsViewModels
+            self.collectionView?.reloadData()
+        })
     }
     
     func showOnFailure(with error: DatabaseError) {
@@ -116,7 +147,7 @@ extension HomeViewController: HomePresenterViewable {
 }
 
 extension HomeViewController: UISearchResultsUpdating, UISearchControllerDelegate {
-   
+    
     func updateSearchResults(for searchController: UISearchController) {
         guard let filteredShowcaseApps = self.presenter?.search(text: searchController.searchBar.text) else {
             return

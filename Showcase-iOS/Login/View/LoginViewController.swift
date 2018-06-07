@@ -41,8 +41,7 @@ class LoginViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     @IBAction func didMissingLoginDetails(_ sender: Any) {
-        let loginPresentor = loginPresenter as! MailComposable
-        loginPresentor.openMailClient()
+        self.loginPresenter?.openMailClient()
     }
     
     // MARK: MailComposeViewControllerDelegate
@@ -103,8 +102,7 @@ extension LoginViewController: LoginPresenterViewable {
     
     func showSuccess() {
         let tabBarViewController = TabBarViewController.instantiate(fromAppStoryboard: .Main)
-        let navigationController = UINavigationController(rootViewController:tabBarViewController)
-        self.present(navigationController, animated: true, completion: nil)
+        self.present(tabBarViewController, animated: true, completion: nil)
     }
 }
 
