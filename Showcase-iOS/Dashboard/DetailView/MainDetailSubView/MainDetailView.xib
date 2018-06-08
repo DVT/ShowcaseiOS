@@ -21,26 +21,29 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="Ps3-yo-k7R">
-            <rect key="frame" x="0.0" y="0.0" width="384" height="122"/>
+            <rect key="frame" x="0.0" y="0.0" width="384" height="139"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FJU-a9-G3x">
                     <rect key="frame" x="8" y="8" width="100" height="103"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="ZMc-HA-MSb"/>
+                        <constraint firstAttribute="height" constant="103" id="wuP-we-z2T"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enterprise Mobility Forum" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utj-Ya-FtB">
-                    <rect key="frame" x="116" y="8" width="204" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enterprise Mobility Forum" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utj-Ya-FtB">
+                    <rect key="frame" x="116" y="9" width="177" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="177" id="qcB-8W-1oT"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8E-BV-Ruw">
-                    <rect key="frame" x="328" y="8" width="48" height="28"/>
+                    <rect key="frame" x="301" y="8" width="75" height="28"/>
                     <color key="backgroundColor" red="0.0" green="0.49803921569999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="48" id="aF0-yV-sdV"/>
+                        <constraint firstAttribute="width" constant="75" id="aF0-yV-sdV"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="Install">
@@ -51,37 +54,49 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nomadic Verve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN0-SI-bsi">
-                    <rect key="frame" x="116" y="30" width="73" height="12"/>
+                    <rect key="frame" x="116" y="31" width="73" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="73" id="doL-Do-D3I"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="A yearly exclusive event targeted at decision makers and executives" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTi-pm-csV">
-                    <rect key="frame" x="116" y="57.000000000000007" width="260" height="31.333333333333336"/>
+                    <rect key="frame" x="116" y="58.000000000000007" width="260" height="31.333333333333336"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n09-f7-Qo4">
+                    <rect key="frame" x="8" y="122" width="376" height="2"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="7DN-1u-krG"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="FJU-a9-G3x" firstAttribute="leading" secondItem="Kac-2G-cNu" secondAttribute="leading" constant="8" id="2LH-Af-zCF"/>
                 <constraint firstItem="ZN0-SI-bsi" firstAttribute="leading" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="8" id="8vN-VP-QUT"/>
                 <constraint firstItem="Y8E-BV-Ruw" firstAttribute="leading" secondItem="utj-Ya-FtB" secondAttribute="trailing" constant="8" id="8wK-bN-RPH"/>
-                <constraint firstItem="Kac-2G-cNu" firstAttribute="bottom" secondItem="FJU-a9-G3x" secondAttribute="bottom" constant="11" id="DZg-Dm-MgP"/>
                 <constraint firstItem="ZN0-SI-bsi" firstAttribute="top" secondItem="utj-Ya-FtB" secondAttribute="bottom" constant="5.3333333333333357" id="Lk0-XZ-19V"/>
+                <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="n09-f7-Qo4" secondAttribute="trailing" id="VOq-Wv-DwU"/>
+                <constraint firstItem="n09-f7-Qo4" firstAttribute="top" secondItem="FJU-a9-G3x" secondAttribute="bottom" constant="11" id="bJx-ep-24K"/>
                 <constraint firstItem="LTi-pm-csV" firstAttribute="top" secondItem="ZN0-SI-bsi" secondAttribute="bottom" constant="15" id="bck-08-t2I"/>
                 <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="Y8E-BV-Ruw" secondAttribute="trailing" constant="8" id="dSc-hJ-zgE"/>
+                <constraint firstItem="n09-f7-Qo4" firstAttribute="leading" secondItem="Kac-2G-cNu" secondAttribute="leading" constant="8" id="fSB-4Z-euu"/>
                 <constraint firstItem="Y8E-BV-Ruw" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="8" id="ijc-As-eTv"/>
                 <constraint firstItem="LTi-pm-csV" firstAttribute="leading" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="8" id="kqd-v6-qpx"/>
                 <constraint firstItem="Kac-2G-cNu" firstAttribute="trailing" secondItem="LTi-pm-csV" secondAttribute="trailing" constant="8" id="l37-yf-cc5"/>
                 <constraint firstItem="FJU-a9-G3x" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="8" id="l8k-iN-Uk6"/>
-                <constraint firstItem="utj-Ya-FtB" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="8" id="ltY-kP-078"/>
+                <constraint firstItem="utj-Ya-FtB" firstAttribute="top" secondItem="Kac-2G-cNu" secondAttribute="top" constant="9" id="ltY-kP-078"/>
                 <constraint firstItem="utj-Ya-FtB" firstAttribute="leading" secondItem="FJU-a9-G3x" secondAttribute="trailing" constant="8.0000000000000142" id="o5Y-NG-bbH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="Kac-2G-cNu"/>
-            <point key="canvasLocation" x="-1" y="-174"/>
+            <point key="canvasLocation" x="-1" y="-165.5"/>
         </view>
     </objects>
 </document>

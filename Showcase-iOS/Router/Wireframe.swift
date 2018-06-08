@@ -18,12 +18,10 @@ class Wireframe: WireframeDelegate {
     
     func transitionToShowcaseAppDetailView(_ controller:HomeViewController, with showcaseAppViewModel: ShowcaseAppViewModel) {
         self.onMainThread {
-            let navigationController = controller.navigationController
-            guard let newController = controller.storyboard?.instantiateViewController(withIdentifier: "DetailView") as? ShowcaseAppDetailViewController else {
-                return
-            }
+            let newController = ShowcaseAppDetailViewController.instantiate(fromAppStoryboard: .DetailView)
             newController.showcaseAppViewModel = showcaseAppViewModel
-            navigationController?.pushViewController(newController, animated: true)
+            controller.tabBarController?.tabBar.isHidden = true
+            controller.navigationController?.pushViewController(newController, animated: true)
         }
     }
     

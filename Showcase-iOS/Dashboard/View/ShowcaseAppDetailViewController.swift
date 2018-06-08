@@ -12,7 +12,6 @@ class ShowcaseAppDetailViewController: UIViewController {
     @IBOutlet private weak var scrollView:UIScrollView!
     @IBOutlet private weak var mainDetailSubView:UIView!
     @IBOutlet private weak var functionalityView:UIView!
-    @IBOutlet private weak var technologyView:UIView!
     @IBOutlet private weak var screenshotsView:UIView!
     @IBOutlet weak var screenShotsScrollView: UICollectionView!
     
@@ -29,6 +28,7 @@ class ShowcaseAppDetailViewController: UIViewController {
     }
     
     func initViews() {
+        self.view.translatesAutoresizingMaskIntoConstraints = true
         let main = MainDetailView(frame: mainDetailSubView.bounds)
         main.showcaseApp = showcaseAppViewModel
         let dependencyContainer = DependencyContainer.container()
@@ -38,14 +38,18 @@ class ShowcaseAppDetailViewController: UIViewController {
         let functionality = FunctionalityView(frame: functionalityView.bounds)
         functionality.populateView(with: showcaseAppViewModel)
         functionalityView.addSubviewPinnedToEdges(functionality)
-        let technology = TechnologyView(frame: technologyView.bounds)
-        technology.populateView(with: showcaseAppViewModel)
-        technologyView.addSubviewPinnedToEdges(technology)
-        guard let screenshots = showcaseAppViewModel?.screenshots else {
+        guard let screenshots = showcaseAppViewModel?.screenshots, screenshots.count > 0 else {
+            self.removeScreenshotView()
             return
         }
         self.screenshots = screenshots
         self.screenShotsScrollView.reloadData()
+    }
+    
+    func removeScreenshotView() {
+        self.screenshotsView.removeFromSuperview()
+        let top = NSLayoutConstraint(item: functionalityView, attribute:.top, relatedBy: .equal, toItem: mainDetailSubView, attribute: .bottom, multiplier: 1.0, constant: 0)
+        self.view.addConstraint(top)
     }
     
     func registerScreenshotsCell() {
