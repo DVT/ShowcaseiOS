@@ -377,7 +377,6 @@
 			isa = PBXGroup;
 			children = (
 				BCA4CF4D20C025C5005DD485 /* Logout */,
-				FD84DA9020BBF82A00ABE936 /* Wireframe */,
 				A389D66D20A59EDF008DB6FE /* FIRStorageTests */,
 				A3DBE44B209F8BC300561CE0 /* GeneratedShowcaseMocks.swift */,
 				FD37E28D2099EC5F006EA459 /* Dashboard */,

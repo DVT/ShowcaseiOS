@@ -17,8 +17,11 @@ class LoginNavigationController: UINavigationController {
     
     func initializeLoginView() {
         let loginViewController = self.viewControllers.first as? LoginViewController
-        var loginPresenter = DependencyContainer.container().resolve(LoginPresentable.self)
+        let dependencyContainer = DependencyContainer.container()
+        var loginPresenter = dependencyContainer.resolve(LoginPresentable.self)
         loginPresenter?.loginViewer = loginViewController
+        loginPresenter?.wireframe = dependencyContainer.resolve(WireframeDelegate.self)
         loginViewController?.loginPresenter = loginPresenter
+        loginViewController?.sharedApplication = dependencyContainer.resolve(SharedApplicationDelegate.self)
     }
 }

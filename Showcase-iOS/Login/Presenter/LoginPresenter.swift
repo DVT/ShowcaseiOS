@@ -13,6 +13,7 @@ class LoginPresenter: LoginPresentable {
     var userDefaults: UserDefaultsProtocol?
     var loginViewer: LoginPresenterViewable?
     var loginInteractor: LoginPresenterInteractable?
+    var wireframe: WireframeDelegate?
     
     let emailValidator = EmailValidator()
     let passwordValidator = PasswordValidator()
@@ -37,6 +38,13 @@ class LoginPresenter: LoginPresentable {
             }
         }
     }
+    
+    func openMailClient() {
+        guard let loginViewController = loginViewer as? LoginViewController else {
+            return
+        }
+        self.wireframe?.transitionToMailComposer(loginViewController)
+    }
 }
 
 extension LoginPresenter: LoginInteractorPresentable {
@@ -52,3 +60,6 @@ extension LoginPresenter: LoginInteractorPresentable {
         loginViewer?.showAuthenticationFailure(withMessage: authenticationError?.errorMessage)
     }
 }
+
+
+

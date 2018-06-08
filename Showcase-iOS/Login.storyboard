@@ -99,6 +99,9 @@
                                                 <state key="normal" title="Missing login details?">
                                                     <color key="titleColor" red="0.074509803921568626" green="0.49019607843137253" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didMissingLoginDetails:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6mh-9O-vxg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
