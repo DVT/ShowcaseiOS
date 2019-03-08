@@ -61,17 +61,31 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private func setupMap(){
-        let longitude = CLLocationDegrees(exactly: viewModel.longitude) ?? 0
-        let latitude = CLLocationDegrees(exactly: viewModel.latitude) ?? 0
-        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        let location = CLLocationCoordinate2D(latitude: latitude,
-                                              longitude: longitude)
-        let region = MKCoordinateRegion(center: location, span: span)
-        let pin = MKPointAnnotation()
-        pin.coordinate = region.center
+    private func setupMap() {
+        let location = createLocation()
+        let region = createRegion(location: location)
+        let pin = createPin(region: region)
         map.setRegion(region, animated: false)
         map.addAnnotation(pin)
+    }
+    
+    private func createLocation() -> CLLocationCoordinate2D {
+        let longitude = CLLocationDegrees(exactly: viewModel.longitude) ?? 0
+        let latitude = CLLocationDegrees(exactly: viewModel.latitude) ?? 0
+        let location = CLLocationCoordinate2D(latitude: latitude,
+                                              longitude: longitude)
+        return location
+    }
+    
+    private func createRegion(location: CLLocationCoordinate2D) -> MKCoordinateRegion {
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        return MKCoordinateRegion(center: location, span: span)
+    }
+    
+    private func createPin(region: MKCoordinateRegion) -> MKPointAnnotation {
+        let pin = MKPointAnnotation()
+        pin.coordinate = region.center
+        return pin
     }
     
     private func styleView() {
