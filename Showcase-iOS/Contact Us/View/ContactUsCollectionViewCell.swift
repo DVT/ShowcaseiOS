@@ -67,6 +67,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         let pin = createPin(region: region)
         map.setRegion(region, animated: false)
         map.addAnnotation(pin)
+        setupMapTap()
     }
     
     private func createLocation() -> CLLocationCoordinate2D {
@@ -88,10 +89,19 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         return pin
     }
     
+    private func setupMapTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(mapTapped(tapGestureRecognizer:)))
+        map.addGestureRecognizer(tap)
+    }
+    
     private func styleView() {
         email.setTitleColor(UIColor.DvtBlueColor, for: .normal)
         call.setTitleColor(UIColor.DvtBlueColor, for: .normal)
         navigate.setTitleColor(UIColor.DvtBlueColor, for: .normal)
         
+    }
+    
+    @objc private func mapTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        viewModel?.navigate()
     }
 }
