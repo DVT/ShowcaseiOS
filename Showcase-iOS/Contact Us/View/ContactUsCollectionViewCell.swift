@@ -79,7 +79,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     }
     
     private func createRegion(location: CLLocationCoordinate2D) -> MKCoordinateRegion {
-        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         return MKCoordinateRegion(center: location, span: span)
     }
     
