@@ -10,6 +10,7 @@ import Foundation
 
 enum Path: String {
     case office = "offices"
+    case socialMedia = "social"
     case apps = "apps"
     case none
 }

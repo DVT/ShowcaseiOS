@@ -93,6 +93,15 @@ struct DependencyContainer {
             return contactUsPresenter
         }
         
+        container.register(AboutPresentable.self) {r in
+            let aboutPresenter = AboutPresenter()
+            let aboutInteractor = AboutInteractableImplementation()
+            aboutInteractor.dataReference =  r.resolve(DataReferenceable.self)
+            aboutPresenter.aboutInteractor = aboutInteractor
+            aboutInteractor.aboutPresenter = aboutPresenter
+            return aboutPresenter
+        }
+        
         return container
     }
 }
