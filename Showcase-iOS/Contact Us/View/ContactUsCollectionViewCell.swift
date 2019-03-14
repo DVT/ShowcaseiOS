@@ -10,21 +10,17 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     
     static let identifier = String(describing: ContactUsCollectionViewCell.self)
     var firebaseStorage: FIRStoring?
-    let staticMapbaseUrl = "https://maps.googleapis.com/maps/api/staticmap?&zoom=15&size=600x300&maptype=roadmap&markers=color:red%7C"
     var viewModel: ContactUsCellViewModel!
     
     //MARK: @IBOutlets
     
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var mapImage: UIImageView!
+    @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var branch: UILabel!
     @IBOutlet weak var locationDescription: UILabel!
-    
     @IBOutlet weak var email: UIButton!
     @IBOutlet weak var call: UIButton!
     @IBOutlet weak var navigate: UIButton!
-    
-    
     
     //MARK: @IBActions
     
@@ -47,9 +43,8 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         populateImageView(with: imagePath)
         branch.text = viewModel?.branch
         locationDescription.text = viewModel?.locationDescription
-        populateStaticMap()
+        setupMap()
         styleView()
-        addTapRecogniserToStaticImage()
     }
     
     private func populateImageView(with imagePath: String) {
@@ -66,14 +61,37 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private func populateStaticMap(){
-        let temp = "\(staticMapbaseUrl)\(viewModel.latitude),\(viewModel.longitude)"
-        guard let mapUrl = URL(string: temp) else {
-            mapImage.image = #imageLiteral(resourceName: "placeHolder")
-            mapImage.contentMode = .scaleAspectFit
-            return
-        }
-        mapImage.kf.setImage(with: mapUrl)
+    private func setupMap() {
+        let location = createLocation()
+        let region = createRegion(location: location)
+        let pin = createPin(region: region)
+        map.setRegion(region, animated: false)
+        map.addAnnotation(pin)
+        setupMapTap()
+    }
+    
+    private func createLocation() -> CLLocationCoordinate2D {
+        let longitude = CLLocationDegrees(exactly: viewModel.longitude) ?? 0
+        let latitude = CLLocationDegrees(exactly: viewModel.latitude) ?? 0
+        let location = CLLocationCoordinate2D(latitude: latitude,
+                                              longitude: longitude)
+        return location
+    }
+    
+    private func createRegion(location: CLLocationCoordinate2D) -> MKCoordinateRegion {
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        return MKCoordinateRegion(center: location, span: span)
+    }
+    
+    private func createPin(region: MKCoordinateRegion) -> MKPointAnnotation {
+        let pin = MKPointAnnotation()
+        pin.coordinate = region.center
+        return pin
+    }
+    
+    private func setupMapTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(mapTapped(tapGestureRecognizer:)))
+        map.addGestureRecognizer(tap)
     }
     
     private func styleView() {
@@ -83,14 +101,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         
     }
     
-    private func addTapRecogniserToStaticImage() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(staticMapImageTapped(tapGestureRecognizer:)))
-        mapImage.isUserInteractionEnabled = true
-        mapImage.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    @objc private func staticMapImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc private func mapTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         viewModel?.navigate()
-        
     }
 }
