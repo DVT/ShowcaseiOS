@@ -31,7 +31,6 @@ class AboutPresenter: AboutPresentable {
     
     func retrieveSocialMediaLinks() {
         aboutView?.startLoadingAnimation()
-        
         //Mark TODO: remove mock and replace with aboutInteractor?.retrieveSocialMediaLinks()
         aboutInteractor?.retrieveMockedSocialMediaLinks()
     }

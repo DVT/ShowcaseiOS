@@ -18,17 +18,17 @@ class AboutViewModel {
     }
 
     var facebook : URL {
-        let url = URL(string: socialMediaLinks?.twitter ?? "https://www.facebook.com/DVTSoftware")
+        let url = URL(string: socialMediaLinks?.facebook ?? "https://www.facebook.com/DVTSoftware")
         return url!
     }
     
     var instagram : URL {
-        let url = URL(string: socialMediaLinks?.twitter ?? "https://www.instagram.com/dvtsoftware/")
+        let url = URL(string: socialMediaLinks?.instagram ?? "https://www.instagram.com/dvtsoftware/")
        return url!
     }
     
     var website : URL {
-        let url = URL(string: socialMediaLinks?.twitter ?? "https://www.dvt.co.za")
+        let url = URL(string: socialMediaLinks?.website ?? "https://www.dvt.co.za")
         return url!
     }
     

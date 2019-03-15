@@ -21,7 +21,7 @@ class ContactUsInteractableTests: XCTestCase {
     
     //MARK: System(s) under test
     
-    var systeUnderTest: ContactUsInteractableImplementation?
+    var systemUnderTest: ContactUsInteractableImplementation?
     var mockError: NSError?
     
     //MARK: Test lifcycle method(s)
@@ -32,7 +32,7 @@ class ContactUsInteractableTests: XCTestCase {
         let contactUsInteractor = ContactUsInteractableImplementation()
         contactUsInteractor.contactUsPresenter = mockContactUsPresentable
         contactUsInteractor.dataReference = mockDatabaseRefeceabele        
-        systeUnderTest = contactUsInteractor
+        systemUnderTest = contactUsInteractor
     }
     
     //MARK: Tests
@@ -50,7 +50,7 @@ class ContactUsInteractableTests: XCTestCase {
                 XCTAssertEqual(errorResult, self.mockError!)
             }))
         }
-        systeUnderTest?.retrieveContacts()
+        systemUnderTest?.retrieveContacts()
         verify(mockContactUsPresentable, times(1)).onRetrieveOfficesFailed(with: any())
     }
     
@@ -73,7 +73,7 @@ class ContactUsInteractableTests: XCTestCase {
             }))
         }
         
-        systeUnderTest?.retrieveContacts()
+        systemUnderTest?.retrieveContacts()
         verify(mockContactUsPresentable, times(1)).onRetrieveOfficesComplete(with: any())
     }
     
@@ -97,7 +97,7 @@ class ContactUsInteractableTests: XCTestCase {
             }))
         }
         
-        systeUnderTest?.retrieveContacts()
+        systemUnderTest?.retrieveContacts()
         verify(mockContactUsPresentable, times(1)).onRetrieveOfficesComplete(with: any())
     }
     
