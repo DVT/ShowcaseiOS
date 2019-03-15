@@ -1,7 +1,7 @@
 PODS:
   - Crashlytics (3.10.1):
     - Fabric (~> 1.7.5)
-  - Cuckoo (0.11.3)
+  - Cuckoo (0.12.1)
   - Fabric (1.7.6)
   - Firebase/Auth (5.0.1):
     - Firebase/CoreOnly
@@ -95,7 +95,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
-  Cuckoo: 97522dd7ac6f18adba6022bdc74aa69e82ca691a
+  Cuckoo: 2f10364798baa4b0d4aacabfa475249cf29977bc
   Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
   Firebase: d6861c2059d8c32d1e6dd8932e22ada346d90a3a
   FirebaseAnalytics: 19812b49fa5f283dd6b23edf8a14b5d477029ab8
