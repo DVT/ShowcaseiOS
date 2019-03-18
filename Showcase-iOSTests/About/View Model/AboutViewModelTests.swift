@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Cuckoo
+@testable import Showcase_iOS
 
 class AboutViewModelTests: XCTestCase {
     

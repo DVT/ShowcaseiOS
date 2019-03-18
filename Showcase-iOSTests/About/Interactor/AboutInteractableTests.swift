@@ -63,7 +63,7 @@ class AboutInteractableTests: XCTestCase {
         setUpMockStubs()
 
         stub(mockDataSnapshot) { (mock) in
-            _ = when(mock.value.get.thenReturn(nil))
+            _ = when(mock.value.get.thenReturn(mockEmptySocialMediaResponse()))
         }
 
         stub(mockDatabaseRefeceabele) { mock in
@@ -74,10 +74,10 @@ class AboutInteractableTests: XCTestCase {
 
         stub(mockAboutPresentable) { mock in
             _ = when(mock.onRetrieveSocialMediaLinksComplete(with: any()).then({ (links) in
-                XCTAssertTrue(links.website != nil)
-                XCTAssertTrue(links.instagram != nil)
-                XCTAssertTrue(links.facebook != nil)
-                XCTAssertTrue(links.twitter != nil)
+                XCTAssertTrue(links.website == nil)
+                XCTAssertTrue(links.instagram == nil)
+                XCTAssertTrue(links.facebook == nil)
+                XCTAssertTrue(links.twitter == nil)
             }))
         }
 
@@ -89,7 +89,7 @@ class AboutInteractableTests: XCTestCase {
         setUpMockStubs()
 
         stub(mockDataSnapshot) { (mock) in
-            _ = when(mock.value.get.thenReturn(mockSocialMediaResponse()))
+            _ = when(mock.value.get.thenReturn(mockValidSocialMediaResponse()))
         }
 
         stub(mockDatabaseRefeceabele) { mock in
@@ -119,11 +119,16 @@ class AboutInteractableTests: XCTestCase {
         }
     }
 
-    func mockSocialMediaResponse() -> [String:Any] {
+    func mockValidSocialMediaResponse() -> [String:Any] {
         let response: [String: Any] = ["twitter":"https://twitter.com/dvt_corporate",
                                        "facebook":"https://www.facebook.com/DVTSoftware",
                                        "website":"https://www.dvt.co.za",
                                        "instagram":"https://www.instagram.com/dvtsoftware/"]
+        return response
+    }
+    
+    func mockEmptySocialMediaResponse() -> [String:Any] {
+        let response: [String: Any] = ["":""]
         return response
     }
 

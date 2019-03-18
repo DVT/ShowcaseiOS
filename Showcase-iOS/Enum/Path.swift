@@ -9,8 +9,8 @@
 import Foundation
 
 enum Path: String {
+    case about = "about"
     case office = "offices"
-    case socialMedia = "social"
     case apps = "apps"
     case none
 }

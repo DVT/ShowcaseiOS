@@ -10,5 +10,4 @@ import Foundation
 
 protocol AboutInteractable {
    func retrieveSocialMediaLinks()
-   func retrieveMockedSocialMediaLinks()
 }

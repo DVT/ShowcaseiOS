@@ -44,7 +44,6 @@ class AboutPresenterTests: XCTestCase {
         }
         presenterUnderTest.onRetrieveSocialMediaLinksFailed(with: mockError)
         verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
-        verify(mockPresenterViewable, times(1)).hideOnFailure(with: any())
     }
     
     func testThatWhenRetrieveSocialMediaLinksSucceedsAndThatLinksIsNotNilThenShowOnSuccessIsCalled() {

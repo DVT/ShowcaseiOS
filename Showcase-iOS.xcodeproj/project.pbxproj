@@ -123,8 +123,6 @@
 		E081FF7B223A7E7E0035648A /* AboutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF7A223A7E7E0035648A /* AboutViewModelTests.swift */; };
 		E081FF85223B7CAC0035648A /* AboutInteractableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF84223B7CAC0035648A /* AboutInteractableTests.swift */; };
 		E081FF8A223B99810035648A /* AboutPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF89223B99810035648A /* AboutPresenterTests.swift */; };
-		E081FF8C223BA3650035648A /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF74223A43EF0035648A /* AboutViewModel.swift */; };
-		E081FF8D223BAA880035648A /* SocialMediaLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF67223A33DC0035648A /* SocialMediaLinks.swift */; };
 		FB0EE7F65FAF1782422E4431 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F34FA43F1070C363C19DD6 /* Pods_Showcase_iOSTests.framework */; };
 		FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2852099DA52006EA459 /* ShowcaseApp.swift */; };
 		FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */; };
@@ -1481,7 +1479,6 @@
 				BC5F20DE20BDC028000EABE6 /* ShowcaseAppCellViewModelTests.swift in Sources */,
 				FDE1AE87209C987D00D383C4 /* ShowcaseAppViewModelTests.swift in Sources */,
 				BCE5DA8D2087AB69000458FD /* UserAuthenticationTests.swift in Sources */,
-				E081FF8D223BAA880035648A /* SocialMediaLinks.swift in Sources */,
 				BC6D073F209246D400FFE9DD /* AuthErrorCodeTests.swift in Sources */,
 				FD37E28F2099EC94006EA459 /* HomeInteractableTests.swift in Sources */,
 				BC4D82D3208F6FB6003EFB06 /* PasswordValidatorTests.swift in Sources */,
@@ -1498,7 +1495,6 @@
 				BC4D82C5208F4CB8003EFB06 /* LoginPresenterTests.swift in Sources */,
 				A389D67520A5BD5F008DB6FE /* FirebaseImageFetcherTests.swift in Sources */,
 				BCE5DACE208A0908000458FD /* User.swift in Sources */,
-				E081FF8C223BA3650035648A /* AboutViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

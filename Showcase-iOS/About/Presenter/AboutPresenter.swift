@@ -26,13 +26,11 @@ class AboutPresenter: AboutPresentable {
     
     func onRetrieveSocialMediaLinksFailed(with error: Error) {
         aboutView?.stopLoadingAnimation()
-        aboutView?.hideOnFailure(with: error)
     }
     
     func retrieveSocialMediaLinks() {
         aboutView?.startLoadingAnimation()
-        //Mark TODO: remove mock and replace with aboutInteractor?.retrieveSocialMediaLinks()
-        aboutInteractor?.retrieveMockedSocialMediaLinks()
+        aboutInteractor?.retrieveSocialMediaLinks()
     }
 
 }
