@@ -64,7 +64,7 @@ class AboutViewController: UIViewController {
     }
     
     @IBAction func instagramTapped(_ sender: Any) {
-        if let instagramUrl = aboutViewModel?.twitter {
+        if let instagramUrl = aboutViewModel?.instagram {
             UIApplication.shared.open(instagramUrl, options: [:], completionHandler: nil)
         }
     }
