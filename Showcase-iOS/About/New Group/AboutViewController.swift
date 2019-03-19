@@ -18,13 +18,13 @@ class AboutViewController: UIViewController {
     var errorView: ErrorView?
     let dependencyContainer = DependencyContainer.container()
     
-    //MARK: @IBOutlets
+    // MARK: @IBOutlets
     
     @IBOutlet weak var loadingView: LoadingView!
  
     @IBOutlet weak var socialMediaStackView: UIStackView!
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class AboutViewController: UIViewController {
         self.firebaseStorage = firebaseStorage
     }
     
-    //MARK: @IBActions
+    // MARK: @IBActions
     
     @IBAction func websiteTapped(_ sender: Any) {
         if let websiteUrl = aboutViewModel?.website {
@@ -70,7 +70,7 @@ class AboutViewController: UIViewController {
     }
 }
 
- //MARK: Extension Presentable
+ // MARK: Extension Presentable
 
 extension AboutViewController: AboutPresenterViewable {
     

@@ -12,22 +12,22 @@ class AboutViewModel {
     
     var socialMediaLinks: SocialMediaLinks?
     
-    var twitter : URL {
+    var twitter: URL {
         let url = URL(string: socialMediaLinks?.twitter ?? "https://twitter.com/dvt_corporate")
         return url!
     }
 
-    var facebook : URL {
+    var facebook: URL {
         let url = URL(string: socialMediaLinks?.facebook ?? "https://www.facebook.com/DVTSoftware")
         return url!
     }
     
-    var instagram : URL {
+    var instagram: URL {
         let url = URL(string: socialMediaLinks?.instagram ?? "https://www.instagram.com/dvtsoftware/")
        return url!
     }
     
-    var website : URL {
+    var website: URL {
         let url = URL(string: socialMediaLinks?.website ?? "https://www.dvt.co.za")
         return url!
     }

@@ -10,12 +10,12 @@ import Foundation
 
 class AboutPresenter: AboutPresentable {
     
-    //MARK: Injectable Properties
+    // MARK: Injectable Properties
     
     var aboutView: AboutPresenterViewable?
     var aboutInteractor: AboutInteractable?
     
-     //MARK: Operations
+     // MARK: Operations
     
     func onRetrieveSocialMediaLinksComplete(with links: SocialMediaLinks) {
         let aboutViewModel = AboutViewModel(socialMediaLinks: links)

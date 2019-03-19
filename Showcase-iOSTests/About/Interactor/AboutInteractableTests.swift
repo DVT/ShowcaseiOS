@@ -13,19 +13,19 @@ import Firebase
 
 class AboutInteractableTests: XCTestCase {
 
-    // Mark: Mocked dependencies
+    // MARK: Mocked dependencies
 
     var mockDatabaseRefeceabele = MockDataReferenceable()
     var mockAboutPresentable = MockAboutPresentable()
     var mockDataSnapshot = MockDataSnapshotProtocol()
     var mockError: NSError?
 
-    // Mark: interactor under test
+    // MARK: interactor under test
     
     var interactorUnderTest: AboutInteractableImplementation?
 
 
-    // Mark: lifecycle methods
+    // MARK: lifecycle methods
     
     override func setUp() {
         super.setUp()
@@ -40,12 +40,12 @@ class AboutInteractableTests: XCTestCase {
 
     }
 
-    // Mark: Negative tests
+    // MARK: Negative tests
 
     func testThatRetrievingFirbaseLinksReturnsAValidErrorWhenFirebaseLinksRetrieverReturnsAnError() {
         setUpMockStubs()
         stub(mockDatabaseRefeceabele) { mock in
-            let _ = when(mock.observe(eventType: any(), with: any(), withCancel: any()).then({ _, _, errorCompletion in
+             _ = when(mock.observe(eventType: any(), with: any(), withCancel: any()).then({ _, _, errorCompletion in
                 errorCompletion(self.mockError!)
             }))
         }
@@ -82,7 +82,7 @@ class AboutInteractableTests: XCTestCase {
         }
 
         interactorUnderTest?.retrieveSocialMediaLinks()
-        verify(mockAboutPresentable,times(1)).onRetrieveSocialMediaLinksComplete(with: any())
+        verify(mockAboutPresentable, times(1)).onRetrieveSocialMediaLinksComplete(with: any())
     }
 
     func testThatWhenFirebaseLinksRetrieverReturnsAValidNonEmptySnapShotThenOnRetrievesSocialMediaLinksWithComplete() {
@@ -109,26 +109,25 @@ class AboutInteractableTests: XCTestCase {
         verify(mockAboutPresentable, times(1)).onRetrieveSocialMediaLinksComplete(with: any())
     }
     
-    // Mark: Support mock methods
+    // MARK: Support mock methods
 
     func setUpMockStubs() {
         stub(mockDatabaseRefeceabele) { (mock) in
-            let _ = when(mock.databaseReference().then({ return self.mockDatabaseRefeceabele }))
-            let _ = when(mock.child(any()).then({ _ in return self.mockDatabaseRefeceabele}))
-
+             _ = when(mock.databaseReference().then({ return self.mockDatabaseRefeceabele }))
+             _ = when(mock.child(any()).then({ _ in return self.mockDatabaseRefeceabele}))
         }
     }
 
-    func mockValidSocialMediaResponse() -> [String:Any] {
-        let response: [String: Any] = ["twitter":"https://twitter.com/dvt_corporate",
-                                       "facebook":"https://www.facebook.com/DVTSoftware",
-                                       "website":"https://www.dvt.co.za",
-                                       "instagram":"https://www.instagram.com/dvtsoftware/"]
+    func mockValidSocialMediaResponse() -> [String: Any] {
+        let response: [String: Any] = ["twitter": "https://twitter.com/dvt_corporate",
+                                       "facebook": "https://www.facebook.com/DVTSoftware",
+                                       "website": "https://www.dvt.co.za",
+                                       "instagram": "https://www.instagram.com/dvtsoftware/"]
         return response
     }
     
-    func mockEmptySocialMediaResponse() -> [String:Any] {
-        let response: [String: Any] = ["":""]
+    func mockEmptySocialMediaResponse() -> [String: Any] {
+        let response: [String: Any] = ["": ""]
         return response
     }
 

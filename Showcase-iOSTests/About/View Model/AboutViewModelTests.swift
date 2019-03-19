@@ -15,7 +15,7 @@ class AboutViewModelTests: XCTestCase {
     var validSocialMediaResponse: SocialMediaLinks!
     var invalidSocialMediaResponse: SocialMediaLinks!
     
-    //MARK: lifecycle methods
+    // MARK: lifecycle methods
     override func setUp() {
         super.setUp()
         validSocialMediaResponse = SocialMediaLinks(with: mockValidSocialMediaResponse())
@@ -28,7 +28,7 @@ class AboutViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-    //Mark: ViewModel Positive Tests
+    // MARK: ViewModel Positive Tests
     
     func testInitilizationCompletesWithoutNil() {
         let viewModelUnderTest = AboutViewModel(socialMediaLinks: validSocialMediaResponse)
@@ -63,7 +63,7 @@ class AboutViewModelTests: XCTestCase {
         XCTAssertEqual(actualResult, expectedResult)
     }
     
-     //Mark: ViewModel Negative tests
+     // MARK: ViewModel Negative tests
     
     func testThatTwitterUrlHasTheExpectedNilValue() {
         let viewModelUnderTest = AboutViewModel(socialMediaLinks: invalidSocialMediaResponse)
@@ -93,13 +93,13 @@ class AboutViewModelTests: XCTestCase {
         XCTAssertEqual(actualResult, expectedResult)
     }
     
-    //Mark: Mocking Firebase response dictionary
+    // MARK: Mocking Firebase response dictionary
     
-    func mockValidSocialMediaResponse() -> [String:Any] {
-        let response: [String: Any] = ["twitter":"https://twitter.com/dvt_corporate",
-                                       "facebook":"https://www.facebook.com/DVTSoftware",
-                                       "website":"https://www.dvt.co.za",
-                                       "instagram":"https://www.instagram.com/dvtsoftware/"]
+    func mockValidSocialMediaResponse() -> [String: Any] {
+        let response: [String: Any] = ["twitter": "https://twitter.com/dvt_corporate",
+                                       "facebook": "https://www.facebook.com/DVTSoftware",
+                                       "website": "https://www.dvt.co.za",
+                                       "instagram": "https://www.instagram.com/dvtsoftware/"]
         return response
     }
     

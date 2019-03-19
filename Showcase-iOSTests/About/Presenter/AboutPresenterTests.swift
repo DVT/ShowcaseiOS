@@ -12,12 +12,12 @@ import Cuckoo
 
 class AboutPresenterTests: XCTestCase {
 
-    //MARK: Injectables
+    // MARK: Injectables
     
     var mockPresenterViewable = MockAboutPresenterViewable()
     var mockAboutInteractor = MockAboutInteractable()
     
-    //MARK: Properties
+    // MARK: Properties
     
     var presenterUnderTest: AboutPresenter!
     var mockError = NSError(domain: "Firebase error", code: 1, userInfo: nil)
@@ -32,11 +32,11 @@ class AboutPresenterTests: XCTestCase {
         presenterUnderTest = aboutPresenter
     }
     
-    //MARK: Tests
+    // MARK: Tests
     
     func testThatWhenRetrieveSocialMediaLinksFailsWithErrorThatIsNotNilThenShowOnFailureIsCalled() {
         stub(mockPresenterViewable) { (mock) in
-            let _ = when(mock.hideOnFailure(with: any()).then({ error in
+            _ = when(mock.hideOnFailure(with: any()).then({ error in
                 XCTAssertNotNil(error)
                 XCTAssertEqual(error as NSError, self.mockError)
             }))
@@ -60,18 +60,18 @@ class AboutPresenterTests: XCTestCase {
         verify(mockPresenterViewable, times(1)).showOnSuccess(with: any())
     }
     
-    //MARK: Mock Offices to help tests.
+    // MARK: Mock Offices to help tests.
     
     func mockLinks() -> SocialMediaLinks {
         let links = SocialMediaLinks(with: mockValidSocialMediaResponse())
         return links
     }
     
-    func mockValidSocialMediaResponse() -> [String:Any] {
-        let response: [String: Any] = ["twitter":"https://twitter.com/dvt_corporate",
-                                       "facebook":"https://www.facebook.com/DVTSoftware",
-                                       "website":"https://www.dvt.co.za",
-                                       "instagram":"https://www.instagram.com/dvtsoftware/"]
+    func mockValidSocialMediaResponse() -> [String: Any] {
+        let response: [String: Any] = ["twitter": "https://twitter.com/dvt_corporate",
+                                       "facebook": "https://www.facebook.com/DVTSoftware",
+                                       "website": "https://www.dvt.co.za",
+                                       "instagram": "https://www.instagram.com/dvtsoftware/"]
         return response
     }
 }
