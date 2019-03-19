@@ -93,7 +93,7 @@ class AboutInteractableTests: XCTestCase {
         }
 
         stub(mockDatabaseRefeceabele) { mock in
-            let _ = when(mock.observe(eventType: any(), with: any(), withCancel: any()).then({ _, successCompletion, _ in
+            _ = when(mock.observe(eventType: any(), with: any(), withCancel: any()).then({ _, successCompletion, _ in
                 successCompletion(self.mockDataSnapshot)
             }))
         }

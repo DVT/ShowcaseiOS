@@ -20,8 +20,7 @@ class AboutInteractableImplementation: AboutInteractable {
                 self.aboutPresenter?.onRetrieveSocialMediaLinksFailed(with: error)
             } else if let result = snapshot as? DataSnapshotProtocol {
                 if result.value != nil {
-                    print(result.value)
-                    let result = result.value as? [String:Any]
+                    let result = result.value as? [String: Any]
                     let links = SocialMediaLinks(with: result)
                     self.aboutPresenter?.onRetrieveSocialMediaLinksComplete(with: links)
                 }
