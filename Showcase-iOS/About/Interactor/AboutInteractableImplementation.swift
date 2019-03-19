@@ -9,10 +9,10 @@
 import Foundation
 
 class AboutInteractableImplementation: AboutInteractable {
-    
+
     var aboutPresenter: AboutPresentable?
     var dataReference: DataReferenceable?
-    
+
     func retrieveSocialMediaLinks() {
         let databaseReference = FirebaseRetrieverableImplementation(reference: dataReference)
         databaseReference.fetchFirebaseData(from: .about) { (snapshot, error) in

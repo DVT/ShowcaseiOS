@@ -13,17 +13,17 @@ import Cuckoo
 class AboutPresenterTests: XCTestCase {
 
     // MARK: Injectables
-    
+
     var mockPresenterViewable = MockAboutPresenterViewable()
     var mockAboutInteractor = MockAboutInteractable()
-    
+
     // MARK: Properties
-    
+
     var presenterUnderTest: AboutPresenter!
     var mockError = NSError(domain: "Firebase error", code: 1, userInfo: nil)
-    
-    //MARK: Lifecycle Method(s)
-    
+
+    // MARK: Lifecycle Method(s)
+
     override func setUp() {
         super.setUp()
         let aboutPresenter = AboutPresenter()
@@ -31,9 +31,9 @@ class AboutPresenterTests: XCTestCase {
         aboutPresenter.aboutView = mockPresenterViewable
         presenterUnderTest = aboutPresenter
     }
-    
+
     // MARK: Tests
-    
+
     func testThatWhenRetrieveSocialMediaLinksFailsWithErrorThatIsNotNilThenShowOnFailureIsCalled() {
         stub(mockPresenterViewable) { (mock) in
             _ = when(mock.hideOnFailure(with: any()).then({ error in
@@ -45,7 +45,7 @@ class AboutPresenterTests: XCTestCase {
         presenterUnderTest.onRetrieveSocialMediaLinksFailed(with: mockError)
         verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
     }
-    
+
     func testThatWhenRetrieveSocialMediaLinksSucceedsAndThatLinksIsNotNilThenShowOnSuccessIsCalled() {
         stub(mockPresenterViewable) { (mock) in
             _ = when(mock.showOnSuccess(with: any()).then({ links in
@@ -59,14 +59,14 @@ class AboutPresenterTests: XCTestCase {
         verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
         verify(mockPresenterViewable, times(1)).showOnSuccess(with: any())
     }
-    
+
     // MARK: Mock Offices to help tests.
-    
+
     func mockLinks() -> SocialMediaLinks {
         let links = SocialMediaLinks(with: mockValidSocialMediaResponse())
         return links
     }
-    
+
     func mockValidSocialMediaResponse() -> [String: Any] {
         let response: [String: Any] = ["twitter": "https://twitter.com/dvt_corporate",
                                        "facebook": "https://www.facebook.com/DVTSoftware",
@@ -74,4 +74,5 @@ class AboutPresenterTests: XCTestCase {
                                        "instagram": "https://www.instagram.com/dvtsoftware/"]
         return response
     }
+
 }

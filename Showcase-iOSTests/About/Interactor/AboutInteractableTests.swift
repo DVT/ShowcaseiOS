@@ -21,12 +21,11 @@ class AboutInteractableTests: XCTestCase {
     var mockError: NSError?
 
     // MARK: interactor under test
-    
+
     var interactorUnderTest: AboutInteractableImplementation?
 
-
     // MARK: lifecycle methods
-    
+
     override func setUp() {
         super.setUp()
         mockError = NSError(domain: "FirebaseError", code: 1, userInfo: nil)
@@ -37,7 +36,8 @@ class AboutInteractableTests: XCTestCase {
     }
 
     override func tearDown() {
-
+        super.tearDown()
+        mockError = nil
     }
 
     // MARK: Negative tests
@@ -67,7 +67,7 @@ class AboutInteractableTests: XCTestCase {
         }
 
         stub(mockDatabaseRefeceabele) { mock in
-            let _ = when(mock.observe(eventType: any(), with: any(), withCancel: any()).then({ _, successCompletion, _ in
+            _ = when(mock.observe(eventType: any(), with: any(), withCancel: any()).then({ _, successCompletion, _ in
                 successCompletion(self.mockDataSnapshot)
             }))
         }
@@ -108,7 +108,7 @@ class AboutInteractableTests: XCTestCase {
         interactorUnderTest?.retrieveSocialMediaLinks()
         verify(mockAboutPresentable, times(1)).onRetrieveSocialMediaLinksComplete(with: any())
     }
-    
+
     // MARK: Support mock methods
 
     func setUpMockStubs() {
@@ -125,7 +125,7 @@ class AboutInteractableTests: XCTestCase {
                                        "instagram": "https://www.instagram.com/dvtsoftware/"]
         return response
     }
-    
+
     func mockEmptySocialMediaResponse() -> [String: Any] {
         let response: [String: Any] = ["": ""]
         return response
