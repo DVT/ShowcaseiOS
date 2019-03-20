@@ -16,6 +16,7 @@ class AboutPresenterTests: XCTestCase {
 
     var mockPresenterViewable = MockAboutPresenterViewable()
     var mockAboutInteractor = MockAboutInteractable()
+    var mockSocialMediaResponses = GeneratedSocialMediaData()
 
     // MARK: Properties
 
@@ -49,8 +50,19 @@ class AboutPresenterTests: XCTestCase {
     func testThatWhenRetrieveSocialMediaLinksSucceedsAndThatLinksIsNotNilThenShowOnSuccessIsCalled() {
         stub(mockPresenterViewable) { (mock) in
             _ = when(mock.showOnSuccess(with: any()).then({ links in
-                print(links)
                 XCTAssertNotNil(links)
+                let expectedTwitter = self.mockSocialMediaResponses.expectedTwitterUrl
+                let expectedFacebook = self.mockSocialMediaResponses.expectedFacebookUrl
+                let expectedInstagram = self.mockSocialMediaResponses.expectedInstagramUrl
+                let expectedWebsite = self.mockSocialMediaResponses.expectedWebsiteUrl
+                let actualTwitter = links.twitter
+                let actualFacebook = links.facebook
+                let actualInstagram = links.instagram
+                let actualWebsite = links.website
+                XCTAssertEqual(actualFacebook, expectedFacebook)
+                XCTAssertEqual(actualTwitter, expectedTwitter)
+                XCTAssertEqual(actualInstagram, expectedInstagram)
+                XCTAssertEqual(actualWebsite, expectedWebsite)
             }))
             _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
@@ -60,19 +72,11 @@ class AboutPresenterTests: XCTestCase {
         verify(mockPresenterViewable, times(1)).showOnSuccess(with: any())
     }
 
-    // MARK: Mock Offices to help tests.
+    // MARK: Mock expected value for links
 
     func mockLinks() -> SocialMediaLinks {
-        let links = SocialMediaLinks(with: mockValidSocialMediaResponse())
+        let links = SocialMediaLinks(with: mockSocialMediaResponses.mockSocialMediaResponseWithValidData)
         return links
-    }
-
-    func mockValidSocialMediaResponse() -> [String: Any] {
-        let response: [String: Any] = ["twitter": "https://twitter.com/dvt_corporate",
-                                       "facebook": "https://www.facebook.com/DVTSoftware",
-                                       "website": "https://www.dvt.co.za",
-                                       "instagram": "https://www.instagram.com/dvtsoftware/"]
-        return response
     }
 
 }

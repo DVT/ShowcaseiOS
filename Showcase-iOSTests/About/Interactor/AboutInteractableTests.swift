@@ -16,6 +16,7 @@ class AboutInteractableTests: XCTestCase {
     // MARK: Mocked dependencies
 
     var mockDatabaseRefeceabele = MockDataReferenceable()
+    let mockedSocialMediaResponses = GeneratedSocialMediaData()
     var mockAboutPresentable = MockAboutPresentable()
     var mockDataSnapshot = MockDataSnapshotProtocol()
     var mockError: NSError?
@@ -43,7 +44,7 @@ class AboutInteractableTests: XCTestCase {
     // MARK: Negative tests
 
     func testThatRetrievingFirbaseLinksReturnsAValidErrorWhenFirebaseLinksRetrieverReturnsAnError() {
-        setUpMockStubs()
+        setupMockedStubs()
         stub(mockDatabaseRefeceabele) { mock in
              _ = when(mock.observe(eventType: any(), with: any(), withCancel: any()).then({ _, _, errorCompletion in
                 errorCompletion(self.mockError!)
@@ -59,11 +60,11 @@ class AboutInteractableTests: XCTestCase {
         verify(mockAboutPresentable, times(1)).onRetrieveSocialMediaLinksFailed(with: any())
     }
 
-    func testThatWhenFirebaseLinksRetrieverReturnsANullSnapshotThenOnRetrieveSocialMediaCompletesWithAnEmptySocialMediaLinks() {
-        setUpMockStubs()
+    func testThatWhenFirebaseLinksRetrieverReturnsANilSnapshotThenOnRetrieveSocialMediaCompletesWithAnEmptySocialMediaLinks() {
+        setupMockedStubs()
 
         stub(mockDataSnapshot) { (mock) in
-            _ = when(mock.value.get.thenReturn(mockEmptySocialMediaResponse()))
+            _ = when(mock.value.get.thenReturn(mockedSocialMediaResponses.mockEmptySocialMediaResponse))
         }
 
         stub(mockDatabaseRefeceabele) { mock in
@@ -86,10 +87,10 @@ class AboutInteractableTests: XCTestCase {
     }
 
     func testThatWhenFirebaseLinksRetrieverReturnsAValidNonEmptySnapShotThenOnRetrievesSocialMediaLinksWithComplete() {
-        setUpMockStubs()
+        setupMockedStubs()
 
         stub(mockDataSnapshot) { (mock) in
-            _ = when(mock.value.get.thenReturn(mockValidSocialMediaResponse()))
+            _ = when(mock.value.get.thenReturn(mockedSocialMediaResponses.mockSocialMediaResponseWithValidData))
         }
 
         stub(mockDatabaseRefeceabele) { mock in
@@ -101,6 +102,9 @@ class AboutInteractableTests: XCTestCase {
         stub(mockAboutPresentable) { mock in
             _ = when(mock.onRetrieveSocialMediaLinksComplete(with: any()).then({ (links) in
                 XCTAssertTrue(links.website != nil)
+                let expectedResult = self.mockedSocialMediaResponses.expectedSocialMediaLinks.website
+                let actualResult = links.website
+                XCTAssertEqual(actualResult, expectedResult)
 
             }))
         }
@@ -111,24 +115,11 @@ class AboutInteractableTests: XCTestCase {
 
     // MARK: Support mock methods
 
-    func setUpMockStubs() {
+    func setupMockedStubs() {
         stub(mockDatabaseRefeceabele) { (mock) in
              _ = when(mock.databaseReference().then({ return self.mockDatabaseRefeceabele }))
              _ = when(mock.child(any()).then({ _ in return self.mockDatabaseRefeceabele}))
         }
-    }
-
-    func mockValidSocialMediaResponse() -> [String: Any] {
-        let response: [String: Any] = ["twitter": "https://twitter.com/dvt_corporate",
-                                       "facebook": "https://www.facebook.com/DVTSoftware",
-                                       "website": "https://www.dvt.co.za",
-                                       "instagram": "https://www.instagram.com/dvtsoftware/"]
-        return response
-    }
-
-    func mockEmptySocialMediaResponse() -> [String: Any] {
-        let response: [String: Any] = ["": ""]
-        return response
     }
 
 }

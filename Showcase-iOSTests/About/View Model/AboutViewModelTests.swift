@@ -14,13 +14,14 @@ class AboutViewModelTests: XCTestCase {
 
     var validSocialMediaResponse: SocialMediaLinks!
     var invalidSocialMediaResponse: SocialMediaLinks!
+    let mockedSocialMediaResponses = GeneratedSocialMediaData()
 
     // MARK: lifecycle methods
 
     override func setUp() {
         super.setUp()
-        validSocialMediaResponse = SocialMediaLinks(with: mockValidSocialMediaResponse())
-        invalidSocialMediaResponse = SocialMediaLinks(with: mockInvalidSocialMediaResponse())
+        validSocialMediaResponse = SocialMediaLinks(with: mockedSocialMediaResponses.mockSocialMediaResponseWithValidData)
+        invalidSocialMediaResponse = SocialMediaLinks(with: mockedSocialMediaResponses.mockInvalidSocialMediaResponse)
     }
 
     override func tearDown() {
@@ -93,24 +94,5 @@ class AboutViewModelTests: XCTestCase {
         let expectedResult = URL(string: "https://www.dvt.co.za")
         XCTAssertEqual(actualResult, expectedResult)
     }
-
-    // MARK: Mocking Firebase response dictionary
-
-    func mockValidSocialMediaResponse() -> [String: Any] {
-        let response: [String: Any] = ["twitter": "https://twitter.com/dvt_corporate",
-                                       "facebook": "https://www.facebook.com/DVTSoftware",
-                                       "website": "https://www.dvt.co.za",
-                                       "instagram": "https://www.instagram.com/dvtsoftware/"]
-        return response
-    }
-
-    func mockInvalidSocialMediaResponse() -> [String: Any] {
-        let nilValue: Any? = nil
-        let response: [String: Any] = ["twitter": nilValue as Any,
-                                       "facebook": nilValue as Any,
-                                       "website": nilValue as Any,
-                                       "instagram": nilValue as Any]
-        return response
-    }
-
+    
 }
