@@ -68,7 +68,6 @@
 		BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */; };
 		BC02347320A051B2006E6E92 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */; };
 		BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */; };
-		BC40834D20AA07F400A2D49C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40834C20AA07F400A2D49C /* AboutViewController.swift */; };
 		BC425EBD20A45D0E00CBBE56 /* CurvedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */; };
 		BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */; };
 		BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */; };
@@ -113,13 +112,16 @@
 		BCEDE50820AC4836005E1F4D /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE50720AC4836005E1F4D /* DependencyContainer.swift */; };
 		BCEDE50A20AC5D1A005E1F4D /* AuthDataResultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE50920AC5D1A005E1F4D /* AuthDataResultProtocol.swift */; };
 		BCEDE51120AEEFE3005E1F4D /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE51020AEEFE3005E1F4D /* LoginNavigationController.swift */; };
-		E081FF68223A33DC0035648A /* SocialMediaLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF67223A33DC0035648A /* SocialMediaLinks.swift */; };
-		E081FF6A223A34B80035648A /* AboutInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF69223A34B80035648A /* AboutInteractable.swift */; };
-		E081FF6C223A350C0035648A /* AboutInteractableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF6B223A350C0035648A /* AboutInteractableImplementation.swift */; };
-		E081FF6F223A39D00035648A /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF6E223A39D00035648A /* AboutPresenter.swift */; };
-		E081FF71223A39E50035648A /* AboutPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF70223A39E50035648A /* AboutPresentable.swift */; };
-		E081FF73223A43BB0035648A /* AboutPresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF72223A43BB0035648A /* AboutPresenterViewable.swift */; };
-		E081FF75223A43EF0035648A /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF74223A43EF0035648A /* AboutViewModel.swift */; };
+		E05BD64F224240CC00DB0714 /* GeneratedSocialMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD64E224240CC00DB0714 /* GeneratedSocialMediaData.swift */; };
+		E05BD6692242576200DB0714 /* AboutPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD6672242576100DB0714 /* AboutPresentable.swift */; };
+		E05BD66A2242576200DB0714 /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD6682242576200DB0714 /* AboutPresenter.swift */; };
+		E05BD66D2242578200DB0714 /* AboutInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD66B2242578100DB0714 /* AboutInteractable.swift */; };
+		E05BD66E2242578200DB0714 /* AboutInteractableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD66C2242578100DB0714 /* AboutInteractableImplementation.swift */; };
+		E05BD6712242579200DB0714 /* AboutPresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD66F2242579200DB0714 /* AboutPresenterViewable.swift */; };
+		E05BD6722242579200DB0714 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD6702242579200DB0714 /* AboutViewController.swift */; };
+		E05BD675224257A300DB0714 /* SocialMediaLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD673224257A300DB0714 /* SocialMediaLinks.swift */; };
+		E05BD676224257A300DB0714 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD674224257A300DB0714 /* About.swift */; };
+		E05BD678224257B200DB0714 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD677224257B100DB0714 /* AboutViewModel.swift */; };
 		E081FF7B223A7E7E0035648A /* AboutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF7A223A7E7E0035648A /* AboutViewModelTests.swift */; };
 		E081FF85223B7CAC0035648A /* AboutInteractableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF84223B7CAC0035648A /* AboutInteractableTests.swift */; };
 		E081FF8A223B99810035648A /* AboutPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF89223B99810035648A /* AboutPresenterTests.swift */; };
@@ -232,7 +234,6 @@
 		BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStoryboard+Enum.swift"; sourceTree = "<group>"; };
 		BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUserProtocol.swift; sourceTree = "<group>"; };
-		BC40834C20AA07F400A2D49C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedButton.swift; sourceTree = "<group>"; };
 		BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentable.swift; sourceTree = "<group>"; };
@@ -278,13 +279,16 @@
 		BCEDE50720AC4836005E1F4D /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		BCEDE50920AC5D1A005E1F4D /* AuthDataResultProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultProtocol.swift; sourceTree = "<group>"; };
 		BCEDE51020AEEFE3005E1F4D /* LoginNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
-		E081FF67223A33DC0035648A /* SocialMediaLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaLinks.swift; sourceTree = "<group>"; };
-		E081FF69223A34B80035648A /* AboutInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractable.swift; sourceTree = "<group>"; };
-		E081FF6B223A350C0035648A /* AboutInteractableImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractableImplementation.swift; sourceTree = "<group>"; };
-		E081FF6E223A39D00035648A /* AboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
-		E081FF70223A39E50035648A /* AboutPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresentable.swift; sourceTree = "<group>"; };
-		E081FF72223A43BB0035648A /* AboutPresenterViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenterViewable.swift; sourceTree = "<group>"; };
-		E081FF74223A43EF0035648A /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
+		E05BD64E224240CC00DB0714 /* GeneratedSocialMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedSocialMediaData.swift; sourceTree = "<group>"; };
+		E05BD6672242576100DB0714 /* AboutPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresentable.swift; sourceTree = "<group>"; };
+		E05BD6682242576200DB0714 /* AboutPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
+		E05BD66B2242578100DB0714 /* AboutInteractable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutInteractable.swift; sourceTree = "<group>"; };
+		E05BD66C2242578100DB0714 /* AboutInteractableImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutInteractableImplementation.swift; sourceTree = "<group>"; };
+		E05BD66F2242579200DB0714 /* AboutPresenterViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresenterViewable.swift; sourceTree = "<group>"; };
+		E05BD6702242579200DB0714 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E05BD673224257A300DB0714 /* SocialMediaLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaLinks.swift; sourceTree = "<group>"; };
+		E05BD674224257A300DB0714 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		E05BD677224257B100DB0714 /* AboutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		E081FF7A223A7E7E0035648A /* AboutViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModelTests.swift; sourceTree = "<group>"; };
 		E081FF84223B7CAC0035648A /* AboutInteractableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractableTests.swift; sourceTree = "<group>"; };
 		E081FF89223B99810035648A /* AboutPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenterTests.swift; sourceTree = "<group>"; };
@@ -688,11 +692,11 @@
 		BC40834B20AA07D500A2D49C /* About */ = {
 			isa = PBXGroup;
 			children = (
-				E081FF6D223A39BB0035648A /* Presenter */,
-				E081FF65223A33B70035648A /* Model */,
-				E081FF64223A33AC0035648A /* Interactor */,
-				E081FF63223A339E0035648A /* ViewModel */,
-				E081FF62223A338F0035648A /* View */,
+				E05BD6662242572100DB0714 /* Presenter */,
+				E05BD6652242571600DB0714 /* Interactor */,
+				E05BD6642242570B00DB0714 /* View */,
+				E05BD6632242570200DB0714 /* Model */,
+				E05BD662224256F600DB0714 /* ViewModel */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -917,48 +921,54 @@
 			path = DependencyContainer;
 			sourceTree = "<group>";
 		};
-		E081FF62223A338F0035648A /* View */ = {
+		E05BD64D224240BC00DB0714 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				BC40834C20AA07F400A2D49C /* AboutViewController.swift */,
-				E081FF72223A43BB0035648A /* AboutPresenterViewable.swift */,
+				E05BD64E224240CC00DB0714 /* GeneratedSocialMediaData.swift */,
 			);
-			name = View;
-			path = "New Group";
+			path = Mocks;
 			sourceTree = "<group>";
 		};
-		E081FF63223A339E0035648A /* ViewModel */ = {
+		E05BD662224256F600DB0714 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				E081FF74223A43EF0035648A /* AboutViewModel.swift */,
+				E05BD677224257B100DB0714 /* AboutViewModel.swift */,
 			);
-			name = ViewModel;
-			path = "New Group1";
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		E081FF64223A33AC0035648A /* Interactor */ = {
+		E05BD6632242570200DB0714 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E081FF69223A34B80035648A /* AboutInteractable.swift */,
-				E081FF6B223A350C0035648A /* AboutInteractableImplementation.swift */,
+				E05BD674224257A300DB0714 /* About.swift */,
+				E05BD673224257A300DB0714 /* SocialMediaLinks.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E05BD6642242570B00DB0714 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E05BD66F2242579200DB0714 /* AboutPresenterViewable.swift */,
+				E05BD6702242579200DB0714 /* AboutViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E05BD6652242571600DB0714 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E05BD66B2242578100DB0714 /* AboutInteractable.swift */,
+				E05BD66C2242578100DB0714 /* AboutInteractableImplementation.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		E081FF65223A33B70035648A /* Model */ = {
+		E05BD6662242572100DB0714 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				E081FF67223A33DC0035648A /* SocialMediaLinks.swift */,
-			);
-			name = Model;
-			path = "New Group2";
-			sourceTree = "<group>";
-		};
-		E081FF6D223A39BB0035648A /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				E081FF6E223A39D00035648A /* AboutPresenter.swift */,
-				E081FF70223A39E50035648A /* AboutPresentable.swift */,
+				E05BD6672242576100DB0714 /* AboutPresentable.swift */,
+				E05BD6682242576200DB0714 /* AboutPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -966,6 +976,7 @@
 		E081FF76223A7DFB0035648A /* About */ = {
 			isa = PBXGroup;
 			children = (
+				E05BD64D224240BC00DB0714 /* Mocks */,
 				E081FF79223A7E1E0035648A /* View Model */,
 				E081FF78223A7E160035648A /* Interactor */,
 				E081FF77223A7E0E0035648A /* Presenter */,
@@ -1369,12 +1380,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC6D07412092481100FFE9DD /* ErrorMessage.swift in Sources */,
-				E081FF71223A39E50035648A /* AboutPresentable.swift in Sources */,
+				E05BD676224257A300DB0714 /* About.swift in Sources */,
 				FDA1875D20B6FD0600F849D0 /* ScreenshotCollectionViewCell.swift in Sources */,
+				E05BD6712242579200DB0714 /* AboutPresenterViewable.swift in Sources */,
 				BC5F20D320B82AA9000EABE6 /* SpinnerView.swift in Sources */,
 				A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */,
+				E05BD678224257B200DB0714 /* AboutViewModel.swift in Sources */,
 				A389D66920A595F7008DB6FE /* StorageReferenceExtension.swift in Sources */,
-				E081FF75223A43EF0035648A /* AboutViewModel.swift in Sources */,
 				BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */,
 				BCA4CF4720BFEB17005DD485 /* FirebaseSignOut.swift in Sources */,
 				BCEDE51120AEEFE3005E1F4D /* LoginNavigationController.swift in Sources */,
@@ -1382,7 +1394,7 @@
 				A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */,
 				BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */,
 				A3B502FE20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift in Sources */,
-				E081FF68223A33DC0035648A /* SocialMediaLinks.swift in Sources */,
+				E05BD675224257A300DB0714 /* SocialMediaLinks.swift in Sources */,
 				BCA4CF4C20C00E5F005DD485 /* SignOutInteractor.swift in Sources */,
 				BC5F20CF20B7FFEE000EABE6 /* KeyboardObservable.swift in Sources */,
 				FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */,
@@ -1401,10 +1413,10 @@
 				A3DBE44A209F891600561CE0 /* LoginPresenterViewable.swift in Sources */,
 				A37BD16820AE9E98009C23A0 /* ContactUsNavigatorImplementation.swift in Sources */,
 				BC02346D20A049BF006E6E92 /* LoginViewController.swift in Sources */,
-				E081FF6C223A350C0035648A /* AboutInteractableImplementation.swift in Sources */,
 				FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */,
 				BC5F20D120B7FFEE000EABE6 /* NotificationCenterDelegate.swift in Sources */,
 				A3BA5EC9208F54BB00E0D34F /* ContactUsPresentable.swift in Sources */,
+				E05BD66D2242578200DB0714 /* AboutInteractable.swift in Sources */,
 				BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */,
 				A389D66720A59556008DB6FE /* StorageReferenceable.swift in Sources */,
 				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
@@ -1416,10 +1428,11 @@
 				A36A55562099E4990037C4BF /* DataReferenceable.swift in Sources */,
 				A389D66520A594EB008DB6FE /* FIRStoring.swift in Sources */,
 				FDE1AE7E209B2D5A00D383C4 /* ShowcaseAppViewModel.swift in Sources */,
-				E081FF6F223A39D00035648A /* AboutPresenter.swift in Sources */,
+				E05BD6692242576200DB0714 /* AboutPresentable.swift in Sources */,
 				BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */,
 				BCEDE50120AC46AE005E1F4D /* Routable.swift in Sources */,
 				BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */,
+				E05BD66A2242576200DB0714 /* AboutPresenter.swift in Sources */,
 				A3E71971209B1A200081D5C1 /* ContactUsPresenterViewable.swift in Sources */,
 				BCE5DADC208A2756000458FD /* LoginInteractorPresentable.swift in Sources */,
 				BCA4CF4320BFE9FC005DD485 /* SignOut.swift in Sources */,
@@ -1435,12 +1448,13 @@
 				BCE5DA872087A981000458FD /* UserAuthentication.swift in Sources */,
 				FD64491020BD6C8A009CEDB9 /* MainDetailViewModel.swift in Sources */,
 				FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */,
-				E081FF6A223A34B80035648A /* AboutInteractable.swift in Sources */,
 				BCA4CF4520BFEADE005DD485 /* AuthSignOutExtension.swift in Sources */,
 				FD98CA7F20A99F4D00FDF031 /* TabBarViewController.swift in Sources */,
+				E05BD66E2242578200DB0714 /* AboutInteractableImplementation.swift in Sources */,
 				A30146FE20AD600E00E8DE4E /* UIView+Utilities.swift in Sources */,
 				A374CC3C20B48553001BCD18 /* FunctionalityView.swift in Sources */,
 				A339977F208D12D8004776AB /* Office.swift in Sources */,
+				E05BD6722242579200DB0714 /* AboutViewController.swift in Sources */,
 				A389D66020A444B3008DB6FE /* ContactUsDelegate.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
 				A37BD16620AE9E15009C23A0 /* ContactUsNavigatorDelegate.swift in Sources */,
@@ -1457,9 +1471,7 @@
 				BC425EBD20A45D0E00CBBE56 /* CurvedButton.swift in Sources */,
 				FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */,
 				A3AC3FBE20AC2DCB00D4B07A /* ContactUsViewController.swift in Sources */,
-				E081FF73223A43BB0035648A /* AboutPresenterViewable.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseLoginAuthenticating.swift in Sources */,
-				BC40834D20AA07F400A2D49C /* AboutViewController.swift in Sources */,
 				BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */,
 				FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */,
 				A3E7196B209B06F40081D5C1 /* ContactUsPresenter.swift in Sources */,
@@ -1488,6 +1500,7 @@
 				A3DBE44C209F8BC300561CE0 /* GeneratedShowcaseMocks.swift in Sources */,
 				A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */,
 				E081FF8A223B99810035648A /* AboutPresenterTests.swift in Sources */,
+				E05BD64F224240CC00DB0714 /* GeneratedSocialMediaData.swift in Sources */,
 				A3FB58C520A98A030093506E /* ContactUsCellViewModelTests.swift in Sources */,
 				A3E7197F209C55370081D5C1 /* ContactUsPresenterTests.swift in Sources */,
 				BCA4CF4F20C025DA005DD485 /* SignOutTests.swift in Sources */,
