@@ -1,4 +1,4 @@
-// !$*UTF8*$!
+
 {
 	archiveVersion = 1;
 	classes = {
@@ -120,11 +120,11 @@
 		E05BD6712242579200DB0714 /* AboutPresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD66F2242579200DB0714 /* AboutPresenterViewable.swift */; };
 		E05BD6722242579200DB0714 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD6702242579200DB0714 /* AboutViewController.swift */; };
 		E05BD675224257A300DB0714 /* SocialMediaLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD673224257A300DB0714 /* SocialMediaLinks.swift */; };
-		E05BD676224257A300DB0714 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD674224257A300DB0714 /* About.swift */; };
 		E05BD678224257B200DB0714 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD677224257B100DB0714 /* AboutViewModel.swift */; };
 		E081FF7B223A7E7E0035648A /* AboutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF7A223A7E7E0035648A /* AboutViewModelTests.swift */; };
 		E081FF85223B7CAC0035648A /* AboutInteractableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF84223B7CAC0035648A /* AboutInteractableTests.swift */; };
 		E081FF8A223B99810035648A /* AboutPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF89223B99810035648A /* AboutPresenterTests.swift */; };
+		E0D7F4FA22444AFB00D6A2D7 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7F4F922444AFB00D6A2D7 /* AnalyticsManager.swift */; };
 		FB0EE7F65FAF1782422E4431 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F34FA43F1070C363C19DD6 /* Pods_Showcase_iOSTests.framework */; };
 		FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2852099DA52006EA459 /* ShowcaseApp.swift */; };
 		FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */; };
@@ -287,11 +287,11 @@
 		E05BD66F2242579200DB0714 /* AboutPresenterViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresenterViewable.swift; sourceTree = "<group>"; };
 		E05BD6702242579200DB0714 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E05BD673224257A300DB0714 /* SocialMediaLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaLinks.swift; sourceTree = "<group>"; };
-		E05BD674224257A300DB0714 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		E05BD677224257B100DB0714 /* AboutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		E081FF7A223A7E7E0035648A /* AboutViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModelTests.swift; sourceTree = "<group>"; };
 		E081FF84223B7CAC0035648A /* AboutInteractableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractableTests.swift; sourceTree = "<group>"; };
 		E081FF89223B99810035648A /* AboutPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenterTests.swift; sourceTree = "<group>"; };
+		E0D7F4F922444AFB00D6A2D7 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		FD37E2852099DA52006EA459 /* ShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseApp.swift; sourceTree = "<group>"; };
 		FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractable.swift; sourceTree = "<group>"; };
 		FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractorImplementation.swift; sourceTree = "<group>"; };
@@ -470,6 +470,7 @@
 		A33D79AA2088795C00D272E7 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				E0D7F4F822444AE600D6A2D7 /* Analytics */,
 				A389D66A20A5989B008DB6FE /* ImageFetcher */,
 				A389D66120A5943F008DB6FE /* Storage */,
 				A33D79AB208879A800D272E7 /* Service */,
@@ -940,7 +941,6 @@
 		E05BD6632242570200DB0714 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E05BD674224257A300DB0714 /* About.swift */,
 				E05BD673224257A300DB0714 /* SocialMediaLinks.swift */,
 			);
 			path = Model;
@@ -1006,6 +1006,14 @@
 				E081FF7A223A7E7E0035648A /* AboutViewModelTests.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		E0D7F4F822444AE600D6A2D7 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7F4F922444AFB00D6A2D7 /* AnalyticsManager.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		F8B264866339C04A655A574F /* Frameworks */ = {
@@ -1387,6 +1395,7 @@
 				A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */,
 				E05BD678224257B200DB0714 /* AboutViewModel.swift in Sources */,
 				A389D66920A595F7008DB6FE /* StorageReferenceExtension.swift in Sources */,
+				E0D7F4FA22444AFB00D6A2D7 /* AnalyticsManager.swift in Sources */,
 				BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */,
 				BCA4CF4720BFEB17005DD485 /* FirebaseSignOut.swift in Sources */,
 				BCEDE51120AEEFE3005E1F4D /* LoginNavigationController.swift in Sources */,

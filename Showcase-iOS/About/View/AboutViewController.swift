@@ -1,11 +1,3 @@
-//
-//  AboutViewController.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/14.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import UIKit
 
 class AboutViewController: UIViewController {
@@ -15,6 +7,7 @@ class AboutViewController: UIViewController {
     var aboutPresenter: AboutPresentable?
     var aboutViewModel: AboutViewModel?
     var firebaseStorage: FIRStoring?
+    var analyticsManager: AnalyticsManager?
     var errorView: ErrorView?
     let dependencyContainer = DependencyContainer.container()
 
@@ -30,6 +23,7 @@ class AboutViewController: UIViewController {
         self.navigationItem.title = "About"
         setupInjectables()
         aboutPresenter?.retrieveSocialMediaLinks()
+        analyticsManager?.trackScreenAppear(screenName: "about")
     }
 
     // MARK: Opertaions
@@ -40,36 +34,41 @@ class AboutViewController: UIViewController {
         self.aboutPresenter = aboutPresenter
         aboutPresenter?.aboutView = self
         self.firebaseStorage = firebaseStorage
+        self.analyticsManager = dependencyContainer.resolve(AnalyticsManager.self)
     }
 
     // MARK: @IBActions
 
     @IBAction func websiteTapped(_ sender: Any) {
+        analyticsManager?.trackButtonTap(buttonName: "website")
         if let websiteUrl = aboutViewModel?.website {
             UIApplication.shared.open(websiteUrl, options: [:], completionHandler: nil)
         }
     }
 
     @IBAction func twitterTapped(_ sender: Any) {
+        analyticsManager?.trackButtonTap(buttonName: "twitter")
         if let twitterUrl = aboutViewModel?.twitter {
             UIApplication.shared.open(twitterUrl, options: [:], completionHandler: nil)
         }
     }
 
     @IBAction func facebookTapped(_ sender: Any) {
+        analyticsManager?.trackButtonTap(buttonName: "facebook")
         if let facebookUrl = aboutViewModel?.facebook {
             UIApplication.shared.open(facebookUrl, options: [:], completionHandler: nil)
         }
     }
 
     @IBAction func instagramTapped(_ sender: Any) {
+        analyticsManager?.trackButtonTap(buttonName: "instagram")
         if let instagramUrl = aboutViewModel?.instagram {
             UIApplication.shared.open(instagramUrl, options: [:], completionHandler: nil)
         }
     }
 }
 
- // MARK: Extension Presentable
+// MARK: Extension Presentable
 
 extension AboutViewController: AboutPresenterViewable {
 
