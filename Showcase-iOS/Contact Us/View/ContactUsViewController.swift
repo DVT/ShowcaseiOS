@@ -13,6 +13,7 @@ class ContactUsViewController: UIViewController {
     var firebaseStorage: FIRStoring?
     var errorView: ErrorView?
     let dependencyContainer = DependencyContainer.container()
+    
     //MARK: @IBOutlets
     
     @IBOutlet weak var loadingView: LoadingView!
@@ -108,7 +109,6 @@ extension ContactUsViewController: ContactUsPresenterViewable {
         }
         self.view.addSubviewPinnedToEdges(errorView!)
     }
-    
-    
+
 }
 

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m2W-01-DQY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m2W-01-DQY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1P0-Jz-x5S" customClass="LoadingView" customModule="Showcase_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="1080"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnF-Ie-Ahj">
                                 <rect key="frame" x="0.0" y="20" width="375" height="1080"/>
                                 <subviews>
@@ -208,7 +213,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aYx-jb-IIb" firstAttribute="trailing" secondItem="DnF-Ie-Ahj" secondAttribute="trailing" id="4gq-0L-sH2"/>
+                            <constraint firstItem="aYx-jb-IIb" firstAttribute="bottom" secondItem="1P0-Jz-x5S" secondAttribute="bottom" id="DQc-jL-2iY"/>
                             <constraint firstItem="aYx-jb-IIb" firstAttribute="bottom" secondItem="DnF-Ie-Ahj" secondAttribute="bottom" id="DyJ-rb-juQ"/>
+                            <constraint firstItem="1P0-Jz-x5S" firstAttribute="top" secondItem="aYx-jb-IIb" secondAttribute="top" id="EnR-jl-OAX"/>
+                            <constraint firstItem="1P0-Jz-x5S" firstAttribute="leading" secondItem="aYx-jb-IIb" secondAttribute="leading" id="GXb-zx-y7l"/>
+                            <constraint firstItem="aYx-jb-IIb" firstAttribute="trailing" secondItem="1P0-Jz-x5S" secondAttribute="trailing" id="Gxo-7W-M7d"/>
                             <constraint firstItem="DnF-Ie-Ahj" firstAttribute="top" secondItem="aYx-jb-IIb" secondAttribute="top" id="Z30-tA-RZA"/>
                             <constraint firstItem="DnF-Ie-Ahj" firstAttribute="leading" secondItem="aYx-jb-IIb" secondAttribute="leading" id="u9f-jn-EqF"/>
                         </constraints>
@@ -216,6 +225,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="About" id="IAy-Sq-3c0"/>
                     <size key="freeformSize" width="375" height="1100"/>
+                    <connections>
+                        <outlet property="loadingView" destination="1P0-Jz-x5S" id="dDF-rF-9bY"/>
+                        <outlet property="socialMediaStackView" destination="4KB-7Q-5vK" id="59J-Gi-Z0W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBg-Wc-Qyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

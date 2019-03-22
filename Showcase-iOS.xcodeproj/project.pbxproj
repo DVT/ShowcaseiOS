@@ -49,7 +49,7 @@
 		A3DBE44A209F891600561CE0 /* LoginPresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBE449209F891600561CE0 /* LoginPresenterViewable.swift */; };
 		A3DBE44C209F8BC300561CE0 /* GeneratedShowcaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBE44B209F8BC300561CE0 /* GeneratedShowcaseMocks.swift */; };
 		A3DEBB5020B3FABD0020EA44 /* ScreenshotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3DEBB4F20B3FABD0020EA44 /* ScreenshotCollectionViewCell.xib */; };
-		A3E71966209AFEE10081D5C1 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		A3E71966209AFEE10081D5C1 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E71967209AFEF80081D5C1 /* LoginPresenterInteractable.swift */; };
 		A3E7196B209B06F40081D5C1 /* ContactUsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7196A209B06F30081D5C1 /* ContactUsPresenter.swift */; };
 		A3E7196E209B072A0081D5C1 /* OfficeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7196D209B072A0081D5C1 /* OfficeViewModel.swift */; };
@@ -68,7 +68,6 @@
 		BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */; };
 		BC02347320A051B2006E6E92 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */; };
 		BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */; };
-		BC40834D20AA07F400A2D49C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40834C20AA07F400A2D49C /* AboutViewController.swift */; };
 		BC425EBD20A45D0E00CBBE56 /* CurvedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */; };
 		BC4D82B8208F3422003EFB06 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */; };
 		BC4D82C0208F49CD003EFB06 /* LoginPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */; };
@@ -78,7 +77,6 @@
 		BC4D82CF208F6F49003EFB06 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */; };
 		BC4D82D3208F6FB6003EFB06 /* PasswordValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */; };
 		BC5675ED20B2B64B005CC3C3 /* DataSnapshotProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5675EC20B2B64B005CC3C3 /* DataSnapshotProtocol.swift */; };
-		BC5675EF20B2C869005CC3C3 /* SocialMediaEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5675EE20B2C869005CC3C3 /* SocialMediaEndPoint.swift */; };
 		BC56761320B41D36005CC3C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56761220B41D36005CC3C3 /* Constants.swift */; };
 		BC56761820B45A81005CC3C3 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56761720B45A81005CC3C3 /* LoginTextField.swift */; };
 		BC56761A20B54E4E005CC3C3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56761920B54E4E005CC3C3 /* UserDefaultsProtocol.swift */; };
@@ -114,6 +112,19 @@
 		BCEDE50820AC4836005E1F4D /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE50720AC4836005E1F4D /* DependencyContainer.swift */; };
 		BCEDE50A20AC5D1A005E1F4D /* AuthDataResultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE50920AC5D1A005E1F4D /* AuthDataResultProtocol.swift */; };
 		BCEDE51120AEEFE3005E1F4D /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE51020AEEFE3005E1F4D /* LoginNavigationController.swift */; };
+		E05BD64F224240CC00DB0714 /* GeneratedSocialMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD64E224240CC00DB0714 /* GeneratedSocialMediaData.swift */; };
+		E05BD6692242576200DB0714 /* AboutPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD6672242576100DB0714 /* AboutPresentable.swift */; };
+		E05BD66A2242576200DB0714 /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD6682242576200DB0714 /* AboutPresenter.swift */; };
+		E05BD66D2242578200DB0714 /* AboutInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD66B2242578100DB0714 /* AboutInteractable.swift */; };
+		E05BD66E2242578200DB0714 /* AboutInteractableImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD66C2242578100DB0714 /* AboutInteractableImplementation.swift */; };
+		E05BD6712242579200DB0714 /* AboutPresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD66F2242579200DB0714 /* AboutPresenterViewable.swift */; };
+		E05BD6722242579200DB0714 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD6702242579200DB0714 /* AboutViewController.swift */; };
+		E05BD675224257A300DB0714 /* SocialMediaLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD673224257A300DB0714 /* SocialMediaLinks.swift */; };
+		E05BD676224257A300DB0714 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD674224257A300DB0714 /* About.swift */; };
+		E05BD678224257B200DB0714 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BD677224257B100DB0714 /* AboutViewModel.swift */; };
+		E081FF7B223A7E7E0035648A /* AboutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF7A223A7E7E0035648A /* AboutViewModelTests.swift */; };
+		E081FF85223B7CAC0035648A /* AboutInteractableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF84223B7CAC0035648A /* AboutInteractableTests.swift */; };
+		E081FF8A223B99810035648A /* AboutPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF89223B99810035648A /* AboutPresenterTests.swift */; };
 		FB0EE7F65FAF1782422E4431 /* Pods_Showcase_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F34FA43F1070C363C19DD6 /* Pods_Showcase_iOSTests.framework */; };
 		FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2852099DA52006EA459 /* ShowcaseApp.swift */; };
 		FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */; };
@@ -223,7 +234,6 @@
 		BC02346F20A0510A006E6E92 /* AppStoryboard+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStoryboard+Enum.swift"; sourceTree = "<group>"; };
 		BC02347220A051B2006E6E92 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		BC34F482209B28B8005CA9C4 /* FirUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUserProtocol.swift; sourceTree = "<group>"; };
-		BC40834C20AA07F400A2D49C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		BC425EBC20A45D0E00CBBE56 /* CurvedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedButton.swift; sourceTree = "<group>"; };
 		BC4D82B7208F3422003EFB06 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		BC4D82BF208F49CD003EFB06 /* LoginPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentable.swift; sourceTree = "<group>"; };
@@ -233,7 +243,6 @@
 		BC4D82CE208F6F49003EFB06 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		BC4D82D2208F6FB6003EFB06 /* PasswordValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorTests.swift; sourceTree = "<group>"; };
 		BC5675EC20B2B64B005CC3C3 /* DataSnapshotProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSnapshotProtocol.swift; sourceTree = "<group>"; };
-		BC5675EE20B2C869005CC3C3 /* SocialMediaEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaEndPoint.swift; sourceTree = "<group>"; };
 		BC56761220B41D36005CC3C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BC56761720B45A81005CC3C3 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		BC56761920B54E4E005CC3C3 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
@@ -270,6 +279,19 @@
 		BCEDE50720AC4836005E1F4D /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		BCEDE50920AC5D1A005E1F4D /* AuthDataResultProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultProtocol.swift; sourceTree = "<group>"; };
 		BCEDE51020AEEFE3005E1F4D /* LoginNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
+		E05BD64E224240CC00DB0714 /* GeneratedSocialMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedSocialMediaData.swift; sourceTree = "<group>"; };
+		E05BD6672242576100DB0714 /* AboutPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresentable.swift; sourceTree = "<group>"; };
+		E05BD6682242576200DB0714 /* AboutPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
+		E05BD66B2242578100DB0714 /* AboutInteractable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutInteractable.swift; sourceTree = "<group>"; };
+		E05BD66C2242578100DB0714 /* AboutInteractableImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutInteractableImplementation.swift; sourceTree = "<group>"; };
+		E05BD66F2242579200DB0714 /* AboutPresenterViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresenterViewable.swift; sourceTree = "<group>"; };
+		E05BD6702242579200DB0714 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E05BD673224257A300DB0714 /* SocialMediaLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaLinks.swift; sourceTree = "<group>"; };
+		E05BD674224257A300DB0714 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		E05BD677224257B100DB0714 /* AboutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
+		E081FF7A223A7E7E0035648A /* AboutViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModelTests.swift; sourceTree = "<group>"; };
+		E081FF84223B7CAC0035648A /* AboutInteractableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractableTests.swift; sourceTree = "<group>"; };
+		E081FF89223B99810035648A /* AboutPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenterTests.swift; sourceTree = "<group>"; };
 		FD37E2852099DA52006EA459 /* ShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseApp.swift; sourceTree = "<group>"; };
 		FD37E2872099DA69006EA459 /* HomePresenterInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractable.swift; sourceTree = "<group>"; };
 		FD37E2892099DAA3006EA459 /* HomePresenterInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterInteractorImplementation.swift; sourceTree = "<group>"; };
@@ -375,6 +397,7 @@
 		99FB7FFB2085F25300B300BA /* Showcase-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				E081FF76223A7DFB0035648A /* About */,
 				BCA4CF4D20C025C5005DD485 /* Logout */,
 				A389D66D20A59EDF008DB6FE /* FIRStorageTests */,
 				A3DBE44B209F8BC300561CE0 /* GeneratedShowcaseMocks.swift */,
@@ -669,8 +692,11 @@
 		BC40834B20AA07D500A2D49C /* About */ = {
 			isa = PBXGroup;
 			children = (
-				BC40834C20AA07F400A2D49C /* AboutViewController.swift */,
-				BC5675EE20B2C869005CC3C3 /* SocialMediaEndPoint.swift */,
+				E05BD6662242572100DB0714 /* Presenter */,
+				E05BD6652242571600DB0714 /* Interactor */,
+				E05BD6642242570B00DB0714 /* View */,
+				E05BD6632242570200DB0714 /* Model */,
+				E05BD662224256F600DB0714 /* ViewModel */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -893,6 +919,93 @@
 				BCEDE50720AC4836005E1F4D /* DependencyContainer.swift */,
 			);
 			path = DependencyContainer;
+			sourceTree = "<group>";
+		};
+		E05BD64D224240BC00DB0714 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E05BD64E224240CC00DB0714 /* GeneratedSocialMediaData.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E05BD662224256F600DB0714 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E05BD677224257B100DB0714 /* AboutViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E05BD6632242570200DB0714 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E05BD674224257A300DB0714 /* About.swift */,
+				E05BD673224257A300DB0714 /* SocialMediaLinks.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E05BD6642242570B00DB0714 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E05BD66F2242579200DB0714 /* AboutPresenterViewable.swift */,
+				E05BD6702242579200DB0714 /* AboutViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E05BD6652242571600DB0714 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E05BD66B2242578100DB0714 /* AboutInteractable.swift */,
+				E05BD66C2242578100DB0714 /* AboutInteractableImplementation.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E05BD6662242572100DB0714 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E05BD6672242576100DB0714 /* AboutPresentable.swift */,
+				E05BD6682242576200DB0714 /* AboutPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E081FF76223A7DFB0035648A /* About */ = {
+			isa = PBXGroup;
+			children = (
+				E05BD64D224240BC00DB0714 /* Mocks */,
+				E081FF79223A7E1E0035648A /* View Model */,
+				E081FF78223A7E160035648A /* Interactor */,
+				E081FF77223A7E0E0035648A /* Presenter */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		E081FF77223A7E0E0035648A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E081FF89223B99810035648A /* AboutPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E081FF78223A7E160035648A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E081FF84223B7CAC0035648A /* AboutInteractableTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E081FF79223A7E1E0035648A /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				E081FF7A223A7E7E0035648A /* AboutViewModelTests.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		F8B264866339C04A655A574F /* Frameworks */ = {
@@ -1239,7 +1352,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseLoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginInteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FIRStoring.swift)\" \\\n\"$INPUT_DIR/$(find . -name StorageReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name KeyBoardDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name KeyboardObservable.swift)\" \\\n\"$INPUT_DIR/$(find . -name NotificationCenterDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name SharedApplicationDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name AuthDataResultProtocol.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsNavigatorDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataSnapshotProtocol.swift)\" \\\n\"$INPUT_DIR/$(find . -name UserDefaultsProtocol.swift)\" \\\n\"$INPUT_DIR/$(find . -name WireframeDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name MainDetailViewCellDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseSignOut.swift)\" \\\n\"$INPUT_DIR/$(find . -name UserSignOut.swift)\" \\\n\"$INPUT_DIR/$(find . -name SignOutInteractor.swift)\"";
+			shellScript = "#!/usr/bin/env bash\n# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/Showcase-iOSTests/GeneratedShowcaseMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n# Please add \"$INPUT_DIR/$(find . -name SWIFTFILENAME.swift) below to be mocked out\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/$(find . -name Viewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseLoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginInteractorPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginAuthenticating.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name LoginPresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name AboutPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name AboutInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name AboutPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsPresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterInteractable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresentable.swift)\" \\\n\"$INPUT_DIR/$(find . -name HomePresenterViewable.swift)\" \\\n\"$INPUT_DIR/$(find . -name FIRStoring.swift)\" \\\n\"$INPUT_DIR/$(find . -name StorageReferenceable.swift)\" \\\n\"$INPUT_DIR/$(find . -name KeyBoardDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name KeyboardObservable.swift)\" \\\n\"$INPUT_DIR/$(find . -name NotificationCenterDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name SharedApplicationDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name AuthDataResultProtocol.swift)\" \\\n\"$INPUT_DIR/$(find . -name ContactUsNavigatorDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name DataSnapshotProtocol.swift)\" \\\n\"$INPUT_DIR/$(find . -name UserDefaultsProtocol.swift)\" \\\n\"$INPUT_DIR/$(find . -name WireframeDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name MainDetailViewCellDelegate.swift)\" \\\n\"$INPUT_DIR/$(find . -name FirebaseSignOut.swift)\" \\\n\"$INPUT_DIR/$(find . -name UserSignOut.swift)\" \\\n\"$INPUT_DIR/$(find . -name SignOutInteractor.swift)\"\n";
 		};
 		A9569BE43A8392DD64389346 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1267,9 +1380,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC6D07412092481100FFE9DD /* ErrorMessage.swift in Sources */,
+				E05BD676224257A300DB0714 /* About.swift in Sources */,
 				FDA1875D20B6FD0600F849D0 /* ScreenshotCollectionViewCell.swift in Sources */,
+				E05BD6712242579200DB0714 /* AboutPresenterViewable.swift in Sources */,
 				BC5F20D320B82AA9000EABE6 /* SpinnerView.swift in Sources */,
 				A3BA5ECB208F631100E0D34F /* ContactUsInteractableImplementation.swift in Sources */,
+				E05BD678224257B200DB0714 /* AboutViewModel.swift in Sources */,
 				A389D66920A595F7008DB6FE /* StorageReferenceExtension.swift in Sources */,
 				BC34F483209B28B8005CA9C4 /* FirUserProtocol.swift in Sources */,
 				BCA4CF4720BFEB17005DD485 /* FirebaseSignOut.swift in Sources */,
@@ -1278,6 +1394,7 @@
 				A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */,
 				BCE5DAD7208A23D5000458FD /* LoginAuthenticating.swift in Sources */,
 				A3B502FE20A31CAE00FA8546 /* ContactUsCollectionViewCell.swift in Sources */,
+				E05BD675224257A300DB0714 /* SocialMediaLinks.swift in Sources */,
 				BCA4CF4C20C00E5F005DD485 /* SignOutInteractor.swift in Sources */,
 				BC5F20CF20B7FFEE000EABE6 /* KeyboardObservable.swift in Sources */,
 				FD37E2862099DA52006EA459 /* ShowcaseApp.swift in Sources */,
@@ -1285,7 +1402,7 @@
 				BC56761320B41D36005CC3C3 /* Constants.swift in Sources */,
 				FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */,
 				A389D65D20A4444A008DB6FE /* ContactUsCellViewModel.swift in Sources */,
-				A3E71966209AFEE10081D5C1 /* BuildFile in Sources */,
+				A3E71966209AFEE10081D5C1 /* (null) in Sources */,
 				BC5F20D820BBE8FD000EABE6 /* LoadingView.swift in Sources */,
 				A3E7196E209B072A0081D5C1 /* OfficeViewModel.swift in Sources */,
 				FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */,
@@ -1299,6 +1416,7 @@
 				FD37E2882099DA69006EA459 /* HomePresenterInteractable.swift in Sources */,
 				BC5F20D120B7FFEE000EABE6 /* NotificationCenterDelegate.swift in Sources */,
 				A3BA5EC9208F54BB00E0D34F /* ContactUsPresentable.swift in Sources */,
+				E05BD66D2242578200DB0714 /* AboutInteractable.swift in Sources */,
 				BC4D82CA208F59B1003EFB06 /* EmailValidator.swift in Sources */,
 				A389D66720A59556008DB6FE /* StorageReferenceable.swift in Sources */,
 				A33D79B320887BAA00D272E7 /* DatabaseReference+Extension.swift in Sources */,
@@ -1310,9 +1428,11 @@
 				A36A55562099E4990037C4BF /* DataReferenceable.swift in Sources */,
 				A389D66520A594EB008DB6FE /* FIRStoring.swift in Sources */,
 				FDE1AE7E209B2D5A00D383C4 /* ShowcaseAppViewModel.swift in Sources */,
+				E05BD6692242576200DB0714 /* AboutPresentable.swift in Sources */,
 				BC02347020A0510A006E6E92 /* AppStoryboard+Enum.swift in Sources */,
 				BCEDE50120AC46AE005E1F4D /* Routable.swift in Sources */,
 				BCE5DAD3208A1B9B000458FD /* LoginInteractor.swift in Sources */,
+				E05BD66A2242576200DB0714 /* AboutPresenter.swift in Sources */,
 				A3E71971209B1A200081D5C1 /* ContactUsPresenterViewable.swift in Sources */,
 				BCE5DADC208A2756000458FD /* LoginInteractorPresentable.swift in Sources */,
 				BCA4CF4320BFE9FC005DD485 /* SignOut.swift in Sources */,
@@ -1330,13 +1450,14 @@
 				FD37E28A2099DAA3006EA459 /* HomePresenterInteractorImplementation.swift in Sources */,
 				BCA4CF4520BFEADE005DD485 /* AuthSignOutExtension.swift in Sources */,
 				FD98CA7F20A99F4D00FDF031 /* TabBarViewController.swift in Sources */,
+				E05BD66E2242578200DB0714 /* AboutInteractableImplementation.swift in Sources */,
 				A30146FE20AD600E00E8DE4E /* UIView+Utilities.swift in Sources */,
 				A374CC3C20B48553001BCD18 /* FunctionalityView.swift in Sources */,
 				A339977F208D12D8004776AB /* Office.swift in Sources */,
+				E05BD6722242579200DB0714 /* AboutViewController.swift in Sources */,
 				A389D66020A444B3008DB6FE /* ContactUsDelegate.swift in Sources */,
 				BCE5DAC12089D90A000458FD /* Auth+FirebaseAuthenticating.swift in Sources */,
 				A37BD16620AE9E15009C23A0 /* ContactUsNavigatorDelegate.swift in Sources */,
-				BC5675EF20B2C869005CC3C3 /* SocialMediaEndPoint.swift in Sources */,
 				FD98CA7D20A99F2800FDF031 /* HomeViewController.swift in Sources */,
 				A389D66320A59471008DB6FE /* FirebaseStorageExtension.swift in Sources */,
 				FDA1875F20B836C300F849D0 /* WireframeDelegate.swift in Sources */,
@@ -1351,7 +1472,6 @@
 				FD71315F208DD3EA0090E2E7 /* Path.swift in Sources */,
 				A3AC3FBE20AC2DCB00D4B07A /* ContactUsViewController.swift in Sources */,
 				BCE5DAC32089D962000458FD /* FirebaseLoginAuthenticating.swift in Sources */,
-				BC40834D20AA07F400A2D49C /* AboutViewController.swift in Sources */,
 				BC6D07362090683F00FFE9DD /* AuthenticationError.swift in Sources */,
 				FD6FAA9B208E1C1700D108C5 /* DataReferenceableImplementation.swift in Sources */,
 				A3E7196B209B06F40081D5C1 /* ContactUsPresenter.swift in Sources */,
@@ -1367,16 +1487,20 @@
 				A3E71979209B49CF0081D5C1 /* OfficeViewModelTests.swift in Sources */,
 				BC8406F1208DE32E00B15318 /* LoginInteractorTests.swift in Sources */,
 				BC4D82C7208F598C003EFB06 /* EmailValidatorTests.swift in Sources */,
+				E081FF7B223A7E7E0035648A /* AboutViewModelTests.swift in Sources */,
 				BC5F20DE20BDC028000EABE6 /* ShowcaseAppCellViewModelTests.swift in Sources */,
 				FDE1AE87209C987D00D383C4 /* ShowcaseAppViewModelTests.swift in Sources */,
 				BCE5DA8D2087AB69000458FD /* UserAuthenticationTests.swift in Sources */,
 				BC6D073F209246D400FFE9DD /* AuthErrorCodeTests.swift in Sources */,
 				FD37E28F2099EC94006EA459 /* HomeInteractableTests.swift in Sources */,
 				BC4D82D3208F6FB6003EFB06 /* PasswordValidatorTests.swift in Sources */,
+				E081FF85223B7CAC0035648A /* AboutInteractableTests.swift in Sources */,
 				FD4D307520BD738F00D1AE58 /* MainDetailCellViewModelTests.swift in Sources */,
 				FDE1AE82209B50A300D383C4 /* HomePresentableTests.swift in Sources */,
 				A3DBE44C209F8BC300561CE0 /* GeneratedShowcaseMocks.swift in Sources */,
 				A34475442088B318001734CA /* DatabaseReferenceTests.swift in Sources */,
+				E081FF8A223B99810035648A /* AboutPresenterTests.swift in Sources */,
+				E05BD64F224240CC00DB0714 /* GeneratedSocialMediaData.swift in Sources */,
 				A3FB58C520A98A030093506E /* ContactUsCellViewModelTests.swift in Sources */,
 				A3E7197F209C55370081D5C1 /* ContactUsPresenterTests.swift in Sources */,
 				BCA4CF4F20C025DA005DD485 /* SignOutTests.swift in Sources */,
@@ -1618,7 +1742,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				ENABLE_TESTABILITY = YES;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = "Showcase-iOSTests/Info.plist";
