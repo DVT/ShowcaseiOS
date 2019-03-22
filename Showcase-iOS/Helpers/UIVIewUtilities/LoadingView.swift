@@ -1,16 +1,12 @@
-//
-//  LoadingView.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/28.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import UIKit
 
 class LoadingView: UIView {
-    
+
+    // MARK: @IBOutlet(s)
+
     @IBOutlet var contentView: UIView!
+
+    // MARK: Operation(s)
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
