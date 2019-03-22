@@ -1,14 +1,8 @@
-//
-//  AboutViewModel.swift
-//  Showcase-iOS
-//
-//  Created by Sashen Pillay on 2019/03/14.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
 import Foundation
 
 class AboutViewModel {
+
+    // MARK: Properties
 
     var socialMediaLinks: SocialMediaLinks?
 
@@ -31,6 +25,8 @@ class AboutViewModel {
         let url = URL(string: socialMediaLinks?.website ?? "https://www.dvt.co.za")
         return url ?? nil
     }
+
+    // MARK: Opertaion(s)
 
     init(socialMediaLinks: SocialMediaLinks) {
         self.socialMediaLinks = socialMediaLinks

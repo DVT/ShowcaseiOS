@@ -1,11 +1,3 @@
-//
-//  AboutPresenter.swift
-//  Showcase-iOS
-//sto
-//  Created by Sashen Pillay on 2019/03/14.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
 import Foundation
 
 class AboutPresenter: AboutPresentable {

@@ -1,17 +1,13 @@
-//
-//  AboutInteractableImplementation.swift
-//  Showcase-iOS
-//
-//  Created by Sashen Pillay on 2019/03/14.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
 import Foundation
 
 class AboutInteractableImplementation: AboutInteractable {
 
+    // MARK: Properties
+
     var aboutPresenter: AboutPresentable?
     var dataReference: DataReferenceable?
+
+    // MARK: Operations
 
     func retrieveSocialMediaLinks() {
         let databaseReference = FirebaseRetrieverableImplementation(reference: dataReference)
