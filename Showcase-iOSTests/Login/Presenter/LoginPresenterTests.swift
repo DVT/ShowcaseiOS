@@ -1,11 +1,3 @@
-//
-//  LoginPresenterTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Lehlohonolo Mbele on 2018/04/24.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 import FirebaseAuth
 import Cuckoo
@@ -13,22 +5,35 @@ import Cuckoo
 
 class LoginPresenterTests: XCTestCase {
 
-    var systemUnderTest: LoginPresenter!
+    // MARK: Mocked dependencies
+
     var mockLoginViewer = MockLoginPresenterViewable()
     var mockLoginInteractor = MockLoginPresenterInteractable()
     let mockLoginPresenter = MockLoginInteractorPresentable()
     let mockUserDefaults = MockUserDefaultsProtocol()
     var mockWireFrameDelegate = MockWireframeDelegate()
-    
+
+    // MARK: System under test
+
+    var presenterUnderTest: LoginPresenter!
+
+    // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
-        systemUnderTest = LoginPresenter()
-        systemUnderTest.loginViewer = mockLoginViewer
-        systemUnderTest.loginInteractor = mockLoginInteractor
-        systemUnderTest.userDefaults = mockUserDefaults
-        systemUnderTest.loginViewer = mockLoginViewer
-        systemUnderTest.wireframe = mockWireFrameDelegate
+        presenterUnderTest = LoginPresenter()
+        presenterUnderTest.loginViewer = mockLoginViewer
+        presenterUnderTest.loginInteractor = mockLoginInteractor
+        presenterUnderTest.userDefaults = mockUserDefaults
+        presenterUnderTest.loginViewer = mockLoginViewer
+        presenterUnderTest.wireframe = mockWireFrameDelegate
     }
+
+    override func tearDown() {
+        super.tearDown()
+    }
+
+    // MARK: Tests
 
     func testThatTheSignInMethodOfTheLoginInteractorGetsCalled() {
         stub(mockLoginInteractor) { (mock) in
@@ -37,7 +42,7 @@ class LoginPresenterTests: XCTestCase {
         stub(mockLoginViewer) { (mock) in
             _ = when(mock.startLoadingAnimation().thenDoNothing())
         }
-        systemUnderTest.login(withEmail: "hloks@gmail.com", password: "dbhjbdhjb")
+        presenterUnderTest.login(withEmail: "hloks@gmail.com", password: "dbhjbdhjb")
         verify(mockLoginViewer, times(1)).startLoadingAnimation()
         verify(mockLoginInteractor, times(1)).signIn(withEmail: anyString(), password: anyString())
     }
@@ -46,16 +51,15 @@ class LoginPresenterTests: XCTestCase {
         stub(mockLoginViewer) { (mock) in
             let _ = when(mock.showEmailValidationFailure(withError: any()).thenDoNothing())
         }
-        systemUnderTest.login(withEmail: "", password: "shdjk")
+        presenterUnderTest.login(withEmail: "", password: "shdjk")
         verify(mockLoginViewer, times(1)).showEmailValidationFailure(withError: any())
     }
-
 
     func testThatWhenPasswordIsInvalidThenShowPasswordValidationErrorIsPresented() {
         stub(mockLoginViewer) { (mock) in
             let _ = when(mock.showPasswordValidationFailure(withError: any()).thenDoNothing())
         }
-        systemUnderTest.login(withEmail: "hloks@gmail.com", password: "")
+        presenterUnderTest.login(withEmail: "hloks@gmail.com", password: "")
         verify(mockLoginViewer, times(1)).showPasswordValidationFailure(withError: any())
     }
 
@@ -63,7 +67,7 @@ class LoginPresenterTests: XCTestCase {
         stub(mockLoginViewer) { (mock) in
             let _ = when(mock.showInvalidInputsFailure(withError: any()).thenDoNothing())
         }
-        systemUnderTest.login(withEmail: "", password: "")
+        presenterUnderTest.login(withEmail: "", password: "")
         verify(mockLoginViewer, times(1)).showInvalidInputsFailure(withError: any())
     }
 
@@ -72,7 +76,7 @@ class LoginPresenterTests: XCTestCase {
              _ = when(mock.showAuthenticationFailure(withMessage: any()).thenDoNothing())
              _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
-        systemUnderTest.failedToSign(withError: AuthenticationError.notAuthenticated)
+        presenterUnderTest.failedToSign(withError: AuthenticationError.notAuthenticated)
         verify(mockLoginViewer, times(1)).stopLoadingAnimation()
         verify(mockLoginViewer, times(1)).showAuthenticationFailure(withMessage: any())
     }
@@ -87,12 +91,12 @@ class LoginPresenterTests: XCTestCase {
             _ = when(mock.set(value: any(), forKey: any()).thenDoNothing())
         }
         
-        systemUnderTest.signedInSuccessfully()
+        presenterUnderTest.signedInSuccessfully()
         verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
         verify(mockLoginViewer, times(1)).stopLoadingAnimation()
         verify(mockLoginViewer, times(1)).showSuccess()
     }
-    
+
     func testThatWhenShowSuccessIfAlreadyLoggedInGetsCalledAndTheUserHasLoggedInBeforeThatTheShowSuccessWillBeInvoked() {
         stub(mockLoginViewer) { (mock) in
             let _ = when(mock.showSuccess().thenDoNothing())
@@ -102,12 +106,11 @@ class LoginPresenterTests: XCTestCase {
             _ = when(mock.bool(forKey: any()).thenReturn(true))
         }
         
-        systemUnderTest.showSuccesWhenUserIsAlreadyAuthenticated()
+        presenterUnderTest.showSuccesWhenUserIsAlreadyAuthenticated()
         verify(mockUserDefaults, times(1)).bool(forKey: any())
         verify(mockLoginViewer, times(1)).showSuccess()
     }
-    
-    
+
     func testThatWhenShowSuccessIfAlreadyLoggedInGetsCalledAndTheUserHasNotLoggedInBeforeThatTheShowSuccessWillNotBeInvoked() {
         stub(mockLoginViewer) { (mock) in
             let _ = when(mock.showSuccess().thenDoNothing())
@@ -117,11 +120,11 @@ class LoginPresenterTests: XCTestCase {
             _ = when(mock.bool(forKey: any()).thenReturn(false))
         }
         
-        systemUnderTest.showSuccesWhenUserIsAlreadyAuthenticated()
+        presenterUnderTest.showSuccesWhenUserIsAlreadyAuthenticated()
         verify(mockUserDefaults, times(1)).bool(forKey: any())
         verify(mockLoginViewer, times(0)).showSuccess()
     }
-    
+
     func testThatWhenSignedInSuccesfullyMethodGetsCalledThenTheUserDefaultsValueGetsSetToTrueWithValidKeyValuePair() {
         var userDefaultsDictionary:[String: Bool] = [:]
         
@@ -135,26 +138,27 @@ class LoginPresenterTests: XCTestCase {
                 userDefaultsDictionary["\(key)"] = value
             }))
         }
-        systemUnderTest.signedInSuccessfully()
+        presenterUnderTest.signedInSuccessfully()
         XCTAssertTrue(userDefaultsDictionary["\(UserDefaultsKeys.isLoggedIn.rawValue)"]!)
         verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
     }
-    
+
     func testThatWhenLoginViewIsNotALoginViewControllerThenTransitionToMailComposerIsNotInvokedWhenOpenMailClientGetsCalled() {
-        systemUnderTest?.loginViewer = nil
+        presenterUnderTest?.loginViewer = nil
         stub(mockWireFrameDelegate) { (mock) in
             _ = when(mock.transitionToMailComposer(any()).thenDoNothing())
         }
-        systemUnderTest?.openMailClient()
+        presenterUnderTest?.openMailClient()
         verify(mockWireFrameDelegate, times(0)).transitionToMailComposer(any())
     }
-    
+
     func testThatWhenLoginViewIsALoginViewControllerThenTransitionToMailComposerIsInvokedWhenOpenMailClientGetsCalled() {
-        systemUnderTest?.loginViewer = LoginViewController()
+        presenterUnderTest?.loginViewer = LoginViewController()
         stub(mockWireFrameDelegate) { (mock) in
             _ = when(mock.transitionToMailComposer(any()).thenDoNothing())
         }
-        systemUnderTest?.openMailClient()
+        presenterUnderTest?.openMailClient()
         verify(mockWireFrameDelegate, times(1)).transitionToMailComposer(any())
     }
+
 }

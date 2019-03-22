@@ -1,30 +1,36 @@
-//
-//  HomeInteractableTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Edward Mtshweni on 2018/05/02.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 import Firebase
 @testable import Showcase_iOS
 
 class HomeInteractableTests: XCTestCase {
+
+    // MARK: Mocked dependencies
+
     var mockDatabaseReference = MockDataReferenceable()
     var mockHomePresentable = MockHomePresentable()
     var mockDataSnapShot = MockDataSnapshotProtocol()
-    var systeUnderTest: HomeInteractor?
-    
+
+    // MARK: System under test
+
+    var interactorUnderTest: HomeInteractor?
+
+    // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
         let homeInteractor = HomeInteractor()
         homeInteractor.firebaseDatabaseReference = mockDatabaseReference
         homeInteractor.homePresenter = mockHomePresentable
-        systeUnderTest = homeInteractor
+        interactorUnderTest = homeInteractor
     }
-    
+
+    override func tearDown() {
+        super.tearDown()
+    }
+
+    // MARK: Tests
+
     func testThatFetchingShowcaseAppsCompletesWithAnErrorWhenFirebaseReturnsAnError() {
         stub(mockDatabaseReference) { mock in
             _ = when(mock.databaseReference().then({ return self.mockDatabaseReference }))
@@ -38,10 +44,10 @@ class HomeInteractableTests: XCTestCase {
                 XCTAssertEqual(error as DatabaseError, DatabaseError.childNotFound)
             }))
         }
-        self.systeUnderTest?.fetchShowcaseApps()
+        self.interactorUnderTest?.fetchShowcaseApps()
         verify(mockHomePresentable, times(1)).onFetchShowcaseAppsFailure(with: any())
     }
-    
+
     func testThatFetchingShowcaseAppsCompletesWithADataSnapshopAndAnEmptyListOfShowcaseApps() {
         stub(mockDataSnapShot) { (mock) in
             _ = when(mock.value.get.thenReturn(nil))
@@ -58,10 +64,10 @@ class HomeInteractableTests: XCTestCase {
                 XCTAssertTrue(showcaseApss.isEmpty)
             }))
         }
-        self.systeUnderTest?.fetchShowcaseApps()
+        self.interactorUnderTest?.fetchShowcaseApps()
         verify(mockHomePresentable, times(1)).onFetchShowcaseAppsSuccess(with: any())
     }
-    
+
     func testThatWhenDataSnapShotIsNotNilAndHasValueThenAnArrayOfShowcaseAppIsUpdatedCorrectlyWithValidDataFromDataSnapshot() {
         stub(mockDataSnapShot) { (mock) in
             _ = when(mock.value.get.thenReturn(createFakeApp()))
@@ -79,13 +85,14 @@ class HomeInteractableTests: XCTestCase {
                 XCTAssert(showcaseApss.first?.client == "Absa")
             }))
         }
-        self.systeUnderTest?.fetchShowcaseApps()
+        self.interactorUnderTest?.fetchShowcaseApps()
         verify(mockHomePresentable, times(1)).onFetchShowcaseAppsSuccess(with: any())
     }
-    
+
     func createFakeApp() -> [String: Any] {
         let fakeShowcaseApp = ["client": "Absa",
                                "functionality": "Helps customer invest money"]
         return fakeShowcaseApp
     }
+
 }

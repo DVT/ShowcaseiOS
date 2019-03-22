@@ -1,29 +1,34 @@
-//
-//  DatabaseReferenceTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Kagiso Mohajane on 2018/04/19.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 import Firebase
 @testable import Showcase_iOS
 
 class DatabaseReferenceTests: XCTestCase {
-    
+
+    // MARK: Mocked dependencies
+
     let mockDatabaseReference = MockDataReferenceable()
-    let mockPath = ""
-    var systemUnderTest : FirebaseRetrieverableImplementation?
     var mockSnaphot: DataSnapshot?
-    
+    let mockPath = ""
+
+    // MARK: System under test
+
+    var systemUnderTest : FirebaseRetrieverableImplementation?
+
+    // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
         systemUnderTest  = FirebaseRetrieverableImplementation(reference: mockDatabaseReference)
         mockSnaphot = DataSnapshot()
     }
-    
+
+    override func tearDown() {
+        super.tearDown()
+    }
+
+    // MARK: Tests
+
     func testThatRetrievingFirebaseDatabaseReferenceDoesNotReturnNil() {
         stub(mockDatabaseReference) { (mock) in
             _ = when(mock.databaseReference()).then({ (_ ) -> DataReferenceable in
@@ -34,7 +39,7 @@ class DatabaseReferenceTests: XCTestCase {
         XCTAssertNotNil(result)
         verify(mockDatabaseReference, times(1)).databaseReference()
     }
-    
+
     func testThatRetrievingFirebaseDatabaseReferenceReturnsNil() {
         stub(mockDatabaseReference) { (mock) in
             _ = when(mock.databaseReference()).thenReturn(nil)
@@ -43,7 +48,7 @@ class DatabaseReferenceTests: XCTestCase {
         XCTAssertNil(result)
         verify(mockDatabaseReference, times(1)).databaseReference()
     }
-    
+
     func testThatFirebaseFetcherReturnsDataSnapshotThatIsNotNilWhenFirebaseReturnsAValidSnapShot() {
         setUpDatabaseReferenceTestsStubs()
         stub(mockDatabaseReference) { mock in
@@ -58,7 +63,7 @@ class DatabaseReferenceTests: XCTestCase {
         }
         verify(mockDatabaseReference, times(1)).observe(eventType: any(), with: any(), withCancel: any())
     }
-    
+
     func testThatFirebaseFetcherReturnsErrorThatIsNotNilWhenFirebaseReturnsAnError() {
         setUpDatabaseReferenceTestsStubs()
         stub (mockDatabaseReference) { mock in
@@ -72,7 +77,7 @@ class DatabaseReferenceTests: XCTestCase {
         }
         verify(mockDatabaseReference, times(1)).observe(eventType: any(), with: any(), withCancel: any())
     }
-    
+
     private func setUpDatabaseReferenceTestsStubs() {
         stub(mockDatabaseReference) { (mock) in
             _ = when(mock.databaseReference()).then({ (_ ) -> DataReferenceable? in

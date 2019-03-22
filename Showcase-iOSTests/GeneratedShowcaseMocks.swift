@@ -1,12 +1,5 @@
-// MARK: - Mocks generated from file: Showcase-iOS/About/Interactor/AboutInteractable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/About/Interactor/AboutInteractable.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  AboutInteractable.swift
-//  Showcase-iOS
-//
-//  Created by Sashen Pillay on 2019/03/14.
-//  Copyright © 2019 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -101,15 +94,164 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/About/New Group/AboutPresenterViewable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/About/Presenter/AboutPresentable.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  AboutPresenterViewable.swift
-//  Showcase-iOS
-//
-//  Created by Sashen Pillay on 2019/03/14.
-//  Copyright © 2019 DVT. All rights reserved.
-//
+
+import Cuckoo
+@testable import Showcase_iOS
+
+import Foundation
+
+
+ class MockAboutPresentable: AboutPresentable, Cuckoo.ProtocolMock {
+     typealias MocksType = AboutPresentable
+     typealias Stubbing = __StubbingProxy_AboutPresentable
+     typealias Verification = __VerificationProxy_AboutPresentable
+
+    private var __defaultImplStub: AboutPresentable?
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+     func enableDefaultImplementation(_ stub: AboutPresentable) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+
+    
+
+    
+
+    
+    
+    
+     func onRetrieveSocialMediaLinksComplete(with links: SocialMediaLinks)  {
+        
+            return cuckoo_manager.call("onRetrieveSocialMediaLinksComplete(with: SocialMediaLinks)",
+                parameters: (links),
+                escapingParameters: (links),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.onRetrieveSocialMediaLinksComplete(with: links))
+        
+    }
+    
+    
+    
+     func onRetrieveSocialMediaLinksFailed(with error: Error)  {
+        
+            return cuckoo_manager.call("onRetrieveSocialMediaLinksFailed(with: Error)",
+                parameters: (error),
+                escapingParameters: (error),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.onRetrieveSocialMediaLinksFailed(with: error))
+        
+    }
+    
+    
+    
+     func retrieveSocialMediaLinks()  {
+        
+            return cuckoo_manager.call("retrieveSocialMediaLinks()",
+                parameters: (),
+                escapingParameters: (),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.retrieveSocialMediaLinks())
+        
+    }
+    
+
+	 struct __StubbingProxy_AboutPresentable: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func onRetrieveSocialMediaLinksComplete<M1: Cuckoo.Matchable>(with links: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(SocialMediaLinks)> where M1.MatchedType == SocialMediaLinks {
+	        let matchers: [Cuckoo.ParameterMatcher<(SocialMediaLinks)>] = [wrap(matchable: links) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockAboutPresentable.self, method: "onRetrieveSocialMediaLinksComplete(with: SocialMediaLinks)", parameterMatchers: matchers))
+	    }
+	    
+	    func onRetrieveSocialMediaLinksFailed<M1: Cuckoo.Matchable>(with error: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Error)> where M1.MatchedType == Error {
+	        let matchers: [Cuckoo.ParameterMatcher<(Error)>] = [wrap(matchable: error) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockAboutPresentable.self, method: "onRetrieveSocialMediaLinksFailed(with: Error)", parameterMatchers: matchers))
+	    }
+	    
+	    func retrieveSocialMediaLinks() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockAboutPresentable.self, method: "retrieveSocialMediaLinks()", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_AboutPresentable: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func onRetrieveSocialMediaLinksComplete<M1: Cuckoo.Matchable>(with links: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == SocialMediaLinks {
+	        let matchers: [Cuckoo.ParameterMatcher<(SocialMediaLinks)>] = [wrap(matchable: links) { $0 }]
+	        return cuckoo_manager.verify("onRetrieveSocialMediaLinksComplete(with: SocialMediaLinks)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func onRetrieveSocialMediaLinksFailed<M1: Cuckoo.Matchable>(with error: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Error {
+	        let matchers: [Cuckoo.ParameterMatcher<(Error)>] = [wrap(matchable: error) { $0 }]
+	        return cuckoo_manager.verify("onRetrieveSocialMediaLinksFailed(with: Error)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func retrieveSocialMediaLinks() -> Cuckoo.__DoNotUse<Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("retrieveSocialMediaLinks()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class AboutPresentableStub: AboutPresentable {
+    
+
+    
+
+    
+     func onRetrieveSocialMediaLinksComplete(with links: SocialMediaLinks)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func onRetrieveSocialMediaLinksFailed(with error: Error)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func retrieveSocialMediaLinks()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Showcase-iOS/About/View/AboutPresenterViewable.swift at 2019-03-22 06:56:54 +0000
+
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -294,170 +436,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/About/Presenter/AboutPresentable.swift at 2019-03-20 10:55:06 +0000
-
-//
-//  AboutPresentable.swift
-//  Showcase-iOS
-//
-//  Created by Sashen Pillay on 2019/03/14.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
-import Cuckoo
-@testable import Showcase_iOS
-
-import Foundation
-
-
- class MockAboutPresentable: AboutPresentable, Cuckoo.ProtocolMock {
-     typealias MocksType = AboutPresentable
-     typealias Stubbing = __StubbingProxy_AboutPresentable
-     typealias Verification = __VerificationProxy_AboutPresentable
-
-    private var __defaultImplStub: AboutPresentable?
-
-     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
-
-     func enableDefaultImplementation(_ stub: AboutPresentable) {
-        __defaultImplStub = stub
-        cuckoo_manager.enableDefaultStubImplementation()
-    }
-
-    
-
-    
-
-    
-    
-    
-     func onRetrieveSocialMediaLinksComplete(with links: SocialMediaLinks)  {
-        
-            return cuckoo_manager.call("onRetrieveSocialMediaLinksComplete(with: SocialMediaLinks)",
-                parameters: (links),
-                escapingParameters: (links),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.onRetrieveSocialMediaLinksComplete(with: links))
-        
-    }
-    
-    
-    
-     func onRetrieveSocialMediaLinksFailed(with error: Error)  {
-        
-            return cuckoo_manager.call("onRetrieveSocialMediaLinksFailed(with: Error)",
-                parameters: (error),
-                escapingParameters: (error),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.onRetrieveSocialMediaLinksFailed(with: error))
-        
-    }
-    
-    
-    
-     func retrieveSocialMediaLinks()  {
-        
-            return cuckoo_manager.call("retrieveSocialMediaLinks()",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.retrieveSocialMediaLinks())
-        
-    }
-    
-
-	 struct __StubbingProxy_AboutPresentable: Cuckoo.StubbingProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	
-	     init(manager: Cuckoo.MockManager) {
-	        self.cuckoo_manager = manager
-	    }
-	    
-	    
-	    func onRetrieveSocialMediaLinksComplete<M1: Cuckoo.Matchable>(with links: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(SocialMediaLinks)> where M1.MatchedType == SocialMediaLinks {
-	        let matchers: [Cuckoo.ParameterMatcher<(SocialMediaLinks)>] = [wrap(matchable: links) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockAboutPresentable.self, method: "onRetrieveSocialMediaLinksComplete(with: SocialMediaLinks)", parameterMatchers: matchers))
-	    }
-	    
-	    func onRetrieveSocialMediaLinksFailed<M1: Cuckoo.Matchable>(with error: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Error)> where M1.MatchedType == Error {
-	        let matchers: [Cuckoo.ParameterMatcher<(Error)>] = [wrap(matchable: error) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockAboutPresentable.self, method: "onRetrieveSocialMediaLinksFailed(with: Error)", parameterMatchers: matchers))
-	    }
-	    
-	    func retrieveSocialMediaLinks() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAboutPresentable.self, method: "retrieveSocialMediaLinks()", parameterMatchers: matchers))
-	    }
-	    
-	}
-
-	 struct __VerificationProxy_AboutPresentable: Cuckoo.VerificationProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	    private let callMatcher: Cuckoo.CallMatcher
-	    private let sourceLocation: Cuckoo.SourceLocation
-	
-	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
-	        self.cuckoo_manager = manager
-	        self.callMatcher = callMatcher
-	        self.sourceLocation = sourceLocation
-	    }
-	
-	    
-	
-	    
-	    @discardableResult
-	    func onRetrieveSocialMediaLinksComplete<M1: Cuckoo.Matchable>(with links: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == SocialMediaLinks {
-	        let matchers: [Cuckoo.ParameterMatcher<(SocialMediaLinks)>] = [wrap(matchable: links) { $0 }]
-	        return cuckoo_manager.verify("onRetrieveSocialMediaLinksComplete(with: SocialMediaLinks)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func onRetrieveSocialMediaLinksFailed<M1: Cuckoo.Matchable>(with error: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Error {
-	        let matchers: [Cuckoo.ParameterMatcher<(Error)>] = [wrap(matchable: error) { $0 }]
-	        return cuckoo_manager.verify("onRetrieveSocialMediaLinksFailed(with: Error)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func retrieveSocialMediaLinks() -> Cuckoo.__DoNotUse<Void> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("retrieveSocialMediaLinks()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	}
-
-}
-
- class AboutPresentableStub: AboutPresentable {
-    
-
-    
-
-    
-     func onRetrieveSocialMediaLinksComplete(with links: SocialMediaLinks)  {
-        return DefaultValueRegistry.defaultValue(for: Void.self)
-    }
-    
-     func onRetrieveSocialMediaLinksFailed(with error: Error)  {
-        return DefaultValueRegistry.defaultValue(for: Void.self)
-    }
-    
-     func retrieveSocialMediaLinks()  {
-        return DefaultValueRegistry.defaultValue(for: Void.self)
-    }
-    
-}
-
-
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2019-03-22 06:56:54 +0000
 
 
 import Cuckoo
@@ -553,7 +532,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2019-03-22 06:56:54 +0000
 
 
 import Cuckoo
@@ -709,7 +688,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/View/ContactUsPresenterViewable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/View/ContactUsPresenterViewable.swift at 2019-03-22 06:56:54 +0000
 
 
 import Cuckoo
@@ -895,7 +874,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsDelegate.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsDelegate.swift at 2019-03-22 06:56:54 +0000
 
 
 import Cuckoo
@@ -1021,7 +1000,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsNavigatorDelegate.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsNavigatorDelegate.swift at 2019-03-22 06:56:54 +0000
 
 
 import Cuckoo
@@ -1118,7 +1097,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/SharedApplicationDelegate.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/SharedApplicationDelegate.swift at 2019-03-22 06:56:54 +0000
 
 
 import Cuckoo
@@ -1214,15 +1193,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  HomePresenterInteractable.swift
-//  Showcase-iOS
-//
-//  Created by Edward Mtshweni on 2018/05/02.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -1317,15 +1289,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  HomePresentable.swift
-//  Showcase-iOS
-//
-//  Created by Edward Mtshweni on 2018/05/02.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -1671,15 +1636,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  HomePresenterViewable.swift
-//  Showcase-iOS
-//
-//  Created by Edward Mtshweni on 2018/05/03.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -1864,7 +1822,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2019-03-22 06:56:54 +0000
 
 
 import Cuckoo
@@ -2022,7 +1980,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataSnapshotProtocol.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataSnapshotProtocol.swift at 2019-03-22 06:56:54 +0000
 
 //
 //  DataSnapshotProtocol.swift
@@ -2125,7 +2083,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/FIRStoring.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/FIRStoring.swift at 2019-03-22 06:56:54 +0000
 
 
 import Cuckoo
@@ -2222,7 +2180,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/StorageReferenceable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/StorageReferenceable.swift at 2019-03-22 06:56:54 +0000
 
 
 import Cuckoo
@@ -2349,15 +2307,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  PresenterInteractable.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/04/20.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -2534,15 +2485,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  InteractorPresentable.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/04/20.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -2667,15 +2611,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/UserDefaultsProtocol.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/UserDefaultsProtocol.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  UserDefaultsProtocol.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/23.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -2800,15 +2737,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/AuthDataResultProtocol.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/AuthDataResultProtocol.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  FIRAuthDataResultProtocol.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/16.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -2903,15 +2833,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  FirebaseAuthenticating.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/04/20.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -3006,15 +2929,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  Authenticating.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/04/20.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -3109,7 +3025,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyBoardDelegate.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyBoardDelegate.swift at 2019-03-22 06:56:54 +0000
 
 //
 //  KeyBoardDelegate.swift
@@ -3393,7 +3309,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyboardObservable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyboardObservable.swift at 2019-03-22 06:56:54 +0000
 
 //
 //  KeyboardObservable.swift
@@ -3526,7 +3442,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/NotificationCenterDelegate.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/NotificationCenterDelegate.swift at 2019-03-22 06:56:54 +0000
 
 //
 //  NotificationCenterDelegate.swift
@@ -3689,7 +3605,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2019-03-22 06:56:54 +0000
 
 //
 //  PresenterViewable.swift
@@ -4013,15 +3929,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Logout/Interactor/SignOutInteractor.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Logout/Interactor/SignOutInteractor.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  SignOutInteractor.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/31.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -4199,15 +4108,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/FirebaseSignOut.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/FirebaseSignOut.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  FirebaseSignOut.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/31.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -4302,15 +4204,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/UserSignOut.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/UserSignOut.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  UserSignOut.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/31.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -4405,15 +4300,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Router/WireframeDelegate.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Router/WireframeDelegate.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  WireframeDelegate.swift
-//  Showcase-iOS
-//
-//  Created by Edward Mtshweni on 2018/05/25.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -4569,15 +4457,8 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2019-03-20 10:55:06 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2019-03-22 06:56:54 +0000
 
-//
-//  Viewable.swift
-//  Showcase-iOS
-//
-//  Created by pjapple on 2018/04/17.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS

@@ -1,27 +1,32 @@
-//
-//  SignOutInteractorTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Lehlohonolo Mbele on 2018/05/31.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 @testable import Showcase_iOS
 
 class SignOutInteractorTests: XCTestCase {
-    
-    var systemUnderTest = SignOutInteractor()
+
+     // MARK: System under test
+
+    var interactorUnderTest = SignOutInteractor()
+
+     // MARK: Mocked dependencies
+
     var mockHomePresenter = MockHomePresentable()
     var mockUserSignOut = MockUserSignOut()
 
+     // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
-        systemUnderTest.homePresenter = mockHomePresenter
-        systemUnderTest.userSignOut = mockUserSignOut
+        interactorUnderTest.homePresenter = mockHomePresenter
+        interactorUnderTest.userSignOut = mockUserSignOut
     }
-    
+
+    override func tearDown() {
+        super.tearDown()
+    }
+
+     // MARK: Test(s)
+
     func testThatIfTheUserSignOutMethodDoesNotthrowThenTheHomePresenterSignedOutMethodGetsInvoked() {
         stub(mockUserSignOut) { (mock) in
             _ = when(mock.signOut().thenDoNothing())
@@ -29,8 +34,8 @@ class SignOutInteractorTests: XCTestCase {
         stub(mockHomePresenter) { (mock) in
             _ = when(mock.signedOut().thenDoNothing())
         }
-        
-        systemUnderTest.signOut()
+
+        interactorUnderTest.signOut()
         verify(mockUserSignOut, times(1)).signOut()
         verify(mockHomePresenter, times(1)).signedOut()
     }

@@ -1,31 +1,33 @@
-
 import XCTest
 import Cuckoo
 @testable import Showcase_iOS
 
 class ContactUsPresenterTests: XCTestCase {
 
-    //MARK: Injectables
+    // MARK: Mcoks
 
     var mockPresenterViewable = MockContactUsPresenterViewable()
     var mockContactUsInteractor = MockContactUsInteractable()
 
-    //MARK: Properties
+    // MARK: Properties
 
-    var systemUNderTest: ContactUsPresenter!
     var mockError = NSError(domain: "Firebase error", code: 1, userInfo: nil)
 
-    //MARK: Lifecycle Method(s)
+    // System under test
+
+    var presenterUnderTest: ContactUsPresenter!
+
+    // MARK: Lifecycle Method(s)
 
     override func setUp() {
         super.setUp()
         let contactUsPresenter = ContactUsPresenter()
         contactUsPresenter.contactUsInteractor = mockContactUsInteractor
         contactUsPresenter.contactUsView = mockPresenterViewable
-        systemUNderTest = contactUsPresenter
+        presenterUnderTest = contactUsPresenter
     }
 
-    //MARK: Tests
+    // MARK: Tests
 
     func testThatWhenRetrieveContactsFailsWithErrorThatIsNotNilThenShowOnFailureIsCalled() {
         stub(mockPresenterViewable) { (mock) in
@@ -35,7 +37,7 @@ class ContactUsPresenterTests: XCTestCase {
             }))
             _  = when(mock.stopLoadingAnimation().thenDoNothing())
         }
-        systemUNderTest.onRetrieveOfficesFailed(with: mockError)
+        presenterUnderTest.onRetrieveOfficesFailed(with: mockError)
         verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
         verify(mockPresenterViewable, times(1)).showOnFailure(with: any())
     }
@@ -48,12 +50,12 @@ class ContactUsPresenterTests: XCTestCase {
             }))
             _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
-        systemUNderTest.onRetrieveOfficesComplete(with: mockOffices())
+        presenterUnderTest.onRetrieveOfficesComplete(with: mockOffices())
         verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
         verify(mockPresenterViewable, times(1)).showOnSuccess(with: any())
     }
 
-    //MARK: Mock Offices to help tests.
+    // MARK: Mock Offices to help tests.
 
     func mockOffices() -> [Office] {
         let ptaOffice = Office(with: mockValidOfficeResponse())

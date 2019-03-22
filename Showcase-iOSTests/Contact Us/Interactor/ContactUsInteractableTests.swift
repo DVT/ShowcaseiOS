@@ -1,11 +1,3 @@
-//
-//  ContactUsInteractableTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Kagiso Mohajane on 2018/04/30.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 import Firebase
@@ -13,19 +5,19 @@ import Firebase
 
 class ContactUsInteractableTests: XCTestCase {
     
-    //MARK: Mockables
+    // MARK: Mocked dependencies
     
     var mockDatabaseRefeceabele = MockDataReferenceable()
     var mockContactUsPresentable = MockContactUsPresentable()
     var mockDataSnapshot = MockDataSnapshotProtocol()
-    
-    //MARK: System(s) under test
-    
-    var systemUnderTest: ContactUsInteractableImplementation?
     var mockError: NSError?
     
-    //MARK: Test lifcycle method(s)
+    // MARK: System(s) under test
+
+    var systemUnderTest: ContactUsInteractableImplementation?
     
+    // MARK: Test lifcycle method(s)
+
     override func setUp() {
         super.setUp()
         mockError = NSError(domain: "FirebaseError", code: 1, userInfo: nil)
@@ -34,9 +26,9 @@ class ContactUsInteractableTests: XCTestCase {
         contactUsInteractor.dataReference = mockDatabaseRefeceabele        
         systemUnderTest = contactUsInteractor
     }
-    
-    //MARK: Tests
-    
+
+    // MARK: Tests
+
     func testThatRetrievingFirbaseContactsReturnsAValidErrorWhenFirebaseContactRetrieverReturnsAnError() {
         setUpMockStubs()
         stub(mockDatabaseRefeceabele) { mock in
@@ -53,7 +45,7 @@ class ContactUsInteractableTests: XCTestCase {
         systemUnderTest?.retrieveContacts()
         verify(mockContactUsPresentable, times(1)).onRetrieveOfficesFailed(with: any())
     }
-    
+
     func testThatWhenFirebaseContactRetrieverReturnsANullSnapshotThenOnRetrieveOfficesCompletesWithAnEmptyArrayOfOffices() {
         setUpMockStubs()
         
@@ -76,7 +68,7 @@ class ContactUsInteractableTests: XCTestCase {
         systemUnderTest?.retrieveContacts()
         verify(mockContactUsPresentable, times(1)).onRetrieveOfficesComplete(with: any())
     }
-    
+
     func testThatWhenFirebaseContactRetrieverReturnsAValidNonEmptySnapShotThenOnRetrieveOfficesCompletesWithAnArrayOfOffices() {
         setUpMockStubs()
         
@@ -100,7 +92,7 @@ class ContactUsInteractableTests: XCTestCase {
         systemUnderTest?.retrieveContacts()
         verify(mockContactUsPresentable, times(1)).onRetrieveOfficesComplete(with: any())
     }
-    
+
     func setUpMockStubs() {
         stub(mockDatabaseRefeceabele) { (mock) in
             let _ = when(mock.databaseReference().then({ return self.mockDatabaseRefeceabele }))
@@ -108,10 +100,10 @@ class ContactUsInteractableTests: XCTestCase {
             
         }
     }
-    
+
     func createFakeContact() -> [String: Any] {
         let contact = ["name": "DVT", "telephone": "123456789"]
         return contact
     }
-    
+
 }

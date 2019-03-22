@@ -1,11 +1,3 @@
-//
-//  GeneratedSocialMediaData.swift
-//  Showcase-iOSTests
-//
-//  Created by Sashen Pillay on 2019/03/20.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
 import Foundation
 import Cuckoo
 @testable import Showcase_iOS
@@ -33,32 +25,32 @@ struct GeneratedSocialMediaData {
                                        "instagram": nilValue as Any]
         return response
     }
-    
+
     var expectedTwitterUrl: URL {
         let url = URL(string: "https://twitter.com/dvt_corporate")
         return url!
     }
-    
+
     var expectedFacebookUrl: URL {
         let url = URL(string: "https://www.facebook.com/DVTSoftware")
         return url!
     }
-    
+
     var expectedInstagramUrl: URL {
         let url = URL(string: "https://www.instagram.com/dvtsoftware/")
         return url!
     }
-    
+
     var expectedWebsiteUrl: URL {
         let url = URL(string: "https://www.dvt.co.za")
         return url!
     }
-    
+
     var expectedSocialMediaLinks: SocialMediaLinks {
         let links = SocialMediaLinks(with: mockSocialMediaResponseWithValidData)
         return links
     }
-    
+
     var expectedAboutViewModel: AboutViewModel {
         let links = expectedSocialMediaLinks
         let viewModel = AboutViewModel(socialMediaLinks: links)

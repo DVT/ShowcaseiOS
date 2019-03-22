@@ -1,11 +1,3 @@
-//
-//  AboutPresenterTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Sashen Pillay on 2019/03/15.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 @testable import Showcase_iOS
@@ -31,6 +23,10 @@ class AboutPresenterTests: XCTestCase {
         aboutPresenter.aboutInteractor = mockAboutInteractor
         aboutPresenter.aboutView = mockPresenterViewable
         presenterUnderTest = aboutPresenter
+    }
+
+    override func tearDown() {
+        super.tearDown()
     }
 
     // MARK: Tests

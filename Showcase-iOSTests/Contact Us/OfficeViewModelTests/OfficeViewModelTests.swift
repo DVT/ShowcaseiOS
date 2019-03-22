@@ -1,15 +1,14 @@
-
 import XCTest
 @testable import Showcase_iOS
 
 class OfficeViewModelTests: XCTestCase {
     
-    //MARK: Properties
+    // MARK: Properties
     
     var jhbOfficeViewModel: OfficeViewModel!
     var cptOfficeViewModel: OfficeViewModel!
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     
     override func setUp() {
         super.setUp()
@@ -22,14 +21,14 @@ class OfficeViewModelTests: XCTestCase {
         jhbOfficeViewModel = nil
         cptOfficeViewModel = nil
     }
-    //MARK: initializationTests
+    // MARK: initializationTests
     
     func testInitializationHasCompletedWithoutNil() {
         XCTAssertNotNil(jhbOfficeViewModel)
         XCTAssertNotNil(cptOfficeViewModel)
     }
     
-    //Mark: ViewModel Positive Tests
+    // Mark: ViewModel Positive Tests
     
     func testThatNameInOfficeViewModelHasTheExpectedValue() {
         XCTAssertEqual(jhbOfficeViewModel.name, "Johannesburg")
@@ -67,7 +66,7 @@ class OfficeViewModelTests: XCTestCase {
         XCTAssertEqual(jhbOfficeViewModel.telephoneNumber, "+27117595930")
     }
     
-    //MARK: ViewModel Negative tests
+    // MARK: ViewModel Negative tests
     
     func testThatNameInOfficeViewModelHasTheExpectedNilValue() {
         XCTAssertEqual(cptOfficeViewModel.name, nil)
@@ -106,7 +105,7 @@ class OfficeViewModelTests: XCTestCase {
     }
     
     
-    //MARK: Mocking Firebase response dictionary
+    // MARK: Mocking Firebase response dictionary
     
     func mockValidOfficeResponse() -> [String:Any] {
         let mockJhbOffice: [String: Any] = ["latitude":-26.122743, "name":"Johannesburg","image":"offices/dvt_hyde_park.png",

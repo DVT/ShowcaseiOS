@@ -1,138 +1,146 @@
-
-
 import XCTest
 import Cuckoo
 @testable import Showcase_iOS
 
 class ContactUsCellViewModelTests: XCTestCase {
-    
+
+    // MARK: Mocked dependencies
+
     var mockSharedApplicationDelegate = MockSharedApplicationDelegate()
     var mockContactUsNavigatorDelegate = MockContactUsNavigatorDelegate()
-    var systemUnderTest: ContactUsCellViewModel?
     var mockOfficeViewModel: OfficeViewModel?
     var mockInvalidOfficeViewModel: OfficeViewModel?
     var mockInvalidEmailOfficeViewModel: OfficeViewModel?
     var mockInvalidCoordinatesOfficeViewModel: OfficeViewModel?
     var mockUrlString = "012233"
     var mockUrl: URL?
-    
+
+    // MARK: System under test
+
+    var viewModelUnderTest: ContactUsCellViewModel?
+
+    // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
         mockOfficeViewModel = mockValidOfficeResponse()
         mockInvalidOfficeViewModel = mockInvalidOfficeResponse()
-        systemUnderTest = ContactUsCellViewModel(with: mockOfficeViewModel)
-        systemUnderTest?.sharedApplication = mockSharedApplicationDelegate
-        systemUnderTest?.contactUsNavigator = mockContactUsNavigatorDelegate
+        viewModelUnderTest = ContactUsCellViewModel(with: mockOfficeViewModel)
+        viewModelUnderTest?.sharedApplication = mockSharedApplicationDelegate
+        viewModelUnderTest?.contactUsNavigator = mockContactUsNavigatorDelegate
         mockUrl = URL(string: mockUrlString)
     }
 
+    override func tearDown() {
+        super.tearDown()
+        viewModelUnderTest = nil
+        mockInvalidOfficeViewModel = nil
+        mockOfficeViewModel = nil
+        mockUrl = nil
+    }
+
+    // MARK: Tests
+
     func testThatWhenNavigateMethodExecutesWithLatitudeThatIsEmptyThenNavigateDoesNotExecute() {
-        systemUnderTest = ContactUsCellViewModel(with: mockOfficeResponseWithNilLatitude())
+        viewModelUnderTest = ContactUsCellViewModel(with: mockOfficeResponseWithNilLatitude())
         stub(mockContactUsNavigatorDelegate) { mock in
             _ = when(mock.navigate(with: any(), longitude: any(), branch: any()).thenDoNothing())
         }
-        systemUnderTest?.navigate()
+        viewModelUnderTest?.navigate()
         verify(mockContactUsNavigatorDelegate, never()).navigate(with: any(), longitude: any(), branch: any())
     }
-    
+
     func testThatWhenNavigateMethodExecutesWithLongitudeThatIsEmptyThenNavigateDoesNotExecute() {
-        systemUnderTest = ContactUsCellViewModel(with: mockOfficeResponseWithNilLongitude())
+        viewModelUnderTest = ContactUsCellViewModel(with: mockOfficeResponseWithNilLongitude())
         stub(mockContactUsNavigatorDelegate) { mock in
             _ = when(mock.navigate(with: any(), longitude: any(), branch: any()).thenDoNothing())
         }
-        systemUnderTest?.navigate()
+        viewModelUnderTest?.navigate()
         verify(mockContactUsNavigatorDelegate, never()).navigate(with: any(), longitude: any(), branch: any())
     }
-    
+
     func testThatWhenNavigateMethodExecutesWithLongitudeAndLongitudeThatAreNotNilThenNavigateExecutes() {
         stub(mockContactUsNavigatorDelegate) { mock in
             _ = when(mock.navigate(with: any(), longitude: any(), branch: any()).thenDoNothing())
         }
-        systemUnderTest?.navigate()
+        viewModelUnderTest?.navigate()
         verify(mockContactUsNavigatorDelegate, times(1)).navigate(with: any(), longitude: any(), branch: any())
     }
-    
+
     func testThatWhenCallMethodExecutesOpenSharedApplicationExecutesWithURL() {
         stub(mockSharedApplicationDelegate) { mock in
             _ = when(mock.openSharedApplication(with: any()).then({ url in
                 self.mockUrl = url
             }))
         }
-        systemUnderTest?.call()
+        viewModelUnderTest?.call()
         verify(mockSharedApplicationDelegate, times(1)).openSharedApplication(with: any())
     }
-    
+
     func testThatWhenEmailMethodExecutesOpenSharedApplicationExecutesWithURL() {
         stub(mockSharedApplicationDelegate) { mock in
             _ = when(mock.openSharedApplication(with: any()).then({ url in
                 self.mockUrl = url
             }))
         }
-        systemUnderTest?.email()
+        viewModelUnderTest?.email()
         verify(mockSharedApplicationDelegate, times(1)).openSharedApplication(with: any())
     }
-    
+
     func testThatWhenCallMethodExecutesWithTelephoneNumberThatIsEmptyThenOpenSharedApplicationDonesNotExecute() {
-        systemUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
+        viewModelUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
         stub(mockSharedApplicationDelegate) { mock in
             _ = when(mock.openSharedApplication(with: any()).thenDoNothing())
         }
-        systemUnderTest?.call()
+        viewModelUnderTest?.call()
         verify(mockSharedApplicationDelegate, times(0)).openSharedApplication(with: any())
     }
-    
+
     func testThatWhenEmailMethodExecutesWithEmailAddressThatIsEmptyThenOpenSharedApplicationDonesNotExecute() {
-        systemUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
+        viewModelUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
         stub(mockSharedApplicationDelegate) { mock in
             _ = when(mock.openSharedApplication(with: any()).thenDoNothing())
         }
-        systemUnderTest?.email()
+        viewModelUnderTest?.email()
         verify(mockSharedApplicationDelegate, times(0)).openSharedApplication(with: any())
     }
+
     func testThatLatitudeIContactUsCellViewModelHasTheExpectedValue() {
-        XCTAssertEqual(systemUnderTest?.latitude, -26.122743)
+        XCTAssertEqual(viewModelUnderTest?.latitude, -26.122743)
     }
-    
+
     func testThatLongitudeInContactUsCellViewModelHasTheExpectedValue() {
-        XCTAssertEqual(systemUnderTest?.longitude, 28.03149899999994)
+        XCTAssertEqual(viewModelUnderTest?.longitude, 28.03149899999994)
     }
-    
+
     func testThatBranchInContactUsCellViewModelHasTheExpectedValue() {
-        XCTAssertEqual(systemUnderTest?.branch, "Johannesburg")
+        XCTAssertEqual(viewModelUnderTest?.branch, "Johannesburg")
     }
-    
+
     func testThatLocationDescritionInContactUsCellViewModelHasTheExpectedValue() {
-        XCTAssertEqual(systemUnderTest?.locationDescription, "Ground Floor,Victoria Gate South,Hyde Lane Office Park,Hyde Park Lane,Hydepark,Johannesburg,2196")
+        XCTAssertEqual(viewModelUnderTest?.locationDescription, "Ground Floor,Victoria Gate South,Hyde Lane Office Park,Hyde Park Lane,Hydepark,Johannesburg,2196")
     }
-    
+
     func testThatGivenAnOfficeViewModelWhereLatitudeIsNilThenLatitudeInCellViewModelShouldEqualToZero() {
-        systemUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
-        XCTAssertEqual(systemUnderTest?.latitude, 0.0)
+        viewModelUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
+        XCTAssertEqual(viewModelUnderTest?.latitude, 0.0)
     }
     
     func testThatGivenAnOfficeViewModelWhereLatitudeIsNilThenLongitudeInCellViewModelShouldEqualToZero() {
-        systemUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
-        XCTAssertEqual(systemUnderTest?.longitude, 0.0)
+        viewModelUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
+        XCTAssertEqual(viewModelUnderTest?.longitude, 0.0)
     }
-    
+
     func testThatGivenAnOfficeViewModelWhereNameIsNilThenBranchInCellViewModelShouldEqualAnEmptyString() {
-        systemUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
-        XCTAssertEqual(systemUnderTest?.branch, "")
+        viewModelUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
+        XCTAssertEqual(viewModelUnderTest?.branch, "")
     }
-    
+
     func testThatGivenAnOfficeViewModelWhereNameIsNilThenLocationDescriptionInCellViewModelShouldEqualAnEmptyString() {
-        systemUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
-        XCTAssertEqual(systemUnderTest?.locationDescription, "")
+        viewModelUnderTest = ContactUsCellViewModel(with: mockInvalidOfficeViewModel)
+        XCTAssertEqual(viewModelUnderTest?.locationDescription, "")
     }
-    
-    override func tearDown() {
-        super.tearDown()
-        systemUnderTest = nil
-        mockInvalidOfficeViewModel = nil
-        mockOfficeViewModel = nil
-        mockUrl = nil
-    }
-    
+
     func mockValidOfficeResponse() -> OfficeViewModel {
         let mockJhbOffice: [String: Any] = ["latitude":-26.122743, "name":"Johannesburg","image":"offices/dvt_hyde_park.png",
                                             "googleMapsPlaceId":"ChIJF0f-kTdzlR4RioXEaM2-a10",
@@ -143,7 +151,7 @@ class ContactUsCellViewModelTests: XCTestCase {
                                             "telephone":"+2773444000"]
         return OfficeViewModel(with: Office(with: mockJhbOffice))
     }
-    
+
     func mockInvalidOfficeResponse() -> OfficeViewModel {
         let nilValue: Any? = nil
         let mockJhbOffice: [String: Any] = ["latitude":nilValue as Any, "name":nilValue as Any,"image":nilValue as Any,
@@ -155,7 +163,7 @@ class ContactUsCellViewModelTests: XCTestCase {
                                             "telephone":nilValue as Any]
         return OfficeViewModel(with: Office(with: mockJhbOffice))
     }
-    
+
     func mockOfficeResponseWithNilLatitude() -> OfficeViewModel {
         let nilValue: Any? = nil
         let mockJhbOffice: [String: Any] = ["latitude":nilValue as Any, "name":"Johannesburg","image":"offices/dvt_hyde_park.png",
@@ -167,7 +175,7 @@ class ContactUsCellViewModelTests: XCTestCase {
                                             "telephone":"+2773444000"]
         return OfficeViewModel(with: Office(with: mockJhbOffice))
     }
-  
+
     func mockOfficeResponseWithNilLongitude() -> OfficeViewModel {
         let nilValue: Any? = nil
         let mockJhbOffice: [String: Any] = ["latitude":-23.44333, "name":"Johannesburg","image":"offices/dvt_hyde_park.png",
@@ -179,7 +187,5 @@ class ContactUsCellViewModelTests: XCTestCase {
                                             "telephone":"+2773444000"]
         return OfficeViewModel(with: Office(with: mockJhbOffice))
     }
-    
-    
     
 }

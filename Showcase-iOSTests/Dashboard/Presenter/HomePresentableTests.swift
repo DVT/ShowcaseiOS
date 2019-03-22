@@ -1,17 +1,17 @@
-//
-//  HomePresentableTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Edward Mtshweni on 2018/05/03.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 import Firebase
 @testable import Showcase_iOS
 
 class HomePresentableTests: XCTestCase {
+
+    // MARK: Properties
+
+    var mockShowcaseApps = [ShowcaseApp]()
+    var mockShowcassAppViewModels = [ShowcaseAppViewModel]()
+
+    // MARK: Mocked dependencies
+
     var mockHomeViewer = MockHomePresenterViewable()
     var mockHomeInteractor = MockHomePresenterInteractable()
     var mockWireFrameDelegate = MockWireframeDelegate()
@@ -20,10 +20,13 @@ class HomePresentableTests: XCTestCase {
     var mockStorageReference = MockStorageReferenceable()
     var mockSignOutInteractor = MockSignOutInteractor()
     var mockUserDefaults = MockUserDefaultsProtocol()
-    var mockShowcaseApps = [ShowcaseApp]()
+
+    // MARK: System under test
+
     var systemUnderTest: HomePresenter?
-    var mockShowcassAppViewModels = [ShowcaseAppViewModel]()
-    
+
+    // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
         let homePresenter = HomePresenter()
@@ -35,7 +38,13 @@ class HomePresentableTests: XCTestCase {
         homePresenter.userDefaults = mockUserDefaults
         systemUnderTest = homePresenter
     }
-    
+
+    override func tearDown() {
+        super.tearDown()
+    }
+
+    // MARK: Tests
+
     func testThatGivenFetchShowcaseAppsFailsThenShowOnFailureIsPresentedWithAnError() {
         stub(mockHomeViewer) { (mock) in
             _ = when(mock.showOnFailure(with: any())).then({ error in
@@ -47,7 +56,7 @@ class HomePresentableTests: XCTestCase {
         verify(mockHomeViewer, times(1)).stopLoadingAnimation()
         verify(mockHomeViewer, times(1)).showOnFailure(with: any())
     }
-    
+
     func testThatGivenFetchShowcaseAppsSuccedsThenShowOnSuccessIsPresentedWithAnEmptyListOfShowcaseApps() {
         stub(mockHomeViewer) { (mock) in
             _ = when(mock.showOnSuccess(with: any()).then({ showcaseApps in
@@ -59,7 +68,7 @@ class HomePresentableTests: XCTestCase {
         verify(mockHomeViewer, times(1)).stopLoadingAnimation()
         verify(mockHomeViewer, times(1)).showOnSuccess(with: any())
     }
-    
+
     func testThatGivenFetchShowcaseAppsSuccedsThenShowOnSuccessIsPresentedWithAListOfShowcaseAppsThatIsNotEmpty() {
         let dictionary = setupMockShowcaseAppDictionary()
         self.mockShowcaseApps.append(ShowcaseApp(with: dictionary))
@@ -73,21 +82,21 @@ class HomePresentableTests: XCTestCase {
         verify(mockHomeViewer, times(1)).stopLoadingAnimation()
         verify(mockHomeViewer, times(1)).showOnSuccess(with: any())
     }
-    
+
     func testThatGivenSearchTextThenSearchdShouldReturnWihAListOfShowcaseApps() {
         self.setupMockShowcaseAppViewModels()
         systemUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
         let filteredShowcassApps = self.systemUnderTest?.search(text: "Group")
         XCTAssertTrue((filteredShowcassApps?.count)! == 1)
     }
-    
+
     func testThatGivenEmptySearchTextThenSearchShouldReturnTheAllShowcaseApps() {
         self.setupMockShowcaseAppViewModels()
         systemUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
         let filteredShowcassApps = self.systemUnderTest?.search(text: "")
         XCTAssertTrue((filteredShowcassApps?.count)! == 2)
     }
-    
+
     func testThatGivenSearchTextWithAnInvalidShowcaseAppListThenSearchShouldReturnAnEmptyList() {
         let showcaseapp = ShowcaseApp(with: [String: Any]())
         mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
@@ -95,7 +104,7 @@ class HomePresentableTests: XCTestCase {
         let filteredShowcassApps = self.systemUnderTest?.search(text: "Group Five")
         XCTAssertTrue((filteredShowcassApps?.count)! == 0)
     }
-    
+
     func testThatWhentransitionToShowcaseAppDetailViewGetsCalledThenATransitionToDetailViewTakesPlace(){
         let showcaseapp = ShowcaseApp(with: [String: Any]())
         mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
@@ -106,7 +115,7 @@ class HomePresentableTests: XCTestCase {
         systemUnderTest?.transitionToShowcaseAppDetailView(with: mockShowcassAppViewModels.first!)
         verify(mockWireFrameDelegate, times(1)).transitionToShowcaseAppDetailView(any(), with: any())
     }
-    
+
     func testThatWhentransitonToShowcaseAppDetailViewGetsCalledWhenHomeViewerIsNotAHomeViewControllerThenTransitioningToDetailViewDoesNotTakePlace(){
         let showcaseapp = ShowcaseApp(with: [String: Any]())
         mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
@@ -116,7 +125,7 @@ class HomePresentableTests: XCTestCase {
         systemUnderTest?.transitionToShowcaseAppDetailView(with: mockShowcassAppViewModels.first!)
         verify(mockWireFrameDelegate, times(0)).transitionToShowcaseAppDetailView(any(), with: any())
     }
-    
+
     func testThatFetchShowcaseAppsInvokesTheInteractorToFetchShowcaseAppsAndTheViewToShowLoadingAnimation() {
         stub(mockHomeInteractor) { (mock) in
             _ = when(mock.fetchShowcaseApps().thenDoNothing())
@@ -129,14 +138,14 @@ class HomePresentableTests: XCTestCase {
         verify(mockHomeViewer, times(1)).startLoadingAnimation()
         verify(mockHomeInteractor, times(1)).fetchShowcaseApps()
     }
-    
+
     func testThatIfHomePresenterDoesNotHaveAFirebaseStorageThenFetchAllImagesCompletesWithAnEmptyDictionary() {
         systemUnderTest?.firebaseStorage = nil
         systemUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
             XCTAssertTrue(dictionary.isEmpty)
         })
     }
-    
+
     func testThatIfHomePresenterHasAFirebaseStorageThenFetchAllImagesCompleteseWithAnEmptyDictionaryIfTheShowcaseAppViewModelsAreEmpty() {
         stub(mockFirebaseStorage) { (mock) in
             _ = when(mock.storageReference().thenReturn(mockStorageReference))
@@ -145,8 +154,7 @@ class HomePresentableTests: XCTestCase {
             XCTAssertTrue(dictionary.isEmpty)
         })
     }
-    
-    
+
     func testThatFetchAllImagesCompletesWithADictionaryOfImageURLSWhenShowcaseAppViewModelsEmptyWhenTheImageFetcherReturnsErrors() {
         self.setupMockShowcaseAppViewModels()
         stub(mockFirebaseStorage) { (mock) in
@@ -163,7 +171,7 @@ class HomePresentableTests: XCTestCase {
             XCTAssertTrue(dictionary.isEmpty)
         })
     }
-    
+
     func testThatFetchAllImagesCompletesWithADictionaryOfImageURLSWhenShowcaseAppViewModelsNotEmptyWhenTheImageFetcherReturnsValidImageURLSFromFirebase() {
         self.setupMockShowcaseAppViewModels()
         stub(mockFirebaseStorage) { (mock) in
@@ -188,7 +196,7 @@ class HomePresentableTests: XCTestCase {
         systemUnderTest?.signOutUser()
         verify(mockSignOutInteractor, times(1)).signOut()
     }
-    
+
     func testThatWhenTheHomeViewIsNotAHomeViewControllerThenTheTransitionToLoginViewIsNotInvokedWhenTheSignOutGetsCalled() {
         stub(mockWireFrameDelegate) { (mock) in
             _ = when(mock.transitionToLoginView(any()).thenDoNothing())
@@ -200,7 +208,7 @@ class HomePresentableTests: XCTestCase {
         verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
         verify(mockWireFrameDelegate, never()).transitionToLoginView(any())
     }
-    
+
     func testThatWhenTheHomeViewIsAHomeViewControllerThenTheTransitionToLoginViewIsNotInvokedWhenTheSignOutGetsCalled() {
         systemUnderTest?.homePresenterViewable = HomeViewController()
         stub(mockWireFrameDelegate) { (mock) in
@@ -213,7 +221,7 @@ class HomePresentableTests: XCTestCase {
         verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
         verify(mockWireFrameDelegate, times(1)).transitionToLoginView(any())
     }
-    
+
     func setupMockShowcaseAppDictionary() -> [String: Any] {
         var dictionary = [String: Any]()
         dictionary["client"] = "Group Five"
@@ -226,7 +234,7 @@ class HomePresentableTests: XCTestCase {
         dictionary["screenshots"] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
         return dictionary
     }
-    
+
     func setupMockShowcaseAppViewModels() {
         var dictionary = [String: Any]()
         dictionary["client"] = "Absa"
@@ -237,10 +245,11 @@ class HomePresentableTests: XCTestCase {
         dictionary["shortDescription"] = "Asset data capturing application"
         dictionary["technologyUsed"] = "Windows Phone \n.NET Development "
         dictionary["screenshots"] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
-        
+
         var showcaseapp = ShowcaseApp(with: setupMockShowcaseAppDictionary())
         mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
         showcaseapp = ShowcaseApp(with: dictionary)
         mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
     }
+
 }

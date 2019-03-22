@@ -1,16 +1,10 @@
-//
-//  AboutViewModelTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Sashen Pillay on 2019/03/14.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 @testable import Showcase_iOS
 
 class AboutViewModelTests: XCTestCase {
+
+     // MARK: Proptertie(s)
 
     var validSocialMediaResponse: SocialMediaLinks!
     var invalidSocialMediaResponse: SocialMediaLinks!
@@ -94,5 +88,5 @@ class AboutViewModelTests: XCTestCase {
         let expectedResult = URL(string: "https://www.dvt.co.za")
         XCTAssertEqual(actualResult, expectedResult)
     }
-    
+
 }
