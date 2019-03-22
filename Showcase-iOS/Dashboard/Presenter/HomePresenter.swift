@@ -1,16 +1,10 @@
-//
-//  HomePresenter.swift
-//  Showcase-iOS
-//
-//  Created by Edward Mtshweni on 2018/05/03.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
 class HomePresenter: HomePresentable {
-    
+
+    // MARK: Properties
+
     var showcaseAppViewModels: [ShowcaseAppViewModel] = [ShowcaseAppViewModel]()
     var homePresenterViewable: HomePresenterViewable?
     var homePresenterInteractable: HomePresenterInteractable?
@@ -19,12 +13,14 @@ class HomePresenter: HomePresentable {
     var signOutInteractor: SignOutInteractor?
     var userDefaults: UserDefaultsProtocol?
     private var imagesDictionary: [String: URL] = [:]
-    
+
+    // MARK: Operation(s)
+
     func fetchShowcaseApps() {
         self.homePresenterViewable?.startLoadingAnimation()
         self.homePresenterInteractable?.fetchShowcaseApps()
     }
-    
+
     func fetchAllImages(for showcaseAppViewModels: [ShowcaseAppViewModel], completed: @escaping (([String: URL]) -> ())) {
         guard let firebaseStorage = firebaseStorage else {
             completed(self.imagesDictionary)
@@ -48,7 +44,7 @@ class HomePresenter: HomePresentable {
             }
         }
     }
-    
+
     func onFetchShowcaseAppsSuccess(with showcaseApps: [ShowcaseApp]) {
         var showcaseAppViewModel = [ShowcaseAppViewModel]()
         showcaseApps.forEach { showcaseApp in
@@ -58,12 +54,12 @@ class HomePresenter: HomePresentable {
         self.showcaseAppViewModels = showcaseAppViewModel
         self.homePresenterViewable?.showOnSuccess(with: showcaseAppViewModel)
     }
-    
+
     func onFetchShowcaseAppsFailure(with error: DatabaseError) {
         self.homePresenterViewable?.stopLoadingAnimation()
         self.homePresenterViewable?.showOnFailure(with: error)
     }
-    
+
     func search(text: String?) -> [ShowcaseAppViewModel] {
         var filteredShowcaseAppsViewModels = [ShowcaseAppViewModel]()
         guard let searchText = text, searchText.count > 0 else {
@@ -79,18 +75,18 @@ class HomePresenter: HomePresentable {
         filteredShowcaseAppsViewModels = showcaseApps        
         return filteredShowcaseAppsViewModels
     }
-    
+
     func  transitionToShowcaseAppDetailView(with showcaseAppViewModel: ShowcaseAppViewModel) {
         guard let controller = homePresenterViewable as? HomeViewController else {
             return
         }
         self.wireframe?.transitionToShowcaseAppDetailView(controller, with: showcaseAppViewModel)
     }
-    
+
     func signOutUser() {
         signOutInteractor?.signOut()
     }
-    
+
     func signedOut() {
         userDefaults?.set(value: false, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
         guard let homeViewController = homePresenterViewable as? HomeViewController else {
@@ -98,5 +94,5 @@ class HomePresenter: HomePresentable {
         }
         wireframe?.transitionToLoginView(homeViewController)
     }
-    
+
 }

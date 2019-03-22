@@ -1,15 +1,10 @@
-//
-//  ShowcaseApp.swift
-//  Showcase-iOS
-//
-//  Created by Edward Mtshweni on 2018/05/02.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import Foundation
 import Firebase
 
 class ShowcaseApp {
+
+    // MARK: Properties
+
     var client: String?
     var functionality: String?
     var iconUrl: String?
@@ -20,7 +15,9 @@ class ShowcaseApp {
     var technologyUsed: String?
     var name: String?
     var iosPackageName: String?
-    
+
+    // MARK: Opertaion(s)
+
     init(with dictionary: [String: Any]?) {
         self.client = dictionary?["client"] as? String
         self.functionality = dictionary?["functionality"] as? String
@@ -33,4 +30,5 @@ class ShowcaseApp {
         self.name = dictionary?["name"] as? String
         self.iosPackageName = dictionary?["iosPackageName"] as? String
     }
+
 }

@@ -1,18 +1,19 @@
-
 import Foundation
 import Kingfisher
 
 class MainDetailView: UIView {
-    
-    //MARK: @IBOutlets
+
+    // MARK: @IBOutlets
+
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var image: UIImageView!
     @IBOutlet private weak var productName: UILabel!
     @IBOutlet private weak var clientName: UILabel!
     @IBOutlet private weak var shortDescription: UILabel!
     @IBOutlet private weak var installButton: UIButton!
-    //MARK: LifeCycle
-    
+
+    // MARK: Lifecycle
+
     var mainDetailViewModel: MainDetailViewCellDelegate?
     
     var showcaseApp: ShowcaseAppViewModel? {
@@ -20,25 +21,25 @@ class MainDetailView: UIView {
             self.populateView()
         }
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
-    
-    //MARK: Operations
-    
+
+    // MARK: Operations
+
     private func commonInit() {
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: nil)
         contentView = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         addSubviewPinnedToEdges(contentView)
     }
-    
+
     func populateView() {
         productName.text = showcaseApp?.name
         clientName.text = showcaseApp?.client
@@ -50,7 +51,7 @@ class MainDetailView: UIView {
         }
         installButton.layer.cornerRadius = 10
     }
-    
+
     private func populateImageView(with imagePath: String) {
         let dependencyContainer = DependencyContainer.container()
         guard let firStorage = dependencyContainer.resolve(FIRStoring.self) else {
@@ -67,9 +68,12 @@ class MainDetailView: UIView {
             }
         }
     }
-    
+
+    // MARK: @IBActions
+
     @IBAction func onInstallButtonTapped(_ sender: Any) {
         self.mainDetailViewModel?.openURL(iOSPackageName: showcaseApp?.iosPackageName)
     }
+
 }
 
