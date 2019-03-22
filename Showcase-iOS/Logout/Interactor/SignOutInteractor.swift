@@ -1,22 +1,20 @@
-//
-//  SignOutInteractor.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/31.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import Foundation
 import FirebaseAuth
 
 class SignOutInteractor {
+
+     // MARK: Proptertie(s)
+
     var userSignOut: UserSignOut?
     var homePresenter: HomePresentable?
-    
+
+     // MARK: Opertaion(s)
+
     func signOut() {
         do {
             try userSignOut?.signOut()
             homePresenter?.signedOut()
         } catch _ {}
     }
+
 }
