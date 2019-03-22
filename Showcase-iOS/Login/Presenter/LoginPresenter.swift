@@ -1,23 +1,25 @@
-//
-//  LoginPresenter.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/04/24.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import Foundation
 import FirebaseAuth
 
 class LoginPresenter: LoginPresentable {
+
+     // MARK: Proptertie(s)
+
     var userDefaults: UserDefaultsProtocol?
     var loginViewer: LoginPresenterViewable?
     var loginInteractor: LoginPresenterInteractable?
+
+     // MARK: Delegate(s)
+
     var wireframe: WireframeDelegate?
-    
+
+    // MARK: Proptertie(s) - validators
+
     let emailValidator = EmailValidator()
     let passwordValidator = PasswordValidator()
-    
+
+     // MARK: Opertaion(s)
+
     func login(withEmail email: String, password: String) {
         if emailValidator.isValid(email) && passwordValidator.isValid(password) {
             loginViewer?.startLoadingAnimation()
@@ -30,7 +32,7 @@ class LoginPresenter: LoginPresentable {
             loginViewer?.showPasswordValidationFailure(withError: AuthenticationError.invalidPassword)
         }
     }
-    
+
     func showSuccesWhenUserIsAlreadyAuthenticated() {
         if let isUserAlreadyLoggedIn = userDefaults?.bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue) {
             if isUserAlreadyLoggedIn {
@@ -38,13 +40,14 @@ class LoginPresenter: LoginPresentable {
             }
         }
     }
-    
+
     func openMailClient() {
         guard let loginViewController = loginViewer as? LoginViewController else {
             return
         }
         self.wireframe?.transitionToMailComposer(loginViewController)
     }
+
 }
 
 extension LoginPresenter: LoginInteractorPresentable {
