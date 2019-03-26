@@ -1,11 +1,3 @@
-//
-//  DependencyContainer.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/16.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import Foundation
 import FirebaseStorage
 import FirebaseDatabase
@@ -100,6 +92,11 @@ struct DependencyContainer {
             aboutPresenter.aboutInteractor = aboutInteractor
             aboutInteractor.aboutPresenter = aboutPresenter
             return aboutPresenter
+        }
+        
+        container.register(AnalyticsManager.self) {r in
+            let analyticsManager = AnalyticManagerImplementation()
+            return analyticsManager
         }
         
         return container
