@@ -95,7 +95,7 @@ struct DependencyContainer {
         }
         
         container.register(AnalyticsManager.self) {r in
-            let analyticsManager = AnalyticsManager()
+            let analyticsManager = AnalyticManagerImplementation()
             return analyticsManager
         }
         
