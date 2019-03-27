@@ -1,19 +1,15 @@
-//
-//  Social.swift
-//  Showcase-iOS
-//
-//  Created by Sashen Pillay on 2019/03/14.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
 import Foundation
 
 class SocialMediaLinks {
+
+    // MARK: Properties
 
     var twitter: String?
     var facebook: String?
     var instagram: String?
     var website: String?
+
+    // MARK: Opertaion(s)
 
     init(with snapShotValue: [String: Any]?) {
         twitter = snapShotValue?["twitter"] as? String

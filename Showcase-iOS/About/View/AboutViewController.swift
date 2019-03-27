@@ -1,11 +1,3 @@
-//
-//  AboutViewController.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/14.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import UIKit
 
 class AboutViewController: UIViewController {
@@ -18,7 +10,7 @@ class AboutViewController: UIViewController {
     var errorView: ErrorView?
     let dependencyContainer = DependencyContainer.container()
 
-    // MARK: @IBOutlets
+    // MARK: @IBOutlet(s)
 
     @IBOutlet weak var loadingView: LoadingView!
     @IBOutlet weak var socialMediaStackView: UIStackView!
@@ -32,44 +24,49 @@ class AboutViewController: UIViewController {
         aboutPresenter?.retrieveSocialMediaLinks()
     }
 
-    // MARK: Opertaions
+    // MARK: Opertaion(s)
 
     func setupInjectables() {
         let aboutPresenter = dependencyContainer.resolve(AboutPresentable.self) as? AboutPresenter
         let firebaseStorage = dependencyContainer.resolve(FIRStoring.self)
         self.aboutPresenter = aboutPresenter
         aboutPresenter?.aboutView = self
+        aboutPresenter?.analyticManager = dependencyContainer.resolve(AnalyticsManager.self) as? AnalyticManagerImplementation
         self.firebaseStorage = firebaseStorage
     }
 
     // MARK: @IBActions
 
     @IBAction func websiteTapped(_ sender: Any) {
+        aboutPresenter?.trackSocialMediaButtonTap(with: "website")
         if let websiteUrl = aboutViewModel?.website {
             UIApplication.shared.open(websiteUrl, options: [:], completionHandler: nil)
         }
     }
 
     @IBAction func twitterTapped(_ sender: Any) {
+        aboutPresenter?.trackSocialMediaButtonTap(with: "twitter")
         if let twitterUrl = aboutViewModel?.twitter {
             UIApplication.shared.open(twitterUrl, options: [:], completionHandler: nil)
         }
     }
 
     @IBAction func facebookTapped(_ sender: Any) {
+        aboutPresenter?.trackSocialMediaButtonTap(with: "facebook")
         if let facebookUrl = aboutViewModel?.facebook {
             UIApplication.shared.open(facebookUrl, options: [:], completionHandler: nil)
         }
     }
 
     @IBAction func instagramTapped(_ sender: Any) {
+        aboutPresenter?.trackSocialMediaButtonTap(with: "instagram")
         if let instagramUrl = aboutViewModel?.instagram {
             UIApplication.shared.open(instagramUrl, options: [:], completionHandler: nil)
         }
     }
 }
 
- // MARK: Extension Presentable
+// MARK: Extension Presentable
 
 extension AboutViewController: AboutPresenterViewable {
 
