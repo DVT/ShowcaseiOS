@@ -38,28 +38,28 @@ class AboutViewController: UIViewController {
     // MARK: @IBActions
 
     @IBAction func websiteTapped(_ sender: Any) {
-        aboutPresenter?.trackSocialMediaButtonTap(with: "website")
+        aboutPresenter?.trackSocialMediaButtonTap(with: AnalyticTag.websiteButtonTap.rawValue)
         if let websiteUrl = aboutViewModel?.website {
             UIApplication.shared.open(websiteUrl, options: [:], completionHandler: nil)
         }
     }
 
     @IBAction func twitterTapped(_ sender: Any) {
-        aboutPresenter?.trackSocialMediaButtonTap(with: "twitter")
+        aboutPresenter?.trackSocialMediaButtonTap(with: AnalyticTag.twitterButtonTap.rawValue)
         if let twitterUrl = aboutViewModel?.twitter {
             UIApplication.shared.open(twitterUrl, options: [:], completionHandler: nil)
         }
     }
 
     @IBAction func facebookTapped(_ sender: Any) {
-        aboutPresenter?.trackSocialMediaButtonTap(with: "facebook")
+        aboutPresenter?.trackSocialMediaButtonTap(with: AnalyticTag.facebookButtonTap.rawValue)
         if let facebookUrl = aboutViewModel?.facebook {
             UIApplication.shared.open(facebookUrl, options: [:], completionHandler: nil)
         }
     }
 
     @IBAction func instagramTapped(_ sender: Any) {
-        aboutPresenter?.trackSocialMediaButtonTap(with: "instagram")
+        aboutPresenter?.trackSocialMediaButtonTap(with: AnalyticTag.instagramButtonTap.rawValue)
         if let instagramUrl = aboutViewModel?.instagram {
             UIApplication.shared.open(instagramUrl, options: [:], completionHandler: nil)
         }

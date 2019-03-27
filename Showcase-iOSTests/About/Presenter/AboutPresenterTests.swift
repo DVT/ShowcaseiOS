@@ -67,7 +67,7 @@ class AboutPresenterTests: XCTestCase {
     }
 
     func testThatWhenSocialMediaAnalyticFunctionIsCalledThatTheCorrectFirebaseAnalyticFunctionIsCalled() {
-        let mockedAnalyticButtonName = "mock_test_twitter"
+        let mockedAnalyticButtonName = AnalyticTag.instagramButtonTap.rawValue
         stub(mockAnalyticsManager) { (mock) in
             _ = when(mock.trackButtonTap(buttonName: mockedAnalyticButtonName)).thenDoNothing()
         }
