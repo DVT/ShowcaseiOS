@@ -35,29 +35,34 @@ class AboutViewController: UIViewController {
         self.firebaseStorage = firebaseStorage
     }
 
+    func socialMediaButtonTap(with url: URL, and analyticTag: AnalyticTag) {
+        aboutPresenter?.trackSocialMediaButtonTap(with: analyticTag)
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+
     // MARK: @IBActions
 
     @IBAction func websiteTapped(_ sender: Any) {
         if let url = aboutViewModel?.website {
-            aboutPresenter?.openSocialMediaLink(with: url, and: AnalyticTag.websiteButtonTap)
+            socialMediaButtonTap(with: url, and: AnalyticTag.websiteButtonTap)
         }
     }
 
     @IBAction func twitterTapped(_ sender: Any) {
         if let url = aboutViewModel?.twitter {
-            aboutPresenter?.openSocialMediaLink(with: url, and: AnalyticTag.twitterButtonTap)
+            socialMediaButtonTap(with: url, and: AnalyticTag.twitterButtonTap)
         }
     }
 
     @IBAction func facebookTapped(_ sender: Any) {
         if let url = aboutViewModel?.facebook {
-             aboutPresenter?.openSocialMediaLink(with: url, and: AnalyticTag.facebookButtonTap)
+             socialMediaButtonTap(with: url, and: AnalyticTag.facebookButtonTap)
         }
     }
 
     @IBAction func instagramTapped(_ sender: Any) {
         if let url = aboutViewModel?.instagram {
-             aboutPresenter?.openSocialMediaLink(with: url, and: AnalyticTag.instagramButtonTap)
+             socialMediaButtonTap(with: url, and: AnalyticTag.instagramButtonTap)
         }
     }
 }

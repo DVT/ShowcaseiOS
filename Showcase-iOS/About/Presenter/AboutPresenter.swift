@@ -26,9 +26,8 @@ class AboutPresenter: AboutPresentable {
         aboutInteractor?.retrieveSocialMediaLinks()
     }
 
-    func openSocialMediaLink(with url: URL, and analyticTag: AnalyticTag) {
+    func trackSocialMediaButtonTap(with analyticTag: AnalyticTag) {
         analyticManager?.trackButtonTap(buttonName: analyticTag.rawValue)
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
 }

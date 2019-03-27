@@ -68,11 +68,10 @@ class AboutPresenterTests: XCTestCase {
 
     func testThatWhenOpenSocialMediaFunctionIsCalledThatTheCorrectFirebaseAnalyticFunctionIsCalled() {
         let mockedAnalyticTag = AnalyticTag.instagramButtonTap
-        let mockedUrl = mockSocialMediaResponses.expectedFacebookUrl
         stub(mockAnalyticsManager) { (mock) in
             _ = when(mock.trackButtonTap(buttonName: mockedAnalyticTag.rawValue)).thenDoNothing()
         }
-        presenterUnderTest.openSocialMediaLink(with: mockedUrl, and: mockedAnalyticTag)
+        presenterUnderTest.trackSocialMediaButtonTap(with: mockedAnalyticTag)
         verify(mockAnalyticsManager, times(1)).trackButtonTap(buttonName: any())
     }
 
