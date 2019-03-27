@@ -66,12 +66,13 @@ class AboutPresenterTests: XCTestCase {
         verify(mockPresenterViewable, times(1)).showOnSuccess(with: any())
     }
 
-    func testThatWhenSocialMediaAnalyticFunctionIsCalledThatTheCorrectFirebaseAnalyticFunctionIsCalled() {
-        let mockedAnalyticButtonName = AnalyticTag.instagramButtonTap.rawValue
+    func testThatWhenOpenSocialMediaFunctionIsCalledThatTheCorrectFirebaseAnalyticFunctionIsCalled() {
+        let mockedAnalyticTag = AnalyticTag.instagramButtonTap
+        let mockedUrl = mockSocialMediaResponses.expectedFacebookUrl
         stub(mockAnalyticsManager) { (mock) in
-            _ = when(mock.trackButtonTap(buttonName: mockedAnalyticButtonName)).thenDoNothing()
+            _ = when(mock.trackButtonTap(buttonName: mockedAnalyticTag.rawValue)).thenDoNothing()
         }
-        presenterUnderTest.trackSocialMediaButtonTap(with: mockedAnalyticButtonName)
+        presenterUnderTest.openSocialMediaLink(with: mockedUrl, and: mockedAnalyticTag)
         verify(mockAnalyticsManager, times(1)).trackButtonTap(buttonName: any())
     }
 

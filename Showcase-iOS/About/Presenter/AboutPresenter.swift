@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class AboutPresenter: AboutPresentable {
 
@@ -25,8 +26,9 @@ class AboutPresenter: AboutPresentable {
         aboutInteractor?.retrieveSocialMediaLinks()
     }
 
-    func trackSocialMediaButtonTap(with buttonName: String) {
-        analyticManager?.trackButtonTap(buttonName: buttonName)
+    func openSocialMediaLink(with url: URL, and analyticTag: AnalyticTag) {
+        analyticManager?.trackButtonTap(buttonName: analyticTag.rawValue)
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
 }
