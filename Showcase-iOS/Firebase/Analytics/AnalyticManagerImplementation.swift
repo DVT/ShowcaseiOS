@@ -19,7 +19,7 @@ class AnalyticManagerImplementation: AnalyticsManager {
     }
 
     func trackGenericEvent(eventName: String) {
-        let analyticTag = "sgeneric_\(eventName)"
+        let analyticTag = "generic_\(eventName)"
         Analytics.logEvent(analyticTag, parameters: nil)
     }
 

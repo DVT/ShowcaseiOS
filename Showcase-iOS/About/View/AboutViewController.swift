@@ -1,11 +1,3 @@
-//
-//  AboutViewController.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/14.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import UIKit
 
 class AboutViewController: UIViewController {
@@ -18,7 +10,7 @@ class AboutViewController: UIViewController {
     var errorView: ErrorView?
     let dependencyContainer = DependencyContainer.container()
 
-    // MARK: @IBOutlets
+    // MARK: @IBOutlet(s)
 
     @IBOutlet weak var loadingView: LoadingView!
     @IBOutlet weak var socialMediaStackView: UIStackView!
@@ -32,44 +24,50 @@ class AboutViewController: UIViewController {
         aboutPresenter?.retrieveSocialMediaLinks()
     }
 
-    // MARK: Opertaions
+    // MARK: Opertaion(s)
 
     func setupInjectables() {
         let aboutPresenter = dependencyContainer.resolve(AboutPresentable.self) as? AboutPresenter
         let firebaseStorage = dependencyContainer.resolve(FIRStoring.self)
         self.aboutPresenter = aboutPresenter
         aboutPresenter?.aboutView = self
+        aboutPresenter?.analyticManager = dependencyContainer.resolve(AnalyticsManager.self) as? AnalyticManagerImplementation
         self.firebaseStorage = firebaseStorage
+    }
+
+    func socialMediaButtonTap(with url: URL, and analyticTag: AnalyticTag) {
+        aboutPresenter?.trackSocialMediaButtonTap(with: analyticTag)
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
     // MARK: @IBActions
 
     @IBAction func websiteTapped(_ sender: Any) {
-        if let websiteUrl = aboutViewModel?.website {
-            UIApplication.shared.open(websiteUrl, options: [:], completionHandler: nil)
+        if let url = aboutViewModel?.website {
+            socialMediaButtonTap(with: url, and: AnalyticTag.websiteButtonTap)
         }
     }
 
     @IBAction func twitterTapped(_ sender: Any) {
-        if let twitterUrl = aboutViewModel?.twitter {
-            UIApplication.shared.open(twitterUrl, options: [:], completionHandler: nil)
+        if let url = aboutViewModel?.twitter {
+            socialMediaButtonTap(with: url, and: AnalyticTag.twitterButtonTap)
         }
     }
 
     @IBAction func facebookTapped(_ sender: Any) {
-        if let facebookUrl = aboutViewModel?.facebook {
-            UIApplication.shared.open(facebookUrl, options: [:], completionHandler: nil)
+        if let url = aboutViewModel?.facebook {
+             socialMediaButtonTap(with: url, and: AnalyticTag.facebookButtonTap)
         }
     }
 
     @IBAction func instagramTapped(_ sender: Any) {
-        if let instagramUrl = aboutViewModel?.instagram {
-            UIApplication.shared.open(instagramUrl, options: [:], completionHandler: nil)
+        if let url = aboutViewModel?.instagram {
+             socialMediaButtonTap(with: url, and: AnalyticTag.instagramButtonTap)
         }
     }
 }
 
- // MARK: Extension Presentable
+// MARK: Extension Presentable
 
 extension AboutViewController: AboutPresenterViewable {
 

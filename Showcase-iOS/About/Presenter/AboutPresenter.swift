@@ -1,19 +1,13 @@
-//
-//  AboutPresenter.swift
-//  Showcase-iOS
-//sto
-//  Created by Sashen Pillay on 2019/03/14.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
 import Foundation
+import UIKit
 
 class AboutPresenter: AboutPresentable {
 
-    // MARK: Injectable Properties
+    // MARK: Injectable properties
 
     var aboutView: AboutPresenterViewable?
     var aboutInteractor: AboutInteractable?
+    var analyticManager: AnalyticsManager?
 
     // MARK: Operations
 
@@ -30,6 +24,10 @@ class AboutPresenter: AboutPresentable {
     func retrieveSocialMediaLinks() {
         aboutView?.startLoadingAnimation()
         aboutInteractor?.retrieveSocialMediaLinks()
+    }
+
+    func trackSocialMediaButtonTap(with analyticTag: AnalyticTag) {
+        analyticManager?.trackButtonTap(buttonName: analyticTag.rawValue)
     }
 
 }

@@ -1,11 +1,3 @@
-//
-//  AboutPresenterTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Sashen Pillay on 2019/03/15.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 @testable import Showcase_iOS
@@ -17,6 +9,7 @@ class AboutPresenterTests: XCTestCase {
     var mockPresenterViewable = MockAboutPresenterViewable()
     var mockAboutInteractor = MockAboutInteractable()
     var mockSocialMediaResponses = GeneratedSocialMediaData()
+    var mockAnalyticsManager = MockAnalyticsManager()
 
     // MARK: Properties
 
@@ -30,6 +23,7 @@ class AboutPresenterTests: XCTestCase {
         let aboutPresenter = AboutPresenter()
         aboutPresenter.aboutInteractor = mockAboutInteractor
         aboutPresenter.aboutView = mockPresenterViewable
+        aboutPresenter.analyticManager = mockAnalyticsManager
         presenterUnderTest = aboutPresenter
     }
 
@@ -70,6 +64,15 @@ class AboutPresenterTests: XCTestCase {
         presenterUnderTest.onRetrieveSocialMediaLinksComplete(with: links)
         verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
         verify(mockPresenterViewable, times(1)).showOnSuccess(with: any())
+    }
+
+    func testThatWhenOpenSocialMediaFunctionIsCalledThatTheCorrectFirebaseAnalyticFunctionIsCalled() {
+        let mockedAnalyticTag = AnalyticTag.instagramButtonTap
+        stub(mockAnalyticsManager) { (mock) in
+            _ = when(mock.trackButtonTap(buttonName: mockedAnalyticTag.rawValue)).thenDoNothing()
+        }
+        presenterUnderTest.trackSocialMediaButtonTap(with: mockedAnalyticTag)
+        verify(mockAnalyticsManager, times(1)).trackButtonTap(buttonName: any())
     }
 
     // MARK: Mock expected value for links
