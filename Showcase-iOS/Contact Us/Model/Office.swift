@@ -1,9 +1,10 @@
-
-
 import Foundation
 import Firebase
 
 class Office {
+
+    // MARK: Properties
+
     var address: String?
     var emailAddress: String?
     var googleMapsName: String?
@@ -13,7 +14,9 @@ class Office {
     var longitude: Double?
     var name: String?
     var telephone: String?
-    
+
+    // MARK: Operation(s)
+
     init(with snapShotValue: [String: Any]?) {
         self.address = snapShotValue?["address"] as? String
         self.emailAddress = snapShotValue?["emailAddress"] as? String
@@ -25,4 +28,5 @@ class Office {
         self.name = snapShotValue?["name"] as? String
         self.telephone = snapShotValue?["telephone"] as? String
     }
+
 }

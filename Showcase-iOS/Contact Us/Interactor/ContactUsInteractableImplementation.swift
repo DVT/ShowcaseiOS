@@ -3,10 +3,14 @@ import Foundation
 import Firebase
 
 class ContactUsInteractableImplementation: ContactUsInteractable {
-    
+
+    // MARK: Properties
+
     var contactUsPresenter: ContactUsPresentable?
     var dataReference: DataReferenceable?
-    
+
+    // MARK: Operation(s)
+
     func retrieveContacts() {
         var offices: [Office] = [Office]()
         let databaseReference = FirebaseRetrieverableImplementation(reference: dataReference)
@@ -22,6 +26,7 @@ class ContactUsInteractableImplementation: ContactUsInteractable {
             }
         }
     }
+
 }
 
 

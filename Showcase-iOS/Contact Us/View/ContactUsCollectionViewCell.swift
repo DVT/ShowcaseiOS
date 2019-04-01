@@ -5,15 +5,16 @@ import Kingfisher
 import MapKit
 
 class ContactUsCollectionViewCell: UICollectionViewCell {
-    
+
     //MARK: Properties
-    
+
     static let identifier = String(describing: ContactUsCollectionViewCell.self)
     var firebaseStorage: FIRStoring?
+    var presenter: ContactUsPresentable?
     var viewModel: ContactUsCellViewModel!
-    
-    //MARK: @IBOutlets
-    
+
+    //MARK: @IBOutlet(s)
+
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var branch: UILabel!
@@ -21,23 +22,26 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var email: UIButton!
     @IBOutlet weak var call: UIButton!
     @IBOutlet weak var navigate: UIButton!
-    
-    //MARK: @IBActions
-    
+
+    //MARK: @IBAction(s)
+
     @IBAction func emailPressed(_ sender: Any) {
+        presenter?.trackButtonTap(analyticTag: .emailButtonTap)
         viewModel?.email()
     }
-    
+
     @IBAction func callPressed(_ sender: Any) {
+        presenter?.trackButtonTap(analyticTag: .callButtonTap)
         viewModel?.call()
     }
-    
+
     @IBAction func navigatePressed(_ sender: Any) {
+        presenter?.trackButtonTap(analyticTag: .navigateButtonTap)
         viewModel?.navigate()
     }
-    
-    //MARK: Operations
-    
+
+    //MARK: Operation(s)
+
     func populateView() {
         guard let imagePath = viewModel?.officeViewModel?.imageUrl else { return }
         populateImageView(with: imagePath)
@@ -46,7 +50,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         setupMap()
         styleView()
     }
-    
+
     private func populateImageView(with imagePath: String) {
         guard let firStorage = self.firebaseStorage else { return }
         let imageFetcher = ImageFetcher(from: firStorage)
@@ -60,7 +64,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
+
     private func setupMap() {
         let location = createLocation()
         let region = createRegion(location: location)
@@ -69,7 +73,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         map.addAnnotation(pin)
         setupMapTap()
     }
-    
+
     private func createLocation() -> CLLocationCoordinate2D {
         let longitude = CLLocationDegrees(exactly: viewModel.longitude) ?? 0
         let latitude = CLLocationDegrees(exactly: viewModel.latitude) ?? 0
@@ -77,31 +81,31 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
                                               longitude: longitude)
         return location
     }
-    
+
     private func createRegion(location: CLLocationCoordinate2D) -> MKCoordinateRegion {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         return MKCoordinateRegion(center: location, span: span)
     }
-    
+
     private func createPin(region: MKCoordinateRegion) -> MKPointAnnotation {
         let pin = MKPointAnnotation()
         pin.coordinate = region.center
         return pin
     }
-    
+
     private func setupMapTap() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(mapTapped(tapGestureRecognizer:)))
         map.addGestureRecognizer(tap)
     }
-    
+
     private func styleView() {
         email.setTitleColor(UIColor.DvtBlueColor, for: .normal)
         call.setTitleColor(UIColor.DvtBlueColor, for: .normal)
         navigate.setTitleColor(UIColor.DvtBlueColor, for: .normal)
-        
     }
-    
+
     @objc private func mapTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         viewModel?.navigate()
     }
+
 }
