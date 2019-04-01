@@ -3,7 +3,7 @@ import UIKit
 
 class ContactUsViewController: UIViewController {
 
-    //MARK: Properties
+    // MARK: Properties
 
     var contactUsPresenter: ContactUsPresentable?
     var cellViewModel: ContactUsCellViewModel?
@@ -12,12 +12,12 @@ class ContactUsViewController: UIViewController {
     var errorView: ErrorView?
     let dependencyContainer = DependencyContainer.container()
 
-    //MARK: @IBOutlet(s)
+    // MARK: @IBOutlet(s)
 
     @IBOutlet weak var loadingView: LoadingView!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    //MARK: Lifecycle
+    // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class ContactUsViewController: UIViewController {
         contactUsPresenter?.trackScreenDidAppear(screen: "contact_us")
     }
 
-    //MARK: Operation(s)
+    // MARK: Operation(s)
 
     func setupInjectables() {
         let contactUsPresenter = dependencyContainer.resolve(ContactUsPresentable.self) as! ContactUsPresenter
@@ -53,7 +53,7 @@ class ContactUsViewController: UIViewController {
 
 }
 
-//MARK: CollectionView extension
+// MARK: CollectionView extension
 
 extension ContactUsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
@@ -71,7 +71,7 @@ extension ContactUsViewController: UICollectionViewDelegate, UICollectionViewDat
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section:Int) -> CGFloat {
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 2.0
     }
 
@@ -95,7 +95,7 @@ extension ContactUsViewController: UICollectionViewDelegate, UICollectionViewDat
 
 }
 
-//MARK: ContactUsPresenterViewable extension
+// MARK: ContactUsPresenterViewable extension
 
 extension ContactUsViewController: ContactUsPresenterViewable {
 

@@ -6,14 +6,14 @@ import MapKit
 
 class ContactUsCollectionViewCell: UICollectionViewCell {
 
-    //MARK: Properties
+    // MARK: Properties
 
     static let identifier = String(describing: ContactUsCollectionViewCell.self)
     var firebaseStorage: FIRStoring?
     var presenter: ContactUsPresentable?
     var viewModel: ContactUsCellViewModel!
 
-    //MARK: @IBOutlet(s)
+    // MARK: @IBOutlet(s)
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var map: MKMapView!
@@ -23,7 +23,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var call: UIButton!
     @IBOutlet weak var navigate: UIButton!
 
-    //MARK: @IBAction(s)
+    // MARK: @IBAction(s)
 
     @IBAction func emailPressed(_ sender: Any) {
         presenter?.trackButtonTap(analyticTag: .emailButtonTap)
@@ -40,7 +40,7 @@ class ContactUsCollectionViewCell: UICollectionViewCell {
         viewModel?.navigate()
     }
 
-    //MARK: Operation(s)
+    // MARK: Operation(s)
 
     func populateView() {
         guard let imagePath = viewModel?.officeViewModel?.imageUrl else { return }
