@@ -26,18 +26,20 @@ class ContactUsViewController: UIViewController {
         setCollectionView()
         registerContactUsCell()
         contactUsPresenter?.retrieveContacts()
-        contactUsPresenter?.trackScreenDidAppear(screen: "contact_us")
+        contactUsPresenter?.trackScreenDidAppear(analyticTag: .contact)
     }
 
     // MARK: Operation(s)
 
     func setupInjectables() {
-        let contactUsPresenter = dependencyContainer.resolve(ContactUsPresentable.self) as! ContactUsPresenter
+        if let contactUsPresenter = dependencyContainer.resolve(ContactUsPresentable.self) as? ContactUsPresenter {
+            self.contactUsPresenter = contactUsPresenter
+            contactUsPresenter.contactUsView = self
+            if let analyticManger = dependencyContainer.resolve(AnalyticsManager.self) as? AnalyticManagerImplementation {
+                contactUsPresenter.analyticManager = analyticManger
+            }
+        }
         let firebaseStorage = dependencyContainer.resolve(FIRStoring.self)
-        let analyticManger = dependencyContainer.resolve(AnalyticsManager.self) as! AnalyticManagerImplementation
-        self.contactUsPresenter = contactUsPresenter
-        contactUsPresenter.contactUsView = self
-        contactUsPresenter.analyticManager = analyticManger
         self.firebaseStorage = firebaseStorage
     }
 

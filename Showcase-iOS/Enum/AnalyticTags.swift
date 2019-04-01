@@ -8,5 +8,6 @@ enum AnalyticTag: String {
     case navigateButtonTap = "navigate"
     case callButtonTap = "call"
     case emailButtonTap = "email"
+    case contact = "contact_us"
     case none
 }

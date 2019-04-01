@@ -5,5 +5,5 @@ protocol ContactUsPresentable {
     func onRetrieveOfficesFailed(with error: Error)
     func retrieveContacts()
     func trackButtonTap(analyticTag: AnalyticTag)
-    func trackScreenDidAppear(screen: String)
+    func trackScreenDidAppear(analyticTag: AnalyticTag)
 }

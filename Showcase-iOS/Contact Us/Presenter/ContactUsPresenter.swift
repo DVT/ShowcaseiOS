@@ -31,8 +31,8 @@ class ContactUsPresenter: ContactUsPresentable {
         contactUsInteractor?.retrieveContacts()
     }
 
-    func trackScreenDidAppear(screen: String) {
-        analyticManager?.trackScreenAppear(screenName: screen)
+    func trackScreenDidAppear(analyticTag: AnalyticTag) {
+        analyticManager?.trackScreenAppear(screenName: analyticTag.rawValue)
     }
 
     func trackButtonTap(analyticTag: AnalyticTag) {

@@ -65,11 +65,11 @@ class ContactUsPresenterTests: XCTestCase {
     }
 
     func testThatWhenScreenAppearsThatAnalyticIsFired() {
-        let mockedScreen = "mocked_screen"
+        let mockedScreen = AnalyticTag.contact
         stub(mockAnalyticManager) { (mock) in
-            _ = when(mock.trackScreenAppear(screenName: mockedScreen)).thenDoNothing()
+            _ = when(mock.trackScreenAppear(screenName: mockedScreen.rawValue)).thenDoNothing()
         }
-        systemUnderTest.trackScreenDidAppear(screen: mockedScreen)
+        systemUnderTest.trackScreenDidAppear(analyticTag: mockedScreen)
         verify(mockAnalyticManager, times(1)).trackScreenAppear(screenName: any())
     }
 
