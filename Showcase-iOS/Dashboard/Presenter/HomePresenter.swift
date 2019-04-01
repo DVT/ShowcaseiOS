@@ -104,4 +104,8 @@ class HomePresenter: HomePresentable {
         analyticManager?.trackButtonTap(buttonName: analyticTag.rawValue)
     }
 
+    func trackScreenDidAppear(analyticTag: AnalyticTag) {
+        analyticManager?.trackScreenAppear(screenName: analyticTag.rawValue)
+    }
+
 }

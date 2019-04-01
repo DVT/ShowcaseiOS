@@ -23,6 +23,7 @@ class HomeViewController: UICollectionViewController {
         self.registerCollectionViewNib()
         self.addLoadingAnimationView()
         self.presenter?.fetchShowcaseApps()
+        presenter?.trackScreenDidAppear(analyticTag: .dashboard)
     }
 
     override func viewWillAppear(_ animated: Bool) {

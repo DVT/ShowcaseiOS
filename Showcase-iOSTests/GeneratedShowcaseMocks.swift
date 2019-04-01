@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Showcase-iOS/About/Interactor/AboutInteractable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/About/Interactor/AboutInteractable.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  AboutInteractable.swift
@@ -101,7 +101,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/About/Presenter/AboutPresentable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/About/Presenter/AboutPresentable.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -287,7 +287,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/About/View/AboutPresenterViewable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/About/View/AboutPresenterViewable.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -473,7 +473,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -569,7 +569,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -725,7 +725,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/View/ContactUsPresenterViewable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/View/ContactUsPresenterViewable.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -911,7 +911,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsDelegate.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsDelegate.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -1037,7 +1037,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsNavigatorDelegate.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsNavigatorDelegate.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -1134,7 +1134,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/SharedApplicationDelegate.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/SharedApplicationDelegate.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -1230,7 +1230,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  HomePresenterInteractable.swift
@@ -1333,7 +1333,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  HomePresentable.swift
@@ -1514,6 +1514,21 @@ import Foundation
     
     
     
+     func trackScreenDidAppear(analyticTag: AnalyticTag)  {
+        
+            return cuckoo_manager.call("trackScreenDidAppear(analyticTag: AnalyticTag)",
+                parameters: (analyticTag),
+                escapingParameters: (analyticTag),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.trackScreenDidAppear(analyticTag: analyticTag))
+        
+    }
+    
+    
+    
      func trackDidSelectApplication(application: String)  {
         
             return cuckoo_manager.call("trackDidSelectApplication(application: String)",
@@ -1595,6 +1610,11 @@ import Foundation
 	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresentable.self, method: "signedOut()", parameterMatchers: matchers))
 	    }
 	    
+	    func trackScreenDidAppear<M1: Cuckoo.Matchable>(analyticTag: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(AnalyticTag)> where M1.MatchedType == AnalyticTag {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnalyticTag)>] = [wrap(matchable: analyticTag) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresentable.self, method: "trackScreenDidAppear(analyticTag: AnalyticTag)", parameterMatchers: matchers))
+	    }
+	    
 	    func trackDidSelectApplication<M1: Cuckoo.Matchable>(application: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
 	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: application) { $0 }]
 	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresentable.self, method: "trackDidSelectApplication(application: String)", parameterMatchers: matchers))
@@ -1674,6 +1694,12 @@ import Foundation
 	    }
 	    
 	    @discardableResult
+	    func trackScreenDidAppear<M1: Cuckoo.Matchable>(analyticTag: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == AnalyticTag {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnalyticTag)>] = [wrap(matchable: analyticTag) { $0 }]
+	        return cuckoo_manager.verify("trackScreenDidAppear(analyticTag: AnalyticTag)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
 	    func trackDidSelectApplication<M1: Cuckoo.Matchable>(application: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
 	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: application) { $0 }]
 	        return cuckoo_manager.verify("trackDidSelectApplication(application: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
@@ -1736,6 +1762,10 @@ import Foundation
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
+     func trackScreenDidAppear(analyticTag: AnalyticTag)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
      func trackDidSelectApplication(application: String)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
@@ -1747,15 +1777,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2019-04-01 10:11:01 +0000
 
-//
-//  HomePresenterViewable.swift
-//  Showcase-iOS
-//
-//  Created by Edward Mtshweni on 2018/05/03.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -1940,7 +1963,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Analytics/AnalyticsManager.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Analytics/AnalyticsManager.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -2127,7 +2150,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -2285,7 +2308,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataSnapshotProtocol.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataSnapshotProtocol.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  DataSnapshotProtocol.swift
@@ -2388,7 +2411,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/FIRStoring.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/FIRStoring.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -2485,7 +2508,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/StorageReferenceable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/StorageReferenceable.swift at 2019-04-01 10:11:01 +0000
 
 
 import Cuckoo
@@ -2612,7 +2635,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  PresenterInteractable.swift
@@ -2797,7 +2820,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  InteractorPresentable.swift
@@ -2930,7 +2953,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/UserDefaultsProtocol.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/UserDefaultsProtocol.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  UserDefaultsProtocol.swift
@@ -3063,7 +3086,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/AuthDataResultProtocol.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/AuthDataResultProtocol.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  FIRAuthDataResultProtocol.swift
@@ -3166,7 +3189,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  FirebaseAuthenticating.swift
@@ -3269,7 +3292,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  Authenticating.swift
@@ -3372,7 +3395,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyBoardDelegate.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyBoardDelegate.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  KeyBoardDelegate.swift
@@ -3656,7 +3679,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyboardObservable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyboardObservable.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  KeyboardObservable.swift
@@ -3789,7 +3812,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/NotificationCenterDelegate.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/NotificationCenterDelegate.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  NotificationCenterDelegate.swift
@@ -3952,7 +3975,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  PresenterViewable.swift
@@ -4276,7 +4299,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Logout/Interactor/SignOutInteractor.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Logout/Interactor/SignOutInteractor.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  SignOutInteractor.swift
@@ -4462,7 +4485,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/FirebaseSignOut.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/FirebaseSignOut.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  FirebaseSignOut.swift
@@ -4565,7 +4588,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/UserSignOut.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/UserSignOut.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  UserSignOut.swift
@@ -4668,7 +4691,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Router/WireframeDelegate.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Router/WireframeDelegate.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  WireframeDelegate.swift
@@ -4832,7 +4855,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2019-04-01 07:27:57 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2019-04-01 10:11:01 +0000
 
 //
 //  Viewable.swift

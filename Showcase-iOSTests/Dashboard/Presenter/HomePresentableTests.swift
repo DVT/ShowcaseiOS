@@ -226,13 +226,22 @@ class HomePresentableTests: XCTestCase {
         verify(mockAnalyticsManager, times(1)).trackSelectionOfApplication(applicationName: any())
     }
 
-    func  testThatWhenLogoutInTappedThatTheAnalyticIsFired() {
+    func testThatWhenLogoutIsTappedThatTheAnalyticIsFired() {
         let mockButtonTapped = AnalyticTag.logoutTap
         stub(mockAnalyticsManager) { (mock) in
            _ = when(mock.trackButtonTap(buttonName: mockButtonTapped.rawValue)).thenDoNothing()
         }
         systemUnderTest?.trackButtonTap(analyticTag: mockButtonTapped)
         verify(mockAnalyticsManager, times(1)).trackButtonTap(buttonName: any())
+    }
+
+    func testThatWhenHomeScreenAppearsThatTheAnalyticIsFired() {
+        let mockScreen = AnalyticTag.dashboard
+        stub(mockAnalyticsManager) { (mock) in
+            _ = when(mock.trackScreenAppear(screenName: mockScreen.rawValue)).thenDoNothing()
+        }
+        systemUnderTest?.trackScreenDidAppear(analyticTag: mockScreen)
+        verify(mockAnalyticsManager, times(1)).trackScreenAppear(screenName: any())
     }
 
     // MARK: Mocked responses
