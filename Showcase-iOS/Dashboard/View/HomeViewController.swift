@@ -47,14 +47,16 @@ class HomeViewController: UICollectionViewController {
 
     func setupInjectables() {
         let dependencyContainer = DependencyContainer.container()
-        let homePresenter = dependencyContainer.resolve(HomePresentable.self) as! HomePresenter
         let firebaseStorage = dependencyContainer.resolve(FIRStoring.self)
-        let analyticManager = dependencyContainer.resolve(AnalyticsManager.self) as? AnalyticManagerImplementation
-        self.presenter = homePresenter
-        homePresenter.homePresenterViewable = self
-        homePresenter.analyticManager = analyticManager
-        homePresenter.firebaseStorage = firebaseStorage
         self.firebaseStorage = firebaseStorage
+        if let homePresenter = dependencyContainer.resolve(HomePresentable.self) as? HomePresenter {
+            homePresenter.homePresenterViewable = self
+            homePresenter.firebaseStorage = firebaseStorage
+            if let analyticManager = dependencyContainer.resolve(AnalyticsManager.self) as? AnalyticManagerImplementation {
+                homePresenter.analyticManager = analyticManager
+            }
+            self.presenter = homePresenter
+        }
     }
 
     func registerCollectionViewNib() {
