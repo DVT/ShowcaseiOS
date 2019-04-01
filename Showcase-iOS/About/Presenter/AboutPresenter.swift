@@ -9,7 +9,7 @@ class AboutPresenter: AboutPresentable {
     var aboutInteractor: AboutInteractable?
     var analyticManager: AnalyticsManager?
 
-    // MARK: Operations
+    // MARK: Operation(s)
 
     func onRetrieveSocialMediaLinksComplete(with links: SocialMediaLinks) {
         let aboutViewModel = AboutViewModel(socialMediaLinks: links)
