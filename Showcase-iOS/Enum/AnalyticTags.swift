@@ -1,11 +1,3 @@
-//
-//  AnalyticTags.swift
-//  Showcase-iOS
-//
-//  Created by Sashen Pillay on 2019/03/27.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
 import Foundation
 
 enum AnalyticTag: String {

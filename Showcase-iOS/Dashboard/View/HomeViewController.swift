@@ -7,7 +7,7 @@ class HomeViewController: UICollectionViewController {
     var presenter: HomePresentable?
     var showcaseAppsViewModels = [ShowcaseAppViewModel]()
     var filteredShowcaseAppsViewModels = [ShowcaseAppViewModel]()
-    var firebaseStorage:FIRStoring?
+    var firebaseStorage: FIRStoring?
     let searchController = UISearchController(searchResultsController: nil)
     var errorView: ErrorView?
     var loadingView: LoadingView?
@@ -39,16 +39,19 @@ class HomeViewController: UICollectionViewController {
     // MARK: Opertaion(s)
 
     func addRightUIBarButtonItem() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout",
+                                                            style: .plain, target: self,
+                                                            action: #selector(logoutTapped))
     }
 
     func setupInjectables() {
         let dependencyContainer = DependencyContainer.container()
         let homePresenter = dependencyContainer.resolve(HomePresentable.self) as! HomePresenter
         let firebaseStorage = dependencyContainer.resolve(FIRStoring.self)
+        let analyticManager = dependencyContainer.resolve(AnalyticsManager.self) as? AnalyticManagerImplementation
         self.presenter = homePresenter
         homePresenter.homePresenterViewable = self
-        homePresenter.analyticManager = dependencyContainer.resolve(AnalyticsManager.self) as? AnalyticManagerImplementation
+        homePresenter.analyticManager = analyticManager
         homePresenter.firebaseStorage = firebaseStorage
         self.firebaseStorage = firebaseStorage
     }
@@ -68,9 +71,12 @@ class HomeViewController: UICollectionViewController {
         presenter?.trackButtonTap(analyticTag: .logoutTap)
         self.onMainThread {
             let message = "Are you sure you want to logout?"
-            let alertController = UIAlertController(title: "Logout", message: message, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: {
-                (action: UIAlertAction) in
+            let alertController = UIAlertController(title: "Logout",
+                                                    message: message,
+                                                    preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Ok",
+                                                    style: .default,
+                                                    handler: { (_: UIAlertAction) in
                 self.presenter?.signOutUser()
             }))
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -86,31 +92,40 @@ class HomeViewController: UICollectionViewController {
 
 // MARK: UICollectionViewDelegateFlowLayout extension
 
-extension HomeViewController : UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filteredShowcaseAppsViewModels.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseAppViewIdentifier", for: indexPath) as! ShowcaseAppCollectionViewCell
         cell.populateCell(with: filteredShowcaseAppsViewModels[indexPath.row], imageDictionary: self.imagesDictionary)
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width:collectionView.frame.size.width, height:50)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width/3 - 1, height: 200)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1.0
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section:Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section:Int) -> CGFloat {
         return 1.0
     }
 
@@ -157,7 +172,7 @@ extension HomeViewController: HomePresenterViewable {
 // MARK: UISearchResultsUpdating and UISearchControllerDelegate extension
 
 extension HomeViewController: UISearchResultsUpdating, UISearchControllerDelegate {
-    
+
     func updateSearchResults(for searchController: UISearchController) {
         guard let filteredShowcaseApps = self.presenter?.search(text: searchController.searchBar.text) else {
             return

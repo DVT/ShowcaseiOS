@@ -21,7 +21,7 @@ class HomePresentableTests: XCTestCase {
 
     // MARK: Presenter under test
 
-    var presenterUnderTest: HomePresenter?
+    var systemUnderTest: HomePresenter?
 
     // MARK: Lifecycle Method(s)
 
@@ -35,11 +35,7 @@ class HomePresentableTests: XCTestCase {
         homePresenter.signOutInteractor = mockSignOutInteractor
         homePresenter.userDefaults = mockUserDefaults
         homePresenter.analyticManager = mockAnalyticsManager
-        presenterUnderTest = homePresenter
-    }
-
-    override func tearDown() {
-        super.tearDown()
+        systemUnderTest = homePresenter
     }
 
     // MARK: Test(s)
@@ -51,7 +47,7 @@ class HomePresentableTests: XCTestCase {
             })
             _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
-        self.presenterUnderTest?.onFetchShowcaseAppsFailure(with: .childNotFound)
+        self.systemUnderTest?.onFetchShowcaseAppsFailure(with: .childNotFound)
         verify(mockHomeViewer, times(1)).stopLoadingAnimation()
         verify(mockHomeViewer, times(1)).showOnFailure(with: any())
     }
@@ -63,7 +59,7 @@ class HomePresentableTests: XCTestCase {
             }))
             _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
-        self.presenterUnderTest?.onFetchShowcaseAppsSuccess(with: [ShowcaseApp]())
+        self.systemUnderTest?.onFetchShowcaseAppsSuccess(with: [ShowcaseApp]())
         verify(mockHomeViewer, times(1)).stopLoadingAnimation()
         verify(mockHomeViewer, times(1)).showOnSuccess(with: any())
     }
@@ -77,41 +73,41 @@ class HomePresentableTests: XCTestCase {
             }))
             _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
-        self.presenterUnderTest?.onFetchShowcaseAppsSuccess(with: self.mockShowcaseApps)
+        self.systemUnderTest?.onFetchShowcaseAppsSuccess(with: self.mockShowcaseApps)
         verify(mockHomeViewer, times(1)).stopLoadingAnimation()
         verify(mockHomeViewer, times(1)).showOnSuccess(with: any())
     }
 
     func testThatGivenSearchTextThenSearchdShouldReturnWihAListOfShowcaseApps() {
         self.setupMockShowcaseAppViewModels()
-        presenterUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
-        let filteredShowcassApps = self.presenterUnderTest?.search(text: "Group")
+        systemUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
+        let filteredShowcassApps = self.systemUnderTest?.search(text: "Group")
         XCTAssertTrue((filteredShowcassApps?.count)! == 1)
     }
 
     func testThatGivenEmptySearchTextThenSearchShouldReturnTheAllShowcaseApps() {
         self.setupMockShowcaseAppViewModels()
-        presenterUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
-        let filteredShowcassApps = self.presenterUnderTest?.search(text: "")
+        systemUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
+        let filteredShowcassApps = self.systemUnderTest?.search(text: "")
         XCTAssertTrue((filteredShowcassApps?.count)! == 2)
     }
 
     func testThatGivenSearchTextWithAnInvalidShowcaseAppListThenSearchShouldReturnAnEmptyList() {
         let showcaseapp = ShowcaseApp(with: [String: Any]())
         mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
-        presenterUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
-        let filteredShowcassApps = self.presenterUnderTest?.search(text: "Group Five")
+        systemUnderTest?.showcaseAppViewModels = mockShowcassAppViewModels
+        let filteredShowcassApps = self.systemUnderTest?.search(text: "Group Five")
         XCTAssertTrue((filteredShowcassApps?.count)! == 0)
     }
 
     func testThatWhentransitionToShowcaseAppDetailViewGetsCalledThenATransitionToDetailViewTakesPlace(){
         let showcaseapp = ShowcaseApp(with: [String: Any]())
         mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
-        presenterUnderTest?.homePresenterViewable = HomeViewController()
+        systemUnderTest?.homePresenterViewable = HomeViewController()
         stub(mockWireFrameDelegate) { (mock) in
             _ = when(mock.transitionToShowcaseAppDetailView(any(), with: any()).thenDoNothing())
         }
-        presenterUnderTest?.transitionToShowcaseAppDetailView(with: mockShowcassAppViewModels.first!)
+        systemUnderTest?.transitionToShowcaseAppDetailView(with: mockShowcassAppViewModels.first!)
         verify(mockWireFrameDelegate, times(1)).transitionToShowcaseAppDetailView(any(), with: any())
     }
 
@@ -121,7 +117,7 @@ class HomePresentableTests: XCTestCase {
         stub(mockWireFrameDelegate) { (mock) in
             _ = when(mock.transitionToShowcaseAppDetailView(any(), with: any()).thenDoNothing())
         }
-        presenterUnderTest?.transitionToShowcaseAppDetailView(with: mockShowcassAppViewModels.first!)
+        systemUnderTest?.transitionToShowcaseAppDetailView(with: mockShowcassAppViewModels.first!)
         verify(mockWireFrameDelegate, times(0)).transitionToShowcaseAppDetailView(any(), with: any())
     }
 
@@ -133,14 +129,14 @@ class HomePresentableTests: XCTestCase {
             _ = when(mock.startLoadingAnimation().thenDoNothing())
         }
         
-        presenterUnderTest?.fetchShowcaseApps()
+        systemUnderTest?.fetchShowcaseApps()
         verify(mockHomeViewer, times(1)).startLoadingAnimation()
         verify(mockHomeInteractor, times(1)).fetchShowcaseApps()
     }
 
     func testThatIfHomePresenterDoesNotHaveAFirebaseStorageThenFetchAllImagesCompletesWithAnEmptyDictionary() {
-        presenterUnderTest?.firebaseStorage = nil
-        presenterUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
+        systemUnderTest?.firebaseStorage = nil
+        systemUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
             XCTAssertTrue(dictionary.isEmpty)
         })
     }
@@ -149,7 +145,7 @@ class HomePresentableTests: XCTestCase {
         stub(mockFirebaseStorage) { (mock) in
             _ = when(mock.storageReference().thenReturn(mockStorageReference))
         }
-        presenterUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
+        systemUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
             XCTAssertTrue(dictionary.isEmpty)
         })
     }
@@ -166,7 +162,7 @@ class HomePresentableTests: XCTestCase {
                 completion(nil, error)
             }))
         }
-        presenterUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
+        systemUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
             XCTAssertTrue(dictionary.isEmpty)
         })
     }
@@ -183,7 +179,7 @@ class HomePresentableTests: XCTestCase {
                 completion(imageURL, nil)
             }))
         }
-        presenterUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
+        systemUnderTest?.fetchAllImages(for: mockShowcassAppViewModels, completed: { (dictionary) in
             XCTAssertTrue(!dictionary.isEmpty)
         })
     }
@@ -192,7 +188,7 @@ class HomePresentableTests: XCTestCase {
         stub(mockSignOutInteractor) { (mock) in
             _ = when(mock.signOut().thenDoNothing())
         }
-        presenterUnderTest?.signOutUser()
+        systemUnderTest?.signOutUser()
         verify(mockSignOutInteractor, times(1)).signOut()
     }
 
@@ -203,20 +199,20 @@ class HomePresentableTests: XCTestCase {
         stub(mockUserDefaults) { (mock) in
             _ = when(mock.set(value: any(), forKey: any()).thenDoNothing())
         }
-        presenterUnderTest?.signedOut()
+        systemUnderTest?.signedOut()
         verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
         verify(mockWireFrameDelegate, never()).transitionToLoginView(any())
     }
 
     func testThatWhenTheHomeViewIsAHomeViewControllerThenTheTransitionToLoginViewIsNotInvokedWhenTheSignOutGetsCalled() {
-        presenterUnderTest?.homePresenterViewable = HomeViewController()
+        systemUnderTest?.homePresenterViewable = HomeViewController()
         stub(mockWireFrameDelegate) { (mock) in
             _ = when(mock.transitionToLoginView(any()).thenDoNothing())
         }
         stub(mockUserDefaults) { (mock) in
             _ = when(mock.set(value: any(), forKey: any()).thenDoNothing())
         }
-        presenterUnderTest?.signedOut()
+        systemUnderTest?.signedOut()
         verify(mockUserDefaults, times(1)).set(value: any(), forKey: any())
         verify(mockWireFrameDelegate, times(1)).transitionToLoginView(any())
     }
@@ -226,7 +222,7 @@ class HomePresentableTests: XCTestCase {
         stub(mockAnalyticsManager) { (mock) in
             _ = when(mock.trackSelectionOfApplication(applicationName: mockSelectedApplication)).thenDoNothing()
         }
-        presenterUnderTest?.trackDidSelectApplication(application: mockSelectedApplication)
+        systemUnderTest?.trackDidSelectApplication(application: mockSelectedApplication)
         verify(mockAnalyticsManager, times(1)).trackSelectionOfApplication(applicationName: any())
     }
 
@@ -235,7 +231,7 @@ class HomePresentableTests: XCTestCase {
         stub(mockAnalyticsManager) { (mock) in
            _ = when(mock.trackButtonTap(buttonName: mockButtonTapped.rawValue)).thenDoNothing()
         }
-        presenterUnderTest?.trackButtonTap(analyticTag: mockButtonTapped)
+        systemUnderTest?.trackButtonTap(analyticTag: mockButtonTapped)
         verify(mockAnalyticsManager, times(1)).trackButtonTap(buttonName: any())
     }
 
