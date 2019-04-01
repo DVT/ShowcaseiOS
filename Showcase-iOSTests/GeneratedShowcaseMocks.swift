@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Showcase-iOS/About/Interactor/AboutInteractable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/About/Interactor/AboutInteractable.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  AboutInteractable.swift
@@ -101,15 +101,8 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/About/Presenter/AboutPresentable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/About/Presenter/AboutPresentable.swift at 2019-04-01 07:27:57 +0000
 
-//
-//  AboutPresentable.swift
-//  Showcase-iOS
-//
-//  Created by Sashen Pillay on 2019/03/14.
-//  Copyright © 2019 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -181,6 +174,21 @@ import Foundation
         
     }
     
+    
+    
+     func trackSocialMediaButtonTap(with analyticTag: AnalyticTag)  {
+        
+            return cuckoo_manager.call("trackSocialMediaButtonTap(with: AnalyticTag)",
+                parameters: (analyticTag),
+                escapingParameters: (analyticTag),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.trackSocialMediaButtonTap(with: analyticTag))
+        
+    }
+    
 
 	 struct __StubbingProxy_AboutPresentable: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
@@ -203,6 +211,11 @@ import Foundation
 	    func retrieveSocialMediaLinks() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return .init(stub: cuckoo_manager.createStub(for: MockAboutPresentable.self, method: "retrieveSocialMediaLinks()", parameterMatchers: matchers))
+	    }
+	    
+	    func trackSocialMediaButtonTap<M1: Cuckoo.Matchable>(with analyticTag: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(AnalyticTag)> where M1.MatchedType == AnalyticTag {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnalyticTag)>] = [wrap(matchable: analyticTag) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockAboutPresentable.self, method: "trackSocialMediaButtonTap(with: AnalyticTag)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -239,6 +252,12 @@ import Foundation
 	        return cuckoo_manager.verify("retrieveSocialMediaLinks()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
+	    @discardableResult
+	    func trackSocialMediaButtonTap<M1: Cuckoo.Matchable>(with analyticTag: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == AnalyticTag {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnalyticTag)>] = [wrap(matchable: analyticTag) { $0 }]
+	        return cuckoo_manager.verify("trackSocialMediaButtonTap(with: AnalyticTag)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
 	}
 
 }
@@ -261,18 +280,15 @@ import Foundation
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
+     func trackSocialMediaButtonTap(with analyticTag: AnalyticTag)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/About/View/AboutPresenterViewable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/About/View/AboutPresenterViewable.swift at 2019-04-01 07:27:57 +0000
 
-//
-//  AboutPresenterViewable.swift
-//  Showcase-iOS
-//
-//  Created by Sashen Pillay on 2019/03/14.
-//  Copyright © 2019 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
@@ -457,7 +473,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Interactor/ContactUsInteractable.swift at 2019-04-01 07:27:57 +0000
 
 
 import Cuckoo
@@ -553,7 +569,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/Presenter/ContactUsPresentable.swift at 2019-04-01 07:27:57 +0000
 
 
 import Cuckoo
@@ -709,7 +725,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/View/ContactUsPresenterViewable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/View/ContactUsPresenterViewable.swift at 2019-04-01 07:27:57 +0000
 
 
 import Cuckoo
@@ -895,7 +911,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsDelegate.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsDelegate.swift at 2019-04-01 07:27:57 +0000
 
 
 import Cuckoo
@@ -1021,7 +1037,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsNavigatorDelegate.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/ContactUsNavigatorDelegate.swift at 2019-04-01 07:27:57 +0000
 
 
 import Cuckoo
@@ -1118,7 +1134,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/SharedApplicationDelegate.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Contact Us/ViewHelpers/SharedApplicationDelegate.swift at 2019-04-01 07:27:57 +0000
 
 
 import Cuckoo
@@ -1214,7 +1230,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Interactor/HomePresenterInteractable.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  HomePresenterInteractable.swift
@@ -1317,7 +1333,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/Presenter/HomePresentable.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  HomePresentable.swift
@@ -1496,6 +1512,36 @@ import Foundation
         
     }
     
+    
+    
+     func trackDidSelectApplication(application: String)  {
+        
+            return cuckoo_manager.call("trackDidSelectApplication(application: String)",
+                parameters: (application),
+                escapingParameters: (application),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.trackDidSelectApplication(application: application))
+        
+    }
+    
+    
+    
+     func trackButtonTap(analyticTag: AnalyticTag)  {
+        
+            return cuckoo_manager.call("trackButtonTap(analyticTag: AnalyticTag)",
+                parameters: (analyticTag),
+                escapingParameters: (analyticTag),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.trackButtonTap(analyticTag: analyticTag))
+        
+    }
+    
 
 	 struct __StubbingProxy_HomePresentable: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
@@ -1547,6 +1593,16 @@ import Foundation
 	    func signedOut() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresentable.self, method: "signedOut()", parameterMatchers: matchers))
+	    }
+	    
+	    func trackDidSelectApplication<M1: Cuckoo.Matchable>(application: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: application) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresentable.self, method: "trackDidSelectApplication(application: String)", parameterMatchers: matchers))
+	    }
+	    
+	    func trackButtonTap<M1: Cuckoo.Matchable>(analyticTag: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(AnalyticTag)> where M1.MatchedType == AnalyticTag {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnalyticTag)>] = [wrap(matchable: analyticTag) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresentable.self, method: "trackButtonTap(analyticTag: AnalyticTag)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -1617,6 +1673,18 @@ import Foundation
 	        return cuckoo_manager.verify("signedOut()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
+	    @discardableResult
+	    func trackDidSelectApplication<M1: Cuckoo.Matchable>(application: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: application) { $0 }]
+	        return cuckoo_manager.verify("trackDidSelectApplication(application: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func trackButtonTap<M1: Cuckoo.Matchable>(analyticTag: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == AnalyticTag {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnalyticTag)>] = [wrap(matchable: analyticTag) { $0 }]
+	        return cuckoo_manager.verify("trackButtonTap(analyticTag: AnalyticTag)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
 	}
 
 }
@@ -1668,10 +1736,18 @@ import Foundation
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
+     func trackDidSelectApplication(application: String)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func trackButtonTap(analyticTag: AnalyticTag)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  HomePresenterViewable.swift
@@ -1864,7 +1940,194 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Analytics/AnalyticsManager.swift at 2019-04-01 07:27:57 +0000
+
+
+import Cuckoo
+@testable import Showcase_iOS
+
+import FirebaseAnalytics
+import Foundation
+
+
+ class MockAnalyticsManager: AnalyticsManager, Cuckoo.ProtocolMock {
+     typealias MocksType = AnalyticsManager
+     typealias Stubbing = __StubbingProxy_AnalyticsManager
+     typealias Verification = __VerificationProxy_AnalyticsManager
+
+    private var __defaultImplStub: AnalyticsManager?
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+     func enableDefaultImplementation(_ stub: AnalyticsManager) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+
+    
+
+    
+
+    
+    
+    
+     func trackButtonTap(buttonName: String)  {
+        
+            return cuckoo_manager.call("trackButtonTap(buttonName: String)",
+                parameters: (buttonName),
+                escapingParameters: (buttonName),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.trackButtonTap(buttonName: buttonName))
+        
+    }
+    
+    
+    
+     func trackSelectionOfApplication(applicationName: String)  {
+        
+            return cuckoo_manager.call("trackSelectionOfApplication(applicationName: String)",
+                parameters: (applicationName),
+                escapingParameters: (applicationName),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.trackSelectionOfApplication(applicationName: applicationName))
+        
+    }
+    
+    
+    
+     func trackScreenAppear(screenName: String)  {
+        
+            return cuckoo_manager.call("trackScreenAppear(screenName: String)",
+                parameters: (screenName),
+                escapingParameters: (screenName),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.trackScreenAppear(screenName: screenName))
+        
+    }
+    
+    
+    
+     func trackGenericEvent(eventName: String)  {
+        
+            return cuckoo_manager.call("trackGenericEvent(eventName: String)",
+                parameters: (eventName),
+                escapingParameters: (eventName),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.trackGenericEvent(eventName: eventName))
+        
+    }
+    
+
+	 struct __StubbingProxy_AnalyticsManager: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func trackButtonTap<M1: Cuckoo.Matchable>(buttonName: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: buttonName) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockAnalyticsManager.self, method: "trackButtonTap(buttonName: String)", parameterMatchers: matchers))
+	    }
+	    
+	    func trackSelectionOfApplication<M1: Cuckoo.Matchable>(applicationName: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: applicationName) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockAnalyticsManager.self, method: "trackSelectionOfApplication(applicationName: String)", parameterMatchers: matchers))
+	    }
+	    
+	    func trackScreenAppear<M1: Cuckoo.Matchable>(screenName: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: screenName) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockAnalyticsManager.self, method: "trackScreenAppear(screenName: String)", parameterMatchers: matchers))
+	    }
+	    
+	    func trackGenericEvent<M1: Cuckoo.Matchable>(eventName: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: eventName) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockAnalyticsManager.self, method: "trackGenericEvent(eventName: String)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_AnalyticsManager: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func trackButtonTap<M1: Cuckoo.Matchable>(buttonName: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: buttonName) { $0 }]
+	        return cuckoo_manager.verify("trackButtonTap(buttonName: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func trackSelectionOfApplication<M1: Cuckoo.Matchable>(applicationName: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: applicationName) { $0 }]
+	        return cuckoo_manager.verify("trackSelectionOfApplication(applicationName: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func trackScreenAppear<M1: Cuckoo.Matchable>(screenName: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: screenName) { $0 }]
+	        return cuckoo_manager.verify("trackScreenAppear(screenName: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func trackGenericEvent<M1: Cuckoo.Matchable>(eventName: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: eventName) { $0 }]
+	        return cuckoo_manager.verify("trackGenericEvent(eventName: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class AnalyticsManagerStub: AnalyticsManager {
+    
+
+    
+
+    
+     func trackButtonTap(buttonName: String)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func trackSelectionOfApplication(applicationName: String)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func trackScreenAppear(screenName: String)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func trackGenericEvent(eventName: String)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataReferenceable.swift at 2019-04-01 07:27:57 +0000
 
 
 import Cuckoo
@@ -2022,7 +2285,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataSnapshotProtocol.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Service/DataSnapshotProtocol.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  DataSnapshotProtocol.swift
@@ -2125,7 +2388,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/FIRStoring.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/FIRStoring.swift at 2019-04-01 07:27:57 +0000
 
 
 import Cuckoo
@@ -2222,7 +2485,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/StorageReferenceable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Firebase/Storage/StorageReferenceable.swift at 2019-04-01 07:27:57 +0000
 
 
 import Cuckoo
@@ -2349,7 +2612,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Interactor/LoginPresenterInteractable.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  PresenterInteractable.swift
@@ -2534,7 +2797,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/LoginInteractorPresentable.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  InteractorPresentable.swift
@@ -2667,7 +2930,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/UserDefaultsProtocol.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Presenter/UserDefaultsProtocol.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  UserDefaultsProtocol.swift
@@ -2800,7 +3063,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/AuthDataResultProtocol.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/AuthDataResultProtocol.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  FIRAuthDataResultProtocol.swift
@@ -2903,7 +3166,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/FirebaseLoginAuthenticating.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  FirebaseAuthenticating.swift
@@ -3006,7 +3269,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/Service/LoginAuthenticating.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  Authenticating.swift
@@ -3109,7 +3372,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyBoardDelegate.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyBoardDelegate.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  KeyBoardDelegate.swift
@@ -3393,7 +3656,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyboardObservable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/KeyboardObservable.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  KeyboardObservable.swift
@@ -3526,7 +3789,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/NotificationCenterDelegate.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/Extensions/NotificationCenterDelegate.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  NotificationCenterDelegate.swift
@@ -3689,7 +3952,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Login/View/LoginPresenterViewable.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  PresenterViewable.swift
@@ -4013,7 +4276,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Logout/Interactor/SignOutInteractor.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Logout/Interactor/SignOutInteractor.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  SignOutInteractor.swift
@@ -4199,7 +4462,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/FirebaseSignOut.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/FirebaseSignOut.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  FirebaseSignOut.swift
@@ -4302,7 +4565,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/UserSignOut.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Logout/Service/UserSignOut.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  UserSignOut.swift
@@ -4405,7 +4668,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Router/WireframeDelegate.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Router/WireframeDelegate.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  WireframeDelegate.swift
@@ -4569,7 +4832,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2019-03-25 09:17:05 +0000
+// MARK: - Mocks generated from file: Showcase-iOS/Viewable.swift at 2019-04-01 07:27:57 +0000
 
 //
 //  Viewable.swift

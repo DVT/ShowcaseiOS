@@ -27,7 +27,7 @@ class AboutPresenterTests: XCTestCase {
         presenterUnderTest = aboutPresenter
     }
 
-    // MARK: Tests
+    // MARK: Test(s)
 
     func testThatWhenRetrieveSocialMediaLinksFailsWithErrorThatIsNotNilThenShowOnFailureIsCalled() {
         stub(mockPresenterViewable) { (mock) in

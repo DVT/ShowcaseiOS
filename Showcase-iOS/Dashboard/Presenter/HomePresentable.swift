@@ -18,4 +18,6 @@ protocol HomePresentable {
     func transitionToShowcaseAppDetailView(with showcaseAppViewModel: ShowcaseAppViewModel)
     func signOutUser()
     func signedOut()
+    func trackDidSelectApplication(application: String)
+    func trackButtonTap(analyticTag: AnalyticTag)
 }
