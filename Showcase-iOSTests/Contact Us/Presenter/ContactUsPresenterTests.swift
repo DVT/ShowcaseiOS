@@ -5,27 +5,29 @@ import Cuckoo
 
 class ContactUsPresenterTests: XCTestCase {
 
-    //MARK: Injectables
+    // MARK: Mocked injectable(s)
 
     var mockPresenterViewable = MockContactUsPresenterViewable()
     var mockContactUsInteractor = MockContactUsInteractable()
-
-    //MARK: Properties
-
-    var systemUNderTest: ContactUsPresenter!
+    var mockAnalyticManager = MockAnalyticsManager()
     var mockError = NSError(domain: "Firebase error", code: 1, userInfo: nil)
 
-    //MARK: Lifecycle Method(s)
+    // MARK: System under test
+
+    var systemUnderTest: ContactUsPresenter!
+
+    // MARK: Lifecycle Method(s)
 
     override func setUp() {
         super.setUp()
         let contactUsPresenter = ContactUsPresenter()
         contactUsPresenter.contactUsInteractor = mockContactUsInteractor
         contactUsPresenter.contactUsView = mockPresenterViewable
-        systemUNderTest = contactUsPresenter
+        contactUsPresenter.analyticManager = mockAnalyticManager
+        systemUnderTest = contactUsPresenter
     }
 
-    //MARK: Tests
+    // MARK: Test(s)
 
     func testThatWhenRetrieveContactsFailsWithErrorThatIsNotNilThenShowOnFailureIsCalled() {
         stub(mockPresenterViewable) { (mock) in
@@ -35,7 +37,7 @@ class ContactUsPresenterTests: XCTestCase {
             }))
             _  = when(mock.stopLoadingAnimation().thenDoNothing())
         }
-        systemUNderTest.onRetrieveOfficesFailed(with: mockError)
+        systemUnderTest.onRetrieveOfficesFailed(with: mockError)
         verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
         verify(mockPresenterViewable, times(1)).showOnFailure(with: any())
     }
@@ -48,12 +50,30 @@ class ContactUsPresenterTests: XCTestCase {
             }))
             _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
-        systemUNderTest.onRetrieveOfficesComplete(with: mockOffices())
+        systemUnderTest.onRetrieveOfficesComplete(with: mockOffices())
         verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
         verify(mockPresenterViewable, times(1)).showOnSuccess(with: any())
     }
 
-    //MARK: Mock Offices to help tests.
+    func testThatWhenButtonIsTappedThatAnalyticIsFired() {
+        let mockedAnalyticTag = AnalyticTag.callButtonTap
+        stub(mockAnalyticManager) { (mock) in
+            _ = when(mock.trackButtonTap(buttonName: mockedAnalyticTag.rawValue)).thenDoNothing()
+        }
+        systemUnderTest.trackButtonTap(analyticTag: mockedAnalyticTag)
+        verify(mockAnalyticManager, times(1)).trackButtonTap(buttonName: any())
+    }
+
+    func testThatWhenScreenAppearsThatAnalyticIsFired() {
+        let mockedScreen = AnalyticTag.contact
+        stub(mockAnalyticManager) { (mock) in
+            _ = when(mock.trackScreenAppear(screenName: mockedScreen.rawValue)).thenDoNothing()
+        }
+        systemUnderTest.trackScreenDidAppear(analyticTag: mockedScreen)
+        verify(mockAnalyticManager, times(1)).trackScreenAppear(screenName: any())
+    }
+
+    // MARK: Mock Offices to help tests.
 
     func mockOffices() -> [Office] {
         let ptaOffice = Office(with: mockValidOfficeResponse())
@@ -64,16 +84,19 @@ class ContactUsPresenterTests: XCTestCase {
         return offices
     }
 
-    func mockValidOfficeResponse() -> [String:Any] {
-        let mockJhbOffice: [String: Any] = ["latitude":"-26.122743", "name":"Johannesburg","image":"offices/dvt_hyde_park.png",
-                                            "googleMapsPlaceId":"ChIJF0f-kTdzlR4RioXEaM2-a10",
-                                            "address":"Ground Floor,Victoria Gate South,Hyde Lane Office Park,Hyde Park Lane,Hydepark,Johannesburg,2196",
-                                            "googleMapsName":"DVT Johannesburg",
-                                            "emailAddress":"jvandermerwe@jhb.dvt.co.za",
-                                            "longitude":"28.03149899999994",
-                                            "telephone":"+27117595930"]
+    func mockValidOfficeResponse() -> [String: Any] {
+        let mockJhbOffice: [String: Any] = ["latitude": "-26.122743",
+                                            "name": "Johannesburg",
+                                            "image": "offices/dvt_hyde_park.png",
+                                            "googleMapsPlaceId": "ChIJF0f-kTdzlR4RioXEaM2-a10",
+                                            "address": "Ground Floor,Victoria Gate South,Hyde Lane Office Park,Hyde Park Lane,Hydepark,Johannesburg,2196",
+                                            "googleMapsName": "DVT Johannesburg",
+                                            "emailAddress": "jvandermerwe@jhb.dvt.co.za",
+                                            "longitude": "28.03149899999994",
+                                            "telephone": "+27117595930"]
         return mockJhbOffice
     }
+
 }
 
 
