@@ -18,11 +18,11 @@ class LoginNavigationController: UINavigationController {
             loginPresenter.loginViewer = loginViewController
             loginPresenter.wireframe = dependencyContainer.resolve(WireframeDelegate.self)
             loginViewController?.loginPresenter = loginPresenter
-            if let analyticsManager = dependencyContainer.resolve(AnalyticsManager.self) as? AnalyticManagerImplementation {
+            if let analyticsManager =
+                dependencyContainer.resolve(AnalyticsManager.self) as? AnalyticManagerImplementation {
                  loginPresenter.analyticsManager = analyticsManager
             }
-            loginViewController?.sharedApplication = dependencyContainer.resolve(SharedApplicationDelegate.self)
         }
-        
+         loginViewController?.sharedApplication = dependencyContainer.resolve(SharedApplicationDelegate.self)
     }
 }

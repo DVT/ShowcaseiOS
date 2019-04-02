@@ -104,12 +104,12 @@ extension LoginViewController: LoginPresenterViewable {
     }
 
     func showPasswordValidationFailure(withError error: AuthenticationError) {
-        self.showAlert(withTitle:"Invalid password.",
+        self.showAlert(withTitle: "Invalid password.",
                        "Please provide a strong password.")
     }
 
     func showInvalidInputsFailure(withError error: AuthenticationError) {
-        self.showAlert(withTitle:  "Invalid inputs." ,
+        self.showAlert(withTitle: "Invalid inputs." ,
                        "Please make sure that you've provided valid inputs for username and password.")
     }
 
