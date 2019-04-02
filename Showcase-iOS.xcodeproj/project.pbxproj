@@ -49,7 +49,7 @@
 		A3DBE44A209F891600561CE0 /* LoginPresenterViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBE449209F891600561CE0 /* LoginPresenterViewable.swift */; };
 		A3DBE44C209F8BC300561CE0 /* GeneratedShowcaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBE44B209F8BC300561CE0 /* GeneratedShowcaseMocks.swift */; };
 		A3DEBB5020B3FABD0020EA44 /* ScreenshotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3DEBB4F20B3FABD0020EA44 /* ScreenshotCollectionViewCell.xib */; };
-		A3E71966209AFEE10081D5C1 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		A3E71966209AFEE10081D5C1 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		A3E71968209AFEF80081D5C1 /* LoginPresenterInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E71967209AFEF80081D5C1 /* LoginPresenterInteractable.swift */; };
 		A3E7196B209B06F40081D5C1 /* ContactUsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7196A209B06F30081D5C1 /* ContactUsPresenter.swift */; };
 		A3E7196E209B072A0081D5C1 /* OfficeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7196D209B072A0081D5C1 /* OfficeViewModel.swift */; };
@@ -1291,6 +1291,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -1302,6 +1303,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -1417,7 +1419,7 @@
 				BC56761320B41D36005CC3C3 /* Constants.swift in Sources */,
 				FD37E28C2099DAE5006EA459 /* HomePresentable.swift in Sources */,
 				A389D65D20A4444A008DB6FE /* ContactUsCellViewModel.swift in Sources */,
-				A3E71966209AFEE10081D5C1 /* (null) in Sources */,
+				A3E71966209AFEE10081D5C1 /* BuildFile in Sources */,
 				BC5F20D820BBE8FD000EABE6 /* LoadingView.swift in Sources */,
 				A3E7196E209B072A0081D5C1 /* OfficeViewModel.swift in Sources */,
 				FD5BA71C208DFD0A0002A1A9 /* FirebaseError.swift in Sources */,

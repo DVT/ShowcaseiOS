@@ -14,6 +14,9 @@ PODS:
   - Firebase/Database (5.0.1):
     - Firebase/CoreOnly
     - FirebaseDatabase (= 5.0.0)
+  - Firebase/Performance (5.0.1):
+    - Firebase/Core
+    - FirebasePerformance (= 2.0.0)
   - Firebase/Storage (5.0.1):
     - Firebase/CoreOnly
     - FirebaseStorage (= 3.0.0)
@@ -32,10 +35,24 @@ PODS:
     - leveldb-library (~> 1.18)
   - FirebaseInstanceID (3.0.0):
     - FirebaseCore (~> 5.0)
+  - FirebasePerformance (2.0.0):
+    - FirebaseAnalytics (~> 5.0)
+    - FirebaseInstanceID (~> 3.0)
+    - FirebaseSwizzlingUtilities/ISASwizzling (~> 2.0)
+    - FirebaseSwizzlingUtilities/MethodSwizzling (~> 2.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.5)
   - FirebaseStorage (3.0.0):
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseSwizzlingUtilities/ISASwizzling (2.0.0)
+  - FirebaseSwizzlingUtilities/MethodSwizzling (2.0.0):
+    - FirebaseCore (~> 5.0)
   - GoogleToolboxForMac/Defines (2.1.4)
+  - GoogleToolboxForMac/Logger (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GTMSessionFetcher/Core (1.1.15)
@@ -46,6 +63,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Protobuf (3.7.0)
   - RxBlocking (4.1.2):
     - RxSwift (~> 4.0)
   - RxCocoa (4.1.2):
@@ -62,6 +80,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Performance
   - Firebase/Storage
   - Kingfisher
   - RxBlocking (~> 4.0)
@@ -81,12 +100,15 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseDatabase
     - FirebaseInstanceID
+    - FirebasePerformance
     - FirebaseStorage
+    - FirebaseSwizzlingUtilities
     - GoogleToolboxForMac
     - GTMSessionFetcher
     - Kingfisher
     - leveldb-library
     - nanopb
+    - Protobuf
     - RxBlocking
     - RxCocoa
     - RxSwift
@@ -103,18 +125,21 @@ SPEC CHECKSUMS:
   FirebaseCore: cafc814b2d84fc8733f09e653041cc2165332ad7
   FirebaseDatabase: 697eb53e5b4fe7cd4fa8756c1f82a9fca011345f
   FirebaseInstanceID: 83e0040351565df711a5db3d8ebe5ea21aca998a
+  FirebasePerformance: 1ec6c40e5dad2543ca4c4f25d15168bde6322c2c
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
+  FirebaseSwizzlingUtilities: 6c22677c50d0b6f5f0dc637c1233f13694a3003f
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   RxBlocking: f6054985901412fc8c02daa84e92d4ba68c61389
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   RxTest: e634f15fd2c2cd0e0120132ef7a4f7be69ad0393
   Swinject: a1364b0f66c2736bb03c1c7cab54809e16df25da
 
-PODFILE CHECKSUM: d52de8e9ed6b5ec3c47170c31c681d9942c9c29f
+PODFILE CHECKSUM: e83989b1ea6ecf4044dfdda9f01d2b55a51b0727
 
 COCOAPODS: 1.6.1
