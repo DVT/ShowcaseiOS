@@ -13,7 +13,7 @@ class AboutPresenterTests: XCTestCase {
 
     // MARK: Properties
 
-    var presenterUnderTest: AboutPresenter!
+    var systemUnderTest: AboutPresenter!
     var mockError = NSError(domain: "Firebase error", code: 1, userInfo: nil)
 
     // MARK: Lifecycle Method(s)
@@ -24,10 +24,10 @@ class AboutPresenterTests: XCTestCase {
         aboutPresenter.aboutInteractor = mockAboutInteractor
         aboutPresenter.aboutView = mockPresenterViewable
         aboutPresenter.analyticManager = mockAnalyticsManager
-        presenterUnderTest = aboutPresenter
+        systemUnderTest = aboutPresenter
     }
 
-    // MARK: Tests
+    // MARK: Test(s)
 
     func testThatWhenRetrieveSocialMediaLinksFailsWithErrorThatIsNotNilThenShowOnFailureIsCalled() {
         stub(mockPresenterViewable) { (mock) in
@@ -37,7 +37,7 @@ class AboutPresenterTests: XCTestCase {
             }))
             _  = when(mock.stopLoadingAnimation().thenDoNothing())
         }
-        presenterUnderTest.onRetrieveSocialMediaLinksFailed(with: mockError)
+        systemUnderTest.onRetrieveSocialMediaLinksFailed(with: mockError)
         verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
     }
 
@@ -61,7 +61,7 @@ class AboutPresenterTests: XCTestCase {
             _ = when(mock.stopLoadingAnimation().thenDoNothing())
         }
         let links = mockLinks()
-        presenterUnderTest.onRetrieveSocialMediaLinksComplete(with: links)
+        systemUnderTest.onRetrieveSocialMediaLinksComplete(with: links)
         verify(mockPresenterViewable, times(1)).stopLoadingAnimation()
         verify(mockPresenterViewable, times(1)).showOnSuccess(with: any())
     }
@@ -71,7 +71,7 @@ class AboutPresenterTests: XCTestCase {
         stub(mockAnalyticsManager) { (mock) in
             _ = when(mock.trackButtonTap(buttonName: mockedAnalyticTag.rawValue)).thenDoNothing()
         }
-        presenterUnderTest.trackSocialMediaButtonTap(with: mockedAnalyticTag)
+        systemUnderTest.trackSocialMediaButtonTap(with: mockedAnalyticTag)
         verify(mockAnalyticsManager, times(1)).trackButtonTap(buttonName: any())
     }
 

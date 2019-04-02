@@ -1572,6 +1572,51 @@ import Foundation
         
     }
     
+    
+    
+     func trackScreenDidAppear(analyticTag: AnalyticTag)  {
+        
+            return cuckoo_manager.call("trackScreenDidAppear(analyticTag: AnalyticTag)",
+                parameters: (analyticTag),
+                escapingParameters: (analyticTag),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.trackScreenDidAppear(analyticTag: analyticTag))
+        
+    }
+    
+    
+    
+     func trackDidSelectApplication(application: String)  {
+        
+            return cuckoo_manager.call("trackDidSelectApplication(application: String)",
+                parameters: (application),
+                escapingParameters: (application),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.trackDidSelectApplication(application: application))
+        
+    }
+    
+    
+    
+     func trackButtonTap(analyticTag: AnalyticTag)  {
+        
+            return cuckoo_manager.call("trackButtonTap(analyticTag: AnalyticTag)",
+                parameters: (analyticTag),
+                escapingParameters: (analyticTag),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.trackButtonTap(analyticTag: analyticTag))
+        
+    }
+    
 
 	 struct __StubbingProxy_HomePresentable: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
@@ -1623,6 +1668,21 @@ import Foundation
 	    func signedOut() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresentable.self, method: "signedOut()", parameterMatchers: matchers))
+	    }
+	    
+	    func trackScreenDidAppear<M1: Cuckoo.Matchable>(analyticTag: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(AnalyticTag)> where M1.MatchedType == AnalyticTag {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnalyticTag)>] = [wrap(matchable: analyticTag) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresentable.self, method: "trackScreenDidAppear(analyticTag: AnalyticTag)", parameterMatchers: matchers))
+	    }
+	    
+	    func trackDidSelectApplication<M1: Cuckoo.Matchable>(application: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: application) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresentable.self, method: "trackDidSelectApplication(application: String)", parameterMatchers: matchers))
+	    }
+	    
+	    func trackButtonTap<M1: Cuckoo.Matchable>(analyticTag: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(AnalyticTag)> where M1.MatchedType == AnalyticTag {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnalyticTag)>] = [wrap(matchable: analyticTag) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockHomePresentable.self, method: "trackButtonTap(analyticTag: AnalyticTag)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -1693,6 +1753,24 @@ import Foundation
 	        return cuckoo_manager.verify("signedOut()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
+	    @discardableResult
+	    func trackScreenDidAppear<M1: Cuckoo.Matchable>(analyticTag: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == AnalyticTag {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnalyticTag)>] = [wrap(matchable: analyticTag) { $0 }]
+	        return cuckoo_manager.verify("trackScreenDidAppear(analyticTag: AnalyticTag)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func trackDidSelectApplication<M1: Cuckoo.Matchable>(application: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: application) { $0 }]
+	        return cuckoo_manager.verify("trackDidSelectApplication(application: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func trackButtonTap<M1: Cuckoo.Matchable>(analyticTag: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == AnalyticTag {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnalyticTag)>] = [wrap(matchable: analyticTag) { $0 }]
+	        return cuckoo_manager.verify("trackButtonTap(analyticTag: AnalyticTag)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
 	}
 
 }
@@ -1744,18 +1822,23 @@ import Foundation
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
+     func trackScreenDidAppear(analyticTag: AnalyticTag)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func trackDidSelectApplication(application: String)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func trackButtonTap(analyticTag: AnalyticTag)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
 }
 
 
 // MARK: - Mocks generated from file: Showcase-iOS/Dashboard/View/HomePresenterViewable.swift at 2019-04-01 11:09:44 +0000
 
-//
-//  HomePresenterViewable.swift
-//  Showcase-iOS
-//
-//  Created by Edward Mtshweni on 2018/05/03.
-//  Copyright © 2018 DVT. All rights reserved.
-//
 
 import Cuckoo
 @testable import Showcase_iOS
