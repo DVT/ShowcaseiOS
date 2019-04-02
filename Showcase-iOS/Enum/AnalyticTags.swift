@@ -5,8 +5,8 @@ enum AnalyticTag: String {
     case instagramButtonTap = "instagram"
     case websiteButtonTap = "website"
     case facebookButtonTap = "facebook"
-    case logoutTap = "logout"
-    case loginTap = "login"
+    case logout = "logout"
+    case login = "login"
     case dashboard = "dashboard"
     case none
 }
