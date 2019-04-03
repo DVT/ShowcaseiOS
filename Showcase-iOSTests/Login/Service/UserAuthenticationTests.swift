@@ -1,29 +1,31 @@
-//
-//  UserAuthenticationTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Lehlohonolo Mbele on 2018/04/18.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 @testable import Showcase_iOS
 
 class UserAuthenticationTests: XCTestCase {
-    
+
+    // MARK: Mocked dependencies
+
     var mockFirebaseAuthentication = MockFirebaseLoginAuthenticating()
+    var mockEmail: String?
+
+    // MARK: System under test
+
     var serviceUnderTest: UserAuthentication!
-    var testEmail: String?
+
+    // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
-        testEmail = "test@gmail.com"
+        mockEmail = "test@gmail.com"
         serviceUnderTest = UserAuthentication(mockFirebaseAuthentication)
     }
 
     override func tearDown() {
         super.tearDown()
     }
+
+    // MARK: Test(s)
 
     func testThatSignInMethodCompletesWithAUserWhenAuthenticationIsSuccesfull() {
         let mockUser = MockUser()
@@ -38,7 +40,7 @@ class UserAuthenticationTests: XCTestCase {
                 completion(fakeUserResult, nil)
             }))
         }
-        serviceUnderTest?.signIn(withEmail: testEmail!, password: "") { (user, error) in
+        serviceUnderTest?.signIn(withEmail: mockEmail!, password: "") { (user, error) in
             XCTAssertEqual(user?.user.uid, mockUser.uid )
         }
         verify(mockFirebaseAuthentication, times(1)).signIn(withEmail: anyString(), password: anyString(), completion: any())

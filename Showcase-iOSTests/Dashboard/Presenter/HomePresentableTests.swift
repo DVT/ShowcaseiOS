@@ -227,7 +227,7 @@ class HomePresentableTests: XCTestCase {
     }
 
     func testThatWhenLogoutIsTappedThatTheAnalyticIsFired() {
-        let mockButtonTapped = AnalyticTag.logoutTap
+        let mockButtonTapped = AnalyticTag.logout
         stub(mockAnalyticsManager) { (mock) in
            _ = when(mock.trackButtonTap(buttonName: mockButtonTapped.rawValue)).thenDoNothing()
         }

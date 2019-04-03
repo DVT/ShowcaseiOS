@@ -1,28 +1,29 @@
-//
-//  LoginInteractorTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Lehlohonolo Mbele on 2018/04/23.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 @testable import Showcase_iOS
 
 class LoginInteractorTests: XCTestCase {
-    
-    var systemUnderTest: LoginInteractor!
+
+    // MARK: Mocked dependencies
+
     var mockLoginPresenter = MockLoginInteractorPresentable()
     var mockUserAuthenticator = MockLoginAuthenticating()
-    
+
+    // MARK: System under test
+
+    var systemUnderTest: LoginInteractor!
+
+    // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
         systemUnderTest = LoginInteractor()
         systemUnderTest.userAuthenticator = mockUserAuthenticator
         systemUnderTest.loginPresenter = mockLoginPresenter
     }
-    
+
+    // MARK: Test(s)
+
     func testThatTheSignedInSuccesfullyMethodOfTheLoginPresenterGetsCalledWhenUserIsAuthorized() {
         stub(mockLoginPresenter) { (mock) in
             let _ = when(mock.signedInSuccessfully().thenDoNothing())
@@ -36,7 +37,7 @@ class LoginInteractorTests: XCTestCase {
         systemUnderTest.signIn(withEmail: "", password: "")
         verify(mockLoginPresenter, times(1)).signedInSuccessfully()
     }
-    
+
     func testThatTheSignInFailedMethodOfTheLoginPresenterGetsCalledWhenUserIsNotAuthorized() {
         stub(mockLoginPresenter) { (mock) in
             let _ = when(mock.failedToSign(withError: any()).thenDoNothing())
@@ -50,4 +51,5 @@ class LoginInteractorTests: XCTestCase {
         systemUnderTest.signIn(withEmail: "", password: "")
         verify(mockLoginPresenter, times(1)).failedToSign(withError: any())
     }
+
 }

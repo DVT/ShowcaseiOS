@@ -1,23 +1,20 @@
-//
-//  LoginPresenter.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/04/24.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import Foundation
 import FirebaseAuth
 
 class LoginPresenter: LoginPresentable {
+
+    // MARK: Properties
+
     var userDefaults: UserDefaultsProtocol?
     var loginViewer: LoginPresenterViewable?
     var loginInteractor: LoginPresenterInteractable?
     var wireframe: WireframeDelegate?
-    
+    var analyticsManager: AnalyticsManager?
     let emailValidator = EmailValidator()
     let passwordValidator = PasswordValidator()
-    
+
+    // MARK: Operation(s)
+
     func login(withEmail email: String, password: String) {
         if emailValidator.isValid(email) && passwordValidator.isValid(password) {
             loginViewer?.startLoadingAnimation()
@@ -30,7 +27,7 @@ class LoginPresenter: LoginPresentable {
             loginViewer?.showPasswordValidationFailure(withError: AuthenticationError.invalidPassword)
         }
     }
-    
+
     func showSuccesWhenUserIsAlreadyAuthenticated() {
         if let isUserAlreadyLoggedIn = userDefaults?.bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue) {
             if isUserAlreadyLoggedIn {
@@ -38,27 +35,40 @@ class LoginPresenter: LoginPresentable {
             }
         }
     }
-    
+
     func openMailClient() {
         guard let loginViewController = loginViewer as? LoginViewController else {
             return
         }
         self.wireframe?.transitionToMailComposer(loginViewController)
     }
+
+    func trackScreenDidAppear(with analyticTag: AnalyticTag) {
+        analyticsManager?.trackScreenAppear(screenName: analyticTag.rawValue)
+    }
+
+    func trackLoginButtonTapped(with analyticTag: AnalyticTag) {
+        analyticsManager?.trackButtonTap(buttonName: analyticTag.rawValue)
+    }
+
 }
 
+// MARK: LoginInteractorPresentable extension
+
 extension LoginPresenter: LoginInteractorPresentable {
+
     func signedInSuccessfully() {
         loginViewer?.stopLoadingAnimation()
         userDefaults?.set(value: true, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
         loginViewer?.showSuccess()
     }
-    
+
     func failedToSign(withError error: Error) {
         self.loginViewer?.stopLoadingAnimation()
         let authenticationError = AuthErrorCode(rawValue: error._code)
         loginViewer?.showAuthenticationFailure(withMessage: authenticationError?.errorMessage)
     }
+
 }
 
 

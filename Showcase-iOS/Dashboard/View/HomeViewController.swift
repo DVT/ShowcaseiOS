@@ -71,7 +71,7 @@ class HomeViewController: UICollectionViewController {
     }
 
     @objc func logoutTapped() {
-        presenter?.trackButtonTap(analyticTag: .logoutTap)
+        presenter?.trackButtonTap(analyticTag: .logout)
         self.onMainThread {
             let message = "Are you sure you want to logout?"
             let alertController = UIAlertController(title: "Logout",

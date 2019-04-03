@@ -1,17 +1,14 @@
-//
-//  LoginInteractor.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/04/20.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import Foundation
 
 class LoginInteractor: LoginPresenterInteractable {
+
+    // MARK: Properties
+
     var loginPresenter: LoginInteractorPresentable?
     var userAuthenticator: LoginAuthenticating?
-    
+
+    // MARK: Operation(s)
+
     func signIn(withEmail email: String, password: String) {
         self.userAuthenticator?.signIn(withEmail: email, password: password) { [weak self] (user, error) in
             if let error = error {
@@ -21,6 +18,7 @@ class LoginInteractor: LoginPresenterInteractable {
             }
         }
     }
+
 }
 
 
