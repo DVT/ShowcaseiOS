@@ -50,9 +50,12 @@ class ShowcaseAppDetailViewController: UIViewController {
     func removeScreenshotView() {
         self.screenshotsView.removeFromSuperview()
         let top = NSLayoutConstraint(item: functionalityView,
-                                     attribute:.top, relatedBy: .equal,
-                                     toItem: mainDetailSubView, attribute: .bottom,
-                                     multiplier: 1.0, constant: 0)
+                                     attribute: .top,
+                                     relatedBy: .equal,
+                                     toItem: mainDetailSubView,
+                                     attribute: .bottom,
+                                     multiplier: 1.0,
+                                     constant: 0)
         self.view.addConstraint(top)
     }
 
@@ -91,7 +94,7 @@ extension ShowcaseAppDetailViewController : UICollectionViewDelegate, UICollecti
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section:Int) -> CGFloat {
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 3.0
     }
 
