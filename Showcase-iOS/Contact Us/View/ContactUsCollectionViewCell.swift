@@ -1,5 +1,3 @@
-
-
 import UIKit
 import Kingfisher
 import MapKit
