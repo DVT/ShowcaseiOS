@@ -76,21 +76,15 @@ class AboutPresenterTests: XCTestCase {
     }
 
     func testThatWhenRetrieveSocialMediaLinksIsCalledThatPresenterStartsLoadingAnimation() {
-        stub(mockPresenterViewable) { (mock) in
-            _ = when(mock.startLoadingAnimation()).then({ (_) in
-                self.systemUnderTest.retrieveSocialMediaLinks()
-                verify(self.mockPresenterViewable, times(1)).startLoadingAnimation()
-            })
-        }
-    }
-
-    func testThatWhenRetrieveSocialMediaLinksIsCalledInteractorFetchesLinks() {
         stub(mockAboutInteractor) { (mock) in
-            _ = when(mock.retrieveSocialMediaLinks()).then({ (_) in
-                self.systemUnderTest.retrieveSocialMediaLinks()
-                verify(self.mockAboutInteractor, times(1)).retrieveSocialMediaLinks()
-            })
+            _ = when(mock.retrieveSocialMediaLinks()).thenDoNothing()
         }
+        stub(mockPresenterViewable) { (mock) in
+            _ = when(mock.startLoadingAnimation()).thenDoNothing()
+        }
+        self.systemUnderTest.retrieveSocialMediaLinks()
+        verify(self.mockPresenterViewable, times(1)).startLoadingAnimation()
+        verify(self.mockAboutInteractor, times(1)).retrieveSocialMediaLinks()
     }
 
     // MARK: Mock expected value for links
