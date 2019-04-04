@@ -2,8 +2,8 @@ import Foundation
 import UIKit
 
 protocol WireframeDelegate {
-    func transitionToShowcaseAppDetailView(_ controller:HomeViewController,
+    func transitionToShowcaseAppDetailView(_ controller: HomeViewController,
                                            with showcaseAppViewModel: ShowcaseAppViewModel)
-    func transitionToLoginView(_ controller:HomeViewController)
-    func transitionToMailComposer(_ controller:LoginViewController)
+    func transitionToLoginView(_ controller: HomeViewController)
+    func transitionToMailComposer(_ controller: LoginViewController)
 }
