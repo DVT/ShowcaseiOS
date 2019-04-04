@@ -73,6 +73,24 @@ class ContactUsPresenterTests: XCTestCase {
         verify(mockAnalyticManager, times(1)).trackScreenAppear(screenName: any())
     }
 
+    func testThatWhenRetrieveContactsIsCalledThatTheLoadingAnimationIsCalled() {
+        stub(mockPresenterViewable) { (mock) in
+            _ = when(mock.startLoadingAnimation()).then({ (_) in
+                self.systemUnderTest.retrieveContacts()
+                verify(self.mockPresenterViewable, times(1)).startLoadingAnimation()
+            })
+        }
+    }
+
+    func testThatWhenRetrieveContactsIsCalledThatInteractorFetchesInformation() {
+        stub(mockContactUsInteractor) { (mock) in
+            _ = when(mock.retrieveContacts()).then({ (_) in
+                self.systemUnderTest.retrieveContacts()
+                verify(self.mockContactUsInteractor, times(1)).retrieveContacts()
+            })
+        }
+    }
+
     // MARK: Mock Offices to help tests.
 
     func mockOffices() -> [Office] {
