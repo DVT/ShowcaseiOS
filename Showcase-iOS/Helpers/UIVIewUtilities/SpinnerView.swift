@@ -1,24 +1,16 @@
-//
-//  SpinnerView.swift
-//  Showcase-iOS
-//
-//  Created by Lehlohonolo Mbele on 2018/05/25.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import Foundation
 
 import UIKit
 
 @IBDesignable
 class SpinnerView : UIView {
-    
+
     override var layer: CAShapeLayer {
         get {
             return super.layer as! CAShapeLayer
         }
     }
-    
+
     override class var layerClass: AnyClass {
         return CAShapeLayer.self
     }
@@ -30,15 +22,16 @@ class SpinnerView : UIView {
         layer.lineWidth = 3
         setPath()
     }
-    
+
     override func didMoveToWindow() {
         animate()
     }
-    
+
     private func setPath() {
-        layer.path = UIBezierPath(ovalIn: bounds.insetBy(dx: layer.lineWidth / 2, dy: layer.lineWidth / 2)).cgPath
+        layer.path = UIBezierPath(ovalIn: bounds.insetBy(dx: layer.lineWidth / 2,
+                                                         dy: layer.lineWidth / 2)).cgPath
     }
-    
+
     struct Pose {
         let secondsSincePriorPose: CFTimeInterval
         let start: CGFloat
@@ -49,7 +42,7 @@ class SpinnerView : UIView {
             self.length = length
         }
     }
-    
+
     class var poses: [Pose] {
         get {
             return [
@@ -64,17 +57,17 @@ class SpinnerView : UIView {
             ]
         }
     }
-    
+
     func animate() {
         var time: CFTimeInterval = 0
         var times = [CFTimeInterval]()
         var start: CGFloat = 0
         var rotations = [CGFloat]()
         var strokeEnds = [CGFloat]()
-        
+
         let poses = type(of: self).poses
         let totalSeconds = poses.reduce(0) { $0 + $1.secondsSincePriorPose }
-        
+
         for pose in poses {
             time += pose.secondsSincePriorPose
             times.append(time / totalSeconds)
@@ -82,18 +75,27 @@ class SpinnerView : UIView {
             rotations.append(start * 2 * CGFloat(Double.pi))
             strokeEnds.append(pose.length)
         }
-        
+
         times.append(times.last!)
         rotations.append(rotations[0])
         strokeEnds.append(strokeEnds[0])
         
-        animateKeyPath(keyPath: "strokeEnd", duration: totalSeconds, times: times, values: strokeEnds)
-        animateKeyPath(keyPath: "transform.rotation", duration: totalSeconds, times: times, values: rotations)
+        animateKeyPath(keyPath: "strokeEnd",
+                       duration: totalSeconds,
+                       times: times,
+                       values: strokeEnds)
+        animateKeyPath(keyPath: "transform.rotation",
+                       duration: totalSeconds,
+                       times: times,
+                       values: rotations)
         
         animateStrokeHueWithDuration(duration: totalSeconds * 5)
     }
-    
-    func animateKeyPath(keyPath: String, duration: CFTimeInterval, times: [CFTimeInterval], values: [CGFloat]) {
+
+    func animateKeyPath(keyPath: String,
+                        duration: CFTimeInterval,
+                        times: [CFTimeInterval],
+                        values: [CGFloat]) {
         let animation = CAKeyframeAnimation(keyPath: keyPath)
         animation.keyTimes = times as [NSNumber]?
         animation.values = values
@@ -102,7 +104,7 @@ class SpinnerView : UIView {
         animation.repeatCount = Float.infinity
         layer.add(animation, forKey: animation.keyPath)
     }
-    
+
     func animateStrokeHueWithDuration(duration: CFTimeInterval) {
         let count = 36
         let animation = CAKeyframeAnimation(keyPath: "strokeColor")
@@ -115,5 +117,5 @@ class SpinnerView : UIView {
         animation.repeatCount = Float.infinity
         layer.add(animation, forKey: animation.keyPath)
     }
-    
+
 }
