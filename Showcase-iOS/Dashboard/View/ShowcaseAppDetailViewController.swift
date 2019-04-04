@@ -49,7 +49,10 @@ class ShowcaseAppDetailViewController: UIViewController {
 
     func removeScreenshotView() {
         self.screenshotsView.removeFromSuperview()
-        let top = NSLayoutConstraint(item: functionalityView, attribute:.top, relatedBy: .equal, toItem: mainDetailSubView, attribute: .bottom, multiplier: 1.0, constant: 0)
+        let top = NSLayoutConstraint(item: functionalityView,
+                                     attribute:.top, relatedBy: .equal,
+                                     toItem: mainDetailSubView, attribute: .bottom,
+                                     multiplier: 1.0, constant: 0)
         self.view.addConstraint(top)
     }
 
@@ -68,21 +71,27 @@ class ShowcaseAppDetailViewController: UIViewController {
 
 extension ShowcaseAppDetailViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return screenshots.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScreenshotCollectionViewCell", for: indexPath) as! ScreenshotCollectionViewCell
         cell.populateImageView(with: screenshots[indexPath.row])
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 3.0
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section:Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section:Int) -> CGFloat {
         return 3.0
     }
 

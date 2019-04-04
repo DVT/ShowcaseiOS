@@ -22,7 +22,8 @@ class HomePresenter: HomePresentable {
         self.homePresenterInteractable?.fetchShowcaseApps()
     }
 
-    func fetchAllImages(for showcaseAppViewModels: [ShowcaseAppViewModel], completed: @escaping (([String: URL]) -> ())) {
+    func fetchAllImages(for showcaseAppViewModels: [ShowcaseAppViewModel],
+                        completed: @escaping (([String: URL]) -> ())) {
         guard let firebaseStorage = firebaseStorage else {
             completed(self.imagesDictionary)
             return

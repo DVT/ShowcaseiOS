@@ -1,18 +1,14 @@
-//
-//  ScreenshotCollectionViewCell.swift
-//  Showcase-iOS
-//
-//  Created by Edward Mtshweni on 2018/05/24.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import UIKit
 import Kingfisher
 
 class ScreenshotCollectionViewCell: UICollectionViewCell {
-    
+
+    // MARK: @IBOutlet(s)
+
     @IBOutlet private  weak var image: UIImageView!
-    
+
+    // MARK: Opertaion(s)
+
     func populateImageView(with imagePath: String) {
         let dependencyContainer = DependencyContainer.container()
         guard let firStorage = dependencyContainer.resolve(FIRStoring.self) else {
@@ -25,8 +21,11 @@ class ScreenshotCollectionViewCell: UICollectionViewCell {
             } else {
                 guard let imageUrl = url else{return}
                 let resource = ImageResource(downloadURL: imageUrl, cacheKey: imagePath)
-                self?.image.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                self?.image.kf.setImage(with: resource, placeholder: nil,
+                                        options: nil, progressBlock: nil,
+                                        completionHandler: nil)
             }
         }
     }
+
 }
