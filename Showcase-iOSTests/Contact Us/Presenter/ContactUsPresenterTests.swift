@@ -75,20 +75,14 @@ class ContactUsPresenterTests: XCTestCase {
 
     func testThatWhenRetrieveContactsIsCalledThatTheLoadingAnimationIsCalled() {
         stub(mockPresenterViewable) { (mock) in
-            _ = when(mock.startLoadingAnimation()).then({ (_) in
-                self.systemUnderTest.retrieveContacts()
-                verify(self.mockPresenterViewable, times(1)).startLoadingAnimation()
-            })
+            _ = when(mock.startLoadingAnimation()).thenDoNothing()
         }
-    }
-
-    func testThatWhenRetrieveContactsIsCalledThatInteractorFetchesInformation() {
         stub(mockContactUsInteractor) { (mock) in
-            _ = when(mock.retrieveContacts()).then({ (_) in
-                self.systemUnderTest.retrieveContacts()
-                verify(self.mockContactUsInteractor, times(1)).retrieveContacts()
-            })
+            _ = when(mock.retrieveContacts()).thenDoNothing()
         }
+        systemUnderTest.retrieveContacts()
+        verify(self.mockPresenterViewable, times(1)).startLoadingAnimation()
+        verify(self.mockContactUsInteractor, times(1)).retrieveContacts()
     }
 
     // MARK: Mock Offices to help tests.
