@@ -4,7 +4,7 @@ import Cuckoo
 
 class AboutPresenterTests: XCTestCase {
 
-    // MARK: Injectables
+    // MARK: Injectable(s)
 
     var mockPresenterViewable = MockAboutPresenterViewable()
     var mockAboutInteractor = MockAboutInteractable()
@@ -16,7 +16,7 @@ class AboutPresenterTests: XCTestCase {
     var systemUnderTest: AboutPresenter!
     var mockError = NSError(domain: "Firebase error", code: 1, userInfo: nil)
 
-    // MARK: Lifecycle Method(s)
+    // MARK: Lifecycle
 
     override func setUp() {
         super.setUp()

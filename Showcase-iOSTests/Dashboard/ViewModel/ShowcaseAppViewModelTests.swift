@@ -1,110 +1,118 @@
-//
-//  ShowcaseAppViewModelTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Edward Mtshweni on 2018/05/04.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 @testable import Showcase_iOS
 
 class ShowcaseAppViewModelTests: XCTestCase {
+
+    // MARK: Mocked dependencies
+
     var mockShowcaseAppViewModel: ShowcaseAppViewModel!
     var mockEmptyShowcaseAppViewModel: ShowcaseAppViewModel!
-    
+
+    // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
         self.mockShowcaseAppViewModel = ShowcaseAppViewModel(with: ShowcaseApp(with: self.setupShowcaseAppDictionary()))
         self.mockEmptyShowcaseAppViewModel = ShowcaseAppViewModel(with: ShowcaseApp(with: [String: Any]()))
     }
-    
+
+    // MARK: Test(s)
+
     func testThatGivenADictionaryWhenInstantiatingAShowcaseAppViewModelThenAShowcaseAppViewModelShouldNotBeNil() {
         XCTAssertNotNil(self.mockShowcaseAppViewModel)
     }
-    
+
     func testThatGivenADictionaryThenAShowcaseAppViewModelClientFieldShoulHaveAValue() {
         XCTAssertEqual(self.mockShowcaseAppViewModel.client, "Group Five")
     }
-    
+
     func testThatGivenADictionaryThenAShowcaseAppViewModelFunctionalityFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel.functionality, "Asset data capture on Windows Mobile devices.")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.functionality,
+                       "Asset data capture on Windows Mobile devices.")
     }
-    
+
     func testThatGivenADictionaryThenAShowcaseAppViewModelIconUrlFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel.iconUrl, "app-images/group-five/group_five_logo.jpg")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.iconUrl,
+                       "app-images/group-five/group_five_logo.jpg")
     }
-    
+
     func testThatGivenADictionaryThenAShowcaseAppViewModelIdFieldShoulHaveAValue() {
         XCTAssertEqual(self.mockShowcaseAppViewModel.id, "group-five")
     }
-    
+
     func testThatGivenADictionaryThenAShowcaseAppViewModelIndustryShoulFieldHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel.industry, "Asset Management")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.industry,
+                       "Asset Management")
     }
-    
+
     func testThatGivenADictionaryThenAShowcaseAppViewModelShortDescriptionFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel.shortDescription, "Asset data capturing application")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.shortDescription,
+                       "Asset data capturing application")
     }
-    
+
     func testThatGivenADictionaryThenAShowcaseAppViewModelTechnologyUsedFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel.technologyUsed, "Windows Phone \n.NET Development ")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.technologyUsed,
+                       "Windows Phone \n.NET Development ")
     }
-    
+
     func testThatGivenADictionaryThenAShowcaseAppViewModelScreenshotsFieldShoulHaveAValue() {
-        let screenshots: [String] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
+        let screenshots: [String] = ["app-images/dvt-showcase/about.png",
+                                     "app-images/dvt-showcase/app_detail_dstv.png"]
         XCTAssertEqual(self.mockShowcaseAppViewModel.screenshots!, screenshots)
     }
-    
+
     func testThatGivenADictionaryThenAShowcaseAppViewModelNameFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel.name, "Group Five")
+        XCTAssertEqual(self.mockShowcaseAppViewModel.name,
+                       "Group Five")
     }
-    
+
     func testThatGivenADictionaryThenAShowcaseAppViewModeliOSPackageNameFieldShoulHaveAValue() {
-        XCTAssertEqual(self.mockShowcaseAppViewModel.iosPackageName, "https://itunes.apple.com/za/app/tracker-connect/id973821442?mt=8")
+        let packageName = "https://itunes.apple.com/za/app/tracker-connect/id973821442?mt=8"
+        XCTAssertEqual(self.mockShowcaseAppViewModel.iosPackageName,
+                       packageName)
     }
-    
+
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelClientFieldShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.client, nil)
     }
-    
+
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelFunctionalityFieldShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.functionality, nil)
     }
-    
+
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelIconUrlFieldShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.iconUrl, nil)
     }
-    
+
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelIdFieldShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.id, nil)
     }
-    
+
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelIndustryFieldIShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.industry, nil)
     }
-    
+
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelShortDescriptionFieldShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.shortDescription, nil)
     }
-    
+
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelTechnologyUsedFieldShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.technologyUsed, nil)
     }
-    
+
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelScreenshotsFieldShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.screenshots!, [String]())
     }
-    
+
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModelNameFieldShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.name, nil)
     }
-    
+
     func testThatGivenAnEmptyDictionaryThenAShowcaseAppViewModeliOSPackageNameFieldShoulBeNil() {
         XCTAssertEqual(self.mockEmptyShowcaseAppViewModel.iosPackageName, nil)
     }
-    
+
     func setupShowcaseAppDictionary() -> [String: Any] {
         var dictionary = [String: Any]()
         dictionary["client"] = "Group Five"
@@ -115,8 +123,10 @@ class ShowcaseAppViewModelTests: XCTestCase {
         dictionary["industry"] = "Asset Management"
         dictionary["shortDescription"] = "Asset data capturing application"
         dictionary["technologyUsed"] = "Windows Phone \n.NET Development "
-        dictionary["screenshots"] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
+        dictionary["screenshots"] = ["app-images/dvt-showcase/about.png",
+                                     "app-images/dvt-showcase/app_detail_dstv.png"]
         dictionary["iosPackageName"] = "https://itunes.apple.com/za/app/tracker-connect/id973821442?mt=8"
         return dictionary
     }
+
 }

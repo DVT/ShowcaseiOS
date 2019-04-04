@@ -1,24 +1,26 @@
-//
-//  SignOutTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Lehlohonolo Mbele on 2018/05/31.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 @testable import Showcase_iOS
 
 class SignOutTests: XCTestCase {
-    
+
+    // MARK: Mocked dependencies
+
     var mockFirebaseSignOut = MockFirebaseSignOut()
+
+    // MARK: System under test
+
     var systemUnderTest: SignOut?
+
+    // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
         systemUnderTest = SignOut(mockFirebaseSignOut)
     }
-    
+
+    // MARK: Test(s)
+
     func testThatTheFirebaseSignOutMethodGetsInvokedWhenSignOutIsCalledAndDoesNotThrow() {
         var signOutThrown = false
         stub(mockFirebaseSignOut) { (mock) in
@@ -32,7 +34,7 @@ class SignOutTests: XCTestCase {
         }
         XCTAssertFalse(signOutThrown)
     }
-    
+
     func testThatWhenTheFirebaseSignOutThrowsThenTheSignOutOfTheSystemUnderTestThrows() {
         var signOutThrown = false
         stub(mockFirebaseSignOut) { (mock) in
@@ -46,5 +48,5 @@ class SignOutTests: XCTestCase {
             XCTAssertTrue(signOutThrown)
         }
     }
-    
+
 }

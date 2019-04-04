@@ -4,31 +4,31 @@ import Cuckoo
 @testable import Showcase_iOS
 
 class FirebaseImageFetcherTests: XCTestCase {
-    
-    //MARK: Mockable(s)
-    
+
+    // MARK: Mockable(s)
+
     var mockFIRStorage = MockFIRStoring()
     var mockStorageRef = MockStorageReferenceable()
-    
-    //MARK: System under test
-    
+
+    // MARK: System under test
+
     var systemUdertest: ImageFetcher!
-    
-    //MARK: Mock properties
-    
+
+    // MARK: Mock properties
+
     var mockUrlString = "http://getMock"
     var mockError = NSError(domain: "FetchImagesError", code: 1, userInfo: nil)
-    
-    //MARK: Lifecycle method(s)
-    
+
+    // MARK: Lifecycle method(s)
+
     override func setUp() {
         super.setUp()
         setUpFirebaseStorageReferenceStub()
         systemUdertest = ImageFetcher(from: mockFIRStorage)
     }
-    
+
     //MARK: Tests
-    
+
     func testThatWhenDownloadUrlCompletesWithAnErrorThenFetchImagesCompletesWithTheSameError() {
         setUpStorageReferenceStubWithChild()
         setUpsetUpStorageReferenceStubWithDownloadUrlWithError()
@@ -37,7 +37,7 @@ class FirebaseImageFetcherTests: XCTestCase {
         }
         verify(mockStorageRef, times(1)).downloadImageUrl(completion: any())
     }
-    
+
     func testThatWhenDownloadUrlCompletesWithAnErrorThenFetchImageCompletesWithTheSameUrl() {
         setUpStorageReferenceStubWithChild()
         setUpsetUpStorageReferenceStubWithDownloadUrlWithUrl()
@@ -46,9 +46,8 @@ class FirebaseImageFetcherTests: XCTestCase {
             XCTAssertEqual(url, imageUrl)
         }
         verify(mockStorageRef, times(1)).downloadImageUrl(completion: any())
-        
     }
-    
+
     func testThatWhenDownloadUrlCompleteWithAUrlThatIsNotNilThenFetchImagesCompletesWithAUrlThatIsNotNil() {
         setUpStorageReferenceStubWithChild()
         setUpsetUpStorageReferenceStubWithDownloadUrlWithUrl()
@@ -57,7 +56,7 @@ class FirebaseImageFetcherTests: XCTestCase {
         }
         verify(mockStorageRef, times(1)).downloadImageUrl(completion: any())
     }
-    
+
     func testThatWhenDownloadUrlCompleteWithAnErrorThatIsNotNilThenFetchImagesCompletesWithAnErrorThatIsNotNil() {
         setUpStorageReferenceStubWithChild()
         setUpsetUpStorageReferenceStubWithDownloadUrlWithError()
@@ -66,15 +65,15 @@ class FirebaseImageFetcherTests: XCTestCase {
         }
         verify(mockStorageRef, times(1)).downloadImageUrl(completion: any())
     }
-    
+
     //MARK: Test helpers
-    
+
     func setUpStorageReferenceStubWithChild() {
         stub(mockStorageRef) { (mock) in
             _ = when(mock.child(from: anyString()).thenReturn(mockStorageRef))
         }
     }
-    
+
     func setUpsetUpStorageReferenceStubWithDownloadUrlWithError() {
         stub(mockStorageRef) { (mock) in
             _ = when(mock.downloadImageUrl(completion: any()).then({ completion in
@@ -82,7 +81,7 @@ class FirebaseImageFetcherTests: XCTestCase {
             }))
         }
     }
-    
+
     func setUpsetUpStorageReferenceStubWithDownloadUrlWithUrl() {
         stub(mockStorageRef) { (mock) in
             _ = when(mock.downloadImageUrl(completion: any()).then({ completion in
@@ -91,11 +90,11 @@ class FirebaseImageFetcherTests: XCTestCase {
             }))
         }
     }
-    
+
     func setUpFirebaseStorageReferenceStub() {
         stub(mockFIRStorage) { (mock) in
             _ = when(mock.storageReference().thenReturn(mockStorageRef))
         }
     }
-    
+
 }

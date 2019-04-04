@@ -1,11 +1,3 @@
-//
-//  AboutInteractableTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Sashen Pillay on 2019/03/15.
-//  Copyright © 2019 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 import Firebase

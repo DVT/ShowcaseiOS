@@ -1,22 +1,22 @@
-//
-//  HomeInteractableTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Edward Mtshweni on 2018/05/02.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 import Cuckoo
 import Firebase
 @testable import Showcase_iOS
 
 class HomeInteractableTests: XCTestCase {
+
+    // MARK: Mocked dependencies
+
     var mockDatabaseReference = MockDataReferenceable()
     var mockHomePresentable = MockHomePresentable()
     var mockDataSnapShot = MockDataSnapshotProtocol()
+
+    // MARK: System under test
+
     var systeUnderTest: HomeInteractor?
-    
+
+    // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
         let homeInteractor = HomeInteractor()
@@ -24,7 +24,9 @@ class HomeInteractableTests: XCTestCase {
         homeInteractor.homePresenter = mockHomePresentable
         systeUnderTest = homeInteractor
     }
-    
+
+    // MARK: Test(s)
+
     func testThatFetchingShowcaseAppsCompletesWithAnErrorWhenFirebaseReturnsAnError() {
         stub(mockDatabaseReference) { mock in
             _ = when(mock.databaseReference().then({ return self.mockDatabaseReference }))
@@ -41,7 +43,7 @@ class HomeInteractableTests: XCTestCase {
         self.systeUnderTest?.fetchShowcaseApps()
         verify(mockHomePresentable, times(1)).onFetchShowcaseAppsFailure(with: any())
     }
-    
+
     func testThatFetchingShowcaseAppsCompletesWithADataSnapshopAndAnEmptyListOfShowcaseApps() {
         stub(mockDataSnapShot) { (mock) in
             _ = when(mock.value.get.thenReturn(nil))
@@ -61,7 +63,7 @@ class HomeInteractableTests: XCTestCase {
         self.systeUnderTest?.fetchShowcaseApps()
         verify(mockHomePresentable, times(1)).onFetchShowcaseAppsSuccess(with: any())
     }
-    
+
     func testThatWhenDataSnapShotIsNotNilAndHasValueThenAnArrayOfShowcaseAppIsUpdatedCorrectlyWithValidDataFromDataSnapshot() {
         stub(mockDataSnapShot) { (mock) in
             _ = when(mock.value.get.thenReturn(createFakeApp()))
@@ -82,10 +84,11 @@ class HomeInteractableTests: XCTestCase {
         self.systeUnderTest?.fetchShowcaseApps()
         verify(mockHomePresentable, times(1)).onFetchShowcaseAppsSuccess(with: any())
     }
-    
+
     func createFakeApp() -> [String: Any] {
         let fakeShowcaseApp = ["client": "Absa",
                                "functionality": "Helps customer invest money"]
         return fakeShowcaseApp
     }
+
 }
