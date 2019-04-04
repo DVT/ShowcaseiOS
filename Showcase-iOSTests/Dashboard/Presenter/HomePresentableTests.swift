@@ -23,7 +23,7 @@ class HomePresentableTests: XCTestCase {
 
     var systemUnderTest: HomePresenter?
 
-    // MARK: Lifecycle Method(s)
+    // MARK: Lifecycle
 
     override func setUp() {
         super.setUp()
@@ -255,7 +255,8 @@ class HomePresentableTests: XCTestCase {
         dictionary["industry"] = "Asset Management"
         dictionary["shortDescription"] = "Asset data capturing application"
         dictionary["technologyUsed"] = "Windows Phone \n.NET Development "
-        dictionary["screenshots"] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
+        dictionary["screenshots"] = ["app-images/dvt-showcase/about.png",
+                                     "app-images/dvt-showcase/app_detail_dstv.png"]
         return dictionary
     }
 
@@ -268,8 +269,9 @@ class HomePresentableTests: XCTestCase {
         dictionary["industry"] = "Asset Management"
         dictionary["shortDescription"] = "Asset data capturing application"
         dictionary["technologyUsed"] = "Windows Phone \n.NET Development "
-        dictionary["screenshots"] = ["app-images/dvt-showcase/about.png", "app-images/dvt-showcase/app_detail_dstv.png"]
-        
+        dictionary["screenshots"] = ["app-images/dvt-showcase/about.png",
+                                     "app-images/dvt-showcase/app_detail_dstv.png"]
+
         var showcaseapp = ShowcaseApp(with: setupMockShowcaseAppDictionary())
         mockShowcassAppViewModels.append(ShowcaseAppViewModel(with: showcaseapp))
         showcaseapp = ShowcaseApp(with: dictionary)

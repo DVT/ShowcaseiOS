@@ -31,7 +31,7 @@ class LoginPresenterTests: XCTestCase {
         systemUnderTest.wireframe = mockWireFrameDelegate
     }
 
-    // MARK: Tests
+    // MARK: Test(s)
 
     func testThatTheSignInMethodOfTheLoginInteractorGetsCalled() {
         stub(mockLoginInteractor) { (mock) in

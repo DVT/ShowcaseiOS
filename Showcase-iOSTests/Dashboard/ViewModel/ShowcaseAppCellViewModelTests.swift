@@ -1,23 +1,20 @@
-//
-//  ShowcaseAppCellViewModelTests.swift
-//  Showcase-iOSTests
-//
-//  Created by Lehlohonolo Mbele on 2018/05/29.
-//  Copyright © 2018 DVT. All rights reserved.
-//
-
 import XCTest
 @testable import Showcase_iOS
 
 class ShowcaseAppCellViewModelTests: XCTestCase {
-    
+
+    // MARK: System under test
+
     var systemUnderTest = ShowcaseAppCellViewModel()
-    
+
+    // MARK: Lifecycle
+
     override func setUp() {
         super.setUp()
     }
-    
-    
+
+    // MARK: Test(s)
+
     func testThatGetImageURLReturnsAValidImageURL() {
         let showcaseAppDictionary = ["id": "dvt","iconUrl": "dvt.png"]
         let showcaseApp = ShowcaseApp(with: showcaseAppDictionary)
@@ -27,7 +24,7 @@ class ShowcaseAppCellViewModelTests: XCTestCase {
         let resultImageurl = systemUnderTest.getImageURL(showcaseAppViewModel, imageDictionary )
         XCTAssert(resultImageurl?.absoluteString == url?.absoluteString)
     }
-    
+
     func testThatIfImageDoesNotExistInTheImageDictionaryThenGetImageURLReturnsNil() {
         let showcaseAppDictionary = ["id": "dvt","iconUrl": "dvt.png"]
         let showcaseApp = ShowcaseApp(with: showcaseAppDictionary)
@@ -37,5 +34,5 @@ class ShowcaseAppCellViewModelTests: XCTestCase {
         let resultImageurl = systemUnderTest.getImageURL(showcaseAppViewModel, imageDictionary )
         XCTAssertNil(resultImageurl)
     }
-    
+
 }
