@@ -40,7 +40,7 @@ class AboutViewController: UIViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
-    // MARK: @IBActions
+    // MARK: @IBAction(s)
 
     @IBAction func websiteTapped(_ sender: Any) {
         if let url = aboutViewModel?.website {
@@ -67,7 +67,7 @@ class AboutViewController: UIViewController {
     }
 }
 
-// MARK: Extension Presentable
+// MARK: AboutPresenterViewable extension
 
 extension AboutViewController: AboutPresenterViewable {
 
