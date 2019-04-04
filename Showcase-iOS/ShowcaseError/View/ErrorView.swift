@@ -45,8 +45,9 @@ class ErrorView: UIView {
 
     func commonInit() {
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: nil)
-        contentView = nib.instantiate(withOwner: self, options: nil)[0] as? UIView
-        addSubviewPinnedToEdges(contentView)
+        if let contentView = nib.instantiate(withOwner: self, options: nil)[0] as? UIView {
+             addSubviewPinnedToEdges(contentView)
+        }
         actionButton.roundCorners()
     }
     
