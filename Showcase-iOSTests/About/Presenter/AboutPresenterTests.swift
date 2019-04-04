@@ -75,6 +75,24 @@ class AboutPresenterTests: XCTestCase {
         verify(mockAnalyticsManager, times(1)).trackButtonTap(buttonName: any())
     }
 
+    func testThatWhenRetrieveSocialMediaLinksIsCalledThatPresenterStartsLoadingAnimation() {
+        stub(mockPresenterViewable) { (mock) in
+            _ = when(mock.startLoadingAnimation()).then({ (_) in
+                self.systemUnderTest.retrieveSocialMediaLinks()
+                verify(self.mockPresenterViewable, times(1)).startLoadingAnimation()
+            })
+        }
+    }
+
+    func testThatWhenRetrieveSocialMediaLinksIsCalledInteractorFetchesLinks() {
+        stub(mockAboutInteractor) { (mock) in
+            _ = when(mock.retrieveSocialMediaLinks()).then({ (_) in
+                self.systemUnderTest.retrieveSocialMediaLinks()
+                verify(self.mockAboutInteractor, times(1)).retrieveSocialMediaLinks()
+            })
+        }
+    }
+
     // MARK: Mock expected value for links
 
     func mockLinks() -> SocialMediaLinks {
