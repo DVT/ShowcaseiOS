@@ -57,12 +57,12 @@ class ContactUsViewController: UIViewController {
 
 // MARK: CollectionView extension
 
-extension ContactUsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension ContactUsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 255)
+        return CGSize(width: collectionView.frame.width, height: 310)
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -84,7 +84,7 @@ extension ContactUsViewController: UICollectionViewDelegate, UICollectionViewDat
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContactUsCollectionViewCell.identifier, for: indexPath) as! ContactUsCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContactUsCollectionViewCell.identifier,for: indexPath) as! ContactUsCollectionViewCell
         cellViewModel = ContactUsCellViewModel(with: officeViewModels[indexPath.row])
         cell.viewModel = cellViewModel
         cell.viewModel?.sharedApplication = SharedApplicationDelegateImplementation()
