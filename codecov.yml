@@ -1,14 +1,5 @@
 
 codecov:
-notify:
-    slack:
-        default:
-        url: "https://hooks.slack.com/services/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"
-        threshold: 1%
-        branches: null
-        attachments: "sunburst, diff" # list of attachments to include in notification
-        message: "CodeCov"   
-require_ci_to_pass: yes
 
 coverage:
     precision: 2
